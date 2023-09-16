@@ -143,20 +143,20 @@
 		if (image1IsInView) {
 			return;
 		}
-		if (image1IsInView && !image2IsInView) {
+		if (image2IsInView && !image1IsInView) {
+			image1.scrollIntoView({ behavior: 'smooth' });
+			return;
+		}
+		if (image3IsInView && !image2IsInView) {
 			image2.scrollIntoView({ behavior: 'smooth' });
 			return;
 		}
-		if (image2IsInView && !image3IsInView) {
+		if (image4IsInView && !image3IsInView) {
 			image3.scrollIntoView({ behavior: 'smooth' });
 			return;
 		}
-		if (image3IsInView && !image4IsInView) {
+		if (image5IsInView && !image4IsInView) {
 			image4.scrollIntoView({ behavior: 'smooth' });
-			return;
-		}
-		if (image4IsInView && !image5IsInView) {
-			image5.scrollIntoView({ behavior: 'smooth' });
 			return;
 		}
 	};
@@ -221,7 +221,7 @@
 						<!-- svelte-ignore a11y-click-events-have-key-events -->
 						<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 						<img
-							class="rounded-md border p-xs aspect-[3/4] object-cover grayscale"
+							class="rounded-md border p-xs aspect-[3/4] object-cover grayscale scroll-mx-lg"
 							src={images.albums.earthbound['glam_pic-by_pete_pinto']}
 							alt=""
 							bind:this={image4}
@@ -233,7 +233,7 @@
 						<!-- svelte-ignore a11y-click-events-have-key-events -->
 						<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 						<img
-							class="rounded-md border p-xs aspect-[3/4] object-cover grayscale"
+							class="rounded-md border p-xs aspect-[3/4] object-cover grayscale scroll-mx-lg"
 							src={images.albums.earthbound['promo-by_sara_samsavari']}
 							alt=""
 							bind:this={image5}
@@ -245,35 +245,14 @@
 				</div>
 
 				<button
-					class="absolute hover:bg-white/40 rounded-lg left-0 top-1/2 -translate-y-1/2 z-10 text-3xl hover:opacity-100 opacity-40 transition-all ease-in-out duration-75"
+					class="absolute bg-white/30 hover:bg-white/60 rounded-lg left-0 top-1/2 -translate-y-1/2 z-10 text-3xl hover:opacity-100 opacity-70 transition-all ease-in-out duration-75"
 					type="button"
-					on:click={() => {
-						if (image5IsInView && !image4IsInView) {
-							image4.scrollIntoView({ behavior: 'smooth' });
-							image4IsInView = true;
-							return;
-						}
-						if (image4IsInView && !image3IsInView) {
-							image3.scrollIntoView({ behavior: 'smooth' });
-							image3IsInView = true;
-							return;
-						}
-						if (image3IsInView && !image2IsInView) {
-							image2.scrollIntoView({ behavior: 'smooth' });
-							image2IsInView = true;
-							return;
-						}
-						if (image2IsInView && !image1IsInView) {
-							image1.scrollIntoView({ behavior: 'smooth' });
-							image1IsInView = true;
-							return;
-						}
-					}}
+					on:click={onClickPrevButton}
 				>
 					<CaretLeft />
 				</button>
 				<button
-					class="absolute right-0 top-1/2 -translate-y-1/2 rounded-lg z-10 text-3xl hover:bg-white/40 opacity-40 hover:opacity-100 transition-all ease-in-out duration-75"
+					class="absolute right-0 bg-white/30 top-1/2 -translate-y-1/2 rounded-lg z-10 text-3xl hover:bg-white/40 opacity-70 hover:opacity-100 transition-all ease-in-out duration-75"
 					type="button"
 					on:click={onClickNextButton}
 				>

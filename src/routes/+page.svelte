@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	import { Stop } from 'phosphor-svelte';
+	import { Minus, Plus, Stop } from 'phosphor-svelte';
 
 	import { PageLayout } from '$lib/components';
 	import { images } from '$lib/static';
@@ -44,7 +44,7 @@
 				<div class="pl-xl border-l">
 					<h4 class="text-my-black-400">Music Player</h4>
 
-					<div class="mt-xs flex gap-xxs">
+					<div class="mt-sm flex gap-xxs text-my-black-700">
 						<p>Now playing</p>
 						<p>
 							<span class="font-medium text-my-black-900">Azhi</span> from
@@ -53,7 +53,7 @@
 						<span class="text-xs text-my-black-300 ml-xs translate-y-[5.5px]">change</span>
 					</div>
 
-					<div class="mt-xs flex gap-lg">
+					<div class="mt-sm flex gap-lg text-my-black-700">
 						<p class="flex items-center gap-xs">
 							<span class="text-my-black-600 text-sm">
 								<Stop weight="fill" />
@@ -64,7 +64,9 @@
 
 						<p class="flex items-center gap-xs">
 							<span>Volume</span>
-							<span class="text-my-black-400">60</span>
+							<span class="text-my-black-300 text-xs"><Minus /></span>
+							<span class="text-my-black-300 text-xs"><Plus /></span>
+							<!-- <span class="text-my-black-400">60</span> -->
 						</p>
 					</div>
 				</div>
