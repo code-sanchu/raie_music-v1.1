@@ -2,7 +2,7 @@
 	import { images } from '$lib/static';
 </script>
 
-<header class="flex justify-between">
+<header class="flex justify-between bg-white/50 backdrop-blur-sm">
 	<div class="py-sm pl-md">
 		<a href="/">
 			<img class="w-[100px] lg:w-[110px]" src={images.logo} alt="logo" />

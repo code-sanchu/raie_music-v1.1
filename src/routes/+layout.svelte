@@ -26,7 +26,7 @@
 <svelte:window bind:innerHeight={windowHeight} />
 
 <div
-	class="fixed left-0 top-0 z-50 w-full bg-white transition-transform duration-300 ease-in-out"
+	class="fixed left-0 top-0 z-50 w-full transition-transform duration-300 ease-in-out"
 	style:transform={hideHeader && headerHeight ? `translateY(-${headerHeight}px)` : ''}
 	bind:clientHeight={headerHeight}
 >
@@ -34,9 +34,8 @@
 </div>
 
 <div
-	class="overflow-y-auto flex flex-col overflow-x-hidden transition-all duration-300 ease-in-out"
-	style:height={!hideHeader ? `calc(100vh - ${headerHeight}px)` : '100vh'}
-	style:transform={!hideHeader ? `translateY(${headerHeight}px)` : ''}
+	class="overflow-y-auto flex flex-col overflow-x-hidden transition-all duration-300 ease-in-out h-screen"
+	style:padding-top={`${headerHeight}px`}
 	bind:this={bodyElement}
 	on:scroll={() => {
 		if (!bodyElement) {
@@ -47,9 +46,7 @@
 		currentScrollTop = bodyElement.scrollTop;
 	}}
 >
-	<div class="flex-grow">
-		<slot />
-	</div>
+	<slot />
 
 	<PageLayout.VerticalSpacing />
 

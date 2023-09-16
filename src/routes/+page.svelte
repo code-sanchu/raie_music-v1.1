@@ -12,9 +12,9 @@
 		<div class="flex gap-2xl flex-col">
 			<div class="relative">
 				<p class="prose text-my-black line-clamp-6">
-					Scots-born, London-based, Raie is one of life’s trip-me-up revelations. A purveyor of
+					Scots-born, London-based, Raie is one of life's trip-me-up revelations. A purveyor of
 					pin-me-to-the wall, beautiful, life-enhancing soul music. A sweet, certain surprise… Raie
-					has paid her dues playing live for many years – slipping through the net commercially,
+					has paid her dues playing live for many years - slipping through the net commercially,
 					making astounding music. Chances are, Raie is playing somewhere in London right now and a
 					select few are having their ears flipped over by her incredible voice...
 				</p>
@@ -27,9 +27,9 @@
 			<div>
 				<p class="prose line-clamp-6">
 					Nearly fifty years in to a professional career of recording and performing as a backing
-					singer with a variety of ‘name’ artists, Scottish songstress Raie has finally stepped
-					forward with a solo album. And what a beautifully assured debut it is. Raie’s first love
-					is country music, and the opening ‘Healin’ Train’ is a glorious blast of jangly electric
+					singer with a variety of 'name' artists, Scottish songstress Raie has finally stepped
+					forward with a solo album. And what a beautifully assured debut it is. Raie's first love
+					is country music, and the opening 'Healin' Train' is a glorious blast of jangly electric
 					guitar Americana. But whilst there are shades of Nashville throughout, the infusion of
 					other soulful, bluesy and even gospel-laced influences delivers a diverse concoction which
 					has its own original distinctiveness...

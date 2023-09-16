@@ -9,10 +9,14 @@
 	} from 'phosphor-svelte';
 </script>
 
-<footer class="flex justify-between pb-sm px-md">
-	<p class="text-base text-my-black-950 mr-lg">Get in touch: rachel@raiemusic.com</p>
+<footer class="fixed bottom-0 z-30 flex w-full justify-between py-xs px-xs">
+	<p class="text-base text-my-black-950 mr-lg bg-white/50 backdrop-blur-sm py-xs px-xs rounded-sm">
+		Get in touch: rachel@raiemusic.com
+	</p>
 
-	<div class="text-my-black-400 flex items-center text-xl gap-md">
+	<div
+		class="text-my-black-400 flex items-center text-xl gap-md bg-white/50 backdrop-blur-sm py-xs px-xs"
+	>
 		<a href="/gallery">
 			<Headphones />
 		</a>
