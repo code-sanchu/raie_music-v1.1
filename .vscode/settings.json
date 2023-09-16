@@ -1,0 +1,9 @@
+{
+	"window.title": "raie music - v1.1",
+	"css.lint.unknownAtRules": "ignore",
+	"editor.quickSuggestions": {
+		"other": true,
+		"comments": false,
+		"strings": true
+	}
+}

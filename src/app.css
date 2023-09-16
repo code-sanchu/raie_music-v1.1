@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'Quicksand';
+	font-style: normal;
+	font-weight: 300;
+	src: url('/fonts/Quicksand-Light.ttf');
+}
+
+@font-face {
+	font-family: 'Quicksand';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/Quicksand-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'Quicksand';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/fonts/Quicksand-Medium.ttf');
+}
+
+@font-face {
+	font-family: 'Quicksand';
+	font-style: normal;
+	font-weight: 600;
+	src: url('/fonts/Quicksand-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: 'Quicksand';
+	font-style: normal;
+	font-weight: 700;
+	src: url('/fonts/Quicksand-Bold.ttf');
+}
+
+html {
+	@apply overflow-hidden text-my-black;
+}
+
+div {
+	@apply md:scrollbar-thin md:scrollbar-track-gray-100 md:scrollbar-thumb-gray-400 md:hover:scrollbar-thumb-gray-500;
+}
