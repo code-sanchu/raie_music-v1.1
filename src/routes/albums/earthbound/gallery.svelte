@@ -5,17 +5,11 @@
 </script>
 
 <script lang="ts">
-	export let imageShowIsOpen = false;
+	export let imageShowIsOpen: boolean;
 
 	export let imageShowIndex = 0;
 
-	let images = [
-		{ src: imageSrc.albums.earthbound.album_cover },
-		{ src: imageSrc.albums.earthbound.albany_theatre_13_piece_band },
-		{ src: imageSrc.albums.earthbound['album_promo_shot-by_sara_samsavari'] },
-		{ src: imageSrc.albums.earthbound['glam_pic-by_pete_pinto'] },
-		{ src: imageSrc.albums.earthbound['promo-by_sara_samsavari'] }
-	];
+	export let imageSrcs: string[];
 </script>
 
 <Transition show={imageShowIsOpen}>
@@ -49,10 +43,10 @@
 
 			<button
 				class={`fixed z-50 left-[45vw] top-1/2 text-4xl transition-opacity ease-in-out duration-75 ${
-					imageShowIndex + 1 === images.length ? 'opacity-40' : ''
+					imageShowIndex + 1 === imageSrcs.length ? 'opacity-40' : ''
 				}`}
 				on:click={() => {
-					if (imageShowIndex + 1 === images.length) {
+					if (imageShowIndex + 1 === imageSrcs.length) {
 						return;
 					}
 					imageShowIndex += 1;
@@ -76,13 +70,13 @@
 				class="absolute flex w-[200vw] -left-[50vw] -top-[40vh] transition-transform ease-in-out duration-500"
 				style:transform={`translateX(-${imageShowIndex * 100}vw)`}
 			>
-				{#each images as image}
+				{#each imageSrcs as imageSrc}
 					<div class="w-screen grid place-items-center shrink-0">
 						<!-- svelte-ignore a11y-click-events-have-key-events -->
 						<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 						<img
 							class="w-screen grayscale cursor-zoom-out object-contain max-h-[80vh] max-w-[80vw]"
-							src={image.src}
+							src={imageSrc}
 							on:click={() => (imageShowIsOpen = false)}
 							alt=""
 						/>
