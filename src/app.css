@@ -65,6 +65,13 @@
 	src: url('/fonts/HelveticaNeue-Thin.otf');
 }
 
+@font-face {
+	font-family: 'Mate';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/Mate-Regular.ttf');
+}
+
 html {
 	@apply overflow-hidden text-my-black;
 }

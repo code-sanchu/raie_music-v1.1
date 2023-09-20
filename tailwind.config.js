@@ -25,7 +25,8 @@ export default {
 				sans: ['Quicksand', 'sans-serif'],
 				sans2: ['Helvetica', 'sans-serif'],
 				signature: ['BrianStrait', 'serif'],
-				hand: ['Movement-Indirect', 'serif']
+				hand: ['Movement-Indirect', 'serif'],
+				serif: ['Mate', 'serif']
 			},
 
 			screens: {
