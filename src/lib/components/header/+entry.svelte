@@ -9,10 +9,10 @@
 		</a>
 	</div>
 
-	<div class="text-site-2-red px-md flex items-center lg:text-lg gap-md">
+	<!-- <div class="text-site-2-red px-md flex items-center lg:text-lg gap-md">
 		<a href="/gallery">Gallery</a>
 		<a href="/lyrics">Lyrics</a>
 		<a href="/albums">Albums</a>
 		<a href="/coaching">Coaching</a>
-	</div>
+	</div> -->
 </header>

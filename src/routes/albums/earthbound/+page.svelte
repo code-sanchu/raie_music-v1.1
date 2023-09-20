@@ -65,10 +65,10 @@
 				<h3 class="text-my-black-600">Tracklist</h3>
 
 				<Track
-					length="03:37"
-					name="Wax n Wane"
-					number="01"
-					youtubeVideoSrc="https://www.youtube.com/embed/-8pC2h8qap0?si=6O6L3lgnOznP-7Qj"
+					length={songs.earthbound.wax_n_wane.length}
+					name={songs.earthbound.wax_n_wane.name}
+					number={songs.earthbound.wax_n_wane.number}
+					youtubeVideoSrc={songs.earthbound.wax_n_wane.youtubeEmbed}
 					lyrics={songs.earthbound.wax_n_wane.lyrics}
 				>
 					<div class="mt-md" slot="read-more">
@@ -96,10 +96,134 @@
 				</Track>
 
 				<Track
-					length="03:20"
-					name="Talkin Bout You"
-					number="02"
+					length={songs.earthbound.talkin_bout_you.length}
+					name={songs.earthbound.talkin_bout_you.name}
+					number={songs.earthbound.talkin_bout_you.number}
 					lyrics={songs.earthbound.talkin_bout_you.lyrics}
+				>
+					<div class="mt-md" slot="read-more">
+						<p>
+							Talkin' Bout You is a Country Ballad about love and devotion when the 'chips are
+							down'.
+						</p>
+						<p>
+							Talkin' Bout You is about my son's support during our early lives together and it's a
+							description of his uncanny perception, his support, his honesty and his wisdom.
+						</p>
+						<p class="">
+							<span class="text-my-black-400 inline-block mb-xs">Credits</span><br />
+							© Original version Rachel Bennett, peter J Pinto 2007<br />
+							© Re-arranged version Rachel Bennett, Peter J Pinto, Wes Maebe 2011<br />
+							Produced: Wes Maebe, Rachel Bennett 2011<br />
+							Mixed and Mastered: Wes Maebe @ Sonic Cuisine 2011<br />
+							Track recorded @ Inspired Studios & Sonic Cuisine
+						</p>
+						<p class="">
+							Drums Matt Earnshaw / Guitars & Bass Peter J Pinto / Background Vocals Lynieve Austin,
+							Nazarene, Peter J Pinto / Lead Vocal Rachel Bennett.
+						</p>
+						<p class="text-sm border-b pb-md">PRS CODE: 372333AR</p>
+					</div>
+				</Track>
+
+				<Track
+					length={songs.earthbound.blood.length}
+					name={songs.earthbound.blood.name}
+					number={songs.earthbound.blood.number}
+					lyrics={songs.earthbound.blood.lyrics}
+				>
+					<div class="mt-md" slot="read-more">
+						<p>
+							Talkin' Bout You is a Country Ballad about love and devotion when the 'chips are
+							down'.
+						</p>
+						<p>
+							Talkin' Bout You is about my son's support during our early lives together and it's a
+							description of his uncanny perception, his support, his honesty and his wisdom.
+						</p>
+						<p class="">
+							<span class="text-my-black-400 inline-block mb-xs">Credits</span><br />
+							© Original version Rachel Bennett, peter J Pinto 2007<br />
+							© Re-arranged version Rachel Bennett, Peter J Pinto, Wes Maebe 2011<br />
+							Produced: Wes Maebe, Rachel Bennett 2011<br />
+							Mixed and Mastered: Wes Maebe @ Sonic Cuisine 2011<br />
+							Track recorded @ Inspired Studios & Sonic Cuisine
+						</p>
+						<p class="">
+							Drums Matt Earnshaw / Guitars & Bass Peter J Pinto / Background Vocals Lynieve Austin,
+							Nazarene, Peter J Pinto / Lead Vocal Rachel Bennett.
+						</p>
+						<p class="text-sm border-b pb-md">PRS CODE: 372333AR</p>
+					</div>
+				</Track>
+
+				<Track
+					length={songs.earthbound.katyas_song.length}
+					name={songs.earthbound.katyas_song.name}
+					number={songs.earthbound.katyas_song.number}
+					lyrics={songs.earthbound.katyas_song.lyrics}
+				>
+					<div class="mt-md" slot="read-more">
+						<p>
+							Talkin' Bout You is a Country Ballad about love and devotion when the 'chips are
+							down'.
+						</p>
+						<p>
+							Talkin' Bout You is about my son's support during our early lives together and it's a
+							description of his uncanny perception, his support, his honesty and his wisdom.
+						</p>
+						<p class="">
+							<span class="text-my-black-400 inline-block mb-xs">Credits</span><br />
+							© Original version Rachel Bennett, peter J Pinto 2007<br />
+							© Re-arranged version Rachel Bennett, Peter J Pinto, Wes Maebe 2011<br />
+							Produced: Wes Maebe, Rachel Bennett 2011<br />
+							Mixed and Mastered: Wes Maebe @ Sonic Cuisine 2011<br />
+							Track recorded @ Inspired Studios & Sonic Cuisine
+						</p>
+						<p class="">
+							Drums Matt Earnshaw / Guitars & Bass Peter J Pinto / Background Vocals Lynieve Austin,
+							Nazarene, Peter J Pinto / Lead Vocal Rachel Bennett.
+						</p>
+						<p class="text-sm border-b pb-md">PRS CODE: 372333AR</p>
+					</div>
+				</Track>
+
+				<Track
+					length={songs.earthbound.earthbound.length}
+					name={songs.earthbound.earthbound.name}
+					number={songs.earthbound.earthbound.number}
+					lyrics={songs.earthbound.earthbound.lyrics}
+				>
+					<div class="mt-md" slot="read-more">
+						<p>
+							Talkin' Bout You is a Country Ballad about love and devotion when the 'chips are
+							down'.
+						</p>
+						<p>
+							Talkin' Bout You is about my son's support during our early lives together and it's a
+							description of his uncanny perception, his support, his honesty and his wisdom.
+						</p>
+						<p class="">
+							<span class="text-my-black-400 inline-block mb-xs">Credits</span><br />
+							© Original version Rachel Bennett, peter J Pinto 2007<br />
+							© Re-arranged version Rachel Bennett, Peter J Pinto, Wes Maebe 2011<br />
+							Produced: Wes Maebe, Rachel Bennett 2011<br />
+							Mixed and Mastered: Wes Maebe @ Sonic Cuisine 2011<br />
+							Track recorded @ Inspired Studios & Sonic Cuisine
+						</p>
+						<p class="">
+							Drums Matt Earnshaw / Guitars & Bass Peter J Pinto / Background Vocals Lynieve Austin,
+							Nazarene, Peter J Pinto / Lead Vocal Rachel Bennett.
+						</p>
+						<p class="text-sm border-b pb-md">PRS CODE: 372333AR</p>
+					</div>
+				</Track>
+
+				<Track
+					length={songs.earthbound.goliath.length}
+					name={songs.earthbound.goliath.name}
+					number={songs.earthbound.goliath.number}
+					lyrics={songs.earthbound.goliath.lyrics}
 				>
 					<div class="mt-md" slot="read-more">
 						<p>

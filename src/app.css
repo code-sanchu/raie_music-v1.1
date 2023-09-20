@@ -37,6 +37,34 @@
 	src: url('/fonts/Quicksand-Bold.ttf');
 }
 
+@font-face {
+	font-family: 'BrianStrait';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/brian-strait.ttf');
+}
+
+@font-face {
+	font-family: 'Movement-Indirect';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/Movement-IndirectThin.woff2');
+}
+
+@font-face {
+	font-family: 'Helvetica';
+	font-style: normal;
+	font-weight: 300;
+	src: url('/fonts/HelveticaNeue-Light.otf');
+}
+
+@font-face {
+	font-family: 'Helvetica';
+	font-style: normal;
+	font-weight: 100;
+	src: url('/fonts/HelveticaNeue-Thin.otf');
+}
+
 html {
 	@apply overflow-hidden text-my-black;
 }

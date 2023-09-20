@@ -13,10 +13,7 @@
 			<div class="relative">
 				<p class="prose text-my-black line-clamp-6">
 					Scots-born, London-based, Raie is one of life's trip-me-up revelations. A purveyor of
-					pin-me-to-the wall, beautiful, life-enhancing soul music. A sweet, certain surprise… Raie
-					has paid her dues playing live for many years - slipping through the net commercially,
-					making astounding music. Chances are, Raie is playing somewhere in London right now and a
-					select few are having their ears flipped over by her incredible voice...
+					pin-me-to-the wall, beautiful, life-enhancing soul music. A sweet, certain surprise…
 				</p>
 
 				<p class="mt-md pl-lg text-my-black-500">Martin Cooke - Bluesmatters Magazine</p>
