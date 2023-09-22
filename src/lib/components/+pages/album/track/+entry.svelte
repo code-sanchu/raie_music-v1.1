@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
 	import { Tooltip } from '$lib/components';
-	import { CaretDown, Headphones, MusicNotes, Video } from 'phosphor-svelte';
+	import { CaretDown, MusicNotes, Play, Video } from 'phosphor-svelte';
 	import LyricsModal from './lyrics-modal.svelte';
 	import YoutubeVideoModal from './youtube-video-modal.svelte';
 </script>
@@ -22,7 +22,7 @@
 <div class="flex items-center justify-between mt-sm">
 	<div class="flex gap-xl items-center">
 		<p class="text-my-black-600">{number}.</p>
-		<p>{name}</p>
+		<p class="">{name}</p>
 		<p class="text-my-black-400 text-sm flex items-center gap-xs group/button">
 			<button on:click={() => (showReadMore = !showReadMore)} type="button"
 				>read{showReadMore ? ' less' : ' more'}</button
@@ -45,7 +45,14 @@
 					on:click={() => (videoIsOpen = !videoIsOpen)}
 					type="button"><Video /></button
 				>
-				<Tooltip text="watch music video" triggeredById="track-video" />
+				<Tooltip text="music video" triggeredById="track-video" />
+			{:else}
+				<button
+					class="opacity-0 pointer-events-none p-xxs rounded-full hover:bg-gray-100 hover:text-my-black-700 transition-all ease-in-out duration-75"
+					id="track-video"
+					on:click={() => (videoIsOpen = !videoIsOpen)}
+					type="button"><Video /></button
+				>
 			{/if}
 
 			<button
@@ -54,18 +61,15 @@
 				id="track-lyrics"
 				type="button"><MusicNotes /></button
 			>
+			<Tooltip text="lyrics" triggeredById="track-lyrics" />
 
 			<button
 				class="p-xxs rounded-full hover:bg-gray-100 hover:text-my-black-700 transition-all ease-in-out duration-75"
 				on:click={() => (videoIsOpen = !videoIsOpen)}
 				id="track-listen"
-				type="button"><Headphones /></button
+				type="button"><Play /></button
 			>
-
-			<!-- 			<button
-				class="p-xxs rounded-full hover:bg-gray-100 hover:text-my-black-700 transition-all ease-in-out duration-75"
-				type="button"><ShoppingCartSimple /></button
-			> -->
+			<Tooltip text="play" triggeredById="track-listen" />
 		</div>
 	</div>
 </div>

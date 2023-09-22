@@ -23,7 +23,7 @@
 
 		<TransitionChild
 			as="div"
-			class="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  bg-white/70 p-2xl rounded-xl prose max-h-[70vh] overflow-y-auto"
+			class="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  bg-white/90 p-2xl rounded-xl prose max-h-[70vh] overflow-y-auto"
 			enter="ease-out duration-300"
 			enterFrom="opacity-0 scale-95"
 			enterTo="opacity-100 scale-100"

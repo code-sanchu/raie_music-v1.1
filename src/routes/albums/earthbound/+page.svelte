@@ -4,6 +4,7 @@
 	import { images } from '$lib/static';
 	import Gallery from './gallery.svelte';
 	import { songs } from '$lib/data';
+	import { List } from 'phosphor-svelte';
 </script>
 
 <script lang="ts">
@@ -29,19 +30,48 @@
 
 <PageLayout.HorizontalSpacing>
 	<div class="flex justify-center">
-		<div class="max-w-[768px] w-full">
-			<h1 class="text-3xl mt-md text-site-2-red lg:text-4xl">Earthbound</h1>
+		<div class="max-w-[850px]">
+			<div class="flex">
+				<img
+					class="w-[400px] h-[20px] overflow-hidden opacity-80"
+					src="/images/brick_bg.png"
+					alt="background"
+				/>
+				<img
+					class="w-[400px] h-[20px] overflow-hidden opacity-80"
+					src="/images/brick_bg.png"
+					alt="background"
+				/>
+				<img
+					class="w-[400px] h-[20px] overflow-hidden opacity-80"
+					src="/images/brick_bg.png"
+					alt="background"
+				/>
+			</div>
 
-			<p class="mt-xs text-my-black-600">2016</p>
+			<div class="flex gap-xl items-end mt-md">
+				<h1 class="text-3xl mt-md text-site-2-red lg:text-4xl font-sans2 font-thin tracking-widest">
+					Earthbound
+				</h1>
+				<p class="mt-sm text-my-black-300 tracking-wide">2016</p>
+			</div>
+		</div>
+	</div>
 
-			<ImageScroller.Container>
-				{#each imageSrcs as imageSrc, i}
-					<ImageScroller.Image src={imageSrc} onClick={() => onClickImage(i)} />
-				{/each}
-			</ImageScroller.Container>
+	<div class="flex justify-center">
+		<div class="max-w-[850px] w-full">
+			<!-- <p class="mt-sm text-my-black-600 text-lg">2016</p> -->
 
-			<div class="prose text-my-black">
-				<p class="mt-xs">
+			<div class="mt-xl">
+				<ImageScroller.Container>
+					{#each imageSrcs as imageSrc, i}
+						<ImageScroller.Image src={imageSrc} onClick={() => onClickImage(i)} />
+					{/each}
+				</ImageScroller.Container>
+			</div>
+
+			<div class="prose mt-xl text-my-black">
+				<p class="">
 					Earthbound is an Indie/Folk Ballad about human determination and resourcefulness.
 				</p>
 				<p class="mt-xs">
@@ -50,13 +80,13 @@
 				</p>
 			</div>
 
-			<div class="mt-md">
-				<div class="flex items-center gap-sm">
-					<p class="text-my-black-500">Buy tracks at</p>
+			<div class="mt-lg">
+				<div class="flex items-center gap-md">
+					<p class="text-my-black-600 font-sans2 font-light tracking-wider">Buy tracks at</p>
 
-					<div class="flex items-center gap-sm text-my-black-400">
-						<a href="."><Icon.Bandcamp /></a>
-						<a href="."><Icon.Apple /></a>
+					<div class="flex items-center gap-md text-my-black-400">
+						<a href="."><Icon.Bandcamp weight="light" /></a>
+						<a href="."><Icon.Apple weight="light" /></a>
 					</div>
 				</div>
 			</div>
@@ -249,6 +279,15 @@
 						<p class="text-sm border-b pb-md">PRS CODE: 372333AR</p>
 					</div>
 				</Track>
+			</div>
+
+			<div class="flex items-center gap-md mt-2xl">
+				<p class="text-my-black-400 font-sans2 font-light tracking-wider">Also listen on</p>
+
+				<div class="flex items-center gap-md text-my-black-400">
+					<a href="."><Icon.Spotify weight="light" /></a>
+					<a href="."><Icon.Itunes weight="light" /></a>
+				</div>
 			</div>
 		</div>
 	</div>

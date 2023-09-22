@@ -1,9 +1,18 @@
 <script lang="ts" context="module">
 	import { CaretLeft, CaretRight } from 'phosphor-svelte';
+	import { onMount } from 'svelte';
 </script>
 
 <script lang="ts">
 	let imagesContainer: HTMLDivElement;
+
+	let imagesMountApprox = false;
+
+	onMount(() => {
+		setTimeout(() => {
+			imagesMountApprox = true;
+		}, 100);
+	});
 
 	$: imageElements = !imagesContainer ? undefined : [...imagesContainer.children[0].children];
 
@@ -53,7 +62,7 @@
 		});
 	};
 
-	$: scrollLeft, inViewFunc({ imagesContainer });
+	$: scrollLeft, imagesMountApprox, inViewFunc({ imagesContainer });
 
 	const onClickNextButton = () => {
 		if (!imageElements) {

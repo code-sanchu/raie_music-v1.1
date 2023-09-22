@@ -30,10 +30,10 @@
 	style:transform={hideHeader && headerHeight ? `translateY(-${headerHeight}px)` : ''}
 	bind:clientHeight={headerHeight}
 >
-	<!-- <Header /> -->
+	<Header />
 </div>
 
-<!-- <div
+<div
 	class="overflow-y-auto flex flex-col overflow-x-hidden transition-all duration-300 ease-in-out h-screen"
 	style:padding-top={`${headerHeight}px`}
 	bind:this={bodyElement}
@@ -45,10 +45,6 @@
 		previousScrollTop = currentScrollTop;
 		currentScrollTop = bodyElement.scrollTop;
 	}}
-> -->
-<slot />
-
-<!-- <PageLayout.VerticalSpacing /> -->
-
-<!-- <Footer /> -->
-<!-- </div> -->
+>
+	<slot />
+</div>

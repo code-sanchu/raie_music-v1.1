@@ -23,6 +23,10 @@ export const images = {
 				'/images/albums/earthbound/album_promo_shot-by_sara_samsavari.jpg',
 			'glam_pic-by_pete_pinto': '/images/albums/earthbound/glam_pic-by_pete_pinto.jpg',
 			'promo-by_sara_samsavari': '/images/albums/earthbound/promo-by_sara_samsavari.jpg'
+		},
+
+		this_music_thing: {
+			album_cover: '/images/albums/this-music-thing/this_music_thing-album_cover.jpg'
 		}
 	}
 };
