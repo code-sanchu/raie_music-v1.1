@@ -1,7 +1,9 @@
 <script lang="ts" context="module">
 	import { Dialog, DialogOverlay, Transition, TransitionChild } from '@rgossiaux/svelte-headlessui';
-	import { images as imageSrc } from '$lib/static';
 	import { CaretLeft, CaretRight } from 'phosphor-svelte';
+
+	import { Picture } from '$lib/components';
+	import type { Data } from '$lib/types';
 </script>
 
 <script lang="ts">
@@ -9,7 +11,7 @@
 
 	export let imageShowIndex = 0;
 
-	export let imageSrcs: string[];
+	export let images: Data['Image'][];
 </script>
 
 <Transition show={imageShowIsOpen}>
@@ -43,10 +45,10 @@
 
 			<button
 				class={`fixed z-50 left-[45vw] top-1/2 text-4xl transition-opacity ease-in-out duration-75 ${
-					imageShowIndex + 1 === imageSrcs.length ? 'opacity-40' : ''
+					imageShowIndex + 1 === images.length ? 'opacity-40' : ''
 				}`}
 				on:click={() => {
-					if (imageShowIndex + 1 === imageSrcs.length) {
+					if (imageShowIndex + 1 === images.length) {
 						return;
 					}
 					imageShowIndex += 1;
@@ -70,13 +72,14 @@
 				class="absolute flex w-[200vw] -left-[50vw] -top-[40vh] transition-transform ease-in-out duration-500"
 				style:transform={`translateX(-${imageShowIndex * 100}vw)`}
 			>
-				{#each imageSrcs as imageSrc}
+				{#each images as image}
 					<div class="w-screen grid place-items-center shrink-0">
 						<!-- svelte-ignore a11y-click-events-have-key-events -->
 						<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-						<img
-							class="w-screen grayscale cursor-zoom-out object-contain max-h-[80vh] max-w-[80vw]"
-							src={imageSrc}
+						<Picture
+							imageClass="w-screen cursor-zoom-out object-contain max-h-[80vh] max-w-[80vw]"
+							meta={image.src}
+							sizes={'80vw'}
 							on:click={() => (imageShowIsOpen = false)}
 							alt=""
 						/>

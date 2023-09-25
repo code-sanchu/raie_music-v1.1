@@ -24,14 +24,18 @@
 		<p class="text-my-black-600">{number}.</p>
 		<p class="">{name}</p>
 		<p class="text-my-black-400 text-sm flex items-center gap-xs group/button">
-			<button on:click={() => (showReadMore = !showReadMore)} type="button"
-				>read{showReadMore ? ' less' : ' more'}</button
+			<button
+				class="flex items-center gap-xs"
+				on:click={() => (showReadMore = !showReadMore)}
+				type="button"
 			>
-			<span
-				class="text-xs text-my-black-300 p-xxxs rounded-full group-hover/button:bg-gray-100 transition-all ease-in-out duration-75"
-			>
-				<CaretDown />
-			</span>
+				<span>read{showReadMore ? ' less' : ' more'}</span>
+				<span
+					class="text-xs text-my-black-300 p-xxxs rounded-full group-hover/button:bg-gray-100 transition-all ease-in-out duration-75"
+				>
+					<CaretDown />
+				</span>
+			</button>
 		</p>
 	</div>
 
@@ -40,7 +44,7 @@
 		<div class="flex items-center gap-md text-my-black-600">
 			{#if youtubeVideoSrc}
 				<button
-					class="p-xxs rounded-full hover:bg-gray-100 hover:text-my-black-700 transition-all ease-in-out duration-75"
+					class="p-xxs text-my-black-500 rounded-full hover:bg-gray-100 hover:text-my-black-700 transition-all ease-in-out duration-75"
 					id="track-video"
 					on:click={() => (videoIsOpen = !videoIsOpen)}
 					type="button"><Video /></button
@@ -48,7 +52,7 @@
 				<Tooltip text="music video" triggeredById="track-video" />
 			{:else}
 				<button
-					class="opacity-0 pointer-events-none p-xxs rounded-full hover:bg-gray-100 hover:text-my-black-700 transition-all ease-in-out duration-75"
+					class="opacity-0 pointer-events-none text-my-black-500 p-xxs rounded-full hover:bg-gray-100 hover:text-my-black-700 transition-all ease-in-out duration-75"
 					id="track-video"
 					on:click={() => (videoIsOpen = !videoIsOpen)}
 					type="button"><Video /></button
@@ -56,7 +60,7 @@
 			{/if}
 
 			<button
-				class="p-xxs rounded-full hover:bg-gray-100 hover:text-my-black-700 transition-all ease-in-out duration-75"
+				class="p-xxs rounded-full hover:bg-gray-100 hover:text-my-black-700 text-my-black-500 transition-all ease-in-out duration-75"
 				on:click={() => (lyricsIsOpen = !lyricsIsOpen)}
 				id="track-lyrics"
 				type="button"><MusicNotes /></button
@@ -64,7 +68,7 @@
 			<Tooltip text="lyrics" triggeredById="track-lyrics" />
 
 			<button
-				class="p-xxs rounded-full hover:bg-gray-100 hover:text-my-black-700 transition-all ease-in-out duration-75"
+				class="p-xxs rounded-full hover:bg-gray-100 hover:text-my-black-700 transition-all text-my-black-500 ease-in-out duration-75"
 				on:click={() => (videoIsOpen = !videoIsOpen)}
 				id="track-listen"
 				type="button"><Play /></button

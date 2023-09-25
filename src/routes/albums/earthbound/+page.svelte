@@ -1,9 +1,9 @@
 <script lang="ts" context="module">
-	import { PageLayout, Icon } from '$lib/components';
 	import { ImageScroller, Track } from '$lib/components/+pages/album';
-	import { images } from '$lib/data';
 	import Gallery from './gallery.svelte';
 	import { songs } from '$lib/data';
+	import { PageLayout, Picture, Icon } from '$lib/components';
+	import { images } from '$assets';
 </script>
 
 <script lang="ts">
@@ -31,20 +31,23 @@
 	<div class="flex justify-center">
 		<div class="max-w-[850px]">
 			<div class="flex">
-				<img
-					class="w-[400px] h-[20px] overflow-hidden opacity-80"
-					src="/images/brick_bg.png"
-					alt="background"
+				<Picture
+					imageClass="w-[400px] h-[20px] overflow-hidden opacity-80"
+					meta={images.brick_bg.src}
+					sizes={'400px'}
+					alt=""
 				/>
-				<img
-					class="w-[400px] h-[20px] overflow-hidden opacity-80"
-					src="/images/brick_bg.png"
-					alt="background"
+				<Picture
+					imageClass="w-[400px] h-[20px] overflow-hidden opacity-80"
+					meta={images.brick_bg.src}
+					sizes={'400px'}
+					alt=""
 				/>
-				<img
-					class="w-[400px] h-[20px] overflow-hidden opacity-80"
-					src="/images/brick_bg.png"
-					alt="background"
+				<Picture
+					imageClass="w-[400px] h-[20px] overflow-hidden opacity-80"
+					meta={images.brick_bg.src}
+					sizes={'400px'}
+					alt=""
 				/>
 			</div>
 
@@ -128,7 +131,7 @@
 					number={songs.earthbound.talkin_bout_you.number}
 					lyrics={songs.earthbound.talkin_bout_you.lyrics}
 				>
-					<div class="mt-md" slot="read-more">
+					<div class="mt-md text-my-black-800" slot="read-more">
 						<p>
 							Talkin' Bout You is a Country Ballad about love and devotion when the 'chips are
 							down'.
@@ -137,7 +140,7 @@
 							Talkin' Bout You is about my son's support during our early lives together and it's a
 							description of his uncanny perception, his support, his honesty and his wisdom.
 						</p>
-						<p class="">
+						<p class="text-my-black-700">
 							<span class="text-my-black-400 inline-block mb-xs">Credits</span><br />
 							© Original version Rachel Bennett, peter J Pinto 2007<br />
 							© Re-arranged version Rachel Bennett, Peter J Pinto, Wes Maebe 2011<br />
@@ -290,8 +293,4 @@
 	</div>
 </PageLayout.HorizontalSpacing>
 
-<Gallery
-	bind:imageShowIndex
-	bind:imageShowIsOpen
-	imageSrcs={albumImages.map((image) => image.src)}
-/>
+<Gallery bind:imageShowIndex bind:imageShowIsOpen images={albumImages} />

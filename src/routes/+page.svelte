@@ -1,18 +1,17 @@
 <script context="module" lang="ts">
-	import { images as staticImages } from '$lib/static';
-	import { images } from '$lib/data';
 	import { ArrowRight, Play, Quotes } from 'phosphor-svelte';
-	import { Picture } from '$lib/components';
 
-	// import myImg from '$lib/assets/images/face_shot-1.png';
-	// import myImg from '$lib/assets/images/face_shot-1.png?w=500&format=avif';
+	import { images } from '$assets';
+	import { Picture } from '$lib/components';
 
 	// MUST DO
 	// □ pause/play interaction with browser - i.e can pause music through browser.
 
 	// TO DO
-	// □ use local storage to save default setting.
-	// □ optimise images?, songs
+	// □ use local storage to save default user setting.
+	// □ optimise images - sizes; width queries; if add width to w= on img query string and number is over the image natural wdth, vite won't create a source for that.
+	// □ ...check image strings for max width for those that need to be max
+	// □ optimise songs?
 	// □ loading priority for images
 	// □ different sizes for images - is done auto by Svelte?
 	// □ blur placeholder for images
@@ -92,27 +91,26 @@
 				</div>
 			</div>
 			<Picture meta={images.faceshots[1].src} sizes={'50vw'} loading="eager" alt="" />
-			<!-- <img class="w-[500px]" src={images.faceshots[1].src} alt="" /> -->
-			<!-- <img class="w-[500px]" src={myImg} alt="" /> -->
-			<!-- <img class="w-[500px]" src={`${images.faceshots[1]}?w=500&format=avif`} alt="" /> -->
-			<!-- <img class="w-[500px]" src={images.faceshots[1]} alt="" /> -->
 		</div>
 
 		<div class="mt-2xl flex">
-			<img
-				class="w-[400px] h-[20px] overflow-hidden opacity-80"
-				src="/images/brick_bg.png"
-				alt="background"
+			<Picture
+				imageClass="w-[400px] h-[20px] overflow-hidden opacity-80"
+				meta={images.brick_bg.src}
+				sizes={'400px'}
+				alt=""
 			/>
-			<img
-				class="w-[400px] h-[20px] overflow-hidden opacity-80"
-				src="/images/brick_bg.png"
-				alt="background"
+			<Picture
+				imageClass="w-[400px] h-[20px] overflow-hidden opacity-80"
+				meta={images.brick_bg.src}
+				sizes={'400px'}
+				alt=""
 			/>
-			<img
-				class="w-[400px] h-[20px] overflow-hidden opacity-80"
-				src="/images/brick_bg.png"
-				alt="background"
+			<Picture
+				imageClass="w-[400px] h-[20px] overflow-hidden opacity-80"
+				meta={images.brick_bg.src}
+				sizes={'400px'}
+				alt=""
 			/>
 		</div>
 
@@ -126,7 +124,12 @@
 
 				<div class="mt-lg flex gap-xl">
 					<div class="w-[250px] shrink-0">
-						<img class="opacity-80 w-full" src={staticImages.galaxy['full-band']} alt="" />
+						<Picture
+							imageClass="rounded-sm"
+							meta={images.galaxy['full-band'].src}
+							sizes={'250px'}
+							alt=""
+						/>
 					</div>
 
 					<p class="leading-relaxed text-my-black font-sans2 text-lg max-w-[500px]">
@@ -140,10 +143,11 @@
 			</div>
 
 			<div class="w-[16px] h-[400px] pt-[40px]">
-				<img
-					class="w-[16px] h-[300px] overflow-hidden opacity-80"
-					src="/images/brick_bg.png"
-					alt="background"
+				<Picture
+					imageClass="w-[16px] h-[300px] overflow-hidden opacity-80"
+					meta={images.brick_bg.src}
+					sizes={'400px'}
+					alt=""
 				/>
 			</div>
 

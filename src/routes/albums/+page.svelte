@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
-	import { PageLayout } from '$lib/components';
-	import { images } from '$lib/static';
+	import { images } from '$assets';
+	import { PageLayout, Picture } from '$lib/components';
 </script>
 
 <PageLayout.VerticalSpacing />
@@ -9,20 +9,23 @@
 	<div class="flex justify-center">
 		<div class="">
 			<div class="flex">
-				<img
-					class="w-[400px] h-[20px] overflow-hidden opacity-80"
-					src="/images/brick_bg.png"
-					alt="background"
+				<Picture
+					imageClass="w-[400px] h-[20px] overflow-hidden opacity-80"
+					meta={images.brick_bg.src}
+					sizes={'400px'}
+					alt=""
 				/>
-				<img
-					class="w-[400px] h-[20px] overflow-hidden opacity-80"
-					src="/images/brick_bg.png"
-					alt="background"
+				<Picture
+					imageClass="w-[400px] h-[20px] overflow-hidden opacity-80"
+					meta={images.brick_bg.src}
+					sizes={'400px'}
+					alt=""
 				/>
-				<img
-					class="w-[400px] h-[20px] overflow-hidden opacity-80"
-					src="/images/brick_bg.png"
-					alt="background"
+				<Picture
+					imageClass="w-[400px] h-[20px] overflow-hidden opacity-80"
+					meta={images.brick_bg.src}
+					sizes={'400px'}
+					alt=""
 				/>
 			</div>
 
@@ -33,9 +36,11 @@
 			<div class="">
 				<div class="flex gap-xl w-full justify-center">
 					<a class="shrink-0" href="/albums/earthbound">
-						<img
-							src={images.albums.earthbound.album_cover}
-							class="aspect-square grayscale h-[200px]"
+						<Picture
+							meta={images.albums.earthbound.album_cover.src}
+							imageClass="aspect-square grayscale w-[200px] h-[200px]"
+							sizes={'30vw'}
+							loading="eager"
 							alt=""
 						/>
 					</a>
@@ -63,9 +68,10 @@
 
 				<div class="flex gap-xl w-full justify-center mt-2xl">
 					<a class="shrink-0" href="/albums/this-music-thing">
-						<img
-							src={images.albums.this_music_thing.album_cover}
-							class="aspect-square grayscale h-[200px]"
+						<Picture
+							meta={images.albums.this_music_thing.album_cover.src}
+							imageClass="aspect-square grayscale h-[200px]"
+							sizes={'30vw'}
 							alt=""
 						/>
 					</a>
@@ -99,15 +105,14 @@
 							class="aspect-square grayscale h-[200px] bg-my-black-50/70 p-sm flex flex-col gap-xs"
 						>
 							<p class="text-white">Coming soon...</p>
-							<img
-								src={images.galaxy['full-band']}
-								class="grayscale object-cover opacity-70 flex-grow"
+
+							<Picture
+								meta={images.galaxy['full-band'].src}
+								imageClass="grayscale object-cover opacity-70 flex-grow"
+								sizes={'30vw'}
 								alt=""
 							/>
 						</div>
-						<!-- <div class="aspect-square grayscale h-[200px] bg-my-black-50/70">
-							<p class="text-white p-sm">Coming soon...</p>
-						</div> -->
 					</a>
 
 					<div class="max-w-[600px]">
@@ -130,23 +135,26 @@
 				</div>
 
 				<div class="mt-2xl flex">
-					<img
-						class="w-[400px] h-[20px] overflow-hidden opacity-80"
-						src="/images/brick_bg.png"
-						alt="background"
+					<Picture
+						imageClass="w-[400px] h-[20px] overflow-hidden opacity-80"
+						meta={images.brick_bg.src}
+						sizes={'400px'}
+						alt=""
 					/>
-					<img
-						class="w-[400px] h-[20px] overflow-hidden opacity-80"
-						src="/images/brick_bg.png"
-						alt="background"
+					<Picture
+						imageClass="w-[400px] h-[20px] overflow-hidden opacity-80"
+						meta={images.brick_bg.src}
+						sizes={'400px'}
+						alt=""
 					/>
-					<img
-						class="w-[400px] h-[20px] overflow-hidden opacity-80"
-						src="/images/brick_bg.png"
-						alt="background"
+					<Picture
+						imageClass="w-[400px] h-[20px] overflow-hidden opacity-80"
+						meta={images.brick_bg.src}
+						sizes={'400px'}
+						alt=""
 					/>
 				</div>
 			</div>
 		</div>
-	</div>
-</PageLayout.HorizontalSpacing>
+	</div></PageLayout.HorizontalSpacing
+>
