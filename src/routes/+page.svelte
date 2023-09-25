@@ -90,7 +90,13 @@
 					</button>
 				</div>
 			</div>
-			<Picture meta={images.faceshots[1].src} sizes={'50vw'} loading="eager" alt="" />
+			<Picture
+				imageClass="w-[500px]"
+				meta={images.faceshots[1].src}
+				sizes={'50vw'}
+				loading="eager"
+				alt=""
+			/>
 		</div>
 
 		<div class="mt-2xl flex">
