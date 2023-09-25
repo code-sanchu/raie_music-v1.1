@@ -1,6 +1,11 @@
 <script context="module" lang="ts">
-	import { images } from '$lib/static';
+	import { images as staticImages } from '$lib/static';
+	import { images } from '$lib/data';
 	import { ArrowRight, Play, Quotes } from 'phosphor-svelte';
+	import { Picture } from '$lib/components';
+
+	// import myImg from '$lib/assets/images/face_shot-1.png';
+	// import myImg from '$lib/assets/images/face_shot-1.png?w=500&format=avif';
 
 	// MUST DO
 	// □ pause/play interaction with browser - i.e can pause music through browser.
@@ -16,6 +21,7 @@
 	// □ include links in this music thing article
 	// □ prev/next news article
 	// □ add buy now, radio shows news aticles links to thismusic thing article
+	// □ everything is prerendering fine?
 </script>
 
 <div class="mt-3xl flex justify-center">
@@ -85,17 +91,14 @@
 					</button>
 				</div>
 			</div>
-
-			<img class="w-[500px]" src={images.faceshots[1]} alt="" />
+			<Picture meta={images.faceshots[1].src} sizes={'50vw'} loading="eager" alt="" />
+			<!-- <img class="w-[500px]" src={images.faceshots[1].src} alt="" /> -->
+			<!-- <img class="w-[500px]" src={myImg} alt="" /> -->
+			<!-- <img class="w-[500px]" src={`${images.faceshots[1]}?w=500&format=avif`} alt="" /> -->
+			<!-- <img class="w-[500px]" src={images.faceshots[1]} alt="" /> -->
 		</div>
 
 		<div class="mt-2xl flex">
-			<!-- 			<img
-				class="w-full h-[20px] overflow-hidden opacity-80"
-				src="/images/table_cloth-bg.png"
-				alt="background"
-			/> -->
-
 			<img
 				class="w-[400px] h-[20px] overflow-hidden opacity-80"
 				src="/images/brick_bg.png"
@@ -123,7 +126,7 @@
 
 				<div class="mt-lg flex gap-xl">
 					<div class="w-[250px] shrink-0">
-						<img class="opacity-80 w-full" src={images.galaxy['full-band']} alt="" />
+						<img class="opacity-80 w-full" src={staticImages.galaxy['full-band']} alt="" />
 					</div>
 
 					<p class="leading-relaxed text-my-black font-sans2 text-lg max-w-[500px]">

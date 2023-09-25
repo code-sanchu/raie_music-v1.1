@@ -4,5 +4,6 @@ import Tooltip from './tooltip.svelte';
 
 export * from './layout';
 export * from './icon';
+export * from './picture';
 
 export { Header, Footer, Tooltip };

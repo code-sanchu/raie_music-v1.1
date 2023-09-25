@@ -1,8 +1,11 @@
+import logo from '$assets/images/logo.png?w=110&format=avif&imagetools';
+import faceshot1 from '$assets/images/face_shot-1.png?w=500&format=avif;webp;jpg&as=picture&imagetools';
+
 export const images = {
-	logo: { src: '/images/logo.png', naturalDimensions: { width: 497, height: 166 } },
+	logo: { src: logo, naturalDimensions: { width: 497, height: 166 } },
 
 	faceshots: {
-		1: { src: '/images/face_shot-1.png', naturalDimensions: { width: 1037, height: 1300 } }
+		1: { src: faceshot1, naturalDimensions: { width: 1037, height: 1300 } }
 	},
 
 	galaxy: {
