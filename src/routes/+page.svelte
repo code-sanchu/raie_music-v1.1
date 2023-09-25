@@ -1,6 +1,21 @@
 <script context="module" lang="ts">
 	import { images } from '$lib/static';
 	import { ArrowRight, Play, Quotes } from 'phosphor-svelte';
+
+	// MUST DO
+	// □ pause/play interaction with browser - i.e can pause music through browser.
+
+	// TO DO
+	// □ use local storage to save default setting.
+	// □ optimise images?, songs
+	// □ loading priority for images
+	// □ different sizes for images - is done auto by Svelte?
+	// □ blur placeholder for images
+	// □ popper
+	// □ make icon - take 'R' from logo
+	// □ include links in this music thing article
+	// □ prev/next news article
+	// □ add buy now, radio shows news aticles links to thismusic thing article
 </script>
 
 <div class="mt-3xl flex justify-center">

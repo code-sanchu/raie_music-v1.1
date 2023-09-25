@@ -1,10 +1,9 @@
 <script lang="ts" context="module">
 	import { PageLayout, Icon } from '$lib/components';
 	import { ImageScroller, Track } from '$lib/components/+pages/album';
-	import { images } from '$lib/static';
+	import { images } from '$lib/data';
 	import Gallery from './gallery.svelte';
 	import { songs } from '$lib/data';
-	import { List } from 'phosphor-svelte';
 </script>
 
 <script lang="ts">
@@ -17,7 +16,7 @@
 		imageShowIsOpen = true;
 	};
 
-	const imageSrcs = [
+	const albumImages = [
 		images.albums.earthbound.album_cover,
 		images.albums.earthbound['glam_pic-by_pete_pinto'],
 		images.albums.earthbound.albany_theatre_13_piece_band,
@@ -60,12 +59,10 @@
 
 	<div class="flex justify-center">
 		<div class="max-w-[850px] w-full">
-			<!-- <p class="mt-sm text-my-black-600 text-lg">2016</p> -->
-
 			<div class="mt-xl">
 				<ImageScroller.Container>
-					{#each imageSrcs as imageSrc, i}
-						<ImageScroller.Image src={imageSrc} onClick={() => onClickImage(i)} />
+					{#each albumImages as image, i}
+						<ImageScroller.Image data={image} onClick={() => onClickImage(i)} />
 					{/each}
 				</ImageScroller.Container>
 			</div>
@@ -293,4 +290,8 @@
 	</div>
 </PageLayout.HorizontalSpacing>
 
-<Gallery bind:imageShowIndex bind:imageShowIsOpen {imageSrcs} />
+<Gallery
+	bind:imageShowIndex
+	bind:imageShowIsOpen
+	imageSrcs={albumImages.map((image) => image.src)}
+/>
