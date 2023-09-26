@@ -6,11 +6,13 @@
 <script lang="ts">
 	let musicPlayer: MusicPlayer;
 
-	$: console.log('musicPlayer:', musicPlayer);
-
 	musicPlayerStore.subscribe((playerStore) => {
 		musicPlayer = playerStore;
 	});
 </script>
 
-<audio src={songs.earthbound.wax_n_wane.localSrc} bind:paused={musicPlayer.paused} />
+<audio
+	src={songs.earthbound.wax_n_wane.localSrc}
+	bind:paused={musicPlayer.paused}
+	bind:volume={musicPlayer.volume}
+/>

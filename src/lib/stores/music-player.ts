@@ -1,7 +1,8 @@
 import { writable } from 'svelte/store';
 
-const player: { paused: boolean } = {
-	paused: true
+const player: { paused: boolean; volume: number } = {
+	paused: true,
+	volume: 60
 };
 
 export type MusicPlayer = typeof player;
