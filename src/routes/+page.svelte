@@ -3,6 +3,7 @@
 
 	import { images } from '$assets';
 	import { Picture } from '$lib/components';
+	import { musicPlayerStore } from '$lib/stores';
 
 	// MUST DO
 	// □ pause/play interaction with browser - i.e can pause music through browser.
@@ -57,8 +58,8 @@
 
 				<div class="">
 					<p class="w-[500px] text-2xl font-sans2 font-thin tracking-wider flex flex-col gap-xxxs">
-						<span
-							><span class="float-left text-xl scale-x-[-1] pl-xs text-my-black-100">
+						<span>
+							<span class="float-left text-xl scale-x-[-1] pl-xs text-my-black-100">
 								<Quotes weight="fill" />
 							</span>
 							Raie has stepped forward with a beautifully assured solo album...
@@ -66,8 +67,9 @@
 
 						<span>Heart-tuggingly moving and edgily</span>
 
-						<span class="self-start"
-							>joyous in equal measures. Love it!
+						<span class="self-start">
+							joyous in equal measures. Love it!
+
 							<span class="float-right text-xl pl-xs text-my-black-100">
 								<Quotes weight="fill" />
 							</span>
@@ -80,16 +82,27 @@
 				</div>
 
 				<div>
-					<button class="flex items-center gap-sm text-xl text-my-black-700" type="button">
+					<button
+						class="flex items-center gap-sm text-xl text-my-black-700"
+						on:click={() => {
+							musicPlayerStore.update((state) => ({
+								...state,
+								paused: false
+							}));
+						}}
+						type="button"
+					>
 						<span class="text-my-black-100 opacity-40 text-2xl">
 							<Play weight="fill" />
 						</span>
-						<span class="text-my-black-800 font-light text-base tracking-widest uppercase"
-							>Play music</span
-						>
+
+						<span class="text-my-black-800 font-light text-base tracking-widest uppercase">
+							Play music
+						</span>
 					</button>
 				</div>
 			</div>
+
 			<Picture
 				imageClass="w-[500px]"
 				meta={images.faceshots[1].src}
@@ -173,56 +186,7 @@
 				<a class="" href=".">About</a>
 
 				<p class="mt-md">Links</p>
-				<!-- <p class="">Socials</p> -->
-				<!-- 				<p class="flex items-center gap-xs mt-lg">
-					<span class="text-my-black-200">
-						<Headphones />
-					</span>
-					<span class="text-my-black-700">listen</span>
-				</p>
-				<p class="flex items-center gap-sm">
-					<span class="text-my-black-200">
-						<ShoppingCartSimple />
-					</span>
-					<span class="text-my-black-700">buy</span>
-				</p>
-				<p class="flex items-center gap-xs">
-					<span class="text-my-black-200">
-						<Globe />
-					</span>
-					<span class="text-my-black-700">socials</span>
-				</p> -->
 			</div>
 		</div>
 	</div>
 </div>
-
-<!-- <footer class="fixed bottom-0 z-30 flex w-full justify-between py-xs px-xs">
-	<p
-		class="mr-lg bg-white/50 backdrop-blur-sm py-xs px-xs rounded-sm font-sans2 font-thin text-lg tracking-wider"
-	>
-		rachel@raiemusic.com
-	</p>
-
-	<div class="text-my-black flex items-center gap-md bg-white/50 backdrop-blur-sm py-xs px-xs">
-		<p class="flex items-center gap-xs">
-			<span class="text-my-black-200">
-				<Headphones />
-			</span>
-			<span class="text-my-black-700">listen</span>
-		</p>
-		<p class="flex items-center gap-xs">
-			<span class="text-my-black-200">
-				<ShoppingCartSimple />
-			</span>
-			<span class="text-my-black-700">buy</span>
-		</p>
-		<p class="flex items-center gap-xs">
-			<span class="text-my-black-200">
-				<Globe />
-			</span>
-			<span class="text-my-black-700">socials</span>
-		</p>
-	</div>
-
-</footer> -->

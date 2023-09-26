@@ -1,7 +1,8 @@
 <script lang="ts" context="module">
 	import '../app.css';
 
-	import { Header, Footer, PageLayout } from '$lib/components/index';
+	import { AudioElement, MusicBottomPanel } from '$lib/components';
+	import { Header } from '$lib/components/index';
 </script>
 
 <script lang="ts">
@@ -48,3 +49,7 @@
 >
 	<slot />
 </div>
+
+<AudioElement />
+
+<MusicBottomPanel />
