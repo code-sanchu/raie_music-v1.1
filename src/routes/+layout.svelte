@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
 	import '../app.css';
 
-	import { AudioElement, MusicBottomPanel } from '$lib/components';
+	import { AudioElement, MusicBottomPanel, MusicPlayer } from '$lib/components';
 	import { Header } from '$lib/components/index';
 </script>
 

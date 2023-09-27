@@ -10,30 +10,25 @@
 	});
 
 	$: paused = musicPlayer.paused;
-	$: console.log('paused:', paused);
 </script>
 
 <div class="relative inline-block">
 	<div class="inline-block">
 		<span
-			class="bar n1"
+			class={`bar n1 ${musicPlayer.isOpen || musicPlayer.paused ? 'bg-white' : 'bg-my-black-100'}`}
 			style:animation-iteration-count={paused ? '1' : 'infinite'}
-			style:animation-play-state={paused ? 'paused' : 'running'}
 		/>
 		<span
-			class="bar n2"
+			class={`bar n2 ${musicPlayer.isOpen || musicPlayer.paused ? 'bg-white' : 'bg-my-black-100'}`}
 			style:animation-iteration-count={paused ? '1' : 'infinite'}
-			style:animation-play-state={paused ? 'paused' : 'running'}
 		/>
 		<span
-			class="bar n4"
+			class={`bar n4 ${musicPlayer.isOpen || musicPlayer.paused ? 'bg-white' : 'bg-my-black-100'}`}
 			style:animation-iteration-count={paused ? '1' : 'infinite'}
-			style:animation-play-state={paused ? 'paused' : 'running'}
 		/>
 		<span
-			class="bar n5"
+			class={`bar n5 ${musicPlayer.isOpen || musicPlayer.paused ? 'bg-white' : 'bg-my-black-100'}`}
 			style:animation-iteration-count={paused ? '1' : 'infinite'}
-			style:animation-play-state={paused ? 'paused' : 'running'}
 		/>
 	</div>
 </div>
@@ -44,11 +39,8 @@
 		position: relative;
 		width: 3px;
 		height: 1px;
-		background: rgb(193, 193, 193);
-		color: transparent;
 		animation-name: pulse;
 		animation-duration: 3.5s;
-		/* animation-iteration-count: infinite; */
 	}
 
 	.n1 {

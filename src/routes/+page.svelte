@@ -22,6 +22,7 @@
 	// □ prev/next news article
 	// □ add buy now, radio shows news aticles links to thismusic thing article
 	// □ everything is prerendering fine?
+	// □ click outside music player doesn't work because bottom panel is seperate.
 </script>
 
 <div class="mt-3xl flex justify-center">
@@ -84,7 +85,7 @@
 				<div>
 					<button
 						class="flex items-center gap-sm text-xl text-my-black-700"
-						on:click={() => {
+						on:click={(e) => {
 							musicPlayerStore.update((state) => ({
 								...state,
 								paused: false
