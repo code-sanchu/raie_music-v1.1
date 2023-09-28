@@ -3,7 +3,7 @@
 
 	import { images } from '$assets';
 	import { Picture } from '$lib/components';
-	import { musicPlayerStore, updateMusicPlayer } from '$lib/stores';
+	import { updateMusicPlayer, updateLinksPanel } from '$lib/stores';
 
 	// MUST DO
 	// □ pause/play interaction with browser - i.e can pause music through browser.
@@ -135,7 +135,9 @@
 					Latest News
 				</h3>
 
-				<h4 class="mt-xs text-2xl font-sans2 tracking-widest text-my-black-600">Galaxy Studios</h4>
+				<h4 class="mt-xs text-2xl font-sans2 tracking-widest font-thin text-my-black-600">
+					Galaxy Studios
+				</h4>
 
 				<div class="mt-lg flex gap-xl">
 					<div class="w-[250px] shrink-0">
@@ -147,7 +149,7 @@
 						/>
 					</div>
 
-					<p class="leading-relaxed text-my-black font-sans2 text-lg max-w-[500px]">
+					<p class="leading-relaxed font-sans2 text-lg max-w-[500px] font-thin tracking-wide">
 						We came - We saw - We recorded a 12 track album in six days!<br /><br /> Deep in the
 						Belgian countryside, surrounded by birdsong and spring breezes - we dug deep into the
 						beautiful Galaxy Studios - Eight musicians and Engineer/Producer The Wesonator!<br /><br
@@ -166,10 +168,13 @@
 				/>
 			</div>
 
-			<div class="flex flex-col gap-sm justify-center items-end font-sans2 text-lg">
+			<div
+				class="flex flex-col gap-sm justify-center items-end font-sans2 text-lg font-thin tracking-wide text-my-black-700"
+			>
 				<span class="text-my-black-800">
-					<ArrowRight />
+					<ArrowRight weight="thin" />
 				</span>
+
 				<a class="flex flex-col items-end" href=".">
 					<span>Gallery</span>
 				</a>
@@ -181,7 +186,7 @@
 				</a>
 				<a class="" href=".">About</a>
 
-				<p class="mt-md">Links</p>
+				<button class="mt-md" on:click={updateLinksPanel.open} type="button">Links</button>
 			</div>
 		</div>
 	</div>

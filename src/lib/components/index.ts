@@ -6,5 +6,6 @@ export * from './layout';
 export * from './icon';
 export * from './picture';
 export * from './music-player';
+export * from './links-panel';
 
 export { Header, Footer, Tooltip };
