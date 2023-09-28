@@ -113,7 +113,7 @@
 					type="button"
 				>
 					<span class={`italic text-[0.7rem] text-white uppercase`}>
-						{#if !musicPlayer.tracksVisibility}
+						{#if musicPlayer.tracksVisibility === 'closed' || musicPlayer.tracksVisibility === 'closing'}
 							change track
 						{:else}
 							hide tracks
