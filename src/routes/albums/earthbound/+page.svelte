@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
 	import { ImageScroller, Track } from '$lib/components/+pages/album';
 	import Gallery from './gallery.svelte';
-	import { songs } from '$lib/data';
+	import { songsMap } from '$lib/data';
 	import { PageLayout, Picture, Icon } from '$lib/components';
 	import { images } from '$assets';
 </script>
@@ -95,11 +95,11 @@
 				<h3 class="text-my-black-600">Tracklist</h3>
 
 				<Track
-					length={songs.earthbound.wax_n_wane.length}
-					name={songs.earthbound.wax_n_wane.name}
-					number={songs.earthbound.wax_n_wane.number}
-					youtubeVideoSrc={songs.earthbound.wax_n_wane.youtubeEmbed}
-					lyrics={songs.earthbound.wax_n_wane.lyrics}
+					length={songsMap.earthbound.wax_n_wane.length}
+					name={songsMap.earthbound.wax_n_wane.name}
+					number={songsMap.earthbound.wax_n_wane.number}
+					youtubeVideoSrc={songsMap.earthbound.wax_n_wane.youtubeEmbed}
+					lyrics={songsMap.earthbound.wax_n_wane.lyrics}
 				>
 					<div class="mt-md" slot="read-more">
 						<p>Wax 'n Wane is an Alternative Indie Ballad about acceptance of life and hardship.</p>
@@ -126,10 +126,10 @@
 				</Track>
 
 				<Track
-					length={songs.earthbound.talkin_bout_you.length}
-					name={songs.earthbound.talkin_bout_you.name}
-					number={songs.earthbound.talkin_bout_you.number}
-					lyrics={songs.earthbound.talkin_bout_you.lyrics}
+					length={songsMap.earthbound.talkin_bout_you.length}
+					name={songsMap.earthbound.talkin_bout_you.name}
+					number={songsMap.earthbound.talkin_bout_you.number}
+					lyrics={songsMap.earthbound.talkin_bout_you.lyrics}
 				>
 					<div class="mt-md text-my-black-800" slot="read-more">
 						<p>
@@ -157,10 +157,10 @@
 				</Track>
 
 				<Track
-					length={songs.earthbound.blood.length}
-					name={songs.earthbound.blood.name}
-					number={songs.earthbound.blood.number}
-					lyrics={songs.earthbound.blood.lyrics}
+					length={songsMap.earthbound.blood.length}
+					name={songsMap.earthbound.blood.name}
+					number={songsMap.earthbound.blood.number}
+					lyrics={songsMap.earthbound.blood.lyrics}
 				>
 					<div class="mt-md" slot="read-more">
 						<p>
@@ -188,10 +188,10 @@
 				</Track>
 
 				<Track
-					length={songs.earthbound.katyas_song.length}
-					name={songs.earthbound.katyas_song.name}
-					number={songs.earthbound.katyas_song.number}
-					lyrics={songs.earthbound.katyas_song.lyrics}
+					length={songsMap.earthbound.katyas_song.length}
+					name={songsMap.earthbound.katyas_song.name}
+					number={songsMap.earthbound.katyas_song.number}
+					lyrics={songsMap.earthbound.katyas_song.lyrics}
 				>
 					<div class="mt-md" slot="read-more">
 						<p>
@@ -219,10 +219,10 @@
 				</Track>
 
 				<Track
-					length={songs.earthbound.earthbound.length}
-					name={songs.earthbound.earthbound.name}
-					number={songs.earthbound.earthbound.number}
-					lyrics={songs.earthbound.earthbound.lyrics}
+					length={songsMap.earthbound.earthbound.length}
+					name={songsMap.earthbound.earthbound.name}
+					number={songsMap.earthbound.earthbound.number}
+					lyrics={songsMap.earthbound.earthbound.lyrics}
 				>
 					<div class="mt-md" slot="read-more">
 						<p>
@@ -250,10 +250,10 @@
 				</Track>
 
 				<Track
-					length={songs.earthbound.goliath.length}
-					name={songs.earthbound.goliath.name}
-					number={songs.earthbound.goliath.number}
-					lyrics={songs.earthbound.goliath.lyrics}
+					length={songsMap.earthbound.goliath.length}
+					name={songsMap.earthbound.goliath.name}
+					number={songsMap.earthbound.goliath.number}
+					lyrics={songsMap.earthbound.goliath.lyrics}
 				>
 					<div class="mt-md" slot="read-more">
 						<p>

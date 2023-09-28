@@ -3,7 +3,7 @@
 
 	import { images } from '$assets';
 	import { Picture } from '$lib/components';
-	import { musicPlayerStore } from '$lib/stores';
+	import { musicPlayerStore, updateMusicPlayer } from '$lib/stores';
 
 	// MUST DO
 	// □ pause/play interaction with browser - i.e can pause music through browser.
@@ -85,12 +85,7 @@
 				<div>
 					<button
 						class="flex items-center gap-sm text-xl text-my-black-700"
-						on:click={(e) => {
-							musicPlayerStore.update((state) => ({
-								...state,
-								paused: false
-							}));
-						}}
+						on:click={() => updateMusicPlayer.play()}
 						type="button"
 					>
 						<span class="text-my-black-100 opacity-40 text-2xl">

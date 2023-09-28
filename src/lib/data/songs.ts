@@ -1,5 +1,8 @@
 const earthbound = {
 	wax_n_wane: {
+		albumName: 'Earthbound',
+		albumKey: 'earthbound',
+		id: 'earthbound-wax_n_wane',
 		name: "Wax 'n Wane",
 		number: '01',
 		length: '04:34',
@@ -10,6 +13,9 @@ const earthbound = {
 	},
 
 	talkin_bout_you: {
+		albumName: 'Earthbound',
+		albumKey: 'earthbound',
+		id: 'earthbound-talkin_bout_you',
 		name: 'Talkin Bout You',
 		number: '02',
 		length: '03:15',
@@ -19,6 +25,9 @@ const earthbound = {
 	},
 
 	blood: {
+		albumName: 'Earthbound',
+		albumKey: 'earthbound',
+		id: 'earthbound-blood',
 		name: 'Blood',
 		number: '03',
 		length: '04:51',
@@ -28,6 +37,9 @@ const earthbound = {
 	},
 
 	katyas_song: {
+		albumName: 'Earthbound',
+		albumKey: 'earthbound',
+		id: 'earthbound-katyas_song',
 		name: "Katya's song",
 		number: '04',
 		length: '04:09',
@@ -37,6 +49,9 @@ const earthbound = {
 	},
 
 	earthbound: {
+		albumName: 'Earthbound',
+		albumKey: 'earthbound',
+		id: 'earthbound-earthbound',
 		name: 'Earthbound',
 		number: '05',
 		length: '04:56',
@@ -46,6 +61,9 @@ const earthbound = {
 	},
 
 	goliath: {
+		albumName: 'Earthbound',
+		albumKey: 'earthbound',
+		id: 'earthbound-goliath',
 		name: 'Goliath',
 		number: '06',
 		length: '04:12',
@@ -53,10 +71,13 @@ const earthbound = {
 			"Stone in ya' head<br/>Brought you down to your knees<br/>Cold, cold chill runnin' thru' you dread<br/>Somewhere at minus five degrees<br/>The thud of your heartbeat stops you dead<br/>In the mud at the bottom of your street<br/><br/> Goliath<br/> You done ruled the roost for years<br/> But something out there<br/> Is bigga' than you<br/><br/> Thought you had it nailed<br/> Put up all your fences<br/> But it's your heart that got impaled<br/> Love done got thru' to your senses<br/> Your reign of hate has failed<br/> You got no future tenses<br/><br/> Goliath …<br/><br/> You been playin' God<br/> Like you can judge an' jurify<br/> Just give the wink an' the nod<br/> An' your dogs gonna' let it fly<br/> You keep talkin' 'bout blood on the walls<br/> But when your destiny calls<br/> Goliath<br/><br/> Goliath there is no debate<br/> Power done made you insane<br/> Your giant heart broke way too late<br/> Now blood pumpin' fear thru' you veins<br/> You done made your final mistake<br/> Dust from you bones is all that remains<br/><br/> Goliath …",
 		localSrc: '/songs/earthbound/06-goliath-128.mp3'
 	}
-};
+} as const;
 
 const this_music_thing = {
 	healin_train: {
+		albumName: 'This Music Thing',
+		albumKey: 'this_music_thing',
+		id: 'this_music_thing-healin_train',
 		name: "Healin' train",
 		number: '01',
 		length: '03:18',
@@ -67,6 +88,9 @@ const this_music_thing = {
 	},
 
 	rebekahs_lullaby: {
+		albumName: 'This Music Thing',
+		albumKey: 'this_music_thing',
+		id: 'this_music_thing-rebekahs_lullaby',
 		name: "Rebekah's Lullaby",
 		number: '02',
 		length: '04:30',
@@ -76,6 +100,9 @@ const this_music_thing = {
 	},
 
 	pegasus: {
+		albumName: 'This Music Thing',
+		albumKey: 'this_music_thing',
+		id: 'this_music_thing-pegasus',
 		name: 'Pegasus',
 		number: '03',
 		length: '04:11',
@@ -85,6 +112,9 @@ const this_music_thing = {
 	},
 
 	blackbird_for_liam: {
+		albumName: 'This Music Thing',
+		albumKey: 'this_music_thing',
+		id: 'this_music_thing-blackbird_for_liam',
 		name: 'Blackbird for Liam',
 		number: '04',
 		length: '04:39',
@@ -94,6 +124,9 @@ const this_music_thing = {
 	},
 
 	national_tv: {
+		albumName: 'This Music Thing',
+		albumKey: 'this_music_thing',
+		id: 'this_music_thing-national_tv',
 		name: 'National TV - A Lament for Anneli Alderton',
 		number: '05',
 		length: '04:51',
@@ -103,6 +136,9 @@ const this_music_thing = {
 	},
 
 	melody_for_ruth: {
+		albumName: 'This Music Thing',
+		albumKey: 'this_music_thing',
+		id: 'this_music_thing-melody_for_ruth',
 		name: 'Melody for Ruth',
 		number: '06',
 		length: '04:49',
@@ -112,6 +148,9 @@ const this_music_thing = {
 	},
 
 	this_music_thing: {
+		albumName: 'This Music Thing',
+		albumKey: 'this_music_thing',
+		id: 'this_music_thing-this_music_thing',
 		name: 'This Music Thing',
 		number: '07',
 		length: '04:24',
@@ -121,6 +160,9 @@ const this_music_thing = {
 	},
 
 	lenas_song: {
+		albumName: 'This Music Thing',
+		albumKey: 'this_music_thing',
+		id: 'this_music_thing-lenas_song',
 		name: "Lena's Song",
 		number: '08',
 		length: '06:15',
@@ -130,6 +172,9 @@ const this_music_thing = {
 	},
 
 	the_trial_of_ruby_bates: {
+		albumName: 'This Music Thing',
+		albumKey: 'this_music_thing',
+		id: 'this_music_thing-the_trial_of_ruby_bates',
 		name: 'The Trial of Ruby Bates',
 		number: '09',
 		length: '05:43',
@@ -139,6 +184,9 @@ const this_music_thing = {
 	},
 
 	for_jasmine_a_ghost_story: {
+		albumName: 'This Music Thing',
+		albumKey: 'this_music_thing',
+		id: 'this_music_thing-for_jasmine_a_ghost_story',
 		name: 'For Jasmine - a Ghost Story',
 		number: '10',
 		length: '05:24',
@@ -148,6 +196,9 @@ const this_music_thing = {
 	},
 
 	azhia: {
+		albumName: 'This Music Thing',
+		albumKey: 'this_music_thing',
+		id: 'this_music_thing-azhia',
 		name: 'Azhia',
 		number: '11',
 		length: '05:26',
@@ -155,15 +206,21 @@ const this_music_thing = {
 			"You settled for this place<br/>Old eyes in a child face<br/>Phosphorous blue<br/>Trusting in the arms that caught you<br/>Remember all the old ones taught you	<br/> Test your fear<br/>Learn to persevere<br/>Know the reason you came here<br/><br/> Out to sea the spirit keep<br/>Turtle song waves in the deep<br/>Wait upon their council<br/>Before you lay the walls to build<br/>It's easier to do His will<br/>See the lie of land<br/>The contours and His plan<br/>Listen look and understand<br/><br/> On and on the life force<br/>Till this old world<br/>Runs its course<br/>Spins its last days<br/>This is His way<br/><br/> Azhia Asiatic 	<br/> In your eyes	<br/>I see an old soul<br/>Azhia Asiatic	<br/> You hold on<br/>Stronger than strong<br/>And help us<br/>To make sense of it all<br/><br/> Earth memory has stayed impressed<br/>Millions of light years from the start<br/>The insight of a loving mothers quest<br/>To help a child endure and play her part<br/>To learn the wisdom of the East<br/>Bring understanding to her heart<br/><br/> Water washes stories in the stone<br/>Wind that bends horizons to its might<br/>Soil that many eons rain has known<br/>Fire igniting stars that fill the night<br/>The battles scream but morning comes anew<br/>The living breathing wonder that is you<br/><br/> On and on …<br/><br/> Azhia Asiatic …. <br/><br/> Lay the stones that will keep you here<br/>Wake me when the moon is up<br/>Inside the silence here that's falling down<br/>And the messages that drift ashore",
 		localSrc: '/songs/this_music_thing/11-azhia-128.mp3'
 	}
+} as const;
+
+export type AlbumKey = 'earthbound' | 'this_music_thing';
+
+export const albumsArr = [
+	{ name: 'This Music Thing', key: 'this_music_thing' },
+	{ name: 'Earthbound', key: 'earthbound' }
+] as const;
+
+export const songsArr = {
+	earthbound: Object.values(earthbound),
+	this_music_thing: Object.values(this_music_thing)
 };
 
-export const songs = {
+export const songsMap = {
 	earthbound,
 	this_music_thing
 };
-
-// export type Song = { name: string; number: string; length: string; lyrics: string };
-
-export type AlbumKey = keyof typeof songs;
-
-export type GetSongKey<TAlbumKey extends AlbumKey> = keyof (typeof songs)[TAlbumKey];
