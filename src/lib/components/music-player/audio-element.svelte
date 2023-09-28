@@ -34,6 +34,7 @@
 
 	$: handleAudioOnTrackChange(currentSong);
 
+	// could only get this func to run on track change with currentSong as argument; not with musicPlayer.currentTrackIndex, nor trackHasChanged;
 	function handleAudioOnTrackChange(_currentSong: (typeof songsList)[number]) {
 		if (!musicPlayer || !audioElement || !musicPlayer.hasBeenPlayed) {
 			return;
@@ -46,10 +47,26 @@
 			return;
 		}
 
+		if (musicPlayer.paused) {
+			return;
+		}
+
+		console.log('HELLLO');
+
 		setTimeout(() => {
 			audioElement.play();
 		}, 50);
 	}
+
+	/* 	let timePlayed = 0;
+	
+	$: endOfTrack = (timePlayed) === audioElement.duration
+
+	$: {
+		if (endOfTrack) {
+
+		}
+	} */
 </script>
 
 <audio
@@ -57,4 +74,9 @@
 	bind:paused={musicPlayer.paused}
 	bind:volume={musicPlayer.volume}
 	bind:this={audioElement}
+	on:ended={() => {
+		console.log('ENDED');
+
+		updateMusicPlayer.track('next');
+	}}
 />

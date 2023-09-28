@@ -10,8 +10,8 @@ type MusicPlayer = {
 	paused: boolean;
 	hasBeenPlayed: boolean;
 	volume: number;
-	isOpen: boolean;
-	tracksIsOpen: boolean;
+	visibility: 'closed' | 'opening' | 'open' | 'closing';
+	tracksVisibility: 'closed' | 'opening' | 'open' | 'closing';
 };
 
 export const musicPlayerInitData: MusicPlayer = {
@@ -20,8 +20,8 @@ export const musicPlayerInitData: MusicPlayer = {
 	paused: true,
 	hasBeenPlayed: false,
 	volume: 0.6,
-	isOpen: false,
-	tracksIsOpen: false
+	visibility: 'closed',
+	tracksVisibility: 'closed'
 };
 
 const musicPlayerStore = writable(musicPlayerInitData);
@@ -72,8 +72,34 @@ export const updateMusicPlayer = {
 	},
 
 	pause: () => updateMusicPlayerStore('paused', true),
-	isOpen: (isOpen: boolean) => updateMusicPlayerStore('isOpen', isOpen),
-	tracksIsOpen: (isOpen: boolean) => updateMusicPlayerStore('tracksIsOpen', isOpen)
+	open: () => {
+		updateMusicPlayerStore('visibility', 'opening');
+
+		setTimeout(() => {
+			updateMusicPlayerStore('visibility', 'open');
+		}, 300);
+	},
+	close: () => {
+		updateMusicPlayerStore('visibility', 'closing');
+
+		setTimeout(() => {
+			updateMusicPlayerStore('visibility', 'closed');
+		}, 300);
+	},
+	openTracks: () => {
+		updateMusicPlayerStore('tracksVisibility', 'opening');
+
+		setTimeout(() => {
+			updateMusicPlayerStore('tracksVisibility', 'open');
+		}, 300);
+	},
+	closeTracks: () => {
+		updateMusicPlayerStore('tracksVisibility', 'closing');
+
+		setTimeout(() => {
+			updateMusicPlayerStore('tracksVisibility', 'closed');
+		}, 300);
+	}
 };
 
 export { songsList, type MusicPlayer, musicPlayerStore };

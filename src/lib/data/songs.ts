@@ -211,8 +211,8 @@ const this_music_thing = {
 export type AlbumKey = 'earthbound' | 'this_music_thing';
 
 export const albumsArr = [
-	{ name: 'This Music Thing', key: 'this_music_thing' },
-	{ name: 'Earthbound', key: 'earthbound' }
+	{ name: 'Earthbound', key: 'earthbound' },
+	{ name: 'This Music Thing', key: 'this_music_thing' }
 ] as const;
 
 export const songsArr = {

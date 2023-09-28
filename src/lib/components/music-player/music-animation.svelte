@@ -5,6 +5,8 @@
 <script lang="ts">
 	let musicPlayer: MusicPlayer;
 
+	$: console.log('musicPlayer.visibility:', musicPlayer.visibility);
+
 	musicPlayerStore.subscribe((playerStore) => {
 		musicPlayer = playerStore;
 	});
@@ -15,19 +17,27 @@
 <div class="relative inline-block">
 	<div class="inline-block">
 		<span
-			class={`bar n1 ${musicPlayer.isOpen || musicPlayer.paused ? 'bg-white' : 'bg-my-black-100'}`}
+			class={`bar n1 ${
+				musicPlayer.visibility !== 'closed' || musicPlayer.paused ? 'bg-white' : 'bg-my-black-100'
+			}`}
 			style:animation-iteration-count={paused ? '1' : 'infinite'}
 		/>
 		<span
-			class={`bar n2 ${musicPlayer.isOpen || musicPlayer.paused ? 'bg-white' : 'bg-my-black-100'}`}
+			class={`bar n2 ${
+				musicPlayer.visibility !== 'closed' || musicPlayer.paused ? 'bg-white' : 'bg-my-black-100'
+			}`}
 			style:animation-iteration-count={paused ? '1' : 'infinite'}
 		/>
 		<span
-			class={`bar n4 ${musicPlayer.isOpen || musicPlayer.paused ? 'bg-white' : 'bg-my-black-100'}`}
+			class={`bar n4 ${
+				musicPlayer.visibility !== 'closed' || musicPlayer.paused ? 'bg-white' : 'bg-my-black-100'
+			}`}
 			style:animation-iteration-count={paused ? '1' : 'infinite'}
 		/>
 		<span
-			class={`bar n5 ${musicPlayer.isOpen || musicPlayer.paused ? 'bg-white' : 'bg-my-black-100'}`}
+			class={`bar n5 ${
+				musicPlayer.visibility !== 'closed' || musicPlayer.paused ? 'bg-white' : 'bg-my-black-100'
+			}`}
 			style:animation-iteration-count={paused ? '1' : 'infinite'}
 		/>
 	</div>

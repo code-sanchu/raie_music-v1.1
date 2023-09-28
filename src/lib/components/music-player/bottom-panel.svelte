@@ -2,7 +2,12 @@
 	import { Control } from 'phosphor-svelte';
 
 	import { onClickOutside } from '$lib/helpers';
-	import { musicPlayerStore, songsList, type MusicPlayer as MusicPlayerType } from '$lib/stores';
+	import {
+		musicPlayerStore,
+		songsList,
+		type MusicPlayer as MusicPlayerType,
+		updateMusicPlayer
+	} from '$lib/stores';
 	import { Tooltip } from '$lib/components';
 	import { MusicAnimation, MusicPlayer } from '.';
 </script>
@@ -19,56 +24,63 @@
 
 <div
 	class="fixed z-20 group/panel bottom-0 left-0 flex justify-between items-center w-screen px-[1.5rem] pb-xs"
-	use:onClickOutside={() => {
-		musicPlayerStore.update((state) => ({
-			...state,
-			isOpen: false
-		}));
-	}}
+	use:onClickOutside={updateMusicPlayer.close}
 >
-	<button
-		class={`font-sans2 z-10 transition-all ease-in-out duration-300 font-thin flex items-center gap-xs tracking-[0.075em] px-xs py-xs ${
-			!musicPlayer.isOpen
-				? 'text-my-black-500 group-hover/panel:text-my-black-900 bg-white/70 backdrop-blur-sm'
-				: 'text-white'
+	<div
+		class={`p-xs ${
+			musicPlayer.visibility === 'closed' ? 'bg-white/70 backdrop-blur-sm' : 'bg-transparent'
 		}`}
-		type="button"
-		on:click={() =>
-			musicPlayerStore.update((state) => ({
-				...state,
-				isOpen: true,
-				tracksIsOpen: true
-			}))}
 		id="music-bottom-panel_track"
 	>
-		<span>Now playing</span>
-		<span class="italic">{currentSong.name}</span>
-	</button>
-	<Tooltip text="Change track" triggeredById="music-bottom-panel_track" />
+		<button
+			class={`font-sans2 z-10 transition-colors ease-in-out duration-150 font-thin flex items-center gap-xs tracking-[0.075em] ${
+				musicPlayer.visibility === 'closed' || musicPlayer.visibility === 'closing'
+					? 'text-my-black-500 group-hover/panel:text-my-black-700'
+					: 'text-white'
+			}`}
+			on:click={() => {
+				updateMusicPlayer.open();
+				updateMusicPlayer.openTracks();
+			}}
+			type="button"
+		>
+			<span>Now playing</span>
+			<span class="italic">{currentSong.name}</span>
+		</button>
+	</div>
+	{#if musicPlayer.visibility === 'closed'}
+		<Tooltip text="Change track" triggeredById="music-bottom-panel_track" />
+	{/if}
 
 	<div
-		class={`px-xs py-xs transition-all ease-out duration-300 rounded-sm ${
-			!musicPlayer.isOpen ? 'bg-white/70 backdrop-blur-sm' : 'text-white'
+		class={`p-xs rounded-sm ${
+			musicPlayer.visibility === 'closed' ? 'bg-white/70 backdrop-blur-sm' : ''
 		}`}
 	>
 		<button
-			class="flex items-center gap-xl"
-			on:click={() =>
-				musicPlayerStore.update((state) => ({
-					...state,
-					isOpen: !musicPlayer.isOpen
-				}))}
+			class={`flex items-center gap-xl ${
+				musicPlayer.visibility === 'closed' || musicPlayer.visibility === 'closing'
+					? 'text-my-black-500 group-hover/panel:text-my-black-700'
+					: 'text-white'
+			}`}
+			on:click={() => {
+				if (musicPlayer.visibility === 'open' || musicPlayer.visibility === 'opening') {
+					updateMusicPlayer.close();
+				} else {
+					updateMusicPlayer.open();
+				}
+			}}
 			type="button"
 		>
 			<span class="flex items-center gap-xs">
 				<span
 					class={`text-my-black-300 text-[0.7rem] italic transition-all ease-out duration-300 uppercase ${
-						!musicPlayer.isOpen
+						musicPlayer.visibility === 'closed' || musicPlayer.visibility === 'closing'
 							? 'text-my-black-300 group-hover/panel:text-my-black-600'
 							: 'text-white'
 					}`}
 				>
-					{#if !musicPlayer.isOpen}
+					{#if musicPlayer.visibility === 'closed' || musicPlayer.visibility === 'closing'}
 						open
 					{:else}
 						close
@@ -78,7 +90,7 @@
 
 				<span
 					class={`text-[0.6rem] transition-all ease-in-out duration-300 ${
-						!musicPlayer.isOpen
+						musicPlayer.visibility === 'closed' || musicPlayer.visibility === 'closing'
 							? 'text-my-black-300 group-hover/panel:text-my-black-600'
 							: 'text-white rotate-180'
 					}`}
