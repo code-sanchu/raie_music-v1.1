@@ -32,6 +32,16 @@
 	<PageLayout.VerticalSpacing sizing="3/4" />
 
 	<div class="relative flex justify-center">
+		<!-- <div class="absolute left-0 top-sm">
+			<Picture
+				imageClass="w-[200px] rounded-sm"
+				pictureClass="grayscale opacity-80"
+				meta={images.raie_as_child.src}
+				sizes={'200px'}
+				loading="eager"
+				alt=""
+			/>
+		</div> -->
 		<div>
 			<p
 				class="relative prose prose-lg leading-relaxed text-2xl max-w-[650px] font-sans2 font-thin tracking-wide"
@@ -46,44 +56,24 @@
 
 			<PageLayout.VerticalSpacing sizing="half" />
 
-			<div class="flex justify-start">
-				<Picture
-					imageClass="w-[200px] rounded-sm"
-					pictureClass="grayscale opacity-80"
-					meta={images.raie_as_child.src}
-					sizes={'200px'}
-					loading="eager"
-					alt=""
-				/>
-			</div>
-
 			<PageLayout.VerticalSpacing sizing="half" />
-
-			<div class="flex gap-lg">
-				<h3 class="italic font-sans2 font-thin text-my-black-500 tracking-widest">The Albums</h3>
-
-				<p
-					class="relative prose prose-lg leading-relaxed text-xl max-w-[50ch] font-sans2 font-thin tracking-wide"
-				>
-					Raie's first album - This Music Thing - was 'birthed' at GMS studio in SE London with Wes
-					at the helm - engineering and producing the full album; Wes brought in a host of wonderful
-					players including Jon Klein (Specimen, Siouxie and the Banshees, Sinead O'Connor) and
-					Chris Bell (Specimen, Thompson Twins, Hugh Cornwell).<br /><br />
-				</p>
-			</div>
+			<p
+				class="relative prose prose-lg leading-relaxed text-2xl max-w-[650px] font-sans2 font-thin tracking-wide"
+			>
+				<span class="italic font-sans2 font-thin text-my-black-500 tracking-widest text-sm mr-sm">
+					The Albums
+				</span>
+				Raie's first album - This Music Thing - was 'birthed' at GMS studio in SE London with Wes at
+				the helm - engineering and producing the full album; Wes brought in a host of wonderful players
+				including Jon Klein (Specimen, Siouxie and the Banshees, Sinead O'Connor) and Chris Bell (Specimen,
+				Thompson Twins, Hugh Cornwell).
+			</p>
 
 			<PageLayout.VerticalSpacing sizing="3/4" />
 
-			<Picture
-				imageClass="w-[400px] h-[20px] overflow-hidden opacity-80"
-				meta={images.brick_bg.src}
-				sizes={'400px'}
-				alt=""
-			/>
-
-			<h3 class="italic font-sans2 text-sm font-thin text-my-black-900 tracking-widest mt-md">
+			<!-- <h3 class="italic font-sans2 text-sm font-thin text-my-black-900 tracking-widest mt-md">
 				Contacts
-			</h3>
+			</h3> -->
 		</div>
 	</div>
 
