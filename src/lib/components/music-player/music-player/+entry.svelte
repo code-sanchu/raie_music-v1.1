@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	import { Play, Playlist, SkipBack, SkipForward } from 'phosphor-svelte';
+	import { Pause, Play, Playlist, SkipBack, SkipForward } from 'phosphor-svelte';
 
 	import { musicPlayerStore, updateMusicPlayer, type MusicPlayer } from '$lib/stores';
 	import Tracks from './tracks.svelte';
@@ -21,30 +21,32 @@
 	}`}
 >
 	<div class={`flex mb-xl`}>
-		<div class="pt-[0.75rem] border-t-2 border-my-black-700 bg-white w-1/2">
-			<Tracks />
+		<div class="bg-white w-1/2 pt-lg pb-xs pr-md">
+			<div class="pt-md border-t-2 border-my-black">
+				<Tracks />
 
-			<div class="flex items-center gap-md">
-				<button
-					class="flex items-center gap-xs"
-					on:click={musicPlayerState.tracksVisibility === 'closed' ||
-					musicPlayerState.tracksVisibility === 'closing'
-						? updateMusicPlayer.openTracks
-						: updateMusicPlayer.closeTracks}
-					type="button"
-				>
-					<span class="text-my-black-600 py-xxs">
-						<Playlist weight="fill" />
-					</span>
+				<div class="flex items-center gap-md">
+					<button
+						class="flex items-center gap-xs"
+						on:click={musicPlayerState.tracksVisibility === 'closed' ||
+						musicPlayerState.tracksVisibility === 'closing'
+							? updateMusicPlayer.openTracks
+							: updateMusicPlayer.closeTracks}
+						type="button"
+					>
+						<span class="text-my-black-600 py-xxs">
+							<Playlist weight="fill" />
+						</span>
 
-					<span class={`text-[0.7rem] text-my-black-600 uppercase`}>
-						{#if musicPlayerState.tracksVisibility === 'closed' || musicPlayerState.tracksVisibility === 'closing'}
-							show tracks
-						{:else}
-							hide tracks
-						{/if}
-					</span>
-				</button>
+						<span class={`text-[0.7rem] text-my-black-600 uppercase`}>
+							{#if musicPlayerState.tracksVisibility === 'closed' || musicPlayerState.tracksVisibility === 'closing'}
+								show tracks
+							{:else}
+								hide tracks
+							{/if}
+						</span>
+					</button>
+				</div>
 			</div>
 		</div>
 
@@ -55,19 +57,28 @@
 				type="button"
 			/>
 
-			<div class="pt-[0.75rem] w-full border-t-2 border-my-black-700 bg-white">
-				<div class="flex items-center gap-md justify-end text-my-black-800">
-					<a class="rounded-full p-xxs" href=".">
-						<Play weight="fill" />
-					</a>
+			<div class="w-full bg-white pt-lg pb-xs pl-md">
+				<div class="pt-md border-t-2 border-my-black-700">
+					<div class="flex items-center gap-md justify-end text-my-black-800">
+						<button
+							class="rounded-full p-xxs"
+							on:click={musicPlayerState.paused ? updateMusicPlayer.play : updateMusicPlayer.pause}
+						>
+							{#if musicPlayerState.paused}
+								<Play weight="fill" />
+							{:else}
+								<Pause weight="fill" />
+							{/if}
+						</button>
 
-					<a class="rounded-full p-xxs" href=".">
-						<SkipBack weight="fill" />
-					</a>
+						<button class="rounded-full p-xxs" on:click={() => updateMusicPlayer.track('prev')}>
+							<SkipBack weight="fill" />
+						</button>
 
-					<a class="rounded-full p-xxs" href=".">
-						<SkipForward weight="fill" />
-					</a>
+						<button class="rounded-full p-xxs" on:click={() => updateMusicPlayer.track('next')}>
+							<SkipForward weight="fill" />
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>

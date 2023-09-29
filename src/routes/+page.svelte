@@ -24,6 +24,8 @@
 	// □ everything is prerendering fine?
 	// □ click outside music player doesn't work because bottom panel is seperate.
 	// □ bind actua width values for bottom right panel
+	// □ song time for open player (and closed?). on right side?
+	// □ redesign music player a bit. Make as links panel. title on left and right. Maybe song name on right as title. song lengths?
 </script>
 
 <div class="mt-3xl flex justify-center">
