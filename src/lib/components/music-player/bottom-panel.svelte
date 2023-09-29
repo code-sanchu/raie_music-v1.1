@@ -10,7 +10,7 @@
 	} from '$lib/stores';
 
 	import { Tooltip } from '$lib/components';
-	import MusicPlayerNew from './music-player-new.svelte';
+	import MusicPlayerNew from './music-player/+entry.svelte';
 	import { AnimatedBars } from './animated-bars';
 </script>
 

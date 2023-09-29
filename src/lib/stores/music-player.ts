@@ -91,14 +91,14 @@ export const updateMusicPlayer = {
 
 		setTimeout(() => {
 			updateMusicPlayerStore('tracksVisibility', 'open');
-		}, 300);
+		}, 150);
 	},
 	closeTracks: () => {
 		updateMusicPlayerStore('tracksVisibility', 'closing');
 
 		setTimeout(() => {
 			updateMusicPlayerStore('tracksVisibility', 'closed');
-		}, 300);
+		}, 150);
 	}
 };
 

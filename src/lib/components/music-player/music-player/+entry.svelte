@@ -1,13 +1,14 @@
 <script context="module" lang="ts">
-	import { Control, Pause, Play, Playlist, SkipBack, SkipForward } from 'phosphor-svelte';
+	import { Play, Playlist, SkipBack, SkipForward } from 'phosphor-svelte';
 
 	import {
+		musicPlayerInitData,
 		musicPlayerStore,
-		type MusicPlayer,
 		songsList,
 		updateMusicPlayer,
-		musicPlayerInitData
+		type MusicPlayer
 	} from '$lib/stores';
+	import Tracks from './tracks.svelte';
 	// import { songsArr, type AlbumKey, albumsArr } from '$lib/data';
 </script>
 
@@ -23,18 +24,22 @@
 	$: currentSong = songsList[musicPlayerState.currentTrackIndex];
 
 	let visibleAlbumKey: AlbumKey = songsList[musicPlayerInitData.currentTrackIndex].albumKey;
+
+	$: tracksClosedOrClosing =
+		musicPlayerState.tracksVisibility === 'closed' ||
+		musicPlayerState.tracksVisibility === 'closing';
 </script>
 
 <div
-	class={`absolute -z-10 w-screen pb-md px-lg pt-sm bottom-0 bg-white left-0 transition-all ease-out duration-300  ${
+	class={`absolute -z-10 w-screen px-lg pt-sm bottom-0 bg-white left-0 transition-all ease-out duration-300 ${
 		musicPlayerState.visibility === 'closing' || musicPlayerState.visibility === 'closed'
 			? 'translate-y-full'
 			: 'translate-y-0'
 	}`}
 >
-	<div class="grid grid-cols-2 gap-xl">
-		<div class="pt-[0.75rem] border-t-2 border-my-black">
-			<!-- <h5 class="italic text-sm">Tracks</h5> -->
+	<div class={`flex gap-xl mb-xl items-end`}>
+		<div class="pt-[0.75rem] border-t-2 border-my-black-700 flex flex-col w-1/2">
+			<Tracks />
 
 			<div class="flex items-center gap-md">
 				<button
@@ -45,7 +50,7 @@
 						: updateMusicPlayer.closeTracks}
 					type="button"
 				>
-					<span class="text-my-black-600">
+					<span class="text-my-black-600 py-xxs">
 						<Playlist weight="fill" />
 					</span>
 
@@ -60,10 +65,10 @@
 			</div>
 		</div>
 
-		<div class="pt-[0.75rem] border-t-2 border-my-black pb-lg">
+		<div class="pt-[0.75rem] border-t-2 border-my-black-700 w-1/2">
 			<!-- <h5 class="italic text-sm">Controls</h5> -->
 
-			<div class="flex items-center gap-md justify-end">
+			<div class="flex items-center gap-md justify-end text-my-black-800">
 				<a class="rounded-full p-xxs" href=".">
 					<Play weight="fill" />
 				</a>
