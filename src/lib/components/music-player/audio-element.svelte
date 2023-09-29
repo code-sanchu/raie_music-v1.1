@@ -6,7 +6,7 @@
 	let audioElement: HTMLAudioElement;
 	let musicPlayer: MusicPlayer;
 
-	$: console.log('musicPlayer:', musicPlayer);
+	// $: console.log('musicPlayer:', musicPlayer);
 
 	musicPlayerStore.subscribe((playerStore) => {
 		musicPlayer = playerStore;

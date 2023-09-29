@@ -27,24 +27,39 @@
 </script>
 
 <div
-	class={`transition-all ease-out duration-150 mb-sm flex flex-col ${
-		closedOrClosing ? 'h-0 opacity-0' : 'h-[250px]'
+	class={`transition-all ease-out duration-150 flex flex-col bg-white ${
+		closedOrClosing ? 'h-0 opacity-0 pointer-events-none' : 'h-[250px] mb-sm'
 	}`}
 >
-	<h5 class="italic text-sm flex-shrink-0">Music player tracks (by Raie)</h5>
+	<h5 class="italic text-sm flex-shrink-0">Music player</h5>
 
 	<div class="mt-md flex-grow overflow-hidden flex flex-col">
 		<h3
-			class="self-start pr-2xl text-xs mr-sm text-my-black-200 italic pt-xs border-t border-my-black-100"
+			class={`self-start text-xs mr-sm text-my-black-200 italic pt-xs border-t border-my-black-100 ${
+				visibleAlbumKey === 'earthbound' ? 'pr-2xl' : 'pr-sm'
+			}`}
 		>
 			Albums
 		</h3>
+
 		<div
-			class="self-start pr-xl pb-xs flex items-end font-thin font-sans2 tracking-wider italic flex-shrink-0 border-b border-b-my-black-100"
+			class="self-start pr-xl pb-xs flex items-end font-thin font-sans2 tracking-wider flex-shrink-0 border-b border-b-my-black-100"
 		>
-			<h4>Earthbound</h4>
+			<button
+				class={`italic ${visibleAlbumKey === 'earthbound' ? 'font-normal translate-y-[1px]' : ''}`}
+				on:click={() => (visibleAlbumKey = 'earthbound')}
+				type="button">Earthbound</button
+			>
 			,
-			<h4 class="font-normal translate-y-[1.5px]">&nbsp;This Music Thing</h4>
+			<button
+				class={`italic ${
+					visibleAlbumKey === 'this_music_thing' ? 'font-normal translate-y-[1px]' : ''
+				}`}
+				on:click={() => (visibleAlbumKey = 'this_music_thing')}
+				type="button"
+			>
+				&nbsp;This Music Thing
+			</button>
 		</div>
 
 		<div

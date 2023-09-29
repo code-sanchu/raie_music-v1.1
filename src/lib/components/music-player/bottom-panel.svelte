@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
 	import { Control } from 'phosphor-svelte';
+	import { Tooltip } from 'flowbite-svelte';
 
 	import { onClickOutside } from '$lib/helpers';
 	import {
@@ -9,7 +10,6 @@
 		updateMusicPlayer
 	} from '$lib/stores';
 
-	import { Tooltip } from '$lib/components';
 	import MusicPlayerNew from './music-player/+entry.svelte';
 	import { AnimatedBars } from './animated-bars';
 </script>
@@ -24,89 +24,92 @@
 	$: currentSong = songsList[musicPlayer.currentTrackIndex];
 
 	$: closedOrClosing = musicPlayer.visibility === 'closed' || musicPlayer.visibility === 'closing';
-
-	// let openPlayerButton: HTMLButtonElement
-	// let fullBottomRightPanelDummy: HTMLDivElement
 </script>
 
 <div
-	class="fixed z-20 group/panel bottom-0 left-0 flex justify-between items-center w-screen px-[1.5rem] pb-xs"
+	class="fixed z-20 group/panel bottom-0 left-0 w-screen"
 	use:onClickOutside={updateMusicPlayer.close}
 >
 	<div
-		class={`p-xs ${
-			musicPlayer.visibility === 'closed' ? 'bg-white/70 backdrop-blur-sm' : 'bg-transparent'
-		}`}
-		id="music-bottom-panel_track"
-	>
-		<button
-			class={`font-sans2 z-10 transition-colors ease-in-out duration-150 font-thin flex items-center gap-xs tracking-[0.075em] ${
-				closedOrClosing ? 'text-my-black-500 group-hover/panel:text-my-black-700' : ''
-			}`}
-			on:click={() => {
-				updateMusicPlayer.open();
-				updateMusicPlayer.openTracks();
-			}}
-			type="button"
-		>
-			<span>Now playing</span>
-			<span class="italic">{currentSong.name}</span>
-		</button>
-	</div>
-	{#if musicPlayer.visibility === 'closed'}
-		<Tooltip text="Change track" triggeredById="music-bottom-panel_track" />
-	{/if}
-
-	<div
-		class={`p-xs rounded-sm ${
-			musicPlayer.visibility === 'closed' ? 'bg-white/70 backdrop-blur-sm' : ''
+		class={`flex justify-between items-center px-[1.5rem] pb-xs transition-all ease-in-out duration-300 ${
+			closedOrClosing ? '' : 'bg-white'
 		}`}
 	>
-		<button
-			class={`flex items-center transition-all ease-out duration-700 ${
-				musicPlayer.paused ? 'w-[89.963px]' : 'w-[179.087px]'
-			}`}
-			on:click={() => {
-				if (closedOrClosing) {
+		<div class={`relative p-xs bg-white rounded-sm group/button`}>
+			<button
+				class={`font-sans2 z-10 transition-colors ease-in-out duration-150 font-thin flex items-center gap-xs tracking-[0.075em] ${
+					closedOrClosing ? 'text-my-black-500 group-hover/panel:text-my-black-700' : ''
+				}`}
+				on:click={() => {
+					if (musicPlayer.visibility === 'open' || musicPlayer.visibility === 'opening') {
+						return;
+					}
 					updateMusicPlayer.open();
-				} else {
-					updateMusicPlayer.close();
-				}
-			}}
-			type="button"
-		>
-			<span class="flex items-center gap-xs">
-				<span
-					class={`text-my-black-300 whitespace-nowrap text-[0.7rem] italic transition-all ease-out duration-300 uppercase ${
-						closedOrClosing ? 'text-my-black-300 group-hover/panel:text-my-black-600' : ''
-					}`}
-				>
-					{#if closedOrClosing}
-						open
-					{:else}
-						close
-					{/if}
-					player
-				</span>
+					updateMusicPlayer.openTracks();
+				}}
+				type="button"
+			>
+				<span>Now playing</span>
+				<span class="italic">{currentSong.name}</span>
+			</button>
 
-				<span
-					class={`text-[0.6rem] transition-all ease-in-out duration-300 ${
-						closedOrClosing ? 'text-my-black-300 group-hover/panel:text-my-black-600' : 'rotate-180'
-					}`}
-				>
-					<Control />
-				</span>
-			</span>
-
-			<div
-				class={`ml-xl h-[24px] transition-opacity ease-out duration-700 ${
-					musicPlayer.paused ? 'opacity-0' : ''
+			<span
+				class={`text-[0.6rem]  uppercase italic absolute text-my-black-200 bottom-xxxs -right-0 translate-x-full opacity-0 ease-in-out duration-150 bg-white/80 p-xs delay-300 pointer-events-none ${
+					musicPlayer.visibility === 'closed' ? 'group-hover/button:opacity-100' : ''
 				}`}
 			>
-				<AnimatedBars />
-			</div>
-		</button>
-	</div>
+				Change track
+			</span>
+		</div>
 
+		<div class={`p-xs rounded-sm bg-white`}>
+			<button
+				class={`flex items-center transition-all ease-out duration-700 ${
+					musicPlayer.paused ? 'w-[89.963px]' : 'w-[179.087px]'
+				}`}
+				on:click={() => {
+					if (closedOrClosing) {
+						updateMusicPlayer.open();
+					} else {
+						updateMusicPlayer.close();
+					}
+				}}
+				type="button"
+			>
+				<span class="flex items-center gap-xs">
+					<span
+						class={`text-my-black-300 whitespace-nowrap text-[0.7rem] italic transition-all ease-out duration-300 uppercase ${
+							closedOrClosing ? 'text-my-black-300 group-hover/panel:text-my-black-600' : ''
+						}`}
+					>
+						{#if closedOrClosing}
+							open
+						{:else}
+							close
+						{/if}
+						player
+					</span>
+
+					<span
+						class={`text-[0.6rem] transition-all ease-in-out duration-300 ${
+							closedOrClosing
+								? 'text-my-black-300 group-hover/panel:text-my-black-600'
+								: 'rotate-180'
+						}`}
+					>
+						<Control />
+					</span>
+				</span>
+
+				<div
+					class={`ml-xl h-[24px] transition-opacity ease-out duration-700 ${
+						musicPlayer.paused ? 'opacity-0' : ''
+					}`}
+				>
+					<AnimatedBars />
+				</div>
+			</button>
+		</div>
+	</div>
 	<MusicPlayerNew />
 </div>
