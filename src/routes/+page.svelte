@@ -23,6 +23,7 @@
 	// □ add buy now, radio shows news aticles links to thismusic thing article
 	// □ everything is prerendering fine?
 	// □ click outside music player doesn't work because bottom panel is seperate.
+	// □ bind actua width values for bottom right panel
 </script>
 
 <div class="mt-3xl flex justify-center">

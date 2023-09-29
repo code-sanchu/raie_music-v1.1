@@ -29,7 +29,7 @@
 >
 	<div class="grid grid-cols-2 gap-xl">
 		<div class="pt-xs border-t-2 border-my-black">
-			<h5 class="italic text-sm">Buy Tracks</h5>
+			<h5 class="italic text-sm">Buy songs</h5>
 
 			<div class="flex items-center gap-md mt-md text-my-black-900">
 				<a class="rounded-full p-xxs" href=".">

@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const plugin = require('tailwindcss/plugin');
+
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: [
@@ -57,5 +60,22 @@ export default {
 		}
 	},
 
-	plugins: [require('tailwind-scrollbar'), require('@tailwindcss/typography')]
+	plugins: [
+		require('tailwind-scrollbar'),
+		require('@tailwindcss/typography'),
+		plugin(({ matchUtilities, theme }) => {
+			matchUtilities(
+				{
+					'animation-delay': (value) => {
+						return {
+							'animation-delay': value
+						};
+					}
+				},
+				{
+					values: theme('transitionDelay')
+				}
+			);
+		})
+	]
 };

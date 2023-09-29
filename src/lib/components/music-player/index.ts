@@ -1,6 +1,7 @@
 import AudioElement from './audio-element.svelte';
-import MusicAnimation from './music-animation.svelte';
+import MusicAnimation from './animated-bars/+entry.svelte';
 import MusicBottomPanel from './bottom-panel.svelte';
 import MusicPlayer from './music-player.svelte';
+import MusicPlayerNew from './music-player-new.svelte';
 
-export { AudioElement, MusicAnimation, MusicBottomPanel, MusicPlayer };
+export { AudioElement, MusicAnimation, MusicBottomPanel, MusicPlayer, MusicPlayerNew };

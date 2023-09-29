@@ -8,8 +8,10 @@
 		type MusicPlayer as MusicPlayerType,
 		updateMusicPlayer
 	} from '$lib/stores';
+
 	import { Tooltip } from '$lib/components';
-	import { MusicAnimation, MusicPlayer } from '.';
+	import MusicPlayerNew from './music-player-new.svelte';
+	import { AnimatedBars } from './animated-bars';
 </script>
 
 <script lang="ts">
@@ -20,6 +22,11 @@
 	});
 
 	$: currentSong = songsList[musicPlayer.currentTrackIndex];
+
+	$: closedOrClosing = musicPlayer.visibility === 'closed' || musicPlayer.visibility === 'closing';
+
+	// let openPlayerButton: HTMLButtonElement
+	// let fullBottomRightPanelDummy: HTMLDivElement
 </script>
 
 <div
@@ -34,9 +41,7 @@
 	>
 		<button
 			class={`font-sans2 z-10 transition-colors ease-in-out duration-150 font-thin flex items-center gap-xs tracking-[0.075em] ${
-				musicPlayer.visibility === 'closed' || musicPlayer.visibility === 'closing'
-					? 'text-my-black-500 group-hover/panel:text-my-black-700'
-					: 'text-white'
+				closedOrClosing ? 'text-my-black-500 group-hover/panel:text-my-black-700' : ''
 			}`}
 			on:click={() => {
 				updateMusicPlayer.open();
@@ -58,29 +63,25 @@
 		}`}
 	>
 		<button
-			class={`flex items-center gap-xl ${
-				musicPlayer.visibility === 'closed' || musicPlayer.visibility === 'closing'
-					? 'text-my-black-500 group-hover/panel:text-my-black-700'
-					: 'text-white'
+			class={`flex items-center transition-all ease-out duration-700 ${
+				musicPlayer.paused ? 'w-[89.963px]' : 'w-[179.087px]'
 			}`}
 			on:click={() => {
-				if (musicPlayer.visibility === 'open' || musicPlayer.visibility === 'opening') {
-					updateMusicPlayer.close();
-				} else {
+				if (closedOrClosing) {
 					updateMusicPlayer.open();
+				} else {
+					updateMusicPlayer.close();
 				}
 			}}
 			type="button"
 		>
 			<span class="flex items-center gap-xs">
 				<span
-					class={`text-my-black-300 text-[0.7rem] italic transition-all ease-out duration-300 uppercase ${
-						musicPlayer.visibility === 'closed' || musicPlayer.visibility === 'closing'
-							? 'text-my-black-300 group-hover/panel:text-my-black-600'
-							: 'text-white'
+					class={`text-my-black-300 whitespace-nowrap text-[0.7rem] italic transition-all ease-out duration-300 uppercase ${
+						closedOrClosing ? 'text-my-black-300 group-hover/panel:text-my-black-600' : ''
 					}`}
 				>
-					{#if musicPlayer.visibility === 'closed' || musicPlayer.visibility === 'closing'}
+					{#if closedOrClosing}
 						open
 					{:else}
 						close
@@ -90,18 +91,22 @@
 
 				<span
 					class={`text-[0.6rem] transition-all ease-in-out duration-300 ${
-						musicPlayer.visibility === 'closed' || musicPlayer.visibility === 'closing'
-							? 'text-my-black-300 group-hover/panel:text-my-black-600'
-							: 'text-white rotate-180'
+						closedOrClosing ? 'text-my-black-300 group-hover/panel:text-my-black-600' : 'rotate-180'
 					}`}
 				>
 					<Control />
 				</span>
 			</span>
 
-			<MusicAnimation />
+			<div
+				class={`ml-xl h-[24px] transition-opacity ease-out duration-700 ${
+					musicPlayer.paused ? 'opacity-0' : ''
+				}`}
+			>
+				<AnimatedBars />
+			</div>
 		</button>
 	</div>
 
-	<MusicPlayer />
+	<MusicPlayerNew />
 </div>
