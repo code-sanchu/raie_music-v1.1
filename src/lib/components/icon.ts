@@ -5,7 +5,7 @@ import {
 	FacebookLogo,
 	Headphones,
 	InstagramLogo,
-	MusicNoteSimple,
+	MusicNotesSimple,
 	Parallelogram,
 	Pause,
 	Play,
@@ -40,7 +40,7 @@ export const Icon = {
 	AudioPlayer: Equalizer,
 	Apple: AppleLogo,
 	Spotify: SpotifyLogo,
-	Itunes: MusicNoteSimple,
+	Itunes: MusicNotesSimple,
 	Bandcamp: Parallelogram,
 	Album: CircleNotch
 };

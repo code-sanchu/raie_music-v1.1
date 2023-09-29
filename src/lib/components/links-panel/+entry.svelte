@@ -1,12 +1,5 @@
 <script context="module" lang="ts">
-	import {
-		MusicNotes,
-		Parallelogram,
-		SoundcloudLogo,
-		SpotifyLogo,
-		YoutubeLogo
-	} from 'phosphor-svelte';
-
+	import { Icon, Tooltip } from '$lib/components';
 	import { onClickOutside } from '$lib/helpers';
 	import { linksPanelStore, updateLinksPanel, type LinksPanel } from '$lib/stores';
 </script>
@@ -32,13 +25,15 @@
 			<h5 class="italic text-sm">Buy songs</h5>
 
 			<div class="flex items-center gap-md mt-md text-my-black-900">
-				<a class="rounded-full p-xxs" href=".">
-					<Parallelogram weight="fill" />
+				<a class="rounded-full p-xxs" href="." id="links_panel-bandcamp">
+					<Icon.Bandcamp weight="fill" />
 				</a>
+				<Tooltip text="Bandcamp" triggeredById="links_panel-bandcamp" />
 
-				<a class="rounded-full p-xxs" href=".">
-					<MusicNotes weight="fill" />
+				<a class="rounded-full p-xxs" href="." id="links_panel-itunes">
+					<Icon.Itunes weight="fill" />
 				</a>
+				<Tooltip text="Itunes" triggeredById="links_panel-itunes" />
 			</div>
 		</div>
 
@@ -46,17 +41,30 @@
 			<h5 class="italic text-sm">Listen & Follow</h5>
 
 			<div class="flex items-center gap-md mt-md text-my-black-900">
-				<a class="rounded-full p-xxs" href=".">
-					<SoundcloudLogo weight="fill" />
+				<a class="rounded-full p-xxs" href="." id="links_panel-soundcloud">
+					<Icon.Soundcloud weight="fill" />
 				</a>
+				<Tooltip text="Soundcloud" triggeredById="links_panel-soundcloud" />
 
-				<a class="rounded-full p-xxs" href=".">
-					<YoutubeLogo weight="fill" />
+				<a class="rounded-full p-xxs" href="." id="links_panel-youtube">
+					<Icon.Youtube weight="fill" />
 				</a>
+				<Tooltip text="Youtube" triggeredById="links_panel-youtube" />
 
-				<a class="rounded-full p-xxs" href=".">
-					<SpotifyLogo weight="fill" />
+				<a class="rounded-full p-xxs" href="." id="links_panel-spotify">
+					<Icon.Spotify weight="fill" />
 				</a>
+				<Tooltip text="Spotify" triggeredById="links_panel-spotify" />
+
+				<a class="rounded-full p-xxs" href="." id="links_panel-facebook">
+					<Icon.Facebook weight="fill" />
+				</a>
+				<Tooltip text="Facebook" triggeredById="links_panel-facebook" />
+
+				<a class="rounded-full p-xxs" href="." id="links_panel-insta">
+					<Icon.Instagram weight="fill" />
+				</a>
+				<Tooltip text="Instagram" triggeredById="links_panel-insta" />
 			</div>
 		</div>
 	</div>

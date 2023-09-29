@@ -26,6 +26,7 @@
 	// □ bind actua width values for bottom right panel
 	// □ song time for open player (and closed?). on right side?
 	// □ redesign music player a bit. Make as links panel. title on left and right. Maybe song name on right as title. song lengths?
+	// □ loading song feedback..
 </script>
 
 <div class="mt-3xl flex justify-center">
@@ -187,7 +188,7 @@
 				<a class="flex flex-col items-end" href=".">
 					<span>Voice Coaching</span>
 				</a>
-				<a class="" href=".">About</a>
+				<a class="" href="/about">About</a>
 
 				<button class="mt-md" on:click={updateLinksPanel.open} type="button">Links</button>
 			</div>
