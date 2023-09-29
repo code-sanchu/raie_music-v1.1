@@ -1,5 +1,6 @@
 import logo from '$assets/images/logo.png?w=110&format=avif;webp;jpg&as=picture&imagetools';
 import brick_bg from '$assets/images/brick_bg.png?w=400&format=avif;webp;jpg&as=picture&imagetools';
+import raie_as_child from '$assets/images/raie-as-child.jpeg?w=480&format=avif;webp;jpg&as=picture&imagetools';
 import faceshot1 from '$assets/images/face_shot-1.png?w=500&format=avif;webp;jpg&as=picture&imagetools';
 
 import galaxy_chris from '$assets/images/galaxy/chris_bell.jpg?w=500&format=avif;webp;jpg&as=picture&imagetools';
@@ -13,6 +14,7 @@ import galaxy_wes from '$assets/images/galaxy/wesonator.jpg?w=500&format=avif;we
 export const images = {
 	logo: { src: logo, naturalDimensions: { width: 497, height: 166 } },
 	brick_bg: { src: brick_bg, naturalDimensions: { width: 315, height: 37 } },
+	raie_as_child: { src: raie_as_child, naturalDimensions: { width: 480, height: 640 } },
 
 	faceshots: {
 		1: { src: faceshot1, naturalDimensions: { width: 1037, height: 1300 } }
