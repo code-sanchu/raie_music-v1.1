@@ -27,6 +27,7 @@
 	// □ song time for open player (and closed?). on right side?
 	// □ redesign music player a bit. Make as links panel. title on left and right. Maybe song name on right as title. song lengths?
 	// □ loading song feedback..
+	// □ clean up functions in event listeners
 </script>
 
 <div class="mt-3xl flex justify-center">

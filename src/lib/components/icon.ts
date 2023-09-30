@@ -20,7 +20,9 @@ import {
 	YoutubeLogo,
 	Video,
 	MusicNotes,
-	CaretDown
+	CaretDown,
+	X,
+	DotsSix
 } from 'phosphor-svelte';
 import type { ComponentProps } from 'svelte';
 
@@ -48,5 +50,7 @@ export const Icon = {
 	Album: CircleNotch,
 	Video,
 	Lyrics: MusicNotes,
-	CaretDown
+	CaretDown,
+	X,
+	Handle: DotsSix
 };

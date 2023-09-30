@@ -1,6 +1,5 @@
 <script lang="ts" context="module">
 	import { Dialog, DialogOverlay, Transition, TransitionChild } from '@rgossiaux/svelte-headlessui';
-	import { page } from '$app/stores';
 </script>
 
 <script lang="ts">

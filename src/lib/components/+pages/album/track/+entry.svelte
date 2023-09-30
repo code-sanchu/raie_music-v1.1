@@ -1,7 +1,6 @@
 <script lang="ts" context="module">
-	import { Tooltip, Icon } from '$lib/components';
+	import { Tooltip, Icon, YoutubeVideoModal } from '$lib/components';
 	import LyricsModal from './lyrics-modal.svelte';
-	import YoutubeVideoModal from './youtube-video-modal.svelte';
 </script>
 
 <script lang="ts">

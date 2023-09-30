@@ -1,11 +1,18 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
-	import { Icon, PageLayout, Picture } from '$lib/components';
-	import YoutubeVideoModal from '$lib/components/+pages/album/track/youtube-video-modal.svelte';
-
-	// may not be necessary - she initialy wasn't too concerned.
-	// could have youtube popup for well known bands raie's been a part of.
+	import { Icon, PageLayout, Picture, YoutubeVideoPopup } from '$lib/components';
 </script>
+
+<script lang="ts">
+	import Tooltip from '$lib/components/tooltip.svelte';
+
+	let klfIsOpen = false;
+</script>
+
+<YoutubeVideoPopup
+	src="https://www.youtube.com/embed/HDsCeC6f0zc?si=5EOP3K4rQM5nUS0v"
+	bind:isOpen={klfIsOpen}
+/>
 
 <PageLayout.VerticalSpacing />
 
@@ -24,9 +31,12 @@
 			moved into a music career writing for theatre and dance and also sang background vocals for a
 			number of bands including the
 			<span class="font-medium italic text-lg">KLF</span>
-			<span class="inline-block text-base translate-y-[1px] text-my-black-700"
-				><Icon.Play weight="fill" /></span
-			>,
+			<button
+				class="inline-block text-base translate-y-[1px] text-my-black-700"
+				on:click={() => (klfIsOpen = true)}
+				id="klf-video"
+				type="button"><Icon.Play weight="fill" /></button
+			><Tooltip text="KLF is gonna rock ya..." triggeredById="klf-video" />,
 			<span class="font-medium italic text-lg uppercase">Orchestre Jazira</span>
 			<span class="inline-block text-base translate-y-[1px] text-my-black-700"
 				><Icon.Play weight="fill" /></span
@@ -60,15 +70,10 @@
 			<div>
 				<h2 class="uppercase italic">contacts</h2>
 
-				<div class="mt-xs grid grid-cols-2">
-					<div>
-						<p>Email</p>
-					</div>
-					<div>
-						<a class="font-medium" href="mailto:rachel@raiemusic.com" target="_blank"
-							>rachel@raiemusic.com</a
-						>
-					</div>
+				<div class="mt-xs">
+					<a class="font-medium" href="mailto:rachel@raiemusic.com" target="_blank"
+						>rachel@raiemusic.com</a
+					>
 				</div>
 			</div>
 
@@ -77,11 +82,11 @@
 
 				<div class="flex text-xl items-center gap-sm mt-xs">
 					<a class="rounded-full p-xxs" href="." id="links_panel-facebook">
-						<Icon.Facebook weight="light" />
+						<Icon.Facebook weight="fill" />
 					</a>
 
 					<a class="rounded-full p-xxs" href="." id="links_panel-insta">
-						<Icon.Instagram weight="light" />
+						<Icon.Instagram weight="fill" />
 					</a>
 				</div>
 			</div>
@@ -91,22 +96,22 @@
 
 				<div class="flex text-xl items-center gap-sm mt-xs">
 					<a class="rounded-full p-xxs" href="." id="links_panel-facebook">
-						<Icon.Soundcloud weight="light" />
+						<Icon.Soundcloud weight="fill" />
 					</a>
 
 					<a class="rounded-full p-xxs" href="." id="links_panel-insta">
-						<Icon.Spotify weight="light" />
+						<Icon.Spotify weight="fill" />
 					</a>
 
 					<a class="rounded-full p-xxs" href="." id="links_panel-insta">
-						<Icon.Youtube weight="light" />
+						<Icon.Youtube weight="fill" />
 					</a>
 					<a class="rounded-full p-xxs" href="." id="links_panel-insta">
-						<Icon.Bandcamp weight="light" />
+						<Icon.Bandcamp weight="fill" />
 					</a>
 
 					<a class="rounded-full p-xxs" href="." id="links_panel-insta">
-						<Icon.Itunes weight="light" />
+						<Icon.Itunes weight="fill" />
 					</a>
 				</div>
 			</div>
