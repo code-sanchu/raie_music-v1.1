@@ -31,7 +31,9 @@
 		leaveTo="opacity-0 scale-95"
 		style="right: {right}px; top: {top}px;"
 	>
-		<div class="flex justify-between items-center gap-md bg-white rounded-t-md py-xxs pl-xs">
+		<div
+			class="flex justify-between items-center gap-md bg-white rounded-t-md py-xxs pl-xs pr-xxxs"
+		>
 			<div class="flex gap-sm items-center">
 				<button
 					class={`p-[0.15rem] ${moving ? 'cursor-grabbing' : 'cursor-grab'}`}
@@ -44,7 +46,7 @@
 			<button
 				class="p-[0.15rem] rounded-full text-[0.5rem] border border-my-black"
 				on:click={() => (isOpen = false)}
-				type="button"><Icon.X /></button
+				type="button"><Icon.X weight="bold" /></button
 			>
 		</div>
 		<div class="aspect-video">

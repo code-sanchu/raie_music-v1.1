@@ -6,12 +6,22 @@
 <script lang="ts">
 	import Tooltip from '$lib/components/tooltip.svelte';
 
-	let klfIsOpen = false;
+	let klfVideoIsOpen = false;
+	let orchestreVideoIsOpen = false;
+	let duduVideoIsOpen = false;
 </script>
 
 <YoutubeVideoPopup
 	src="https://www.youtube.com/embed/HDsCeC6f0zc?si=5EOP3K4rQM5nUS0v"
-	bind:isOpen={klfIsOpen}
+	bind:isOpen={klfVideoIsOpen}
+/>
+<YoutubeVideoPopup
+	src="https://www.youtube.com/embed/p-GGcTc8FgM?si=gEx2PpdozaUOFoOh"
+	bind:isOpen={orchestreVideoIsOpen}
+/>
+<YoutubeVideoPopup
+	src="https://www.youtube.com/embed/-5prnBpWN6E?si=GI4GhYTbEu-sWCah"
+	bind:isOpen={duduVideoIsOpen}
 />
 
 <PageLayout.VerticalSpacing />
@@ -33,19 +43,25 @@
 			<span class="font-medium italic text-lg">KLF</span>
 			<button
 				class="inline-block text-base translate-y-[1px] text-my-black-700"
-				on:click={() => (klfIsOpen = true)}
+				on:click={() => (klfVideoIsOpen = true)}
 				id="klf-video"
 				type="button"><Icon.Play weight="fill" /></button
 			><Tooltip text="KLF is gonna rock ya..." triggeredById="klf-video" />,
 			<span class="font-medium italic text-lg uppercase">Orchestre Jazira</span>
-			<span class="inline-block text-base translate-y-[1px] text-my-black-700"
-				><Icon.Play weight="fill" /></span
-			>
+			<button
+				class="inline-block text-base translate-y-[1px] text-my-black-700"
+				on:click={() => (orchestreVideoIsOpen = true)}
+				id="orchestre-video"
+				type="button"><Icon.Play weight="fill" /></button
+			><Tooltip text="watch" triggeredById="orchestre-video" />
 			and
 			<span class="font-medium italic text-lg uppercase">Dudu Pukwana</span>
-			<span class="inline-block text-base translate-y-[1px] text-my-black-700"
-				><Icon.Play weight="fill" /></span
-			>.
+			<button
+				class="inline-block text-base translate-y-[1px] text-my-black-700"
+				on:click={() => (duduVideoIsOpen = true)}
+				id="dudu-video"
+				type="button"><Icon.Play weight="fill" /></button
+			>.<Tooltip text="watch" triggeredById="dudu-video" />
 		</p>
 
 		<p>
@@ -59,10 +75,6 @@
 		</p>
 
 		<PageLayout.VerticalSpacing sizing="3/4" />
-
-		<!-- <h3 class="italic font-sans2 text-sm font-thin text-my-black-900 tracking-widest mt-md">
-				Contacts
-			</h3> -->
 	</div>
 
 	<div class="flex gap-lg justify-between font-sans2 font-thin tracking-widest">
