@@ -53,7 +53,7 @@
 				on:click={() => (orchestreVideoIsOpen = true)}
 				id="orchestre-video"
 				type="button"><Icon.Play weight="fill" /></button
-			><Tooltip text="watch" triggeredById="orchestre-video" />
+			><Tooltip text="have a listen..." triggeredById="orchestre-video" />
 			and
 			<span class="font-medium italic text-lg uppercase">Dudu Pukwana</span>
 			<button
@@ -61,7 +61,7 @@
 				on:click={() => (duduVideoIsOpen = true)}
 				id="dudu-video"
 				type="button"><Icon.Play weight="fill" /></button
-			>.<Tooltip text="watch" triggeredById="dudu-video" />
+			>.<Tooltip text="have a listen..." triggeredById="dudu-video" />
 		</p>
 
 		<p>
