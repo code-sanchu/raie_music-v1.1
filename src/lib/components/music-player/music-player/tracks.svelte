@@ -1,14 +1,14 @@
 <script context="module" lang="ts">
-	import { Control, Pause, Play, SkipBack, SkipForward } from 'phosphor-svelte';
+	import { Play } from 'phosphor-svelte';
 
+	import { songsArr, type AlbumKey } from '$lib/assets';
 	import {
+		musicPlayerInitData,
 		musicPlayerStore,
-		type MusicPlayer,
 		songsList,
 		updateMusicPlayer,
-		musicPlayerInitData
+		type MusicPlayer
 	} from '$lib/stores';
-	import { songsArr, type AlbumKey, albumsArr } from '$lib/data';
 </script>
 
 <script lang="ts">

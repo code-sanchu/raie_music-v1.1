@@ -17,7 +17,10 @@ import {
 	SpotifyLogo,
 	Stop,
 	TwitterLogo,
-	YoutubeLogo
+	YoutubeLogo,
+	Video,
+	MusicNotes,
+	CaretDown
 } from 'phosphor-svelte';
 import type { ComponentProps } from 'svelte';
 
@@ -42,5 +45,8 @@ export const Icon = {
 	Spotify: SpotifyLogo,
 	Itunes: MusicNotesSimple,
 	Bandcamp: Parallelogram,
-	Album: CircleNotch
+	Album: CircleNotch,
+	Video,
+	Lyrics: MusicNotes,
+	CaretDown
 };

@@ -8,7 +8,7 @@
 		updateMusicPlayer,
 		musicPlayerInitData
 	} from '$lib/stores';
-	import { songsArr, type AlbumKey, albumsArr } from '$lib/data';
+	import { songsArr, type AlbumKey, albumsArr } from '$lib/assets';
 </script>
 
 <script lang="ts">

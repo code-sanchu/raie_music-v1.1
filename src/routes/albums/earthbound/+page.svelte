@@ -1,9 +1,9 @@
 <script lang="ts" context="module">
 	import { ImageScroller, Track } from '$lib/components/+pages/album';
 	import Gallery from './gallery.svelte';
-	import { songsMap } from '$lib/data';
+	import { songsMap } from '$lib/assets';
 	import { PageLayout, Picture, Icon } from '$lib/components';
-	import { images } from '$assets';
+	import { images } from '$lib/assets';
 </script>
 
 <script lang="ts">

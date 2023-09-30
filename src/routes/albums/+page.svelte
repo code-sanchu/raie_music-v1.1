@@ -1,6 +1,8 @@
 <script lang="ts" context="module">
-	import { images } from '$assets';
+	import { images } from '$lib/assets';
 	import { PageLayout, Picture } from '$lib/components';
+
+	// maybe pictures under the top text.
 </script>
 
 <PageLayout.VerticalSpacing />
@@ -38,7 +40,7 @@
 						class="text-2xl font-sans2 font-thin tracking-wider flex flex-col gap-xxs text-my-black-800 max-w-[700px] leading-relaxed"
 					>
 						To date, I've released 2 albums; soon to be 3 with the release of Red Brick Angels on
-						8th November.
+						8th November. Maybe talk about Wes, Galaxy Studios a bit here...
 					</p>
 
 					<a class="group/album block mt-2xl" href="/albums/earthbound">
@@ -46,7 +48,7 @@
 							<h4 class="text-2xl font-sans2 tracking-widest font-thin">Earthbound</h4>
 
 							<span
-								class="text-[0.6rem] uppercase -translate-y-[3px] gap-sm opacity-0 transition-opacity ease-in-out text-my-black-100 duration-100 group-hover/album:opacity-100"
+								class="text-sm tracking-wide uppercase -translate-y-[3px] gap-sm opacity-0 transition-opacity ease-in-out text-my-black-100 duration-100 group-hover/album:opacity-100"
 							>
 								visit
 							</span>
@@ -75,7 +77,7 @@
 							<h4 class="text-2xl font-sans2 tracking-widest font-thin">This Music Thing</h4>
 
 							<span
-								class="text-[0.6rem] uppercase -translate-y-[3px] gap-sm opacity-0 transition-opacity ease-in-out text-my-black-100 duration-100 group-hover/album:opacity-100"
+								class="text-sm tracking-wide uppercase -translate-y-[3px] gap-sm opacity-0 transition-opacity ease-in-out text-my-black-100 duration-100 group-hover/album:opacity-100"
 							>
 								visit
 							</span>
@@ -105,7 +107,7 @@
 							<h4 class="text-2xl font-sans2 tracking-widest font-thin">Red Brick Angels</h4>
 
 							<span
-								class="text-[0.6rem] uppercase -translate-y-[3px] gap-sm opacity-0 transition-opacity ease-in-out text-my-black-100 duration-100 group-hover/album:opacity-100"
+								class="text-sm tracking-wide uppercase -translate-y-[3px] gap-sm opacity-0 transition-opacity ease-in-out text-my-black-100 duration-100 group-hover/album:opacity-100"
 							>
 								visit
 							</span>

@@ -1,6 +1,5 @@
 <script lang="ts" context="module">
-	import { Tooltip } from '$lib/components';
-	import { CaretDown, MusicNotes, Play, Video } from 'phosphor-svelte';
+	import { Tooltip, Icon } from '$lib/components';
 	import LyricsModal from './lyrics-modal.svelte';
 	import YoutubeVideoModal from './youtube-video-modal.svelte';
 </script>
@@ -33,7 +32,7 @@
 				<span
 					class="text-xs text-my-black-300 p-xxxs rounded-full group-hover/button:bg-gray-100 transition-all ease-in-out duration-75"
 				>
-					<CaretDown />
+					<Icon.CaretDown />
 				</span>
 			</button>
 		</p>
@@ -47,7 +46,7 @@
 					class="p-xxs text-my-black-500 rounded-full hover:bg-gray-100 hover:text-my-black-700 transition-all ease-in-out duration-75"
 					id="track-video"
 					on:click={() => (videoIsOpen = !videoIsOpen)}
-					type="button"><Video /></button
+					type="button"><Icon.Video /></button
 				>
 				<Tooltip text="music video" triggeredById="track-video" />
 			{:else}
@@ -55,7 +54,7 @@
 					class="opacity-0 pointer-events-none text-my-black-500 p-xxs rounded-full hover:bg-gray-100 hover:text-my-black-700 transition-all ease-in-out duration-75"
 					id="track-video"
 					on:click={() => (videoIsOpen = !videoIsOpen)}
-					type="button"><Video /></button
+					type="button"><Icon.Video /></button
 				>
 			{/if}
 
@@ -63,7 +62,7 @@
 				class="p-xxs rounded-full hover:bg-gray-100 hover:text-my-black-700 text-my-black-500 transition-all ease-in-out duration-75"
 				on:click={() => (lyricsIsOpen = !lyricsIsOpen)}
 				id="track-lyrics"
-				type="button"><MusicNotes /></button
+				type="button"><Icon.Lyrics /></button
 			>
 			<Tooltip text="lyrics" triggeredById="track-lyrics" />
 
@@ -71,7 +70,7 @@
 				class="p-xxs rounded-full hover:bg-gray-100 hover:text-my-black-700 transition-all text-my-black-500 ease-in-out duration-75"
 				on:click={() => (videoIsOpen = !videoIsOpen)}
 				id="track-listen"
-				type="button"><Play /></button
+				type="button"><Icon.Play /></button
 			>
 			<Tooltip text="play" triggeredById="track-listen" />
 		</div>

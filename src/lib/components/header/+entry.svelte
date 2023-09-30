@@ -1,8 +1,8 @@
 <script context="module" lang="ts">
 	import { List } from 'phosphor-svelte';
 
-	import { Picture, MusicAnimation } from '$lib/components';
-	import { images } from '$assets';
+	import { images } from '$lib/assets';
+	import { Picture } from '$lib/components';
 </script>
 
 <header class="flex justify-between items-center w-screen pt-md px-lg">

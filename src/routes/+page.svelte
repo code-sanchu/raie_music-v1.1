@@ -1,7 +1,7 @@
 <script context="module" lang="ts">
 	import { ArrowRight, Play, Quotes } from 'phosphor-svelte';
 
-	import { images } from '$assets';
+	import { images } from '$lib/assets';
 	import { Picture } from '$lib/components';
 	import { updateMusicPlayer, updateLinksPanel } from '$lib/stores';
 
@@ -35,8 +35,8 @@
 			<div class="flex flex-col justify-between">
 				<div>
 					<p class="text-2xl font-sans2 font-thin tracking-wider flex flex-col gap-xxs">
-						<span
-							><span class="float-left text-xl scale-x-[-1] pl-xs text-my-black-100">
+						<span>
+							<span class="float-left text-xl scale-x-[-1] pl-xs text-my-black-100">
 								<Quotes weight="fill" />
 							</span>
 							One of life's trip-me-up revelations.
