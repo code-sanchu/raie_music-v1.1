@@ -17,7 +17,7 @@
 	let showReadMore: boolean;
 </script>
 
-<div class="flex items-center justify-between mt-sm group/track">
+<div class={`flex items-center justify-between group/track`}>
 	<div class="flex gap-lg items-center">
 		<p class="text-my-black-400 text-sm self-end">{number}</p>
 		<p class="tracking-wider italic">{name}</p>
@@ -80,7 +80,7 @@
 	style:height={!showReadMore ? '0px' : `${readMoreElement.scrollHeight}px`}
 	style:opacity={!showReadMore ? '0' : `1`}
 >
-	<div class="prose border-b pb-md mt-md">
+	<div class="prose border-b border-my-black-50 pb-md mt-md">
 		{@html description}
 		<h4 class="text-my-black-400 font-thin">Credits</h4>
 		{@html credits}

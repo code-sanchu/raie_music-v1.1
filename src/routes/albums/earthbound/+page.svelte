@@ -13,7 +13,8 @@
 		images.albums.earthbound['promo-by_sara_samsavari']
 	];
 
-	// todo: max wdth video. albums data. links.
+	// todo: max wdth video + image. albums data. links.
+	// todo: betetr image gallery - click outside actual image to close.
 </script>
 
 <script lang="ts">
@@ -73,9 +74,11 @@
 		<div class="mt-xl">
 			<h3 class="italic tracking-widest text-sm">Tracklist</h3>
 
-			{#each songsArr.earthbound as track, i}
-				<Track data={track} />
-			{/each}
+			<div class="flex flex-col items-stretch gap-xs mt-md">
+				{#each songsArr.earthbound as track, i}
+					<Track data={track} />
+				{/each}
+			</div>
 		</div>
 
 		<div class="flex items-center gap-md mt-2xl">
