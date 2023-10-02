@@ -7,7 +7,7 @@
 </script>
 
 <script lang="ts">
-	let isOpen = true;
+	let isOpen = false;
 </script>
 
 <button
@@ -30,17 +30,17 @@
 				<h2 class="tracking-widest font-medium text-sm italic">Site</h2>
 
 				<div class="tracking-widest flex flex-col gap-sm mt-md text-my-black-700">
-					<a class="" href="/albums">
+					<a class="" on:click={() => (isOpen = false)} href="/albums">
 						<span>Albums</span>
 					</a>
 
-					<a class="" href="/about">About</a>
+					<a class="" on:click={() => (isOpen = false)} href="/about">About</a>
 
 					<a class="" on:click={() => (isOpen = false)} href="/voice-coaching">
 						<span>Voice Coaching</span>
 					</a>
 
-					<a class="" href="/gallery">
+					<a class="" on:click={() => (isOpen = false)} href="/gallery">
 						<span>Gallery</span>
 					</a>
 				</div>

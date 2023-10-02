@@ -13,31 +13,31 @@
 
 <PageLayout.VerticalSpacing sizing="1.5" />
 
-<div class="relative prose prose-lg max-w-full leading-relaxed text-2xl tracking-wide">
+<div class="relative prose max-w-full leading-relaxed text-2xl tracking-wide">
 	<p>
-		<span class=" uppercase tracking-widest text-xs italic mr-lg">About Raie</span>
-		<b>Raie</b> was born in Scotland and came to London when she was 17 years of age. Raie focused
-		on being a young Mum to her son Ben before training at drama school in her late twenties; she
-		moved into a music career writing for theatre and dance and also sang background vocals for a
-		number of bands including the
-		<span class="font-medium italic text-lg">KLF</span>
+		<span class="uppercase tracking-widest text-xs italic mr-lg">About Raie</span>
+		<span class="font-medium">Raie</span> was born in Scotland and came to London when she was 17
+		years of age. Raie focused on being a young Mum to her son Ben before training at drama school
+		in her late twenties; she moved into a music career writing for theatre and dance and also sang
+		background vocals for a number of bands including the
+		<span class="italic text-lg">KLF</span>
 		<button
-			class="inline-block text-base translate-y-[1px] text-my-black-700"
+			class="inline-block text-base translate-y-[1px] text-my-black-600"
 			on:click={() => (klfVideoIsOpen = true)}
 			id="klf-video"
 			type="button"><Icon.Play weight="fill" /></button
 		><Tooltip text="KLF is gonna rock ya..." triggeredById="klf-video" />,
-		<span class="font-medium italic text-lg uppercase">Orchestre Jazira</span>
+		<span class="italic text-lg uppercase">Orchestre Jazira</span>
 		<button
-			class="inline-block text-base translate-y-[1px] text-my-black-700"
+			class="inline-block text-base translate-y-[1px] text-my-black-600"
 			on:click={() => (orchestreVideoIsOpen = true)}
 			id="orchestre-video"
 			type="button"><Icon.Play weight="fill" /></button
 		><Tooltip text="have a listen..." triggeredById="orchestre-video" />
 		and
-		<span class="font-medium italic text-lg uppercase">Dudu Pukwana</span>
+		<span class="italic text-lg uppercase">Dudu Pukwana</span>
 		<button
-			class="inline-block text-base translate-y-[1px] text-my-black-700"
+			class="inline-block text-base translate-y-[1px] text-my-black-600"
 			on:click={() => (duduVideoIsOpen = true)}
 			id="dudu-video"
 			type="button"><Icon.Play weight="fill" /></button
