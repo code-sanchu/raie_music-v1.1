@@ -1,6 +1,8 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
+	import { voiceCoaching } from '$lib/data';
 	import { Images, PageLayout, ImageGalleryModalNewTwo, Picture, Icon } from '$lib/components';
+	import PersonalTestimony from './personal-testimony.svelte';
 
 	const galleryImages = [
 		images.dog_carpet,
@@ -81,19 +83,35 @@
 			artiste showcases as well as preparation for audition technique.
 		</p>
 
-		<h2 class="text-xl tracking-widest uppercase mt-xl italic">Rates</h2>
-
-		<p class="mt-sm border-my-black-50/20 prose text-my-black max-w-[500px] tracking-wide">
-			Tuition rates on a sliding scale.
-		</p>
-
-		<div class="mt-xs flex items-end gap-sm">
-			<p class="tracking-wider">Contact:</p>
-			<div class="flex items-end gap-md">
-				<a class="block tracking-wide" href="mailto:rachel@raiemusic.com" target="_blank"
-					>rachel@raiemusic.com</a
+		<div class="border p-md mt-xl grid border-my-black-200 rounded-sm">
+			<div>
+				<h2
+					class="text-lg tracking-widest uppercase italic border-b border-my-black-400 inline-block"
 				>
-				<p class="tracking-wide">07949 876 703</p>
+					Rates
+				</h2>
+
+				<p
+					class="mt-sm border-my-black-50/20 prose text-my-black italic max-w-[500px] tracking-wide"
+				>
+					Tuition rates on a sliding scale.
+				</p>
+
+				<div class="mt-xs flex items-end gap-sm italic">
+					<div class="flex items-end gap-md">
+						<div class="flex gap-xs">
+							<span>E:</span>
+							<a class="block tracking-wide" href="mailto:rachel@raiemusic.com" target="_blank"
+								>rachel@raiemusic.com</a
+							>
+						</div>
+
+						<div class="flex gap-xs">
+							<span>P:</span>
+							<p class="tracking-wide">07949 876 703</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -117,68 +135,11 @@
 
 		<h2 class="text-xl tracking-widest uppercase mt-xl">Personal Testimony</h2>
 
-		<div class="flex items-end gap-md">
-			<h3 class="mt-lg font-medium">Carmody — Singer Songwriter</h3>
-
-			<div class="flex items-center gap-xs text-gray-600">
-				<a
-					class="text-sm"
-					href="https://dopecausewesaid.com/dope-features/london-based-singer-songwriter-carmody-unveils-her-debut-album-imperfect-constellations"
-					target="_blank">about</a
-				>
-				<span class="text-xs">
-					<Icon.ExternalLink weight="thin" />
-				</span>
-			</div>
+		<div class="flex flex-col gap-sm">
+			{#each voiceCoaching.personalTestimony as testimony}
+				<PersonalTestimony {testimony} />
+			{/each}
 		</div>
-
-		<p class="mt-xs prose text-my-black max-w-[500px] tracking-wide">
-			"Rachel is the best vocal coach I've come across! To me she is a sorceress, as the vocal
-			exercises and suggestions she makes improve my voice, and the delivery of my songs, so
-			dramatically it feels like magic. She is also a very soothing presence just before a big show
-			and has really made me feel more at ease and confident about performing. I really love being
-			coached by Rachel and recommend her to every vocalist I meet."
-		</p>
-
-		<div class="flex items-end gap-md">
-			<h3 class="mt-lg font-medium">Anna Bernard — Actress Radio, TV and Theatre</h3>
-
-			<div class="flex items-center gap-xs text-gray-600">
-				<a class="text-sm" href="https://www.mandy.com/uk/a/anna-bernard" target="_blank">about</a>
-				<span class="text-xs">
-					<Icon.ExternalLink weight="thin" />
-				</span>
-			</div>
-		</div>
-
-		<p class="mt-xs prose text-my-black max-w-[500px] tracking-wide">
-			"The joy of Rachel is that she hears what you can do when you sing, not what you can't. How
-			refreshing. So great to be lifted up and feel inspired again with a sense of direction and
-			also fun. I love her lessons."
-		</p>
-
-		<div class="flex items-end gap-md">
-			<h3 class="mt-lg font-medium">
-				Steve Medlin – Collage Arts/Wac Arts and theatre maker (original Unclassified Mime member)
-			</h3>
-
-			<div class="flex items-center gap-xs text-gray-600">
-				<a
-					class="text-sm"
-					href="https://www.ayoungertheatre.com/author/steve-medlin/"
-					target="_blank">about</a
-				>
-				<span class="text-xs">
-					<Icon.ExternalLink weight="thin" />
-				</span>
-			</div>
-		</div>
-
-		<p class="mt-xs prose text-my-black max-w-[500px] tracking-wide">
-			"The joy of Rachel is that she hears what you can do when you sing, not what you can't. How
-			refreshing. So great to be lifted up and feel inspired again with a sense of direction and
-			also fun. I love her lessons."
-		</p>
 	</div>
 
 	<div class="relative self-start">
