@@ -24,7 +24,9 @@ import {
 	X,
 	DotsSix,
 	ArrowRight,
-	Quotes
+	Quotes,
+	Control,
+	SkipBack
 } from 'phosphor-svelte';
 import type { ComponentProps } from 'svelte';
 
@@ -33,6 +35,7 @@ export type IconProps = ComponentProps<Play>;
 export const Icon = {
 	Play,
 	Next: SkipForward,
+	Prev: SkipBack,
 	Volume: SpeakerSimpleHigh,
 	Mute: SpeakerSimpleSlash,
 	Pause,
@@ -56,5 +59,6 @@ export const Icon = {
 	X,
 	Handle: DotsSix,
 	ArrowRight,
-	Quotes
+	Quotes,
+	CaretUpSmall: Control
 };

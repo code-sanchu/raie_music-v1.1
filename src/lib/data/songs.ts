@@ -280,10 +280,8 @@ export type SongData = {
 	number: string;
 	length: string;
 	lyrics: string;
-	localSrc: string;
+	localSrc: string | null;
 	description: string;
 	credits: string;
 	youtubeEmbed: string | null;
 };
-
-// export type SongData = (typeof earthbound)[keyof typeof earthbound];

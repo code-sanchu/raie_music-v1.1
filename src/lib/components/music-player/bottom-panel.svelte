@@ -1,17 +1,16 @@
 <script context="module" lang="ts">
 	import { Control } from 'phosphor-svelte';
-	import { Tooltip } from 'flowbite-svelte';
 
 	import { onClickOutside } from '$lib/helpers';
 	import {
 		musicPlayerStore,
 		songsList,
-		type MusicPlayer as MusicPlayerType,
-		updateMusicPlayer
+		updateMusicPlayer,
+		type MusicPlayer as MusicPlayerType
 	} from '$lib/stores';
 
-	import MusicPlayerNew from './music-player/+entry.svelte';
 	import { AnimatedBars } from './animated-bars';
+	import MusicPlayerNew from './music-player/+entry.svelte';
 </script>
 
 <script lang="ts">

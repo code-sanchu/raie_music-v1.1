@@ -1,6 +1,4 @@
 <script context="module" lang="ts">
-	import { Play } from 'phosphor-svelte';
-
 	import { songsArr, type AlbumKey } from '$lib/data';
 	import {
 		musicPlayerInitData,
@@ -9,6 +7,7 @@
 		updateMusicPlayer,
 		type MusicPlayer
 	} from '$lib/stores';
+	import { Icon } from '$lib/components';
 </script>
 
 <script lang="ts">
@@ -92,7 +91,7 @@
 						<span
 							class="absolute text-lg text-my-black-700 opacity-0 group-hover/track:opacity-100 transition-opacity ease-in-out duration-100 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
 						>
-							<Play weight="fill" />
+							<Icon.Play weight="fill" />
 						</span>
 					</span>
 
