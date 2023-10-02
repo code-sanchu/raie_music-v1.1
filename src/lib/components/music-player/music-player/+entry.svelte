@@ -1,7 +1,6 @@
 <script context="module" lang="ts">
-	import { Pause, Play, Playlist, SkipBack, SkipForward } from 'phosphor-svelte';
-
 	import { musicPlayerStore, updateMusicPlayer, type MusicPlayer } from '$lib/stores';
+	import { Icon } from '$lib/components';
 	import Tracks from './tracks.svelte';
 </script>
 
@@ -35,7 +34,7 @@
 						type="button"
 					>
 						<span class="text-my-black-600 py-xxs">
-							<Playlist weight="fill" />
+							<Icon.Tracks weight="fill" />
 						</span>
 
 						<span class={`text-[0.7rem] text-my-black-600 uppercase`}>
@@ -65,18 +64,18 @@
 							on:click={musicPlayerState.paused ? updateMusicPlayer.play : updateMusicPlayer.pause}
 						>
 							{#if musicPlayerState.paused}
-								<Play weight="fill" />
+								<Icon.Play weight="fill" />
 							{:else}
-								<Pause weight="fill" />
+								<Icon.Pause weight="fill" />
 							{/if}
 						</button>
 
 						<button class="rounded-full p-xxs" on:click={() => updateMusicPlayer.track('prev')}>
-							<SkipBack weight="fill" />
+							<Icon.Prev weight="fill" />
 						</button>
 
 						<button class="rounded-full p-xxs" on:click={() => updateMusicPlayer.track('next')}>
-							<SkipForward weight="fill" />
+							<Icon.Next weight="fill" />
 						</button>
 					</div>
 				</div>

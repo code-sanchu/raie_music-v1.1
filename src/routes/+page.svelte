@@ -158,16 +158,19 @@
 			<Icon.ArrowRight weight="thin" />
 		</span>
 
-		<a class="flex flex-col items-end" href="/gallery">
-			<span>Gallery</span>
-		</a>
 		<a class="flex flex-col items-end" href="/albums">
 			<span>Albums</span>
 		</a>
+
+		<a class="" href="/about">About</a>
+
 		<a class="flex flex-col items-end" href="/voice-coaching">
 			<span>Voice Coaching</span>
 		</a>
-		<a class="" href="/about">About</a>
+
+		<a class="flex flex-col items-end" href="/gallery">
+			<span>Gallery</span>
+		</a>
 
 		<button class="mt-md" on:click={updateLinksPanel.open} type="button">Links</button>
 	</div>

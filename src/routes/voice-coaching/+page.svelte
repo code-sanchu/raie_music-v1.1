@@ -99,7 +99,7 @@
 
 				<div class="mt-xs flex items-end gap-sm italic">
 					<div class="flex items-end gap-md">
-						<div class="flex gap-xs">
+						<div class="flex flex-wrap gap-xs">
 							<span>E:</span>
 							<a class="block tracking-wide" href="mailto:rachel@raiemusic.com" target="_blank"
 								>rachel@raiemusic.com</a
