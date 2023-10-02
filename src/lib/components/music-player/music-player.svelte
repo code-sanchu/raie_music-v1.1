@@ -8,13 +8,11 @@
 		updateMusicPlayer,
 		musicPlayerInitData
 	} from '$lib/stores';
-	import { songsArr, type AlbumKey, albumsArr } from '$lib/assets';
+	import { songsArr, type AlbumKey, albumsArr } from '$lib/data';
 </script>
 
 <script lang="ts">
 	let musicPlayer: MusicPlayer;
-
-	// $: console.log('musicPlayer:', musicPlayer);
 
 	musicPlayerStore.subscribe((playerStore) => {
 		musicPlayer = playerStore;
@@ -26,7 +24,7 @@
 </script>
 
 <div
-	class={`absolute -z-10 font-sans2 font-thin tracking-widest w-screen  pb-xs bottom-0 left-0 transition-all ease-out duration-300 bg-my-black-900 text-white pt-xxs rounded-t-lg ${
+	class={`absolute -z-10 tracking-widest w-screen  pb-xs bottom-0 left-0 transition-all ease-out duration-300 bg-my-black-900 text-white pt-xxs rounded-t-lg ${
 		musicPlayer.visibility === 'closing' || musicPlayer.visibility === 'closed'
 			? 'translate-y-full'
 			: 'translate-y-0'

@@ -37,7 +37,7 @@
 	>
 		<div class={`relative p-xs bg-white rounded-sm group/button`}>
 			<button
-				class={`font-sans2 z-10 transition-colors ease-in-out duration-150 font-thin flex items-center gap-xs tracking-[0.075em] ${
+				class={`z-10 transition-colors ease-in-out duration-150  flex items-center gap-xs tracking-[0.075em] ${
 					closedOrClosing ? 'text-my-black-500 group-hover/panel:text-my-black-700' : ''
 				}`}
 				on:click={() => {

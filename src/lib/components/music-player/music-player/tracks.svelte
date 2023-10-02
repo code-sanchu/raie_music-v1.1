@@ -1,7 +1,7 @@
 <script context="module" lang="ts">
 	import { Play } from 'phosphor-svelte';
 
-	import { songsArr, type AlbumKey } from '$lib/assets';
+	import { songsArr, type AlbumKey } from '$lib/data';
 	import {
 		musicPlayerInitData,
 		musicPlayerStore,
@@ -43,7 +43,7 @@
 		</h3>
 
 		<div
-			class="self-start pr-xl pb-xs flex items-end font-thin font-sans2 tracking-wider flex-shrink-0 border-b border-b-my-black-100"
+			class="self-start pr-xl pb-xs flex items-end tracking-wider flex-shrink-0 border-b border-b-my-black-100"
 		>
 			<button
 				class={`italic ${visibleAlbumKey === 'earthbound' ? 'font-normal translate-y-[1px]' : ''}`}

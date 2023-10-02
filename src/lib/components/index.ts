@@ -9,5 +9,6 @@ export { Header, Footer, Tooltip, YoutubeVideoModal, YoutubeVideoPopup };
 export * from './layout';
 export * from './icon';
 export * from './picture';
+export * from './images';
 export * from './music-player';
 export * from './links-panel';

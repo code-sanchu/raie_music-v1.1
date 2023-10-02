@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 
-import { songsArr } from '$lib/assets';
+import { songsArr } from '$lib/data';
 
 const songsList = [...songsArr.earthbound, ...songsArr.this_music_thing];
 

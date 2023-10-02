@@ -28,7 +28,8 @@ export default {
 			},
 
 			fontFamily: {
-				sans: ['Quicksand', 'sans-serif'],
+				// sans: ['Quicksand', 'sans-serif'],
+				sans: ['Helvetica', 'sans-serif'],
 				sans2: ['Helvetica', 'sans-serif'],
 				signature: ['BrianStrait', 'serif'],
 				hand: ['Movement-Indirect', 'serif'],

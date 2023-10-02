@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
 	import '../app.css';
 
-	import { AudioElement, Header, MusicBottomPanel, LinksPanel } from '$lib/components';
+	import { AudioElement, Header, MusicBottomPanel, LinksPanel, PageLayout } from '$lib/components';
 </script>
 
 <script lang="ts">
@@ -46,7 +46,11 @@
 		currentScrollTop = bodyElement.scrollTop;
 	}}
 >
-	<slot />
+	<PageLayout.HorizontalSpacing>
+		<slot />
+	</PageLayout.HorizontalSpacing>
+
+	<PageLayout.VerticalSpacing />
 </div>
 
 <AudioElement />

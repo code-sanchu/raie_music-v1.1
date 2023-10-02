@@ -22,7 +22,9 @@ import {
 	MusicNotes,
 	CaretDown,
 	X,
-	DotsSix
+	DotsSix,
+	ArrowRight,
+	Quotes
 } from 'phosphor-svelte';
 import type { ComponentProps } from 'svelte';
 
@@ -52,5 +54,7 @@ export const Icon = {
 	Lyrics: MusicNotes,
 	CaretDown,
 	X,
-	Handle: DotsSix
+	Handle: DotsSix,
+	ArrowRight,
+	Quotes
 };
