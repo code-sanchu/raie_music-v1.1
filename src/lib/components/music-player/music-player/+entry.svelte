@@ -57,7 +57,7 @@
 				type="button"
 			/>
 
-			<div class="w-full bg-white pt-lg pb-xs pl-md">
+			<div class="w-full pt-lg pb-xs pl-md">
 				<div class="pt-md border-t-2 border-my-black-700">
 					<div class="flex items-center gap-md justify-end text-my-black-800">
 						<button

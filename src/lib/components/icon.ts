@@ -28,7 +28,8 @@ import {
 	Control,
 	SkipBack,
 	CaretLeft,
-	CaretRight
+	CaretRight,
+	ArrowUpRight
 } from 'phosphor-svelte';
 import type { ComponentProps } from 'svelte';
 
@@ -64,5 +65,6 @@ export const Icon = {
 	Handle: DotsSix,
 	ArrowRight,
 	Quotes,
-	CaretUpSmall: Control
+	CaretUpSmall: Control,
+	ExternalLink: ArrowUpRight
 };

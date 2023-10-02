@@ -69,38 +69,30 @@
 
 			<div class="flex-grow w-[80vw] max-h-[80vh] overflow-hidden">
 				<div
-					class="max-h-[80vh] overflow-visible flex transition-all ease-in-out duration-200 delay-75"
-					style:height={`${currentImageHeight}px`}
+					class="overflow-visible flex transition-transform ease-in-out duration-500"
+					style:transform={`translateX(-${currentIndex * 80}vw)`}
 				>
-					<div
-						class="flex transition-all ease-in-out duration-500 h-full"
-						style:transform={`translateX(-${currentIndex * 80}vw)`}
-					>
-						{#each images as image}
-							<div class="w-[80vw] shrink-0 flex justify-center items-center">
-								<!-- svelte-ignore a11y-click-events-have-key-events -->
-								<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-								<!-- svelte-ignore a11y-no-static-element-interactions -->
-								<div
-									class={`cursor-zoom-out max-h-[80vh] max-w-[80vw]`}
-									style="width: {image.naturalDimensions.width < 400
-										? 400
-										: image.naturalDimensions.width}px; height: {image.naturalDimensions.width < 400
-										? 400 / (image.naturalDimensions.width / image.naturalDimensions.height)
-										: image.naturalDimensions.width /
-										  (image.naturalDimensions.width / image.naturalDimensions.height)}px"
-									on:click={() => (isOpen = false)}
-								>
-									<Picture
-										imageClass={`w-full`}
-										meta={image.src}
-										sizes={`${image.naturalDimensions.width}px`}
-										alt=""
-									/>
-								</div>
+					{#each images as image}
+						<div class="w-[80vw] shrink-0 grid place-items-center">
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
+							<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+							<!-- svelte-ignore a11y-no-static-element-interactions -->
+							<div
+								class={`cursor-zoom-out max-h-[80vh] max-w-[80vw]`}
+								style:width={`${
+									image.naturalDimensions.width < 400 ? 400 : image.naturalDimensions.width
+								}px`}
+								on:click={() => (isOpen = false)}
+							>
+								<Picture
+									imageClass={`w-full`}
+									meta={image.src}
+									sizes={`${image.naturalDimensions.width}px`}
+									alt=""
+								/>
 							</div>
-						{/each}
-					</div>
+						</div>
+					{/each}
 				</div>
 			</div>
 

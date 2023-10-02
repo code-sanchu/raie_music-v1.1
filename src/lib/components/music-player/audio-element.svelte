@@ -6,8 +6,6 @@
 	let audioElement: HTMLAudioElement;
 	let musicPlayer: MusicPlayer;
 
-	// $: console.log('musicPlayer:', musicPlayer);
-
 	musicPlayerStore.subscribe((playerStore) => {
 		musicPlayer = playerStore;
 	});
@@ -30,12 +28,16 @@
 		}
 	}
 
-	$: currentSong = songsList[musicPlayer.currentTrackIndex];
+	$: currentTrackIndex = musicPlayer.currentTrackIndex;
+
+	$: currentSong = songsList[currentTrackIndex];
 
 	$: handleAudioOnTrackChange(currentSong);
 
 	// could only get this func to run on track change with currentSong as argument; not with musicPlayer.currentTrackIndex, nor trackHasChanged;
 	function handleAudioOnTrackChange(_currentSong: (typeof songsList)[number]) {
+		// console.log('HANDLE TRACK CHAGE:', musicPlayer);
+
 		if (!musicPlayer || !audioElement || !musicPlayer.hasBeenPlayed) {
 			return;
 		}
@@ -51,22 +53,10 @@
 			return;
 		}
 
-		console.log('HELLLO');
-
 		setTimeout(() => {
 			audioElement.play();
-		}, 50);
+		}, 100);
 	}
-
-	/* 	let timePlayed = 0;
-	
-	$: endOfTrack = (timePlayed) === audioElement.duration
-
-	$: {
-		if (endOfTrack) {
-
-		}
-	} */
 </script>
 
 <audio
@@ -75,8 +65,6 @@
 	bind:volume={musicPlayer.volume}
 	bind:this={audioElement}
 	on:ended={() => {
-		console.log('ENDED');
-
 		updateMusicPlayer.track('next');
 	}}
 />

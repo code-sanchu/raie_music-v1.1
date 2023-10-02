@@ -4,7 +4,7 @@
 	import { updateLinksPanel, updateMusicPlayer } from '$lib/stores';
 
 	// MUST DO
-	// □ pause/play interaction with browser - i.e can pause music through browser.
+	// □ music player not working propely. Ensure wrkig across bottom panel player + albums pages.
 
 	// TO DO
 	// □ use local storage to save default user setting.
@@ -158,13 +158,13 @@
 			<Icon.ArrowRight weight="thin" />
 		</span>
 
-		<a class="flex flex-col items-end" href=".">
+		<a class="flex flex-col items-end" href="/gallery">
 			<span>Gallery</span>
 		</a>
 		<a class="flex flex-col items-end" href="/albums">
 			<span>Albums</span>
 		</a>
-		<a class="flex flex-col items-end" href=".">
+		<a class="flex flex-col items-end" href="/voice-coaching">
 			<span>Voice Coaching</span>
 		</a>
 		<a class="" href="/about">About</a>

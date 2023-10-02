@@ -55,7 +55,6 @@ export const updateMusicPlayer = {
 			return {
 				...state,
 				paused: false,
-				hasBeenPlayed: true,
 				currentTrackIndex: updatedIndex,
 				trackIndexOnLastInteraction: state.currentTrackIndex
 			};
@@ -72,6 +71,7 @@ export const updateMusicPlayer = {
 	},
 
 	pause: () => updateMusicPlayerStore('paused', true),
+
 	open: () => {
 		updateMusicPlayerStore('visibility', 'opening');
 

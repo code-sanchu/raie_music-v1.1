@@ -61,9 +61,10 @@
 			<h2 class="uppercase italic">contacts</h2>
 
 			<div class="mt-xs">
-				<a class="font-medium" href="mailto:rachel@raiemusic.com" target="_blank"
+				<a class="block font-medium" href="mailto:rachel@raiemusic.com" target="_blank"
 					>rachel@raiemusic.com</a
 				>
+				<p class="font-medium text-sm mt-xs">07949 876 703</p>
 			</div>
 		</div>
 

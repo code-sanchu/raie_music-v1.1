@@ -22,6 +22,11 @@
 	musicPlayerStore.subscribe((playerStore) => {
 		musicPlayer = playerStore;
 	});
+
+	const songListIndex = songsList.findIndex((songListSong) => songListSong.id === id);
+
+	$: currentTrackIndex = musicPlayer.currentTrackIndex;
+	$: isCurrentTrack = currentTrackIndex === songListIndex;
 </script>
 
 <div class={`flex items-center justify-between group/track`}>
@@ -46,7 +51,7 @@
 			</span>
 		</button>
 
-		{#if !musicPlayer.paused && musicPlayer.currentTrackIndex === songsList.findIndex((songListSong) => songListSong.id === id)}
+		{#if !musicPlayer.paused && isCurrentTrack}
 			<p class="text-[0.8rem] italic text-my-black-300 tracking-wide">currently playing</p>
 		{/if}
 	</div>
@@ -83,13 +88,9 @@
 				<button
 					class="p-xxs text-my-black-700 rounded-full"
 					on:click={() => {
-						const songListIndex = songsList.findIndex((songListSong) => songListSong.id === id);
-
 						if (songListIndex < 0) {
 							return;
 						}
-
-						const isCurrentTrack = musicPlayer.currentTrackIndex === songListIndex;
 
 						if (isCurrentTrack) {
 							if (musicPlayer.paused) {
@@ -97,6 +98,7 @@
 
 								return;
 							} else {
+								updateMusicPlayer.pause();
 								return;
 							}
 						}
@@ -104,9 +106,15 @@
 						updateMusicPlayer.track(songListIndex);
 					}}
 					id="track-listen"
-					type="button"><Icon.Play weight="thin" /></button
+					type="button"
 				>
-				<Tooltip text="play" triggeredById="track-listen" />
+					{#if isCurrentTrack && !musicPlayer.paused}
+						<Icon.Pause weight="thin" />
+					{:else}
+						<Icon.Play weight="thin" />
+					{/if}
+				</button>
+				<Tooltip text="play song" triggeredById="track-listen" />
 			{:else}
 				<button class="p-xxs pointer-events-none opacity-0 rounded-full" type="button"
 					><Icon.Play weight="thin" /></button

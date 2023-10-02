@@ -5,6 +5,7 @@ import YoutubeVideoModal from './youtube-video-modal.svelte';
 import YoutubeVideoPopup from './youtube-video-popup.svelte';
 import ImageGalleryModal from './image-gallery-modal.svelte';
 import ImageGalleryModalNew from './image-gallery-modal-new.svelte';
+import ImageGalleryModalNewTwo from './image-gallery-modal-new-two.svelte';
 
 export {
 	Header,
@@ -13,7 +14,8 @@ export {
 	YoutubeVideoModal,
 	YoutubeVideoPopup,
 	ImageGalleryModalNew,
-	ImageGalleryModal
+	ImageGalleryModal,
+	ImageGalleryModalNewTwo
 };
 
 export * from './layout';
