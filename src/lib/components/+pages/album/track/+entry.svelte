@@ -3,13 +3,7 @@
 	import LyricsModal from './lyrics-modal.svelte';
 
 	import type { SongData } from '$lib/data';
-	import {
-		musicPlayerStore,
-		type MusicPlayer,
-		songsList,
-		updateMusicPlayer,
-		musicPlayerInitData
-	} from '$lib/stores';
+	import { musicPlayerStore, type MusicPlayer, songsList, updateMusicPlayer } from '$lib/stores';
 </script>
 
 <script lang="ts">
@@ -33,6 +27,7 @@
 <div class={`flex items-center justify-between group/track`}>
 	<div class="flex gap-lg items-center">
 		<p class="text-my-black-400 text-sm self-end">{number}</p>
+
 		<button
 			class="self-end flex items-end gap-md text-sm group/button"
 			on:click={() => (showReadMore = !showReadMore)}
@@ -50,6 +45,10 @@
 				</span>
 			</span>
 		</button>
+
+		{#if !musicPlayer.paused && musicPlayer.currentTrackIndex === songsList.findIndex((songListSong) => songListSong.id === id)}
+			<p class="text-[0.8rem] italic text-my-black-300 tracking-wide">currently playing</p>
+		{/if}
 	</div>
 
 	<div class="flex gap-xl items-center">
@@ -80,33 +79,39 @@
 			>
 			<Tooltip text="lyrics" triggeredById="track-lyrics" />
 
-			<button
-				class="p-xxs text-my-black-700 rounded-full"
-				on:click={() => {
-					const songListIndex = songsList.findIndex((songListSong) => songListSong.id === id);
+			{#if localSrc}
+				<button
+					class="p-xxs text-my-black-700 rounded-full"
+					on:click={() => {
+						const songListIndex = songsList.findIndex((songListSong) => songListSong.id === id);
 
-					if (songListIndex < 0) {
-						return;
-					}
-
-					const isCurrentTrack = musicPlayer.currentTrackIndex === songListIndex;
-
-					if (isCurrentTrack) {
-						if (musicPlayer.paused) {
-							updateMusicPlayer.play();
-
-							return;
-						} else {
+						if (songListIndex < 0) {
 							return;
 						}
-					}
 
-					updateMusicPlayer.track(songListIndex);
-				}}
-				id="track-listen"
-				type="button"><Icon.Play weight="thin" /></button
-			>
-			<Tooltip text="play" triggeredById="track-listen" />
+						const isCurrentTrack = musicPlayer.currentTrackIndex === songListIndex;
+
+						if (isCurrentTrack) {
+							if (musicPlayer.paused) {
+								updateMusicPlayer.play();
+
+								return;
+							} else {
+								return;
+							}
+						}
+
+						updateMusicPlayer.track(songListIndex);
+					}}
+					id="track-listen"
+					type="button"><Icon.Play weight="thin" /></button
+				>
+				<Tooltip text="play" triggeredById="track-listen" />
+			{:else}
+				<button class="p-xxs pointer-events-none opacity-0 rounded-full" type="button"
+					><Icon.Play weight="thin" /></button
+				>
+			{/if}
 		</div>
 	</div>
 </div>
@@ -115,7 +120,7 @@
 	class="translate-x-0 ease-out duration-300 overflow-hidden"
 	bind:this={readMoreElement}
 	style:height={!showReadMore ? '0px' : `${readMoreElement.scrollHeight}px`}
-	style:opacity={!showReadMore ? '0' : `1`}
+	style:opacity={!showReadMore ? '0' : '1'}
 >
 	<div class="prose border-b border-my-black-50 pb-md mt-md">
 		{@html description}

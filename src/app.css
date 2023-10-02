@@ -52,7 +52,11 @@
 }
 
 html {
-	@apply overflow-hidden text-my-black;
+	@apply overflow-hidden text-my-black outline-none active:outline-none focus:outline-none;
+}
+
+* {
+	@apply outline-none active:outline-none focus:outline-none;
 }
 
 div {

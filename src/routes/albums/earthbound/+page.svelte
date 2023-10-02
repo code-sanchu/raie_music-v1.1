@@ -1,9 +1,8 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
-	import { Icon, Images, PageLayout } from '$lib/components';
+	import { Images, PageLayout, ImageGalleryModal } from '$lib/components';
 	import { ImageScroller, Track } from '$lib/components/+pages/album';
 	import { songsArr } from '$lib/data';
-	import Gallery from './gallery.svelte';
 
 	const albumImages = [
 		images.albums.earthbound.album_cover,
@@ -13,7 +12,7 @@
 		images.albums.earthbound['promo-by_sara_samsavari']
 	];
 
-	// todo: max wdth video + image. albums data. links.
+	// todo: max wdth video + image.
 	// todo: betetr image gallery - click outside actual image to close.
 </script>
 
@@ -60,16 +59,14 @@
 			</p>
 		</div>
 
-		<div class="mt-xl">
-			<div class="flex items-center gap-md text-my-black-400">
-				<p class="tracking-wider">Buy tracks at</p>
+		<!-- <div class="flex items-center gap-md text-my-black-400 mt-xl">
+			<p class="tracking-wider">Buy tracks at</p>
 
-				<div class="flex items-center gap-md text-my-black-400">
-					<a href="."><Icon.Bandcamp weight="thin" /></a>
-					<a href="."><Icon.Apple weight="thin" /></a>
-				</div>
+			<div class="flex items-center gap-md text-my-black-400">
+				<a href="."><Icon.Bandcamp weight="thin" /></a>
+				<a href="."><Icon.Itunes weight="thin" /></a>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="mt-xl">
 			<h3 class="italic tracking-widest text-sm">Tracklist</h3>
@@ -81,15 +78,19 @@
 			</div>
 		</div>
 
-		<div class="flex items-center gap-md mt-2xl">
+		<!-- <div class="flex items-center gap-md mt-2xl">
 			<p class="text-my-black-400 tracking-wider">Also listen on</p>
 
 			<div class="flex items-center gap-md text-my-black-400">
 				<a href="."><Icon.Spotify weight="light" /></a>
 				<a href="."><Icon.Itunes weight="light" /></a>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </div>
 
-<Gallery bind:imageShowIndex bind:imageShowIsOpen images={albumImages} />
+<ImageGalleryModal
+	bind:currentIndex={imageShowIndex}
+	bind:isOpen={imageShowIsOpen}
+	images={albumImages}
+/>
