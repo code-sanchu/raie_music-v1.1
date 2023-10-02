@@ -7,8 +7,6 @@
 </script>
 
 <script lang="ts">
-	import { Envelope } from 'phosphor-svelte';
-
 	let isOpen = true;
 </script>
 
