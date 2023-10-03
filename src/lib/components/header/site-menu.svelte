@@ -1,9 +1,10 @@
 <script context="module" lang="ts">
 	import { List } from 'phosphor-svelte';
 
-	import { Icon, PageLayout } from '$lib/components';
 	import { onClickOutside } from '$lib/helpers';
+	import { external_links } from '$lib/data';
 	import { updateMusicPlayer } from '$lib/stores';
+	import { Icon, PageLayout, Tooltip } from '$lib/components';
 </script>
 
 <script lang="ts">
@@ -65,32 +66,74 @@
 				<h2 class="tracking-widest font-medium text-sm italic">Listen, Buy & Follow</h2>
 
 				<div class="flex text-base items-center gap-sm mt-md">
-					<a class="rounded-full p-xxs" href="." id="links_panel-facebook">
+					<a
+						class="rounded-full p-xxs"
+						href={external_links.listen.soundcloud}
+						target="_blank"
+						id="site_menu-soundcloud"
+					>
 						<Icon.Soundcloud weight="fill" />
 					</a>
+					<Tooltip text="Soundcloud" triggeredById="site_menu-soundcloud" />
 
-					<a class="rounded-full p-xxs" href="." id="links_panel-insta">
+					<a
+						class="rounded-full p-xxs"
+						href={external_links.listen.spotify}
+						target="_blank"
+						id="site_menu-spotify"
+					>
 						<Icon.Spotify weight="fill" />
 					</a>
+					<Tooltip text="Spotify" triggeredById="site_menu-spotify" />
 
-					<a class="rounded-full p-xxs" href="." id="links_panel-insta">
+					<a
+						class="rounded-full p-xxs"
+						href={external_links.listen.youtube}
+						target="_blank"
+						id="site_menu-youtube"
+					>
 						<Icon.Youtube weight="fill" />
 					</a>
-					<a class="rounded-full p-xxs" href="." id="links_panel-insta">
+					<Tooltip text="Youtube" triggeredById="site_menu-youtube" />
+
+					<a
+						class="rounded-full p-xxs"
+						href={external_links.buy.bandcamp}
+						target="_blank"
+						id="site_menu-bandcamp"
+					>
 						<Icon.Bandcamp weight="fill" />
 					</a>
+					<Tooltip text="Bandcamp" triggeredById="site_menu-bandcamp" />
 
-					<a class="rounded-full p-xxs" href="." id="links_panel-insta">
+					<a
+						class="rounded-full p-xxs"
+						href={external_links.buy.itunes}
+						target="_blank"
+						id="site_menu-itunes"
+					>
 						<Icon.Itunes weight="fill" />
 					</a>
+					<Tooltip text="Itunes" triggeredById="site_menu-itunes" />
 
-					<a class="rounded-full p-xxs" href="." id="links_panel-facebook">
+					<a
+						class="rounded-full p-xxs"
+						href={external_links.follow.facebook}
+						id="site_menu-facebook"
+					>
 						<Icon.Facebook weight="fill" />
 					</a>
+					<Tooltip text="Facebook" triggeredById="site_menu-facebook" />
 
-					<a class="rounded-full p-xxs" href="." id="links_panel-insta">
+					<a
+						class="rounded-full p-xxs"
+						href={external_links.follow.instagram}
+						target="_blank"
+						id="site_menu-insta"
+					>
 						<Icon.Instagram weight="fill" />
 					</a>
+					<Tooltip text="Instagram" triggeredById="site_menu-insta" />
 				</div>
 
 				<h2 class="mt-xl tracking-widest font-medium text-sm italic border-t border-my-black pt-xs">
@@ -112,25 +155,6 @@
 						<a class="text-sm" href="mailto:rachel@raiemusic.com" target="_blank">07949 876 703</a>
 					</div>
 				</div>
-
-				<!-- 				<h2 class="mt-xl tracking-widest font-medium text-sm italic border-t border-my-black pt-xs">
-					Music Player
-				</h2>
-
-				<div class="mt-md">
-					<button
-						class="uppercase text-xs tracking-widest border py-xxs px-xs border-my-black-300 rounded-md flex items-center gap-xs"
-						on:click={() => {
-							isOpen = false;
-
-							updateMusicPlayer.open();
-						}}
-						type="button"
-					>
-						<span class="grid place-items-center text-my-black-300"><MusicNote /></span>
-						<span>open</span>
-					</button>
-				</div> -->
 			</div>
 		</div>
 	</PageLayout.HorizontalSpacing>

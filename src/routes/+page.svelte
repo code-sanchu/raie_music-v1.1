@@ -20,6 +20,7 @@
 
 	// □ make icon - take 'R' from logo
 	// □ sort out raie logo
+	// □ site menu tooltips
 
 	// NICE TO HAVE
 	// □ song time for open player (and closed?). on right side?
