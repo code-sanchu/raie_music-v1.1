@@ -1,11 +1,10 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
-	import { Icon, PageLayout, Picture, YoutubeVideoPopup } from '$lib/components';
+	import { external_links } from '$lib/data';
+	import { Icon, PageLayout, Picture, YoutubeVideoPopup, Tooltip } from '$lib/components';
 </script>
 
 <script lang="ts">
-	import Tooltip from '$lib/components/tooltip.svelte';
-
 	let klfVideoIsOpen = false;
 	let orchestreVideoIsOpen = false;
 	let duduVideoIsOpen = false;
@@ -72,13 +71,20 @@
 			<h2 class="uppercase italic">social media</h2>
 
 			<div class="flex text-xl items-center gap-sm mt-xs">
-				<a class="rounded-full p-xxs" href="." id="links_panel-facebook">
+				<a class="rounded-full p-xxs" href={external_links.follow.facebook} id="about-facebook">
 					<Icon.Facebook weight="fill" />
 				</a>
+				<Tooltip text="Facebook" triggeredById="about-facebook" />
 
-				<a class="rounded-full p-xxs" href="." id="links_panel-insta">
+				<a
+					class="rounded-full p-xxs"
+					href={external_links.follow.instagram}
+					target="_blank"
+					id="about-insta"
+				>
 					<Icon.Instagram weight="fill" />
 				</a>
+				<Tooltip text="Instagram" triggeredById="about-insta" />
 			</div>
 		</div>
 
@@ -86,24 +92,55 @@
 			<h2 class="uppercase italic">Listen & Buy</h2>
 
 			<div class="flex text-xl items-center gap-sm mt-xs">
-				<a class="rounded-full p-xxs" href="." id="links_panel-facebook">
+				<a
+					class="rounded-full p-xxs"
+					href={external_links.listen.soundcloud}
+					target="_blank"
+					id="about-soundcloud"
+				>
 					<Icon.Soundcloud weight="fill" />
 				</a>
+				<Tooltip text="Soundcloud" triggeredById="about-soundcloud" />
 
-				<a class="rounded-full p-xxs" href="." id="links_panel-insta">
+				<a
+					class="rounded-full p-xxs"
+					href={external_links.listen.spotify}
+					target="_blank"
+					id="about-spotify"
+				>
 					<Icon.Spotify weight="fill" />
 				</a>
+				<Tooltip text="Spotify" triggeredById="about-spotify" />
 
-				<a class="rounded-full p-xxs" href="." id="links_panel-insta">
+				<a
+					class="rounded-full p-xxs"
+					href={external_links.listen.youtube}
+					target="_blank"
+					id="about-youtube"
+				>
 					<Icon.Youtube weight="fill" />
 				</a>
-				<a class="rounded-full p-xxs" href="." id="links_panel-insta">
+				<Tooltip text="Youtube" triggeredById="about-youtube" />
+
+				<a
+					class="rounded-full p-xxs"
+					href={external_links.buy.bandcamp}
+					target="_blank"
+					id="about-bandcamp"
+				>
 					<Icon.Bandcamp weight="fill" />
 				</a>
+				<Tooltip text="Bandcamp" triggeredById="about-bandcamp" />
 
-				<a class="rounded-full p-xxs" href="." id="links_panel-insta">
+				<a
+					class="rounded-full p-xxs"
+					href={external_links.buy.itunes}
+					target="_blank"
+					id="about-itunes"
+				>
 					<Icon.Itunes weight="fill" />
 				</a>
+				<Tooltip text="Itunes" triggeredById="about-itunes" />
 			</div>
 		</div>
 	</div>
