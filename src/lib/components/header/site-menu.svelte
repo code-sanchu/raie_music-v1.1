@@ -102,9 +102,8 @@
 						class="uppercase text-xs tracking-widest border py-xxs px-xs border-my-black-300 rounded-md flex items-center gap-xs"
 						on:click={() => {
 							isOpen = false;
-							setTimeout(() => {
-								updateMusicPlayer.open();
-							}, 100);
+
+							updateMusicPlayer.open();
 						}}
 						type="button"
 					>

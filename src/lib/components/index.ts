@@ -4,19 +4,8 @@ import Tooltip from './tooltip.svelte';
 import YoutubeVideoModal from './youtube-video-modal.svelte';
 import YoutubeVideoPopup from './youtube-video-popup.svelte';
 import ImageGalleryModal from './image-gallery-modal.svelte';
-import ImageGalleryModalNew from './image-gallery-modal-new.svelte';
-import ImageGalleryModalNewTwo from './image-gallery-modal-new-two.svelte';
 
-export {
-	Header,
-	Footer,
-	Tooltip,
-	YoutubeVideoModal,
-	YoutubeVideoPopup,
-	ImageGalleryModalNew,
-	ImageGalleryModal,
-	ImageGalleryModalNewTwo
-};
+export { Header, Footer, Tooltip, YoutubeVideoModal, YoutubeVideoPopup, ImageGalleryModal };
 
 export * from './layout';
 export * from './icon';

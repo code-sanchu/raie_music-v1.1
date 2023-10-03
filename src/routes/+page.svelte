@@ -3,30 +3,37 @@
 	import { Icon, PageLayout, Picture, Images } from '$lib/components';
 	import { updateLinksPanel, updateMusicPlayer } from '$lib/stores';
 
+	// GO LIVE CHECKLIST
+	// □ go through music player functionality. play pause skip, etc. on all pages.
+
 	// MUST DO
-	// □ music player not working propely. Ensure wrkig across bottom panel player + albums pages.
+	// □ pause music on play youtube video. And replay on close again?
 
 	// TO DO
-	// □ use local storage to save default user setting.
+	// □ loading priority for images (as opposed to lazy/eager)
+	// □ include links in this music thing article
+	// □ bind actua width values for bottom right panel
+	// □ loading song feedback..
+	// □ song time for open player (and closed?). on right side?
+	// □ clean up functions in event listeners
+	// □ remove line at top of galaxy group photo
+
+	// □ make icon - take 'R' from logo
+	// □ sort out raie logo
+
+	// NICE TO HAVE
+	// □ reset song button
 	// □ optimise images - sizes; width queries; if add width to w= on img query string and number is over the image natural wdth, vite won't create a source for that.
 	// □ ...check image strings for max width for those that need to be max
-	// □ optimise songs?
-	// □ loading priority for images
-	// □ different sizes for images - is done auto by Svelte?
-	// □ blur placeholder for images
-	// □ popper
-	// □ make icon - take 'R' from logo
-	// □ include links in this music thing article
 	// □ prev/next news article
-	// □ add buy now, radio shows news aticles links to thismusic thing article
+	// □ page transitions
+	// □ on track, caret rotates on read less
+	// □ fix grab handle for youtube popup
+	// □ (blur) placeholder for images
+	// □ use local storage to save default user setting.
+
+	// CONFIG
 	// □ everything is prerendering fine?
-	// □ click outside music player doesn't work because bottom panel is seperate.
-	// □ bind actua width values for bottom right panel
-	// □ song time for open player (and closed?). on right side?
-	// □ redesign music player a bit. Make as links panel. title on left and right. Maybe song name on right as title. song lengths?
-	// □ loading song feedback..
-	// □ clean up functions in event listeners
-	// □ reset song button
 </script>
 
 <PageLayout.VerticalSpacing sizing={'double'} />

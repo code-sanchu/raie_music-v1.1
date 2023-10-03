@@ -29,7 +29,6 @@ import this_music_thing_band_goldsmiths from '$assets/images/albums/this-music-t
 import this_music_thing_living_room from '$assets/images/albums/this-music-thing/living_room_gig.jpg?w=500&format=avif;webp;jpg&as=picture&imagetools';
 import this_music_thing_raie_by_bam from '$assets/images/albums/this-music-thing/raie-by_bam.jpg?w=500&format=avif;webp;jpg&as=picture&imagetools';
 import this_music_thing_raie_by_bim from '$assets/images/albums/this-music-thing/raie-by_bim_hjortronsteen.jpg?w=500&format=avif;webp;jpg&as=picture&imagetools';
-import this_music_thing_recording_rebekah from '$assets/images/albums/this-music-thing/recording_rebekahs_lullaby.jpg?w=500&format=avif;webp;jpg&as=picture&imagetools';
 import this_music_thing_studio_dog_and_others from '$assets/images/albums/this-music-thing/studio-dog_and_others.jpeg?w=500&format=avif;webp;jpg&as=picture&imagetools';
 
 import singing_coach_1 from '$assets/images/singing-coach/singing_coach-1.jpg?w=359&format=avif;webp;jpg&as=picture&imagetools';
@@ -147,10 +146,6 @@ export const images = {
 			raie_by_bim: {
 				src: this_music_thing_raie_by_bim,
 				naturalDimensions: { width: 1500, height: 998 }
-			},
-			recording_rebekahs_lullaby: {
-				src: this_music_thing_recording_rebekah,
-				naturalDimensions: { width: 882, height: 881 }
 			},
 			studio_dog_and_others: {
 				src: this_music_thing_studio_dog_and_others,

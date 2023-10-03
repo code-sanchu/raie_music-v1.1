@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
-	import { Images, PageLayout, ImageGalleryModal } from '$lib/components';
+	import { Images, PageLayout, ImageGalleryModal, Icon, Tooltip } from '$lib/components';
 	import { ImageScroller, Track } from '$lib/components/+pages/album';
 	import { songsArr } from '$lib/data';
 
@@ -78,14 +78,18 @@
 			</div>
 		</div>
 
-		<!-- <div class="flex items-center gap-md mt-2xl">
+		<div class="flex items-center gap-md mt-2xl">
 			<p class="text-my-black-400 tracking-wider">Also listen on</p>
 
 			<div class="flex items-center gap-md text-my-black-400">
-				<a href="."><Icon.Spotify weight="light" /></a>
-				<a href="."><Icon.Itunes weight="light" /></a>
+				<a
+					href="https://soundcloud.com/raiemusic/sets/earthbound-ep"
+					target="_blank"
+					id="album-soundcloud"><Icon.Soundcloud weight="light" /></a
+				>
+				<Tooltip text="Soundcloud" triggeredById="album-soundcloud" />
 			</div>
-		</div> -->
+		</div>
 	</div>
 </div>
 

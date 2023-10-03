@@ -8,6 +8,7 @@
 
 <script lang="ts">
 	export let data: SongData;
+	export let noVideos = false;
 
 	const { name, number, length, lyrics, localSrc, description, credits, youtubeEmbed, id } = data;
 
@@ -59,21 +60,23 @@
 	<div class="flex gap-xl items-center">
 		<p class="text-my-black-600 mr-sm text-sm self-end">{length}</p>
 		<div class="flex items-center gap-md text-my-black-600">
-			{#if youtubeEmbed}
-				<button
-					class="p-xxs text-my-black-700 rounded-full"
-					id="track-video"
-					on:click={() => (videoIsOpen = !videoIsOpen)}
-					type="button"><Icon.Video weight="thin" /></button
-				>
-				<Tooltip text="music video" triggeredById="track-video" />
-			{:else}
-				<button
-					class="opacity-0 pointer-events-none p-xxs"
-					id="track-video"
-					on:click={() => (videoIsOpen = !videoIsOpen)}
-					type="button"><Icon.Video weight="thin" /></button
-				>
+			{#if !noVideos}
+				{#if youtubeEmbed}
+					<button
+						class="p-xxs text-my-black-700 rounded-full"
+						id="track-video"
+						on:click={() => (videoIsOpen = !videoIsOpen)}
+						type="button"><Icon.Video weight="thin" /></button
+					>
+					<Tooltip text="music video" triggeredById="track-video" />
+				{:else}
+					<button
+						class="opacity-0 pointer-events-none p-xxs"
+						id="track-video"
+						on:click={() => (videoIsOpen = !videoIsOpen)}
+						type="button"><Icon.Video weight="thin" /></button
+					>
+				{/if}
 			{/if}
 
 			<button

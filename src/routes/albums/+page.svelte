@@ -62,7 +62,7 @@
 					</div>
 				</a>
 
-				<a class="group/album block mt-2xl" href="/albums/earthbound">
+				<a class="group/album block mt-2xl" href="/albums/this-music-thing">
 					<div class="flex items-end gap-lg">
 						<h4 class="text-2xl tracking-widest">This Music Thing</h4>
 
