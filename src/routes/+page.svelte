@@ -10,18 +10,19 @@
 	// □ pause music on play youtube video. And replay on close again?
 
 	// TO DO
-	// □ loading priority for images (as opposed to lazy/eager)
-	// □ include links in this music thing article
-	// □ bind actua width values for bottom right panel
 	// □ loading song feedback..
-	// □ song time for open player (and closed?). on right side?
+	// □ bind actual width values for bottom right panel
+
+	// □ loading priority for images (as opposed to lazy/eager)
 	// □ clean up functions in event listeners
 	// □ remove line at top of galaxy group photo
+	// □ max width for blown up images
 
 	// □ make icon - take 'R' from logo
 	// □ sort out raie logo
 
 	// NICE TO HAVE
+	// □ song time for open player (and closed?). on right side?
 	// □ reset song button
 	// □ optimise images - sizes; width queries; if add width to w= on img query string and number is over the image natural wdth, vite won't create a source for that.
 	// □ ...check image strings for max width for those that need to be max
@@ -31,9 +32,10 @@
 	// □ fix grab handle for youtube popup
 	// □ (blur) placeholder for images
 	// □ use local storage to save default user setting.
+	// □ overlay on music player open?
 
 	// CONFIG
-	// □ everything is prerendering fine?
+	// □ everything is prerendering?
 </script>
 
 <PageLayout.VerticalSpacing sizing={'double'} />

@@ -10,7 +10,7 @@
 	} from '$lib/stores';
 
 	import { AnimatedBars } from './animated-bars';
-	import MusicPlayerNew from './music-player/+entry.svelte';
+	import MusicPlayer from './music-player/+entry.svelte';
 </script>
 
 <script lang="ts">
@@ -110,5 +110,13 @@
 			</button>
 		</div>
 	</div>
-	<MusicPlayerNew />
+	<MusicPlayer />
 </div>
+
+<!-- <div
+	class={`fixed inset-0 -z-[20] bg-my-black/40 transition-opacity ease-in-out duration-300 ${
+		musicPlayer.visibility === 'opening' || musicPlayer.visibility === 'open'
+			? ''
+			: 'pointer-events-none opacity-0'
+	}`}
+/> -->

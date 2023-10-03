@@ -31,6 +31,8 @@ import this_music_thing_raie_by_bam from '$assets/images/albums/this-music-thing
 import this_music_thing_raie_by_bim from '$assets/images/albums/this-music-thing/raie-by_bim_hjortronsteen.jpg?w=500&format=avif;webp;jpg&as=picture&imagetools';
 import this_music_thing_studio_dog_and_others from '$assets/images/albums/this-music-thing/studio-dog_and_others.jpeg?w=500&format=avif;webp;jpg&as=picture&imagetools';
 
+import red_brick_angels_band_hope_and_anchor from '$assets/images/albums/red-brick-angels/band-hope_and_anchor.jpg?w=359&format=avif;webp;jpg&as=picture&imagetools';
+
 import singing_coach_1 from '$assets/images/singing-coach/singing_coach-1.jpg?w=359&format=avif;webp;jpg&as=picture&imagetools';
 
 export const images = {
@@ -150,6 +152,13 @@ export const images = {
 			studio_dog_and_others: {
 				src: this_music_thing_studio_dog_and_others,
 				naturalDimensions: { width: 4032, height: 3024 }
+			}
+		},
+
+		red_brick_angels: {
+			band_hope_and_anchor: {
+				src: red_brick_angels_band_hope_and_anchor,
+				naturalDimensions: { width: 1200, height: 1600 }
 			}
 		}
 	}

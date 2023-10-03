@@ -5,13 +5,16 @@
 <script lang="ts">
 	let imagesContainer: HTMLDivElement;
 
-	/* 	let imagesMountApprox = false;
+	let isOverflow = false;
 
-	onMount(() => {
-		setTimeout(() => {
-			imagesMountApprox = true;
-		}, 100);
-	}); */
+	$: {
+		if (imagesContainer) {
+			const scrollWidth = imagesContainer.scrollWidth;
+			const offsetWidth = imagesContainer.offsetWidth;
+
+			isOverflow = scrollWidth > offsetWidth;
+		}
+	}
 
 	$: imageElements = !imagesContainer ? undefined : [...imagesContainer.children[0].children];
 
@@ -62,7 +65,6 @@
 	};
 
 	$: scrollLeft, inViewFunc({ imagesContainer });
-	// $: scrollLeft, imagesMountApprox, inViewFunc({ imagesContainer });
 
 	const onClickNextButton = () => {
 		if (!imageElements) {
@@ -116,18 +118,21 @@
 		</div>
 	</div>
 
-	<button
-		class="absolute bg-white/80 hover:bg-white/60 rounded-lg left-0 top-1/2 -translate-y-1/2 z-10 text-3xl hover:opacity-100 opacity-70 transition-all ease-in-out duration-75"
-		type="button"
-		on:click={onClickPrevButton}
-	>
-		<CaretLeft />
-	</button>
-	<button
-		class="absolute right-0 bg-white/60 top-1/2 -translate-y-1/2 rounded-lg z-10 text-3xl hover:bg-white/40 opacity-70 hover:opacity-100 transition-all ease-in-out duration-75"
-		type="button"
-		on:click={onClickNextButton}
-	>
-		<CaretRight />
-	</button>
+	{#if isOverflow}
+		<button
+			class="absolute bg-white/80 hover:bg-white/60 rounded-lg left-0 top-1/2 -translate-y-1/2 z-10 text-3xl hover:opacity-100 opacity-70 transition-all ease-in-out duration-75"
+			type="button"
+			on:click={onClickPrevButton}
+		>
+			<CaretLeft />
+		</button>
+
+		<button
+			class="absolute right-0 bg-white/60 top-1/2 -translate-y-1/2 rounded-lg z-10 text-3xl hover:bg-white/40 opacity-70 hover:opacity-100 transition-all ease-in-out duration-75"
+			type="button"
+			on:click={onClickNextButton}
+		>
+			<CaretRight />
+		</button>
+	{/if}
 </div>

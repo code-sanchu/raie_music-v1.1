@@ -5,16 +5,16 @@
 </script>
 
 <script lang="ts">
-	let musicPlayerState: MusicPlayer;
+	let musicPlayer: MusicPlayer;
 
 	musicPlayerStore.subscribe((playerStore) => {
-		musicPlayerState = playerStore;
+		musicPlayer = playerStore;
 	});
 </script>
 
 <div
 	class={`absolute -z-10 w-screen px-lg pt-sm bottom-0 left-0 transition-all ease-out duration-300 ${
-		musicPlayerState.visibility === 'closing' || musicPlayerState.visibility === 'closed'
+		musicPlayer.visibility === 'closing' || musicPlayer.visibility === 'closed'
 			? 'translate-y-full'
 			: 'translate-y-0'
 	}`}
@@ -27,8 +27,8 @@
 				<div class="flex items-center gap-md">
 					<button
 						class="flex items-center gap-xs"
-						on:click={musicPlayerState.tracksVisibility === 'closed' ||
-						musicPlayerState.tracksVisibility === 'closing'
+						on:click={musicPlayer.tracksVisibility === 'closed' ||
+						musicPlayer.tracksVisibility === 'closing'
 							? updateMusicPlayer.openTracks
 							: updateMusicPlayer.closeTracks}
 						type="button"
@@ -38,7 +38,7 @@
 						</span>
 
 						<span class={`text-[0.7rem] text-my-black-600 uppercase`}>
-							{#if musicPlayerState.tracksVisibility === 'closed' || musicPlayerState.tracksVisibility === 'closing'}
+							{#if musicPlayer.tracksVisibility === 'closed' || musicPlayer.tracksVisibility === 'closing'}
 								show tracks
 							{:else}
 								hide tracks
@@ -61,9 +61,9 @@
 					<div class="flex items-center gap-md justify-end text-my-black-800">
 						<button
 							class="rounded-full p-xxs"
-							on:click={musicPlayerState.paused ? updateMusicPlayer.play : updateMusicPlayer.pause}
+							on:click={musicPlayer.paused ? updateMusicPlayer.play : updateMusicPlayer.pause}
 						>
-							{#if musicPlayerState.paused}
+							{#if musicPlayer.paused}
 								<Icon.Play weight="fill" />
 							{:else}
 								<Icon.Pause weight="fill" />

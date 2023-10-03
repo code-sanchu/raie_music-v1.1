@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	import { List, MusicNote } from 'phosphor-svelte';
+	import { List } from 'phosphor-svelte';
 
 	import { Icon, PageLayout } from '$lib/components';
 	import { onClickOutside } from '$lib/helpers';
@@ -43,6 +43,21 @@
 					<a class="" on:click={() => (isOpen = false)} href="/gallery">
 						<span>Gallery</span>
 					</a>
+
+					<button
+						class="flex gap-md mt-md items-end"
+						on:click={() => {
+							isOpen = false;
+
+							updateMusicPlayer.open();
+						}}
+						type="button"
+					>
+						<p class="tracking-widest text-my-black-700">Music player</p>
+						<span class="text-[0.6rem] text-my-black-400 italic -translate-y-[1.5px] uppercase"
+							>open</span
+						>
+					</button>
 				</div>
 			</div>
 
@@ -83,17 +98,22 @@
 				</h2>
 
 				<div class="mt-md">
-					<div class="flex gap-md tracking-wider items-center">
-						<p class="uppercase text-[0.6rem]">Email</p>
-						<a class="" href="mailto:rachel@raiemusic.com" target="_blank">rachel@raiemusic.com</a>
+					<div class="flex gap-md tracking-wider items-end">
+						<p class="uppercase text-[0.6rem] tracking-widest -translate-y-[3px] italic">Email</p>
+						<a class="tracking-widest itai" href="mailto:rachel@raiemusic.com" target="_blank"
+							>rachel@raiemusic.com</a
+						>
 					</div>
-					<div class="flex gap-md tracking-wider items-center mt-xs">
-						<p class="uppercase text-[0.6rem]">Phone</p>
+
+					<div class="flex gap-md tracking-wider items-end mt-xs">
+						<p class="uppercase text-[0.6rem] tracking-widest -translate-y-[2.01px] italic">
+							Phone
+						</p>
 						<a class="text-sm" href="mailto:rachel@raiemusic.com" target="_blank">07949 876 703</a>
 					</div>
 				</div>
 
-				<h2 class="mt-xl tracking-widest font-medium text-sm italic border-t border-my-black pt-xs">
+				<!-- 				<h2 class="mt-xl tracking-widest font-medium text-sm italic border-t border-my-black pt-xs">
 					Music Player
 				</h2>
 
@@ -110,7 +130,7 @@
 						<span class="grid place-items-center text-my-black-300"><MusicNote /></span>
 						<span>open</span>
 					</button>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</PageLayout.HorizontalSpacing>

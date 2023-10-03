@@ -1,34 +1,13 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
-	import { PageLayout, Picture } from '$lib/components';
-
-	// todo: maybe pictures under the top text.
+	import { PageLayout, Picture, Images } from '$lib/components';
 </script>
 
 <PageLayout.VerticalSpacing sizing="1.5" />
 
 <div class="">
 	<div class="">
-		<div class="flex">
-			<Picture
-				imageClass="w-[400px] h-[20px] overflow-hidden opacity-80"
-				meta={images.brick_bg.src}
-				sizes={'400px'}
-				alt=""
-			/>
-			<Picture
-				imageClass="w-[400px] h-[20px] overflow-hidden opacity-80"
-				meta={images.brick_bg.src}
-				sizes={'400px'}
-				alt=""
-			/>
-			<Picture
-				imageClass="w-[400px] h-[20px] overflow-hidden opacity-80"
-				meta={images.brick_bg.src}
-				sizes={'400px'}
-				alt=""
-			/>
-		</div>
+		<Images.BrickBg.HorizontalThree />
 
 		<PageLayout.VerticalSpacing sizing="2/3" />
 

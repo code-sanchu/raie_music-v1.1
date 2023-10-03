@@ -11,9 +11,6 @@
 		images.albums.earthbound['album_promo_shot-by_sara_samsavari'],
 		images.albums.earthbound['promo-by_sara_samsavari']
 	];
-
-	// todo: max wdth video + image.
-	// todo: betetr image gallery - click outside actual image to close.
 </script>
 
 <script lang="ts">
@@ -58,15 +55,6 @@
 				incredible resourcefulness of the people.
 			</p>
 		</div>
-
-		<!-- <div class="flex items-center gap-md text-my-black-400 mt-xl">
-			<p class="tracking-wider">Buy tracks at</p>
-
-			<div class="flex items-center gap-md text-my-black-400">
-				<a href="."><Icon.Bandcamp weight="thin" /></a>
-				<a href="."><Icon.Itunes weight="thin" /></a>
-			</div>
-		</div> -->
 
 		<div class="mt-xl">
 			<h3 class="italic tracking-widest text-sm">Tracklist</h3>
