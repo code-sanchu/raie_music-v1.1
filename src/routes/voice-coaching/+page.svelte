@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
+	import { ImageGalleryModal, Images, PageLayout, Picture } from '$lib/components';
 	import { voiceCoaching } from '$lib/data';
-	import { Images, PageLayout, ImageGalleryModalNewTwo, Picture, Icon } from '$lib/components';
 	import PersonalTestimony from './personal-testimony.svelte';
 
 	const galleryImages = [
@@ -156,7 +156,7 @@
 	</div>
 </div>
 
-<ImageGalleryModalNewTwo
+<ImageGalleryModal
 	bind:currentIndex={imageModalCurrentImageIndex}
 	bind:isOpen={imageModalIsOpen}
 	images={galleryImages}

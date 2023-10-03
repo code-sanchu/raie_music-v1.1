@@ -1,6 +1,7 @@
 <script context="module" lang="ts">
 	import { images } from '$lib/assets';
 	import { Icon, PageLayout, Picture, Images } from '$lib/components';
+	import { ReviewQuote } from '$lib/components/+pages/landing';
 	import {
 		updateLinksPanel,
 		updateMusicPlayer,
@@ -20,12 +21,10 @@
 
 	// □ loading priority for images (as opposed to lazy/eager)
 	// □ clean up functions in event listeners
-	// □ remove line at top of galaxy group photo
 	// □ max width for blown up images
 
 	// □ make icon - take 'R' from logo
 	// □ sort out raie logo
-	// □ site menu tooltips
 
 	// NICE TO HAVE
 	// □ song time for open player (and closed?). on right side?
@@ -55,10 +54,10 @@
 
 <PageLayout.VerticalSpacing sizing={'1.5'} />
 
-<div class="flex justify-between">
-	<div class="flex flex-col justify-between">
-		<div>
-			<p class="text-2xl tracking-wider flex flex-col gap-xxs">
+<div class="flex justify-between gap-xl lg:gap-2xl">
+	<div class="flex flex-col justify-between gap-xl">
+		<ReviewQuote reviewer={{ name: 'Martin Cooke', org: 'Bluesmatters Magazine' }}>
+			<svelte:fragment slot="quote">
 				<span>
 					<span class="float-left text-xl scale-x-[-1] pl-xs text-my-black-100">
 						<Icon.Quotes weight="fill" />
@@ -78,21 +77,19 @@
 						<Icon.Quotes weight="fill" />
 					</span>
 				</span>
-			</p>
+			</svelte:fragment>
+		</ReviewQuote>
 
-			<p class="pl-lg mt-md tracking-wide text-my-black-700 font-light">
-				Martin Cooke — Bluesmatters Magazine
-			</p>
-		</div>
-
-		<div class="">
-			<p class="w-[500px] text-2xl tracking-wider flex flex-col gap-xxxs">
+		<ReviewQuote reviewer={{ name: 'Martin Webb', org: 'R&R Magazine' }}>
+			<svelte:fragment slot="quote">
 				<span>
 					<span class="float-left text-xl scale-x-[-1] pl-xs text-my-black-100">
 						<Icon.Quotes weight="fill" />
 					</span>
-					Raie has stepped forward with a beautifully assured solo album...
+					Raie has stepped forward with a
 				</span>
+
+				<span>beautifully assured solo album...</span>
 
 				<span>Heart-tuggingly moving and edgily</span>
 
@@ -103,12 +100,8 @@
 						<Icon.Quotes weight="fill" />
 					</span>
 				</span>
-			</p>
-
-			<p class="pl-lg mt-md tracking-wide text-my-black-700 font-light">
-				Martin Webb — R&R Magazine
-			</p>
-		</div>
+			</svelte:fragment>
+		</ReviewQuote>
 
 		<div>
 			<button
@@ -135,13 +128,15 @@
 		</div>
 	</div>
 
-	<Picture
-		imageClass="w-[500px]"
-		meta={images.faceshots[1].src}
-		sizes={'50vw'}
-		loading="eager"
-		alt=""
-	/>
+	<div class="md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px]">
+		<Picture
+			imageClass="w-full"
+			meta={images.faceshots[1].src}
+			sizes={'50vw'}
+			loading="eager"
+			alt=""
+		/>
+	</div>
 </div>
 
 <div class="mt-2xl">
