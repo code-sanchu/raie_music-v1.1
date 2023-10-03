@@ -1,7 +1,12 @@
 <script context="module" lang="ts">
 	import { images } from '$lib/assets';
 	import { Icon, PageLayout, Picture, Images } from '$lib/components';
-	import { updateLinksPanel, updateMusicPlayer } from '$lib/stores';
+	import {
+		updateLinksPanel,
+		updateMusicPlayer,
+		musicPlayerStore,
+		type MusicPlayer
+	} from '$lib/stores';
 
 	// GO LIVE CHECKLIST
 	// □ go through music player functionality. play pause skip, etc. on all pages.
@@ -34,12 +39,21 @@
 	// □ (blur) placeholder for images
 	// □ use local storage to save default user setting.
 	// □ overlay on music player open?
+	// □ for phone number, have it so click on to connect to mobile for mobiles?
 
 	// CONFIG
 	// □ everything is prerendering?
 </script>
 
-<PageLayout.VerticalSpacing sizing={'double'} />
+<script lang="ts">
+	let musicPlayer: MusicPlayer;
+
+	musicPlayerStore.subscribe((playerStore) => {
+		musicPlayer = playerStore;
+	});
+</script>
+
+<PageLayout.VerticalSpacing sizing={'1.5'} />
 
 <div class="flex justify-between">
 	<div class="flex flex-col justify-between">
@@ -99,15 +113,23 @@
 		<div>
 			<button
 				class="flex items-center gap-sm text-xl text-my-black-700"
-				on:click={() => updateMusicPlayer.play()}
+				on:click={musicPlayer.paused ? updateMusicPlayer.play : updateMusicPlayer.pause}
 				type="button"
 			>
 				<span class="text-my-black-100 opacity-40 text-2xl">
-					<Icon.Play weight="fill" />
+					{#if musicPlayer.paused}
+						<Icon.Play weight="fill" />
+					{:else}
+						<Icon.Pause weight="fill" />
+					{/if}
 				</span>
 
 				<span class="text-my-black-800 font-light text-base tracking-widest uppercase">
-					Play music
+					{#if musicPlayer.paused}
+						Play music
+					{:else}
+						Pause music
+					{/if}
 				</span>
 			</button>
 		</div>

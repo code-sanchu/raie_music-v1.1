@@ -65,16 +65,18 @@
 					<button
 						class="p-xxs text-my-black-700 rounded-full"
 						id="track-video"
-						on:click={() => (videoIsOpen = !videoIsOpen)}
+						on:click={() => {
+							if (!musicPlayer.paused) {
+								updateMusicPlayer.pause();
+							}
+							videoIsOpen = true;
+						}}
 						type="button"><Icon.Video weight="thin" /></button
 					>
 					<Tooltip text="music video" triggeredById="track-video" />
 				{:else}
-					<button
-						class="opacity-0 pointer-events-none p-xxs"
-						id="track-video"
-						on:click={() => (videoIsOpen = !videoIsOpen)}
-						type="button"><Icon.Video weight="thin" /></button
+					<button class="opacity-0 pointer-events-none p-xxs" type="button"
+						><Icon.Video weight="thin" /></button
 					>
 				{/if}
 			{/if}

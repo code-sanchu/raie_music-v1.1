@@ -1,10 +1,17 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
+	import { Icon, PageLayout, Picture, Tooltip, YoutubeVideoPopup } from '$lib/components';
 	import { external_links } from '$lib/data';
-	import { Icon, PageLayout, Picture, YoutubeVideoPopup, Tooltip } from '$lib/components';
+	import { musicPlayerStore, type MusicPlayer, updateMusicPlayer } from '$lib/stores';
 </script>
 
 <script lang="ts">
+	let musicPlayer: MusicPlayer;
+
+	musicPlayerStore.subscribe((playerStore) => {
+		musicPlayer = playerStore;
+	});
+
 	let klfVideoIsOpen = false;
 	let orchestreVideoIsOpen = false;
 	let duduVideoIsOpen = false;
@@ -22,14 +29,24 @@
 		<span class="italic text-lg">KLF</span>
 		<button
 			class="inline-block text-base translate-y-[1px] text-my-black-600"
-			on:click={() => (klfVideoIsOpen = true)}
+			on:click={() => {
+				if (!musicPlayer.paused) {
+					updateMusicPlayer.pause();
+				}
+				klfVideoIsOpen = true;
+			}}
 			id="klf-video"
 			type="button"><Icon.Play weight="fill" /></button
 		><Tooltip text="KLF is gonna rock ya..." triggeredById="klf-video" />,
 		<span class="italic text-lg uppercase">Orchestre Jazira</span>
 		<button
 			class="inline-block text-base translate-y-[1px] text-my-black-600"
-			on:click={() => (orchestreVideoIsOpen = true)}
+			on:click={() => {
+				if (!musicPlayer.paused) {
+					updateMusicPlayer.pause();
+				}
+				orchestreVideoIsOpen = true;
+			}}
 			id="orchestre-video"
 			type="button"><Icon.Play weight="fill" /></button
 		><Tooltip text="have a listen..." triggeredById="orchestre-video" />
@@ -37,7 +54,12 @@
 		<span class="italic text-lg uppercase">Dudu Pukwana</span>
 		<button
 			class="inline-block text-base translate-y-[1px] text-my-black-600"
-			on:click={() => (duduVideoIsOpen = true)}
+			on:click={() => {
+				if (!musicPlayer.paused) {
+					updateMusicPlayer.pause();
+				}
+				duduVideoIsOpen = true;
+			}}
 			id="dudu-video"
 			type="button"><Icon.Play weight="fill" /></button
 		>.<Tooltip text="have a listen..." triggeredById="dudu-video" />

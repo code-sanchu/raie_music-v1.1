@@ -77,8 +77,8 @@
 			>
 				<span class="flex items-center gap-xs">
 					<span
-						class={`text-my-black-300 whitespace-nowrap text-[0.7rem] italic transition-all ease-out duration-300 uppercase ${
-							closedOrClosing ? 'text-my-black-300 group-hover/panel:text-my-black-600' : ''
+						class={`text-my-black-500 whitespace-nowrap text-[0.7rem] italic transition-all ease-out duration-300 uppercase tracking-wider ${
+							closedOrClosing ? 'text-my-black-500 group-hover/panel:text-my-black-700' : ''
 						}`}
 					>
 						{#if closedOrClosing}
@@ -92,7 +92,7 @@
 					<span
 						class={`text-[0.6rem] transition-all ease-in-out duration-300 ${
 							closedOrClosing
-								? 'text-my-black-300 group-hover/panel:text-my-black-600'
+								? 'text-my-black-400 group-hover/panel:text-my-black-600'
 								: 'rotate-180'
 						}`}
 					>
