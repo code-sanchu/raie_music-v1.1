@@ -1,13 +1,8 @@
 <script context="module" lang="ts">
 	import { images } from '$lib/assets';
-	import { Icon, PageLayout, Picture, Images } from '$lib/components';
-	import { ReviewQuote } from '$lib/components/+pages/landing';
-	import {
-		updateLinksPanel,
-		updateMusicPlayer,
-		musicPlayerStore,
-		type MusicPlayer
-	} from '$lib/stores';
+	import { Icon, Images, PageLayout, Picture } from '$lib/components';
+	import { LatestNews, PlayMusicButton, ReviewQuote } from '$lib/components/+pages/landing';
+	import { updateLinksPanel } from '$lib/stores';
 
 	// GO LIVE CHECKLIST
 	// □ go through music player functionality. play pause skip, etc. on all pages.
@@ -18,6 +13,7 @@
 	// TO DO
 	// □ loading song feedback..
 	// □ bind actual width values for bottom right panel
+	// □ highlight album being played in music player tracks
 
 	// □ loading priority for images (as opposed to lazy/eager)
 	// □ clean up functions in event listeners
@@ -44,161 +40,77 @@
 	// □ everything is prerendering?
 </script>
 
-<script lang="ts">
-	let musicPlayer: MusicPlayer;
-
-	musicPlayerStore.subscribe((playerStore) => {
-		musicPlayer = playerStore;
-	});
-</script>
-
 <PageLayout.VerticalSpacing sizing={'1.5'} />
 
-<div class="flex justify-between gap-xl lg:gap-2xl">
-	<div class="flex flex-col justify-between gap-xl">
-		<ReviewQuote reviewer={{ name: 'Martin Cooke', org: 'Bluesmatters Magazine' }}>
-			<svelte:fragment slot="quote">
-				<span>
-					<span class="float-left text-xl scale-x-[-1] pl-xs text-my-black-100">
-						<Icon.Quotes weight="fill" />
-					</span>
-					One of life's trip-me-up revelations.
-				</span>
+<div
+	class="flex items-center sm:items-start flex-col sm:flex-row sm:justify-between gap-[4.5rem] lg:gap-2xl"
+>
+	<div class="flex flex-col gap-xl">
+		<ReviewQuote
+			reviewer={{ name: 'Martin Cooke', org: 'Bluesmatters Magazine' }}
+			text={[
+				"One of life's trip-me-up revelations.",
+				'A purveyor of pin-me-to-the wall,',
+				'beautiful, life-enhancing soul music.',
+				'A sweet, certain surprise...'
+			]}
+		/>
 
-				<span>A purveyor of pin-me-to-the wall,</span>
+		<div class="sm:hidden max-w-[500px] flex justify-center">
+			<Picture imageClass="" meta={images.faceshots[1].src} sizes={'50vw'} loading="eager" alt="" />
+		</div>
 
-				<span>beautiful, life-enhancing soul music.</span>
+		<ReviewQuote
+			reviewer={{ name: 'Martin Webb', org: 'R&R Magazine' }}
+			text={[
+				'Raie has stepped forward with a',
+				'beautifully assured solo album...',
+				'Heart-tuggingly moving and edgily',
+				'joyous. Love it!'
+			]}
+		/>
 
-				<span />
-
-				<span class="self-start"
-					>A sweet, certain surprise...
-					<span class="float-right text-xl pl-xs text-my-black-100">
-						<Icon.Quotes weight="fill" />
-					</span>
-				</span>
-			</svelte:fragment>
-		</ReviewQuote>
-
-		<ReviewQuote reviewer={{ name: 'Martin Webb', org: 'R&R Magazine' }}>
-			<svelte:fragment slot="quote">
-				<span>
-					<span class="float-left text-xl scale-x-[-1] pl-xs text-my-black-100">
-						<Icon.Quotes weight="fill" />
-					</span>
-					Raie has stepped forward with a
-				</span>
-
-				<span>beautifully assured solo album...</span>
-
-				<span>Heart-tuggingly moving and edgily</span>
-
-				<span class="self-start">
-					joyous in equal measures. Love it!
-
-					<span class="float-right text-xl pl-xs text-my-black-100">
-						<Icon.Quotes weight="fill" />
-					</span>
-				</span>
-			</svelte:fragment>
-		</ReviewQuote>
-
-		<div>
-			<button
-				class="flex items-center gap-sm text-xl text-my-black-700"
-				on:click={musicPlayer.paused ? updateMusicPlayer.play : updateMusicPlayer.pause}
-				type="button"
-			>
-				<span class="text-my-black-100 opacity-40 text-2xl">
-					{#if musicPlayer.paused}
-						<Icon.Play weight="fill" />
-					{:else}
-						<Icon.Pause weight="fill" />
-					{/if}
-				</span>
-
-				<span class="text-my-black-800 font-light text-base tracking-widest uppercase">
-					{#if musicPlayer.paused}
-						Play music
-					{:else}
-						Pause music
-					{/if}
-				</span>
-			</button>
+		<div class="mt-sm xs:mt-md self-start pl-lg">
+			<PlayMusicButton />
 		</div>
 	</div>
 
-	<div class="md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px]">
-		<Picture
-			imageClass="w-full"
-			meta={images.faceshots[1].src}
-			sizes={'50vw'}
-			loading="eager"
-			alt=""
-		/>
+	<div class="hidden sm:block md:max-w-[400px] lg:max-w-[400px] xl:max-w-[450px] 2xl:max-w-[500px]">
+		<Picture imageClass="" meta={images.faceshots[1].src} sizes={'50vw'} loading="eager" alt="" />
 	</div>
 </div>
 
-<div class="mt-2xl">
-	<Images.BrickBg.HorizontalThree />
-</div>
+<PageLayout.VerticalSpacing />
 
-<div class="mt-xl flex justify-between">
-	<div>
-		<h3 class="tracking-widest text-sm text-my-black-600 uppercase">Latest News</h3>
+<Images.BrickBg.HorizontalThree />
 
-		<h4 class="mt-xs text-2xl tracking-widest text-my-black-600">Galaxy Studios</h4>
+<PageLayout.VerticalSpacing />
 
-		<div class="mt-lg flex gap-xl">
-			<div class="w-[250px] shrink-0">
-				<Picture
-					imageClass="rounded-sm"
-					meta={images.galaxy['full-band'].src}
-					sizes={'250px'}
-					alt=""
-				/>
-			</div>
+<div class="flex flex-col sm:flex-row justify-between gap-lg lg:gap-xl flex-shrink-0">
+	<LatestNews />
+	<div class="sm:hidden mt-md">
+		<Images.BrickBg.HorizontalThree />
+	</div>
 
-			<p class="leading-relaxed text-lg max-w-[500px] tracking-wide">
-				We came - We saw - We recorded a 12 track album in six days!<br /><br /> Deep in the Belgian
-				countryside, surrounded by birdsong and spring breezes - we dug deep into the beautiful
-				Galaxy Studios - Eight musicians and Engineer/Producer The Wesonator!<br /><br /> It was intense
-				but we handled the pressure with a real belief in the album and we were well prepared having
-				spent two intense days in rehearsal back in London.
-			</p>
+	<div class="flex gap-md justify-end sm:justify-normal pt-xs sm:pt-[40px]">
+		<div class="hidden sm:block sm:w-[16px]">
+			<Images.BrickBg.Vertical />
 		</div>
-	</div>
 
-	<div class="w-[16px] h-[400px] pt-[40px]">
-		<Picture
-			imageClass="w-[16px] h-[300px] overflow-hidden opacity-80"
-			meta={images.brick_bg.src}
-			sizes={'400px'}
-			alt=""
-		/>
-	</div>
+		<div class="flex flex-col gap-sm items-end sm:text-lg tracking-wide text-my-black-700">
+			<span class="text-my-black-800">
+				<Icon.ArrowRight weight="thin" />
+			</span>
 
-	<div
-		class="flex flex-col gap-sm justify-center items-end text-lg tracking-wide text-my-black-700"
-	>
-		<span class="text-my-black-800">
-			<Icon.ArrowRight weight="thin" />
-		</span>
+			<a class="" href="/albums"> Albums </a>
 
-		<a class="flex flex-col items-end" href="/albums">
-			<span>Albums</span>
-		</a>
+			<a class="" href="/about">About</a>
 
-		<a class="" href="/about">About</a>
+			<a class="whitespace-nowrap" href="/voice-coaching"> Voice Coaching </a>
 
-		<a class="flex flex-col items-end" href="/voice-coaching">
-			<span>Voice Coaching</span>
-		</a>
+			<a class="" href="/gallery"> Gallery </a>
 
-		<a class="flex flex-col items-end" href="/gallery">
-			<span>Gallery</span>
-		</a>
-
-		<button class="mt-md" on:click={updateLinksPanel.open} type="button">Links</button>
+			<button class="mt-md" on:click={updateLinksPanel.open} type="button">Links</button>
+		</div>
 	</div>
 </div>

@@ -119,7 +119,7 @@
 						<Icon.Play weight="thin" />
 					{/if}
 				</button>
-				<Tooltip text="play song" triggeredById="track-listen" />
+				<Tooltip text="play" triggeredById="track-listen" />
 			{:else}
 				<button class="p-xxs pointer-events-none opacity-0 rounded-full" type="button"
 					><Icon.Play weight="thin" /></button
@@ -137,7 +137,9 @@
 >
 	<div class="prose border-b border-my-black-50 pb-md mt-md">
 		{@html description}
+
 		<h4 class="text-my-black-400 font-thin">Credits</h4>
+
 		{@html credits}
 	</div>
 </div>
