@@ -62,7 +62,7 @@
 		</div>
 
 		<div
-			class={`h-full max-w-full mt-sm self-start pr-lg lg:pr-3xl flex flex-col items-start gap-xs  scrollbar-track-white scrollbar-thumb-my-black-100 ${
+			class={`h-full w-full md:w-auto max-w-full mt-sm self-start pr-lg lg:pr-3xl flex flex-col items-start gap-xs  scrollbar-track-white scrollbar-thumb-my-black-100 ${
 				musicPlayer.visibility === 'open' ? 'overflow-y-auto' : 'overflow-hidden'
 			}`}
 		>

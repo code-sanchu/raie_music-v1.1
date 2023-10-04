@@ -27,24 +27,54 @@
 
 <PageLayout.VerticalSpacing sizing="half" />
 
-<div class="flex justify-between">
+<div class="">
 	<div>
-		<h1 class="text-3xl lg:text-4xl tracking-widest">Voice Coaching</h1>
+		<div class="flex justify-between gap-xl">
+			<div>
+				<h1 class="text-3xl lg:text-4xl tracking-widest">Voice Coaching</h1>
 
-		<h2 class="text-xl tracking-widest uppercase mt-lg">Vocal i.d</h2>
+				<h2 class="text-xl tracking-widest uppercase mt-lg">Vocal i.d</h2>
 
-		<h3 class="text-lg tracking-widest mt-md italic">Individually designed by Rachel Bennett</h3>
-		<p class="mt-sm prose text-my-black tracking-wide">
-			Blending the personal touch with a programme designed specifically for your individual singing
-			voice, Rachel will create a workout to suit your lifestyle.
-		</p>
+				<h3 class="text-lg tracking-widest mt-md italic">
+					Individually designed by Rachel Bennett
+				</h3>
+				<p class="mt-sm prose text-my-black tracking-wide">
+					Blending the personal touch with a programme designed specifically for your individual
+					singing voice, Rachel will create a workout to suit your lifestyle.
+				</p>
 
-		<h3 class="text-lg tracking-widest mt-md italic">Realise and release your true potential</h3>
-		<p class="mt-sm prose text-my-black tracking-wide">
-			Let Rachel help you realise and release the natural beauty of your voice. Learn about breath
-			support and body awareness, phrasing and clarity; hone performance skills, repertoire, and
-			stylistic range.
-		</p>
+				<div class="relative self-start shrink-0 sm:hidden py-sm">
+					<Picture
+						imageClass={`h-[320px] sm:h-[300px] md:h-[420px]`}
+						meta={images.singing_coach[1].src}
+						sizes={`${images.singing_coach[1].naturalDimensions.width}px`}
+						alt=""
+					/>
+				</div>
+
+				<h3 class="text-lg tracking-widest mt-xs sm:mt-md italic">
+					Realise and release your true potential
+				</h3>
+				<p class="mt-sm prose text-my-black tracking-wide">
+					Let Rachel help you realise and release the natural beauty of your voice. Learn about
+					breath support and body awareness, phrasing and clarity; hone performance skills,
+					repertoire, and stylistic range.
+				</p>
+			</div>
+
+			<div class="relative self-start shrink-0 hidden sm:block">
+				<Picture
+					imageClass={`h-[320px] sm:h-[300px] md:h-[420px]`}
+					meta={images.singing_coach[1].src}
+					sizes={`${images.singing_coach[1].naturalDimensions.width}px`}
+					alt=""
+				/>
+
+				<div class="absolute -bottom-sm right-0 w-full translate-y-full">
+					<Images.BrickBg.Horizontal />
+				</div>
+			</div>
+		</div>
 
 		<h3 class="text-lg tracking-widest mt-md italic">Systematic & diagnostic</h3>
 		<p class="mt-sm prose text-my-black tracking-wide">
@@ -98,7 +128,7 @@
 				</p>
 
 				<div class="mt-xs flex items-end gap-sm italic">
-					<div class="flex items-end gap-md">
+					<div class="flex flex-wrap items-end gap-x-md gap-y-xs">
 						<div class="flex flex-wrap gap-xs">
 							<span>E:</span>
 							<a class="block tracking-wide" href="mailto:rachel@raiemusic.com" target="_blank"
@@ -142,7 +172,7 @@
 		</div>
 	</div>
 
-	<div class="relative self-start">
+	<div class="relative self-start shrink-0 hidden">
 		<Picture
 			imageClass={`h-[420px]`}
 			meta={images.singing_coach[1].src}

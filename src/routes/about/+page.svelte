@@ -19,7 +19,7 @@
 
 <PageLayout.VerticalSpacing sizing="1.5" />
 
-<div class="relative prose max-w-full leading-relaxed text-2xl tracking-wide">
+<div class="relative prose max-w-full leading-relaxed text-lg sm:text-2xl tracking-wide">
 	<p>
 		<span class="uppercase tracking-widest text-xs italic mr-lg">About Raie</span>
 		<span class="font-medium">Raie</span> was born in Scotland and came to London when she was 17
@@ -76,7 +76,9 @@
 	<PageLayout.VerticalSpacing sizing="3/4" />
 </div>
 
-<div class="flex gap-lg justify-between tracking-widest">
+<div
+	class="flex flex-col-reverse sm:flex-row gap-lg gap-y-[4.5rem] justify-between tracking-widest"
+>
 	<div class="flex flex-col gap-xl">
 		<div>
 			<h2 class="uppercase italic">contacts</h2>

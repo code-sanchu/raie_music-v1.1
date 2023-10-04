@@ -50,11 +50,11 @@
 		<slot />
 	</PageLayout.HorizontalSpacing>
 
-	<PageLayout.VerticalSpacing sizing="1.5" />
+	<PageLayout.VerticalSpacing sizing="double" />
 </div>
 
-<AudioElement />
+<LinksPanel />
 
 <MusicBottomPanel />
 
-<LinksPanel />
+<AudioElement />

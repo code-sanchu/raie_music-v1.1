@@ -26,15 +26,15 @@
 	};
 </script>
 
-<PageLayout.VerticalSpacing sizing="1.5" />
-
 <div class="flex justify-center">
 	<div class="max-w-[900px]">
+		<PageLayout.VerticalSpacing sizing="1.5" />
+
 		<Images.BrickBg.HorizontalThree />
 
 		<PageLayout.VerticalSpacing sizing="2/3" />
 
-		<div class="flex gap-xl items-end">
+		<div class="flex gap-x-xl flex-col sm:flex-row gap-y-sm sm:items-end">
 			<h1 class="text-3xl lg:text-4xl tracking-widest">This Music Thing</h1>
 
 			<p class="text-my-black-300 tracking-wide italic">February 13, 2020</p>
@@ -82,14 +82,14 @@
 		<div class="mt-xl">
 			<h3 class="italic tracking-widest text-sm">Tracklist</h3>
 
-			<div class="flex flex-col items-stretch gap-xs mt-md">
+			<div class="flex flex-col items-stretch gap-xs mt-md max-w-[92vw] overflow-x-auto">
 				{#each songsArr.this_music_thing as track, i}
 					<Track data={track} noVideos />
 				{/each}
 			</div>
 		</div>
 
-		<div class="flex items-center gap-md mt-2xl">
+		<div class="flex items-center gap-md mt-xl sm:mt-2xl">
 			<p class="text-my-black-400 tracking-wider">Also listen on</p>
 
 			<div class="flex items-center gap-md text-my-black-400">

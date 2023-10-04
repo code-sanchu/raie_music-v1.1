@@ -20,11 +20,11 @@
 	}`}
 	use:onClickOutside={updateLinksPanel.close}
 >
-	<div class="grid grid-cols-2 gap-xl">
+	<div class="grid sm:grid-cols-2 gap-md sm:gap-xl">
 		<div class="pt-xs border-t-2 border-my-black">
 			<h5 class="italic text-sm">Buy songs</h5>
 
-			<div class="flex items-center gap-md mt-md text-my-black-900">
+			<div class="flex items-center gap-md mt-sm sm:mt-md text-my-black-900">
 				<a class="rounded-full p-xxs" href="." id="links_panel-bandcamp">
 					<Icon.Bandcamp weight="fill" />
 				</a>
@@ -37,10 +37,10 @@
 			</div>
 		</div>
 
-		<div class="pt-xs border-t-2 border-my-black">
+		<div class="pt-xs border-t sm:border-t-2 border-my-black">
 			<h5 class="italic text-sm">Listen & Follow</h5>
 
-			<div class="flex items-center gap-md mt-md text-my-black-900">
+			<div class="flex items-center gap-md mt-sm sm:mt-md text-my-black-900">
 				<a class="rounded-full p-xxs" href="." id="links_panel-soundcloud">
 					<Icon.Soundcloud weight="fill" />
 				</a>

@@ -13,7 +13,7 @@
 </script>
 
 <div
-	class={`absolute -z-10 w-screen px-lg pt-sm bottom-0 left-0 transition-all ease-out duration-300 ${
+	class={`absolute -z-10 w-screen  px-sm sm:px-md md:px-lg pt-sm bottom-0 left-0 transition-all ease-out duration-300 ${
 		musicPlayer.visibility === 'closing' || musicPlayer.visibility === 'closed'
 			? 'translate-y-full'
 			: 'translate-y-0'

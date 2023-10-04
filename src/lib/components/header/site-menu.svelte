@@ -20,13 +20,13 @@
 </button>
 
 <div
-	class={`fixed top-0 left-0 w-screen px-lg pb-lg flex justify-center gap-lg bg-white z-[80] transition-transform ease-in-out duration-300 ${
+	class={`fixed top-0 left-0 w-screen max-h-screen overflow-y-auto px-lg pb-lg flex justify-center gap-lg bg-white z-[80] transition-transform ease-in-out duration-300 ${
 		isOpen ? '' : '-translate-y-full'
 	}`}
 	use:onClickOutside={() => (isOpen = false)}
 >
 	<PageLayout.HorizontalSpacing>
-		<div class="grid grid-cols-2 gap-lg w-full mt-md">
+		<div class="grid md:grid-cols-2 gap-lg w-full mt-md">
 			<div class="pt-xs border-t-2 border-my-black">
 				<h2 class="tracking-widest font-medium text-sm italic">Site</h2>
 
@@ -155,6 +155,14 @@
 						<a class="text-sm" href="mailto:rachel@raiemusic.com" target="_blank">07949 876 703</a>
 					</div>
 				</div>
+			</div>
+
+			<div class="mt-lg flex justify-center md:hidden">
+				<button
+					class="border border-my-black p-xxs rounded-md"
+					on:click={() => (isOpen = false)}
+					type="button"><Icon.X /></button
+				>
 			</div>
 		</div>
 	</PageLayout.HorizontalSpacing>

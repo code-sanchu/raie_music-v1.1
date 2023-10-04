@@ -30,20 +30,20 @@
 	$: isCurrentTrack = currentTrackIndex === songListIndex;
 </script>
 
-<div class={`flex items-center justify-between group/track`}>
-	<div class="flex gap-lg items-center">
+<div class={`flex flex-nowrap items-center justify-between gap-2xl group/track`}>
+	<div class="flex gap-lg flex-nowrap items-center flex-grow">
 		<p class="text-my-black-400 text-sm self-end">{number}</p>
 
 		<button
-			class="self-end flex items-end gap-md text-sm group/button"
+			class="self-end flex flex-nowrap items-end gap-md text-sm group/button"
 			on:click={() => (showReadMore = !showReadMore)}
 			type="button"
 		>
-			<span class="tracking-wider italic">{name}</span>
+			<span class="tracking-wider italic whitespace-nowrap">{name}</span>
 			<span
-				class="text-my-black-100 flex gap-xs items-center transition-colors ease-in-out duration-75 ml-sm group-hover/track:text-my-black-400"
+				class="text-my-black-100 flex flex-nowrap gap-xs items-center transition-colors ease-in-out duration-75 ml-sm group-hover/track:text-my-black-400"
 			>
-				<span>read{showReadMore ? ' less' : ' more'}</span>
+				<span class="whitespace-nowrap">read{showReadMore ? ' less' : ' more'}</span>
 				<span
 					class="text-xs text-my-black-50 p-xxxs rounded-full group-hover/button:bg-gray-100 transition-all ease-in-out duration-75"
 				>
@@ -53,13 +53,16 @@
 		</button>
 
 		{#if !musicPlayer.paused && isCurrentTrack}
-			<p class="text-[0.8rem] italic text-my-black-300 tracking-wide">currently playing</p>
+			<p class="sm:hidden text-[0.8rem] italic text-my-black-300 tracking-wide">
+				currently playing
+			</p>
 		{/if}
 	</div>
 
-	<div class="flex gap-xl items-center">
-		<p class="text-my-black-600 mr-sm text-sm self-end">{length}</p>
-		<div class="flex items-center gap-md text-my-black-600">
+	<div class="flex flex-nowrap gap-lg sm:gap-xl items-center">
+		<p class="text-my-black-600 text-sm self-end">{length}</p>
+
+		<div class="flex flex-nowrap items-center gap-md text-my-black-600">
 			{#if !noVideos}
 				{#if youtubeEmbed}
 					<button

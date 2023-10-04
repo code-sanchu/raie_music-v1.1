@@ -61,7 +61,7 @@
 			</span>
 		</div>
 
-		<div class={`p-xs rounded-sm bg-white`}>
+		<div class={`py-xxs px-xs sm:p-xs rounded-sm bg-white`}>
 			<button
 				class={`flex items-center transition-all ease-out duration-700 ${
 					musicPlayer.paused ? 'w-[89.963px]' : 'w-[179.087px]'
@@ -82,7 +82,7 @@
 						}`}
 					>
 						{#if closedOrClosing}
-							open
+							music
 						{:else}
 							close
 						{/if}
@@ -110,6 +110,7 @@
 			</button>
 		</div>
 	</div>
+
 	<MusicPlayer />
 </div>
 
