@@ -8,7 +8,7 @@
 
 	<h4 class="mt-xs text-xl sm:text-2xl tracking-widest text-my-black-600">Galaxy Studios</h4>
 
-	<div class="mt-md lg:mt-lg flex gap-lg sm:flex-col lg:flex-row lg:gap-xl">
+	<div class="mt-md lg:mt-lg flex gap-lg flex-col sm:flex-col lg:flex-row lg:gap-xl">
 		<div class="w-[200px] lg:w-[250px] shrink-0">
 			<Picture
 				imageClass="rounded-sm"

@@ -7,7 +7,7 @@
 </script>
 
 <span
-	class={`text-xs xs:text-lg md:text-xl text-my-black-100 pl-xxs md:pl-xs ${
+	class={`text-xs xs:text-lg  md:text-xl text-my-black-100 pl-xxs md:pl-xs ${
 		type === 'left' ? 'float-left scale-x-[-1]' : 'float-right'
 	}`}
 >

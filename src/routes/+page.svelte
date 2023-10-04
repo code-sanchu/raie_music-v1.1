@@ -35,6 +35,7 @@
 	// □ use local storage to save default user setting.
 	// □ overlay on music player open?
 	// □ for phone number, have it so click on to connect to mobile for mobiles?
+	// □ in music player > tracks: give track numbers uniform width
 
 	// CONFIG
 	// □ everything is prerendering?

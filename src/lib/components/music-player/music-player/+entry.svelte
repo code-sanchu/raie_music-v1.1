@@ -19,8 +19,8 @@
 			: 'translate-y-0'
 	}`}
 >
-	<div class={`flex mb-xl`}>
-		<div class="bg-white w-1/2 pt-lg pb-xs pr-md">
+	<div class={`flex mb-xl flex-col md:flex-row`}>
+		<div class="bg-white md:w-1/2 pt-lg pb-xs md:pr-md">
 			<div class="pt-md border-t-2 border-my-black">
 				<Tracks />
 
@@ -49,15 +49,15 @@
 			</div>
 		</div>
 
-		<div class="flex flex-col w-1/2">
+		<div class="flex flex-col md:w-1/2">
 			<button
 				class="flex-grow h-full cursor-auto"
 				on:click={updateMusicPlayer.close}
 				type="button"
 			/>
 
-			<div class="w-full pt-lg pb-xs pl-md">
-				<div class="pt-md border-t-2 border-my-black-700">
+			<div class="w-full pt-md md:pt-lg pb-xs md:pl-md bg-white">
+				<div class="pt-sm md:pt-md border-t md:border-t-2 border-my-black-700">
 					<div class="flex items-center gap-md justify-end text-my-black-800">
 						<button
 							class="rounded-full p-xxs"
