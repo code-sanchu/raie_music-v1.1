@@ -1,20 +1,7 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
-	import { Icon, PageLayout, Picture, Tooltip } from '$lib/components';
-	import { external_links } from '$lib/data';
-	import { musicPlayerStore, type MusicPlayer, updateMusicPlayer } from '$lib/stores';
-</script>
-
-<script lang="ts">
-	let musicPlayer: MusicPlayer;
-
-	musicPlayerStore.subscribe((playerStore) => {
-		musicPlayer = playerStore;
-	});
-
-	let klfVideoIsOpen = false;
-	let orchestreVideoIsOpen = false;
-	let duduVideoIsOpen = false;
+	import { Icon, PageLayout, Picture, Tooltip, LinkIconSwitch } from '$lib/components';
+	import { raie_links_arrs, contacts } from '$lib/data';
 </script>
 
 <PageLayout.VerticalSpacing sizing="1.5" />
@@ -60,17 +47,15 @@
 </div>
 
 <div
-	class="flex flex-col-reverse sm:flex-row gap-lg gap-y-[4.5rem] justify-between tracking-widest"
->
+	class="flex flex-col-reverse sm:flex-row gap-lg gap-y-[4.5rem] justify-between tracking-widest">
 	<div class="flex flex-col gap-xl">
 		<div>
 			<h2 class="uppercase italic">contacts</h2>
 
 			<div class="mt-xs">
-				<a class="block font-medium" href="mailto:rachel@raiemusic.com" target="_blank"
-					>rachel@raiemusic.com</a
-				>
-				<p class="font-medium text-sm mt-xs">07949 876 703</p>
+				<a class="block font-medium" href={`mailto:${contacts.email}`} target="_blank"
+					>{contacts.email}</a>
+				<p class="font-medium text-sm mt-xs">{contacts.phone}</p>
 			</div>
 		</div>
 
@@ -78,20 +63,16 @@
 			<h2 class="uppercase italic">social media</h2>
 
 			<div class="flex text-xl items-center gap-sm mt-xs">
-				<a class="rounded-full p-xxs" href={external_links.follow.facebook} id="about-facebook">
-					<Icon.Facebook weight="fill" />
-				</a>
-				<Tooltip text="Facebook" triggeredById="about-facebook" />
-
-				<a
-					class="rounded-full p-xxs"
-					href={external_links.follow.instagram}
-					target="_blank"
-					id="about-insta"
-				>
-					<Icon.Instagram weight="fill" />
-				</a>
-				<Tooltip text="Instagram" triggeredById="about-insta" />
+				{#each [...raie_links_arrs.follow] as raieLink}
+					<a
+						class="rounded-full p-xxs"
+						href={raieLink.href}
+						target="_blank"
+						id={`about-${raieLink.id}`}>
+						<LinkIconSwitch type={raieLink.id} weight="fill" />
+					</a>
+					<Tooltip text={raieLink.name} triggeredById={`about-${raieLink.id}`} />
+				{/each}
 			</div>
 		</div>
 
@@ -99,55 +80,16 @@
 			<h2 class="uppercase italic">Listen & Buy</h2>
 
 			<div class="flex text-xl items-center gap-sm mt-xs">
-				<a
-					class="rounded-full p-xxs"
-					href={external_links.listen.soundcloud}
-					target="_blank"
-					id="about-soundcloud"
-				>
-					<Icon.Soundcloud weight="fill" />
-				</a>
-				<Tooltip text="Soundcloud" triggeredById="about-soundcloud" />
-
-				<a
-					class="rounded-full p-xxs"
-					href={external_links.listen.spotify}
-					target="_blank"
-					id="about-spotify"
-				>
-					<Icon.Spotify weight="fill" />
-				</a>
-				<Tooltip text="Spotify" triggeredById="about-spotify" />
-
-				<a
-					class="rounded-full p-xxs"
-					href={external_links.listen.youtube}
-					target="_blank"
-					id="about-youtube"
-				>
-					<Icon.Youtube weight="fill" />
-				</a>
-				<Tooltip text="Youtube" triggeredById="about-youtube" />
-
-				<a
-					class="rounded-full p-xxs"
-					href={external_links.buy.bandcamp}
-					target="_blank"
-					id="about-bandcamp"
-				>
-					<Icon.Bandcamp weight="fill" />
-				</a>
-				<Tooltip text="Bandcamp" triggeredById="about-bandcamp" />
-
-				<a
-					class="rounded-full p-xxs"
-					href={external_links.buy.itunes}
-					target="_blank"
-					id="about-itunes"
-				>
-					<Icon.Itunes weight="fill" />
-				</a>
-				<Tooltip text="Itunes" triggeredById="about-itunes" />
+				{#each [...raie_links_arrs.listen, ...raie_links_arrs.buy] as raieLink}
+					<a
+						class="rounded-full p-xxs"
+						href={raieLink.href}
+						target="_blank"
+						id={`about-${raieLink.id}`}>
+						<LinkIconSwitch type={raieLink.id} weight="fill" />
+					</a>
+					<Tooltip text={raieLink.name} triggeredById={`about-${raieLink.id}`} />
+				{/each}
 			</div>
 		</div>
 	</div>
@@ -159,17 +101,7 @@
 			meta={images.raie_as_child.src}
 			sizes={'200px'}
 			loading="eager"
-			alt=""
-		/>
-
-		<!-- 			<Picture
-				imageClass="w-[16px] h-[250px] "
-				pictureClass="grayscale opacity-80 "
-				meta={images.brick_bg.src}
-				sizes={'200px'}
-				loading="eager"
-				alt=""
-			/> -->
+			alt="" />
 
 		<div class="flex flex-col items-end gap-lg">
 			<Picture
@@ -178,17 +110,7 @@
 				meta={images.galaxy['full-band'].src}
 				sizes={'200px'}
 				loading="eager"
-				alt=""
-			/>
-
-			<!-- 				<Picture
-					imageClass="w-[250px] h-[16px]"
-					pictureClass="grayscale opacity-80 "
-					meta={images.brick_bg.src}
-					sizes={'200px'}
-					loading="eager"
-					alt=""
-				/> -->
+				alt="" />
 
 			<Picture
 				imageClass="w-[250px] rounded-sm"
@@ -196,8 +118,7 @@
 				meta={images.galaxy['raie-lead_vocal-young_love'].src}
 				sizes={'200px'}
 				loading="eager"
-				alt=""
-			/>
+				alt="" />
 		</div>
 	</div>
 </div>

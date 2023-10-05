@@ -31,14 +31,14 @@
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<div
-			class={`w-[calc(33.333%-0.666rem)] cursor-zoom-in `}
+			class={`w-[calc(33.333%-0.666rem)] cursor-zoom-in`}
 			on:click={() => {
 				imageModalCurrentImageIndex = i;
 				imageModalIsOpen = true;
 			}}
 		>
 			<Picture
-				imageClass={`w-full `}
+				imageClass={`w-full grayscale hover:grayscale-0`}
 				meta={image.src}
 				sizes={`${image.naturalDimensions.width}px`}
 				alt=""

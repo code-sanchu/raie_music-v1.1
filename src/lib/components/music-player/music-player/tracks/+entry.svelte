@@ -16,8 +16,6 @@
 		musicPlayer = playerStore;
 	});
 
-	$: currentSong = songsList[musicPlayer.currentTrackIndex];
-
 	let visibleAlbumKey: AlbumKey = songsList[musicPlayerInitData.currentTrackIndex].albumKey;
 
 	$: closedOrClosing =
