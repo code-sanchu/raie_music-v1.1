@@ -66,15 +66,13 @@
 				<a
 					href="https://raie.bandcamp.com/album/this-music-thing"
 					target="_blank"
-					id="album-bandcamp"><Icon.Bandcamp weight="thin" /></a
-				>
+					id="album-bandcamp"><Icon.Bandcamp weight="thin" /></a>
 				<Tooltip text="Bandcamp" triggeredById="album-bandcamp" />
 
 				<a
 					href="https://music.apple.com/us/album/this-music-thing/1506845666"
 					target="_blank"
-					id="album-itunes"><Icon.Itunes weight="thin" /></a
-				>
+					id="album-itunes"><Icon.Itunes weight="thin" /></a>
 				<Tooltip text="Itunes" triggeredById="album-itunes" />
 			</div>
 		</div>
@@ -82,7 +80,7 @@
 		<div class="mt-xl">
 			<h3 class="italic tracking-widest text-sm">Tracklist</h3>
 
-			<div class="flex flex-col items-stretch gap-xs mt-md max-w-[92vw] overflow-x-auto">
+			<div class="flex flex-col items-stretch gap-xs mt-md max-w-[92vw] overflow-x-auto pb-md">
 				{#each songsArr.this_music_thing as track, i}
 					<Track data={track} noVideos />
 				{/each}
@@ -96,22 +94,19 @@
 				<a
 					href="https://open.spotify.com/album/45Wzle2Mwc6DDrxLMdFO8Q?si=sMUDIVPaRcqKzho69_YznA&nd=1"
 					target="_blank"
-					id="album-spotify"><Icon.Spotify weight="light" /></a
-				>
+					id="album-spotify"><Icon.Spotify weight="light" /></a>
 				<Tooltip text="Spotify" triggeredById="album-spotify" />
 
 				<a
 					href="https://soundcloud.com/user966280536/sets/this-music-thing"
 					target="_blank"
-					id="album-soundcloud"><Icon.Soundcloud weight="light" /></a
-				>
+					id="album-soundcloud"><Icon.Soundcloud weight="light" /></a>
 				<Tooltip text="Soundcloud" triggeredById="album-soundcloud" />
 
 				<a
 					href="https://music.youtube.com/playlist?list=OLAK5uy_mVL3pbMKWEx7S2mP3WGnf7-Yg2TS1Hqlg"
 					target="_blank"
-					id="album-youtube"><Icon.Youtube weight="light" /></a
-				>
+					id="album-youtube"><Icon.Youtube weight="light" /></a>
 				<Tooltip text="Youtube Music" triggeredById="album-youtube" />
 			</div>
 		</div>
@@ -121,5 +116,4 @@
 <ImageGalleryModal
 	bind:currentIndex={imageShowIndex}
 	bind:isOpen={imageShowIsOpen}
-	images={albumImages}
-/>
+	images={albumImages} />

@@ -1,6 +1,7 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
 	import { Images, PageLayout, ImageGalleryModal, Icon, Tooltip } from '$lib/components';
+	import { Left, Right } from '$lib/components/+pages/album/track';
 	import { ImageScroller, Track } from '$lib/components/+pages/album';
 	import { songsArr } from '$lib/data';
 
@@ -59,9 +60,14 @@
 		<div class="mt-xl">
 			<h3 class="italic tracking-widest text-sm">Tracklist</h3>
 
-			<div class="flex flex-col items-stretch gap-xs mt-md">
+			<div class="flex flex-col items-stretch gap-sm mt-md">
 				{#each songsArr.earthbound as track, i}
-					<Track data={track} />
+					<div class="grid grid-cols-2 gap-xl">
+						<Left data={track} />
+						<div class="flex justify-end">
+							<Right data={track} />
+						</div>
+					</div>
 				{/each}
 			</div>
 		</div>
@@ -73,8 +79,7 @@
 				<a
 					href="https://soundcloud.com/raiemusic/sets/earthbound-ep"
 					target="_blank"
-					id="album-soundcloud"><Icon.Soundcloud weight="light" /></a
-				>
+					id="album-soundcloud"><Icon.Soundcloud weight="light" /></a>
 				<Tooltip text="Soundcloud" triggeredById="album-soundcloud" />
 			</div>
 		</div>
@@ -84,5 +89,4 @@
 <ImageGalleryModal
 	bind:currentIndex={imageShowIndex}
 	bind:isOpen={imageShowIsOpen}
-	images={albumImages}
-/>
+	images={albumImages} />

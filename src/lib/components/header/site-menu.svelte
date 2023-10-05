@@ -93,7 +93,7 @@
 					<div class="flex gap-md tracking-wider items-end">
 						<p class="uppercase text-[0.6rem] tracking-widest -translate-y-[3px] italic">Email</p>
 
-						<a class="tracking-widest itai" href={`mailto:${contacts.email}`} target="_blank"
+						<a class="tracking-widest" href={`mailto:${contacts.email}`} target="_blank"
 							>{contacts.email}</a>
 					</div>
 

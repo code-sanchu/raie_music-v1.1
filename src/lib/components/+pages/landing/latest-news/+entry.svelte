@@ -14,12 +14,11 @@
 				imageClass="rounded-sm"
 				meta={images.galaxy['full-band'].src}
 				sizes={'250px'}
-				alt=""
-			/>
+				alt="" />
 		</div>
 
 		<p class="leading-relaxed lg:text-lg max-w-[500px] tracking-wide">
-			We came - We saw - We recorded a 12 track album in six days!<br /><br /> Deep in the Belgian
+			We came - We saw - We recorded a 12 track album in six days!<br /><br /> In the Belgian
 			countryside, surrounded by birdsong and spring breezes - we dug deep into the beautiful Galaxy
 			Studios - Eight musicians and Engineer/Producer The Wesonator!<br /><br /> It was intense but we
 			handled the pressure with a real belief in the album and we were well prepared having spent two

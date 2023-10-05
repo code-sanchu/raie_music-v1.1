@@ -37,16 +37,15 @@
 		<button
 			class="self-end flex flex-nowrap items-end gap-md text-sm group/button"
 			on:click={() => (showReadMore = !showReadMore)}
-			type="button"
-		>
+			type="button">
 			<span class="tracking-wider italic whitespace-nowrap">{name}</span>
 			<span
-				class="text-my-black-100 flex flex-nowrap gap-xs items-center transition-colors ease-in-out duration-75 ml-sm group-hover/track:text-my-black-400"
-			>
+				class="text-my-black-100 flex flex-nowrap gap-xs items-center transition-colors ease-in-out duration-75 ml-sm group-hover/track:text-my-black-400">
 				<span class="whitespace-nowrap">read{showReadMore ? ' less' : ' more'}</span>
 				<span
-					class="text-xs text-my-black-50 p-xxxs rounded-full group-hover/button:bg-gray-100 transition-all ease-in-out duration-75"
-				>
+					class={`text-xs text-my-black-50 p-xxxs rounded-full group-hover/button:bg-gray-100 transition-all ease-in-out duration-75 ${
+						showReadMore ? 'rotate-180' : ''
+					}`}>
 					<Icon.CaretDown />
 				</span>
 			</span>
@@ -74,13 +73,11 @@
 							}
 							videoIsOpen = true;
 						}}
-						type="button"><Icon.Video weight="thin" /></button
-					>
+						type="button"><Icon.Video weight="thin" /></button>
 					<Tooltip text="music video" triggeredById="track-video" />
 				{:else}
 					<button class="opacity-0 pointer-events-none p-xxs" type="button"
-						><Icon.Video weight="thin" /></button
-					>
+						><Icon.Video weight="thin" /></button>
 				{/if}
 			{/if}
 
@@ -88,8 +85,7 @@
 				class="p-xxs text-my-black-700 rounded-full"
 				on:click={() => (lyricsIsOpen = !lyricsIsOpen)}
 				id="track-lyrics"
-				type="button"><Icon.Lyrics weight="thin" /></button
-			>
+				type="button"><Icon.Lyrics weight="thin" /></button>
 			<Tooltip text="lyrics" triggeredById="track-lyrics" />
 
 			{#if localSrc}
@@ -114,8 +110,7 @@
 						updateMusicPlayer.track(songListIndex);
 					}}
 					id="track-listen"
-					type="button"
-				>
+					type="button">
 					{#if isCurrentTrack && !musicPlayer.paused}
 						<Icon.Pause weight="thin" />
 					{:else}
@@ -125,8 +120,7 @@
 				<Tooltip text="play" triggeredById="track-listen" />
 			{:else}
 				<button class="p-xxs pointer-events-none opacity-0 rounded-full" type="button"
-					><Icon.Play weight="thin" /></button
-				>
+					><Icon.Play weight="thin" /></button>
 			{/if}
 		</div>
 	</div>
@@ -136,8 +130,7 @@
 	class="translate-x-0 ease-out duration-300 overflow-hidden"
 	bind:this={readMoreElement}
 	style:height={!showReadMore ? '0px' : `${readMoreElement.scrollHeight}px`}
-	style:opacity={!showReadMore ? '0' : '1'}
->
+	style:opacity={!showReadMore ? '0' : '1'}>
 	<div class="prose border-b border-my-black-50 pb-md mt-md">
 		{@html description}
 

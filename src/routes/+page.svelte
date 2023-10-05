@@ -44,8 +44,7 @@
 <PageLayout.VerticalSpacing sizing={'1.5'} />
 
 <div
-	class="flex items-center sm:items-start flex-col sm:flex-row sm:justify-between gap-[4.5rem] lg:gap-2xl"
->
+	class="flex items-center sm:items-start flex-col sm:flex-row sm:justify-between gap-[4.5rem] lg:gap-2xl">
 	<div class="flex flex-col gap-xl">
 		<ReviewQuote
 			reviewer={{ name: 'Martin Cooke', org: 'Bluesmatters Magazine' }}
@@ -54,8 +53,7 @@
 				'A purveyor of pin-me-to-the wall,',
 				'beautiful, life-enhancing soul music.',
 				'A sweet, certain surprise...'
-			]}
-		/>
+			]} />
 
 		<div class="sm:hidden max-w-[500px] flex justify-center">
 			<Picture imageClass="" meta={images.faceshots[1].src} sizes={'50vw'} loading="eager" alt="" />
@@ -68,8 +66,7 @@
 				'beautifully assured solo album...',
 				'Heart-tuggingly moving and edgily',
 				'joyous. Love it!'
-			]}
-		/>
+			]} />
 
 		<div class="mt-sm xs:mt-md self-start pl-lg">
 			<PlayMusicButton />
@@ -103,13 +100,13 @@
 				<Icon.ArrowRight weight="thin" />
 			</span>
 
-			<a class="" href="/albums"> Albums </a>
+			<a class="" href="/albums">Albums</a>
 
 			<a class="" href="/about">About</a>
 
-			<a class="whitespace-nowrap" href="/voice-coaching"> Voice Coaching </a>
+			<a class="whitespace-nowrap" href="/voice-coaching">Voice Coaching</a>
 
-			<a class="" href="/gallery"> Gallery </a>
+			<a class="" href="/gallery">Gallery</a>
 
 			<button class="mt-md" on:click={updateLinksPanel.open} type="button">Links</button>
 		</div>

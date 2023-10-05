@@ -11,39 +11,38 @@
 </script>
 
 <Transition show={isOpen}>
-	<Dialog class="relative z-[70]" on:close={() => (isOpen = false)}>
+	<Dialog on:close={() => (isOpen = false)}>
 		<TransitionChild
+			as="div"
+			class="z-[50] fixed inset-0 bg-white/80"
 			enter="ease-out duration-300"
 			enterFrom="opacity-0"
 			enterTo="opacity-100"
 			leave="ease-in duration-200"
 			leaveFrom="opacity-100"
-			leaveTo="opacity-0"
-		>
-			<DialogOverlay class="fixed inset-0 bg-white/80" />
+			leaveTo="opacity-0">
+			<DialogOverlay class="fixed inset-0 bg-transparent" />
 		</TransitionChild>
 
 		<TransitionChild
 			as="div"
-			class="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  bg-white/90 p-xl sm:p-2xl rounded-xl prose max-h-[70vh] overflow-y-auto"
+			class="fixed z-[70] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  bg-white/90 p-xl sm:p-2xl rounded-xl prose max-h-[70vh] overflow-y-auto max-w-screen overflow-x-auto"
 			enter="ease-out duration-300"
 			enterFrom="opacity-0 scale-95"
 			enterTo="opacity-100 scale-100"
 			leave="ease-in duration-200"
 			leaveFrom="opacity-100 scale-100"
-			leaveTo="opacity-0 scale-95"
-		>
+			leaveTo="opacity-0 scale-95">
 			<div class=" flex justify-center md:hidden mb-xl">
 				<button
-					class="border border-my-black-100 text-my-black-600 p-xxs rounded-md"
+					class="border border-my-black-50 text-my-black-600 p-xxs rounded-md"
 					on:click={() => (isOpen = false)}
-					type="button"><Icon.X weight="thin" /></button
-				>
+					type="button"><Icon.X weight="thin" /></button>
 			</div>
 
 			<h3 class="font-medium italic text-my-black-600 mb-md text-base">{name}</h3>
 
-			<div class="prose whitespace-nowrap xs:text-sm">
+			<div class="prose whitespace-nowrap">
 				{@html lyrics}
 			</div>
 
@@ -51,8 +50,7 @@
 				<button
 					class="border border-my-black-100 text-my-black-600 p-xxs rounded-md"
 					on:click={() => (isOpen = false)}
-					type="button"><Icon.X weight="thin" /></button
-				>
+					type="button"><Icon.X weight="thin" /></button>
 			</div>
 		</TransitionChild>
 	</Dialog>
