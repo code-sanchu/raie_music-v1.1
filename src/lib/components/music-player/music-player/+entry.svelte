@@ -1,7 +1,7 @@
 <script context="module" lang="ts">
 	import { musicPlayerStore, updateMusicPlayer, type MusicPlayer } from '$lib/stores';
 	import { Icon } from '$lib/components';
-	import Tracks from './tracks.svelte';
+	import { Tracks } from './tracks';
 </script>
 
 <script lang="ts">

@@ -2,7 +2,7 @@ import { writable } from 'svelte/store';
 
 import { songsArr } from '$lib/data';
 
-const songsList = [...songsArr.earthbound, ...songsArr.this_music_thing];
+const songsList = [...songsArr.this_music_thing, ...songsArr.earthbound];
 
 type MusicPlayer = {
 	currentTrackIndex: number;

@@ -13,7 +13,7 @@
 
 	let moving = false;
 
-	let right = 100;
+	let left = 100;
 	let top = 100;
 
 	// todo: prevent moving outside of page
@@ -29,7 +29,7 @@
 		leave="ease-in duration-200"
 		leaveFrom="opacity-100 scale-100"
 		leaveTo="opacity-0 scale-95"
-		style="right: {right}px; top: {top}px;"
+		style="left: {left}px; top: {top}px;"
 	>
 		<div
 			class="flex justify-between items-center gap-md bg-white rounded-t-md py-xxs pl-xs pr-xxxs"
@@ -38,6 +38,17 @@
 				<button
 					class={`p-[0.15rem] ${moving ? 'cursor-grabbing' : 'cursor-grab'}`}
 					on:mousedown={() => (moving = true)}
+					on:mousemove={(e) => {
+						if (!moving) {
+							return;
+						}
+
+						left += e.movementX;
+						console.log('left:', left);
+
+						top += e.movementY;
+					}}
+					on:mouseup={() => (moving = false)}
 				>
 					<Icon.Handle />
 				</button>
@@ -65,15 +76,4 @@
 
 <svelte:document class={`${moving ? 'cursor-grabbing' : ''}`} />
 
-<svelte:window
-	class={`${moving ? 'cursor-grabbing' : ''}`}
-	on:mouseup={() => (moving = false)}
-	on:mousemove={(e) => {
-		if (!moving) {
-			return;
-		}
-
-		right += -e.movementX;
-		top += e.movementY;
-	}}
-/>
+<svelte:window class={`${moving ? 'cursor-grabbing' : ''}`} />

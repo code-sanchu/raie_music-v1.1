@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
-	import { Icon, PageLayout, Picture, Tooltip, YoutubeVideoPopup } from '$lib/components';
+	import { Icon, PageLayout, Picture, Tooltip } from '$lib/components';
 	import { external_links } from '$lib/data';
 	import { musicPlayerStore, type MusicPlayer, updateMusicPlayer } from '$lib/stores';
 </script>
@@ -27,41 +27,24 @@
 		in her late twenties; she moved into a music career writing for theatre and dance and also sang
 		background vocals for a number of bands including the
 		<span class="italic text-lg">KLF</span>
-		<button
-			class="inline-block text-base translate-y-[1px] text-my-black-600"
-			on:click={() => {
-				if (!musicPlayer.paused) {
-					updateMusicPlayer.pause();
-				}
-				klfVideoIsOpen = true;
-			}}
-			id="klf-video"
-			type="button"><Icon.Play weight="fill" /></button
-		><Tooltip text="KLF is gonna rock ya..." triggeredById="klf-video" />,
+		<a
+			class="text-base text-my-black-400 inline-block"
+			href="https://www.youtube.com/watch?v=HDsCeC6f0zc&ab_channel=KLF"
+			target="_blank"
+			id="klf-video"><Icon.ExternalLink weight="thin" /></a
+		><Tooltip text="have a listen..." triggeredById="klf-video" />,
 		<span class="italic text-lg uppercase">Orchestre Jazira</span>
-		<button
-			class="inline-block text-base translate-y-[1px] text-my-black-600"
-			on:click={() => {
-				if (!musicPlayer.paused) {
-					updateMusicPlayer.pause();
-				}
-				orchestreVideoIsOpen = true;
-			}}
-			id="orchestre-video"
-			type="button"><Icon.Play weight="fill" /></button
+		<a
+			class="text-base text-my-black-400 inline-block"
+			href="https://www.youtube.com/watch?v=u-g5XLttIyw&ab_channel=TheArkive"
+			id="orchestre-video"><Icon.ExternalLink weight="thin" /></a
 		><Tooltip text="have a listen..." triggeredById="orchestre-video" />
 		and
 		<span class="italic text-lg uppercase">Dudu Pukwana</span>
-		<button
-			class="inline-block text-base translate-y-[1px] text-my-black-600"
-			on:click={() => {
-				if (!musicPlayer.paused) {
-					updateMusicPlayer.pause();
-				}
-				duduVideoIsOpen = true;
-			}}
-			id="dudu-video"
-			type="button"><Icon.Play weight="fill" /></button
+		<a
+			class="inline-block text-base text-my-black-400"
+			href="https://www.youtube.com/watch?v=-5prnBpWN6E&ab_channel=alkis09"
+			id="dudu-video"><Icon.ExternalLink weight="thin" /></a
 		>.<Tooltip text="have a listen..." triggeredById="dudu-video" />
 	</p>
 
@@ -218,16 +201,3 @@
 		</div>
 	</div>
 </div>
-
-<YoutubeVideoPopup
-	src="https://www.youtube.com/embed/HDsCeC6f0zc?si=5EOP3K4rQM5nUS0v"
-	bind:isOpen={klfVideoIsOpen}
-/>
-<YoutubeVideoPopup
-	src="https://www.youtube.com/embed/p-GGcTc8FgM?si=gEx2PpdozaUOFoOh"
-	bind:isOpen={orchestreVideoIsOpen}
-/>
-<YoutubeVideoPopup
-	src="https://www.youtube.com/embed/-5prnBpWN6E?si=GI4GhYTbEu-sWCah"
-	bind:isOpen={duduVideoIsOpen}
-/>
