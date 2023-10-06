@@ -7,16 +7,17 @@
 <script lang="ts">
 	export let data: SongData;
 	export let noVideos = false;
+	export let minWidth: number;
 
 	let readMoreElement: HTMLDivElement;
 	let showReadMore: boolean;
 </script>
 
 <div>
-	<div class="grid grid-cols-2 gap-xl min-w-[510px]">
+	<div class="grid grid-cols-2 gap-xl" style:min-width={`${minWidth}px`}>
 		<Left {data} bind:showReadMore />
 
-		<div class="flex justify-end">
+		<div class="flex justify-end pr-xs">
 			<Right {data} {noVideos} />
 		</div>
 	</div>

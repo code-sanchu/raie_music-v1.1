@@ -1,4 +1,5 @@
 <script lang="ts" context="module">
+	import { fade } from 'svelte/transition';
 	import { images } from '$lib/assets';
 	import { Icon, ImageGalleryModal, Images, PageLayout, Tooltip } from '$lib/components';
 	import { ImageScroller } from '$lib/components/+pages/album';
@@ -12,6 +13,8 @@
 		images.albums.earthbound['album_promo_shot-by_sara_samsavari'],
 		images.albums.earthbound['promo-by_sara_samsavari']
 	];
+
+	const tracksMinWidth = 480;
 </script>
 
 <script lang="ts">
@@ -23,6 +26,21 @@
 		imageShowIndex = index;
 		imageShowIsOpen = true;
 	};
+
+	let tracksContainer: HTMLDivElement;
+
+	$: isTracksOverflow = false;
+
+	$: {
+		if (tracksContainer) {
+			const scrollWidth = tracksContainer.scrollWidth;
+			const offsetWidth = tracksContainer.offsetWidth;
+
+			isTracksOverflow = scrollWidth > offsetWidth;
+		}
+	}
+
+	let userHasScrolledTracks = false;
 </script>
 
 <PageLayout.VerticalSpacing sizing="1.5" />
@@ -61,11 +79,28 @@
 			<h3 class="italic tracking-widest text-sm">Tracklist</h3>
 
 			<div
-				class="flex flex-col gap-sm mt-md !overflow-x-scroll sm:overflow-x-auto max-w-[calc(100vw-2rem)] pb-lg">
+				class="relative flex flex-col gap-sm mt-md overflow-x-auto max-w-[calc(100vw-2rem)] pb-lg"
+				bind:this={tracksContainer}
+				on:scroll={(e) => {
+					const scrollLeft = e.currentTarget.scrollLeft;
+
+					if (scrollLeft > 20) {
+						userHasScrolledTracks = true;
+					}
+				}}>
 				{#each songsArr.earthbound as track}
-					<TrackNew data={track} />
+					<TrackNew data={track} minWidth={tracksMinWidth} />
 				{/each}
 			</div>
+
+			{#if isTracksOverflow && !userHasScrolledTracks}
+				<div class="flex justify-end" transition:fade>
+					<div class="flex items-center gap-xs text-my-black-400 text-sm italic tracking-wide">
+						<p>scroll right for more...</p>
+						<!-- <span class="text-my-black-300"><Icon.ArrowRight weight="thin" /></span> -->
+					</div>
+				</div>
+			{/if}
 		</div>
 
 		<div class="flex items-center gap-md mt-lg sm:mt-xl">

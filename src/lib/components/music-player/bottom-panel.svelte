@@ -32,7 +32,9 @@
 		class={`flex justify-between items-center px-[1.5rem] pb-xs transition-all ease-in-out duration-300 ${
 			closedOrClosing ? '' : 'bg-white'
 		}`}>
-		<div class={`p-xs bg-white rounded-sm group/button invisible xs:visible`}>
+		<div
+			class={`p-xs rounded-sm group/button invisible xs:visible grid place-items-center`}
+			style:background="radial-gradient(white, transparent)">
 			<button
 				class={`relative z-10 text-sm sm:text-base transition-colors ease-in-out duration-150 flex items-end gap-xs ${
 					closedOrClosing ? 'text-my-black-500 group-hover/panel:text-my-black-700' : ''
@@ -59,7 +61,9 @@
 			</button>
 		</div>
 
-		<div class={`py-xxs px-xs sm:p-xs rounded-sm bg-white`}>
+		<div
+			class={`py-xxs px-xs sm:p-xs rounded-sm grid place-items-center`}
+			style:background="radial-gradient(white, transparent)">
 			<button
 				class={`group/button relative flex items-end justify-between transition-all ease-out duration-700 ${
 					musicPlayer.paused ? 'w-[89.963px]' : 'w-[159.087px]'

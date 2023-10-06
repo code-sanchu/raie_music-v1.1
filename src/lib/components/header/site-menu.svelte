@@ -32,7 +32,7 @@
 	class="grid place-items-center text-2xl xs:text-3xl text-my-black-400 relative"
 	on:click={() => (isOpen = true)}
 	type="button">
-	<List />
+	<List weight="light" />
 </button>
 
 <div

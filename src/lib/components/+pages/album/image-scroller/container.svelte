@@ -79,7 +79,7 @@
 
 		for (let i = endIndex; i >= 1; i--) {
 			if (inViewArr[i - 1] && !inViewArr[i]) {
-				imageElements[i].scrollIntoView({ behavior: 'smooth' });
+				imageElements[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
 				break;
 			}
 		}
@@ -98,7 +98,7 @@
 
 		for (let i = 0; i < endIndex; i++) {
 			if (inViewArr[i + 1] && !inViewArr[i]) {
-				imageElements[i].scrollIntoView({ behavior: 'smooth' });
+				imageElements[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
 				break;
 			}
 		}
@@ -111,8 +111,7 @@
 		bind:this={imagesContainer}
 		on:scroll={() => {
 			scrollLeft = imagesContainer.scrollLeft;
-		}}
-	>
+		}}>
 		<div class="absolute left-0 top-0 flex gap-sm h-full">
 			<slot />
 		</div>
@@ -122,16 +121,14 @@
 		<button
 			class="absolute bg-white/80 hover:bg-white/60 rounded-lg left-0 top-1/2 -translate-y-1/2 z-10 text-3xl hover:opacity-100 opacity-70 transition-all ease-in-out duration-75"
 			type="button"
-			on:click={onClickPrevButton}
-		>
+			on:click={onClickPrevButton}>
 			<CaretLeft />
 		</button>
 
 		<button
 			class="absolute right-0 bg-white/60 top-1/2 -translate-y-1/2 rounded-lg z-10 text-3xl hover:bg-white/40 opacity-70 hover:opacity-100 transition-all ease-in-out duration-75"
 			type="button"
-			on:click={onClickNextButton}
-		>
+			on:click={onClickNextButton}>
 			<CaretRight />
 		</button>
 	{/if}
