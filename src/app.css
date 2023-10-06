@@ -57,6 +57,8 @@ html {
 
 * {
 	@apply outline-none active:outline-none focus:outline-none;
+
+	-webkit-tap-highlight-color: transparent;
 }
 
 div {

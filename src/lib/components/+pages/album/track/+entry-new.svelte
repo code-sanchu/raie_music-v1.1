@@ -15,6 +15,7 @@
 <div>
 	<div class="grid grid-cols-2 gap-xl min-w-[510px]">
 		<Left {data} bind:showReadMore />
+
 		<div class="flex justify-end">
 			<Right {data} {noVideos} />
 		</div>

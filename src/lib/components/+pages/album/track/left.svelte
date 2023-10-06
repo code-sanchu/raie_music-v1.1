@@ -45,7 +45,7 @@
 			<!-- >read{showReadMore ? ' less' : ' more'}</span> -->
 
 			<span
-				class={`text-[0.65rem] border-[0.8px] border-transparent p-xxxs rounded-full  transition-all ease-in-out duration-75 ${
+				class={`text-[0.65rem] border-[0.8px] border-transparent p-xxxs rounded-full transition-all ease-in-out duration-300 ${
 					showReadMore
 						? 'rotate-180 text-my-black-200 group-hover/button:border-my-black-50/40 group-hover/button:text-my-black-500'
 						: 'text-my-black-50 group-hover/button:border-my-black-50/40 group-hover/button:text-my-black-400'

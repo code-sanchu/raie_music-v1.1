@@ -60,7 +60,8 @@
 		<div class="mt-xl">
 			<h3 class="italic tracking-widest text-sm">Tracklist</h3>
 
-			<div class="flex flex-col gap-sm mt-md overflow-x-auto max-w-[calc(100vw-2rem)] pb-lg">
+			<div
+				class="flex flex-col gap-sm mt-md !overflow-x-scroll sm:overflow-x-auto max-w-[calc(100vw-2rem)] pb-lg">
 				{#each songsArr.earthbound as track}
 					<TrackNew data={track} />
 				{/each}
