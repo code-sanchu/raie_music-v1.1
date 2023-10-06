@@ -1,11 +1,11 @@
 <script lang="ts" context="module">
-	import type { SongData } from '$lib/data';
+	import type { Song } from '$lib/data';
 	import Left from './left.svelte';
 	import Right from './right.svelte';
 </script>
 
 <script lang="ts">
-	export let data: SongData;
+	export let data: Song;
 	export let noVideos = false;
 	export let minWidth: number;
 

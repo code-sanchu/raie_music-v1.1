@@ -9,6 +9,7 @@
 		| 'soundcloud'
 		| 'spotify'
 		| 'youtube'
+		| 'youtube_music'
 		| 'bandcamp'
 		| 'itunes';
 
@@ -31,7 +32,7 @@
 	<Icon.Spotify {weight} />
 {/if}
 
-{#if type === 'youtube'}
+{#if type === 'youtube' || type === 'youtube_music'}
 	<Icon.Youtube {weight} />
 {/if}
 

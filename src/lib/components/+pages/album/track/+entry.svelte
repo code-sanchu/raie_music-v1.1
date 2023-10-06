@@ -2,12 +2,12 @@
 	import { Icon, Tooltip, YoutubeVideoModal } from '$lib/components';
 	import LyricsModal from './lyrics-modal.svelte';
 
-	import type { SongData } from '$lib/data';
+	import type { Song } from '$lib/data';
 	import { musicPlayerStore, type MusicPlayer, songsList, updateMusicPlayer } from '$lib/stores';
 </script>
 
 <script lang="ts">
-	export let data: SongData;
+	export let data: Song;
 	export let noVideos = false;
 
 	const { name, number, length, lyrics, localSrc, description, credits, youtubeEmbed, id } = data;

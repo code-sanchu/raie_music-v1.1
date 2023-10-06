@@ -163,3 +163,6 @@ export const images = {
 		}
 	}
 };
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type ImageAsset = { src: any; naturalDimensions: { width: number; height: number } };

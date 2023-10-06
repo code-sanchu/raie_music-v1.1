@@ -308,7 +308,7 @@ export const songsMap = {
 	this_music_thing
 };
 
-export type SongData = {
+export type Song = {
 	albumName: string;
 	albumKey: string;
 	id: string;

@@ -1,12 +1,12 @@
 <script lang="ts" context="module">
 	import { Icon } from '$lib/components';
 
-	import type { SongData } from '$lib/data';
+	import type { Song } from '$lib/data';
 	import { musicPlayerStore, songsList, type MusicPlayer } from '$lib/stores';
 </script>
 
 <script lang="ts">
-	export let data: SongData;
+	export let data: Song;
 	export let showReadMore: boolean;
 
 	const { name, number, id } = data;
