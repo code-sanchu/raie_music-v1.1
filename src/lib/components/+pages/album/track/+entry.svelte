@@ -42,6 +42,7 @@
 			<span
 				class="text-my-black-100 flex flex-nowrap gap-xs items-center transition-colors ease-in-out duration-75 ml-sm group-hover/track:text-my-black-400">
 				<span class="whitespace-nowrap">read{showReadMore ? ' less' : ' more'}</span>
+
 				<span
 					class={`text-xs text-my-black-50 p-xxxs rounded-full group-hover/button:bg-gray-100 transition-all ease-in-out duration-75 ${
 						showReadMore ? 'rotate-180' : ''

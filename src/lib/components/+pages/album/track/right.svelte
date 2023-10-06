@@ -28,13 +28,13 @@
 </script>
 
 <div class="flex flex-nowrap gap-lg sm:gap-xl items-center">
-	<p class="text-my-black-600 text-sm self-end">{length}</p>
+	<p class="text-my-black-400 text-sm self-end">{length}</p>
 
 	<div class="flex flex-nowrap items-center gap-md text-my-black-600">
 		{#if !noVideos}
 			{#if youtubeEmbed}
 				<button
-					class="p-xxs text-my-black-700 rounded-full"
+					class="p-xxs text-my-black-500 rounded-full"
 					id="track-video"
 					on:click={() => {
 						if (!musicPlayer.paused) {
@@ -51,7 +51,7 @@
 		{/if}
 
 		<button
-			class="p-xxs text-my-black-700 rounded-full"
+			class="p-xxs text-my-black-500 rounded-full"
 			on:click={() => (lyricsIsOpen = !lyricsIsOpen)}
 			id="track-lyrics"
 			type="button"><Icon.Lyrics weight="thin" /></button>
@@ -59,7 +59,7 @@
 
 		{#if localSrc}
 			<button
-				class="p-xxs text-my-black-700 rounded-full"
+				class="p-xxs text-my-black-500 rounded-full"
 				on:click={() => {
 					if (songListIndex < 0) {
 						return;

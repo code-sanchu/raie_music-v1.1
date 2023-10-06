@@ -1,8 +1,8 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
-	import { Images, PageLayout, ImageGalleryModal, Icon, Tooltip } from '$lib/components';
-	import { Left, Right } from '$lib/components/+pages/album/track';
-	import { ImageScroller, Track } from '$lib/components/+pages/album';
+	import { Icon, ImageGalleryModal, Images, PageLayout, Tooltip } from '$lib/components';
+	import { ImageScroller } from '$lib/components/+pages/album';
+	import { TrackNew } from '$lib/components/+pages/album/track';
 	import { songsArr } from '$lib/data';
 
 	const albumImages = [
@@ -60,19 +60,14 @@
 		<div class="mt-xl">
 			<h3 class="italic tracking-widest text-sm">Tracklist</h3>
 
-			<div class="flex flex-col items-stretch gap-sm mt-md">
-				{#each songsArr.earthbound as track, i}
-					<div class="grid grid-cols-2 gap-xl">
-						<Left data={track} />
-						<div class="flex justify-end">
-							<Right data={track} />
-						</div>
-					</div>
+			<div class="flex flex-col gap-sm mt-md overflow-x-auto max-w-[calc(100vw-2rem)] pb-lg">
+				{#each songsArr.earthbound as track}
+					<TrackNew data={track} />
 				{/each}
 			</div>
 		</div>
 
-		<div class="flex items-center gap-md mt-2xl">
+		<div class="flex items-center gap-md mt-lg sm:mt-xl">
 			<p class="text-my-black-400 tracking-wider">Also listen on</p>
 
 			<div class="flex items-center gap-md text-my-black-400">

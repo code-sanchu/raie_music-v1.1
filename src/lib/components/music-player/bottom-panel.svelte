@@ -27,16 +27,14 @@
 
 <div
 	class="fixed z-20 group/panel bottom-0 left-0 w-screen"
-	use:onClickOutside={updateMusicPlayer.close}
->
+	use:onClickOutside={updateMusicPlayer.close}>
 	<div
 		class={`flex justify-between items-center px-[1.5rem] pb-xs transition-all ease-in-out duration-300 ${
 			closedOrClosing ? '' : 'bg-white'
-		}`}
-	>
-		<div class={`relative p-xs bg-white rounded-sm group/button invisible xs:visible `}>
+		}`}>
+		<div class={`p-xs bg-white rounded-sm group/button invisible xs:visible`}>
 			<button
-				class={`z-10 text-sm sm:text-base transition-colors ease-in-out duration-150  flex items-center gap-xs tracking-[0.075em] ${
+				class={`relative z-10 text-sm sm:text-base transition-colors ease-in-out duration-150 flex items-end gap-xs ${
 					closedOrClosing ? 'text-my-black-500 group-hover/panel:text-my-black-700' : ''
 				}`}
 				on:click={() => {
@@ -46,25 +44,25 @@
 					updateMusicPlayer.open();
 					updateMusicPlayer.openTracks();
 				}}
-				type="button"
-			>
-				<span>Now playing</span>
-				<span class="italic">{currentSong.name}</span>
-			</button>
+				type="button">
+				<span class="uppercase text-[0.6rem] translate-y-[1.2px] text-my-black-200 tracking-wider"
+					>Playing</span>
 
-			<span
-				class={`text-[0.6rem]  uppercase italic absolute text-my-black-200 bottom-xxxs -right-0 translate-x-full opacity-0 ease-in-out duration-150 bg-white/80 p-xs delay-300 pointer-events-none ${
-					musicPlayer.visibility === 'closed' ? 'group-hover/button:opacity-100' : ''
-				}`}
-			>
-				Change track
-			</span>
+				<span class="italic text-[0.925rem] tracking-wide">{currentSong.name}</span>
+
+				<span
+					class={`text-[0.6rem] uppercase tracking-widest italic absolute text-my-black-300 -bottom-[3px] -right-sm translate-x-full opacity-0 ease-in-out duration-150 bg-white/80 px-xs py-xxxs delay-300 pointer-events-none ${
+						musicPlayer.visibility === 'closed' ? 'group-hover/button:opacity-100' : ''
+					}`}>
+					Change track
+				</span>
+			</button>
 		</div>
 
 		<div class={`py-xxs px-xs sm:p-xs rounded-sm bg-white`}>
 			<button
-				class={`flex items-center transition-all ease-out duration-700 ${
-					musicPlayer.paused ? 'w-[89.963px]' : 'w-[179.087px]'
+				class={`group/button relative flex items-end justify-between transition-all ease-out duration-700 ${
+					musicPlayer.paused ? 'w-[89.963px]' : 'w-[159.087px]'
 				}`}
 				on:click={() => {
 					if (closedOrClosing) {
@@ -73,14 +71,12 @@
 						updateMusicPlayer.close();
 					}
 				}}
-				type="button"
-			>
+				type="button">
 				<span class="flex items-center gap-xs">
 					<span
 						class={`text-my-black-500 whitespace-nowrap text-[0.7rem] italic transition-all ease-out duration-300 uppercase tracking-wider ${
 							closedOrClosing ? 'text-my-black-500 group-hover/panel:text-my-black-700' : ''
-						}`}
-					>
+						}`}>
 						{#if closedOrClosing}
 							music
 						{:else}
@@ -94,19 +90,24 @@
 							closedOrClosing
 								? 'text-my-black-400 group-hover/panel:text-my-black-600'
 								: 'rotate-180'
-						}`}
-					>
+						}`}>
 						<Control />
 					</span>
 				</span>
 
 				<div
-					class={`ml-xl h-[24px] transition-opacity ease-out duration-700 ${
+					class={`h-[24px] transition-opacity ease-out duration-700 ${
 						musicPlayer.paused ? 'opacity-0' : ''
-					}`}
-				>
+					}`}>
 					<AnimatedBars />
 				</div>
+
+				<span
+					class={`text-[0.6rem] uppercase tracking-widest italic absolute text-my-black-300 -bottom-[1px] -left-sm -translate-x-full opacity-0 ease-in-out duration-150 bg-white/80 px-xs py-xxxs delay-300 pointer-events-none ${
+						musicPlayer.visibility === 'closed' ? 'group-hover/button:opacity-100' : ''
+					}`}>
+					Open
+				</span>
 			</button>
 		</div>
 	</div>
