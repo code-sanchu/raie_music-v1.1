@@ -23,15 +23,18 @@
 	$: currentSong = songsList[musicPlayer.currentTrackIndex];
 
 	$: closedOrClosing = musicPlayer.visibility === 'closed' || musicPlayer.visibility === 'closing';
+
+	let bottomPannelHeight: number = 44;
 </script>
 
 <div
-	class="fixed z-20 group/panel bottom-0 left-0 w-screen"
-	use:onClickOutside={updateMusicPlayer.close}>
+	class={`fixed z-20 group/panel bottom-0 left-0 w-screen transition-all ease-in-out duration-300 ${
+		closedOrClosing ? '' : 'bg-white'
+	}`}
+	use:onClickOutside={updateMusicPlayer.close}
+	bind:clientHeight={bottomPannelHeight}>
 	<div
-		class={`flex justify-between items-center px-[1.5rem] pb-xs transition-all ease-in-out duration-300 ${
-			closedOrClosing ? '' : 'bg-white'
-		}`}>
+		class={`flex justify-between items-center px-[1.5rem] pb-xs transition-all ease-in-out duration-300`}>
 		<div
 			class={`p-xs rounded-sm group/button invisible xs:visible grid place-items-center`}
 			style:background="radial-gradient(white, transparent)">
@@ -116,7 +119,7 @@
 		</div>
 	</div>
 
-	<MusicPlayer />
+	<MusicPlayer pxFromBottom={bottomPannelHeight} />
 </div>
 
 <!-- <div

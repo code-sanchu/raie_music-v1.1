@@ -5,6 +5,8 @@
 </script>
 
 <script lang="ts">
+	export let pxFromBottom: number;
+
 	let musicPlayer: MusicPlayer;
 
 	musicPlayerStore.subscribe((playerStore) => {
@@ -13,13 +15,11 @@
 </script>
 
 <div
-	class={`absolute -z-10 w-screen  px-sm sm:px-md md:px-lg pt-sm bottom-0 left-0 transition-all ease-out duration-300 ${
-		musicPlayer.visibility === 'closing' || musicPlayer.visibility === 'closed'
-			? 'translate-y-full'
-			: 'translate-y-0'
-	}`}
->
-	<div class={`flex mb-xl flex-col md:flex-row`}>
+	class={`absolute -z-10 w-screen px-sm sm:px-md md:px-lg pt-sm bottom-0 left-0 transition-all ease-out duration-300 $`}
+	style:transform={musicPlayer.visibility === 'closing' || musicPlayer.visibility === 'closed'
+		? 'translateY(100%)'
+		: `translateY(-${pxFromBottom}px)`}>
+	<div class={`flex flex-col md:flex-row`}>
 		<div class="bg-white md:w-1/2 pt-lg pb-xs md:pr-md">
 			<div class="pt-md border-t-2 border-my-black">
 				<Tracks />
@@ -31,8 +31,7 @@
 						musicPlayer.tracksVisibility === 'closing'
 							? updateMusicPlayer.openTracks
 							: updateMusicPlayer.closeTracks}
-						type="button"
-					>
+						type="button">
 						<span class="text-my-black-600 py-xxs">
 							<Icon.Tracks weight="fill" />
 						</span>
@@ -53,16 +52,14 @@
 			<button
 				class="flex-grow h-full cursor-auto"
 				on:click={updateMusicPlayer.close}
-				type="button"
-			/>
+				type="button" />
 
 			<div class="w-full pt-md md:pt-lg pb-xs md:pl-md bg-white">
 				<div class="pt-sm md:pt-md border-t md:border-t-2 border-my-black-700">
 					<div class="flex items-center gap-md justify-end text-my-black-800">
 						<button
 							class="rounded-full p-xxs"
-							on:click={musicPlayer.paused ? updateMusicPlayer.play : updateMusicPlayer.pause}
-						>
+							on:click={musicPlayer.paused ? updateMusicPlayer.play : updateMusicPlayer.pause}>
 							{#if musicPlayer.paused}
 								<Icon.Play weight="fill" />
 							{:else}
