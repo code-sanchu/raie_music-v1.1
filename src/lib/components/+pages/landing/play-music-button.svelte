@@ -12,10 +12,9 @@
 </script>
 
 <button
-	class="flex items-center gap-sm text-my-black-700"
+	class="flex items-center gap-sm"
 	on:click={musicPlayer.paused ? updateMusicPlayer.play : updateMusicPlayer.pause}
-	type="button"
->
+	type="button">
 	<span class="text-my-black-100 opacity-40 text-xl md:text-2xl">
 		{#if musicPlayer.paused}
 			<Icon.Play weight="fill" />

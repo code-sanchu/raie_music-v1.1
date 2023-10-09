@@ -7,10 +7,9 @@
 	export let text: string[];
 </script>
 
-<div class="w-[420px] sm:w-[322px] md:w-[355px] lg:w-[420px] grid place-items-center">
+<div class="w-[420px] sm:w-[322px] sm/md:w-[333px] md:w-[355px] md/lg:w-[388px] lg:w-[420px]">
 	<p
-		class="text-lg xs:text-xl sm:text-lg md:text-xl lg:text-2xl tracking-wider flex flex-col gap-xxs md:gap-xs items-start"
-	>
+		class="text-lg xs:text-xl sm:text-lg sm/md:text-1.5lg md:text-xl md/lg:text-1.5xl lg:text-2xl tracking-wider flex flex-col gap-xxs md:gap-xs items-start">
 		{#each text as line, i}
 			<span class="relative">
 				{#if i === 0}
@@ -27,8 +26,7 @@
 	</p>
 
 	<p
-		class="pl-md md:pl-lg text-sm lg:text-base mt-sm md:mt-md tracking-wide text-my-black-700 font-light"
-	>
+		class="pl-md md:pl-lg text-sm lg:text-base mt-sm md:mt-md tracking-wide text-my-black-700 font-light">
 		{reviewer.name} — {reviewer.org}
 	</p>
 </div>

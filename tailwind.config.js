@@ -39,7 +39,9 @@ export default {
 			screens: {
 				xs: '410px',
 				sm: '640px',
+				'sm/md': '704px',
 				md: '768px',
+				'md/lg': '896px',
 				lg: '1024px',
 				xl: '1280px',
 				'2xl': '1536px',
@@ -54,9 +56,15 @@ export default {
 				md: '1.5rem',
 				lg: '2rem',
 				xl: '3rem',
+				'1.5xl': '4.5rem',
 				'2xl': '6rem',
 				'2.5xl': '7.5rem',
 				'3xl': '9rem'
+			},
+
+			fontSize: {
+				'1.5lg': '1.1875rem',
+				'1.5xl': '1.375rem'
 			}
 		}
 	},

@@ -1,8 +1,12 @@
 <script context="module" lang="ts">
 	import { images } from '$lib/assets';
-	import { Icon, Images, PageLayout, Picture } from '$lib/components';
-	import { LatestNews, PlayMusicButton, ReviewQuote } from '$lib/components/+pages/landing';
-	import { updateLinksPanel } from '$lib/stores';
+	import { Images, PageLayout, Picture } from '$lib/components';
+	import {
+		LatestNews,
+		PageLinks,
+		PlayMusicButton,
+		ReviewQuote
+	} from '$lib/components/+pages/landing';
 
 	// GO LIVE CHECKLIST
 	// □ go through music player functionality. play pause skip, etc. on all pages.
@@ -12,6 +16,10 @@
 
 	// TO DO
 	// □ loading song feedback..
+	// □ disable tooltips on touchscreens
+	// □ draw attention to music controls
+	// □ go over gallery + voice coaching responsiveness
+	// □ page transitions on enter and exit
 	// □ bind actual width values for bottom right panel
 	// □ highlight album being played in music player tracks
 
@@ -44,31 +52,35 @@
 <PageLayout.VerticalSpacing sizing={'1.5'} />
 
 <div
-	class="flex items-center sm:items-start flex-col sm:flex-row sm:justify-between gap-[4.5rem] lg:gap-2xl">
-	<div class="flex flex-col gap-xl">
-		<ReviewQuote
-			reviewer={{ name: 'Martin Cooke', org: 'Bluesmatters Magazine' }}
-			text={[
-				"One of life's trip-me-up revelations.",
-				'A purveyor of pin-me-to-the wall,',
-				'beautiful, life-enhancing soul music.',
-				'A sweet, certain surprise...'
-			]} />
+	class="flex items-center justify-center sm:items-start sm:justify-between gap-xl md:gap-[4.5rem] lg:gap-2xl">
+	<div class="flex flex-col gap-1.5xl sm:gap-xl">
+		<div class="pl-md sm:pl-0">
+			<ReviewQuote
+				reviewer={{ name: 'Martin Cooke', org: 'Bluesmatters Magazine' }}
+				text={[
+					"One of life's trip-me-up revelations.",
+					'A purveyor of pin-me-to-the wall,',
+					'beautiful, life-enhancing soul music.',
+					'A sweet, certain surprise...'
+				]} />
+		</div>
 
 		<div class="sm:hidden max-w-[500px] flex justify-center">
 			<Picture imageClass="" meta={images.faceshots[1].src} sizes={'50vw'} loading="eager" alt="" />
 		</div>
 
-		<ReviewQuote
-			reviewer={{ name: 'Martin Webb', org: 'R&R Magazine' }}
-			text={[
-				'Raie has stepped forward with a',
-				'beautifully assured solo album...',
-				'Heart-tuggingly moving and edgily',
-				'joyous. Love it!'
-			]} />
+		<div class="translate-x-[5.5rem] sm:translate-x-0">
+			<ReviewQuote
+				reviewer={{ name: 'Martin Webb', org: 'R&R Magazine' }}
+				text={[
+					'Raie has stepped forward with a',
+					'beautifully assured solo album...',
+					'Heart-tuggingly moving and edgily',
+					'joyous. Love it!'
+				]} />
+		</div>
 
-		<div class="mt-sm xs:mt-md self-start pl-lg">
+		<div class="mt-sm xs:mt-md -translate-x-[7.5px]">
 			<PlayMusicButton />
 		</div>
 	</div>
@@ -80,35 +92,21 @@
 
 <PageLayout.VerticalSpacing />
 
-<Images.BrickBg.HorizontalThree />
+<div class="px-lg h-[12px] overflow-hidden">
+	<Images.BrickBg.HorizontalThree />
+</div>
 
-<PageLayout.VerticalSpacing />
+<!-- <PageLayout.VerticalSpacing />
 
 <div class="flex flex-col sm:flex-row justify-between gap-lg lg:gap-xl flex-shrink-0">
 	<LatestNews />
+
 	<div class="sm:hidden mt-md">
 		<Images.BrickBg.HorizontalThree />
 	</div>
 
-	<div class="flex gap-md justify-end sm:justify-normal pt-xs sm:pt-[40px]">
-		<div class="hidden sm:block sm:w-[16px]">
-			<Images.BrickBg.Vertical />
-		</div>
-
-		<div class="flex flex-col gap-sm items-end sm:text-lg tracking-wide text-my-black-700">
-			<span class="text-my-black-800">
-				<Icon.ArrowRight weight="thin" />
-			</span>
-
-			<a class="" href="/albums">Albums</a>
-
-			<a class="" href="/about">About</a>
-
-			<a class="whitespace-nowrap" href="/voice-coaching">Voice Coaching</a>
-
-			<a class="" href="/gallery">Gallery</a>
-
-			<button class="mt-md" on:click={updateLinksPanel.open} type="button">Links</button>
-		</div>
+	<div class="pt-xs sm:pt-[40px]">
+		<PageLinks />
 	</div>
 </div>
+ -->
