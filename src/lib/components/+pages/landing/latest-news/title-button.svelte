@@ -6,7 +6,7 @@
 
 <button
 	class={`tracking-widest whitespace-nowrap transition-all ease-linear duration-200 ${
-		isActive ? 'text-xl sm:text-2xl text-my-black-600' : 'text-my-black-100'
+		isActive ? 'text-lg sm:text-xl text-my-black-600' : 'text-my-black-100 sm:text-lg'
 	}`}
 	on:click={onClick}
 	type="button">{text}</button>

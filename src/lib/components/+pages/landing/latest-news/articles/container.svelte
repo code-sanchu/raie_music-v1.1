@@ -4,8 +4,8 @@
 </script>
 
 <div
-	class="prose text-my-black leading-relaxed lg:text-lg max-w-[540px] sm:max-w-[500px] pb-sm tracking-wide max-h-[250px] overflow-y-auto pr-md"
-	in:fade={{ easing: sineInOut, duration: 400 }}
+	class="text-my-black leading-relaxed lg:text-lg tracking-wide sm:scrollbar-track-white sm:scrollbar-thumb-[#f4f4f4] max-h-[330px] overflow-y-auto pr-lg transition-all"
+	in:fade={{ easing: sineInOut, duration: 400, delay: 100 }}
 	out:fade={{ easing: sineInOut, duration: 100 }}>
 	<slot />
 </div>

@@ -3,8 +3,8 @@
 	import { updateLinksPanel } from '$lib/stores';
 </script>
 
-<div class="flex gap-md justify-end sm:justify-normal">
-	<div class="hidden sm:block sm:w-[16px]">
+<div class="flex gap-xl justify-end sm:justify-normal">
+	<div class="hidden sm:block sm:w-[12px]">
 		<Images.BrickBg.Vertical />
 	</div>
 
