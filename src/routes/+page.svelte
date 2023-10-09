@@ -56,7 +56,7 @@
 <div
 	class="flex items-center justify-center sm:items-start sm:justify-between gap-xl md:gap-[4.5rem] lg:gap-2xl">
 	<div class="flex flex-col gap-1.5xl sm:gap-xl">
-		<div class="pl-md sm:pl-0">
+		<div class="">
 			<ReviewQuote
 				reviewer={{ name: 'Martin Cooke', org: 'Bluesmatters Magazine' }}
 				text={[
@@ -71,7 +71,8 @@
 			<Picture imageClass="" meta={images.faceshots[1].src} sizes={'50vw'} loading="eager" alt="" />
 		</div>
 
-		<div class="translate-x-[5.5rem] sm:translate-x-0">
+		<div
+			class="translate-x-sm xxs:translate-x-md xs:translate-x-xl xs/sm:translate-x-[4rem] sm:translate-x-0">
 			<ReviewQuote
 				reviewer={{ name: 'Martin Webb', org: 'R&R Magazine' }}
 				text={[
