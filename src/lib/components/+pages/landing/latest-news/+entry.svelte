@@ -12,22 +12,23 @@
 <div>
 	<h3 class="tracking-widest text-xs sm:text-sm text-my-black-600 uppercase">Latest News</h3>
 
-	<div class="flex items-center flex-wrap gap-x-sm gap-y-xs mt-xs max-w-full overflow-hidden">
+	<div
+		class="flex items-center flex-wrap gap-x-xxs xs:gap-x-xs sm:gap-x-sm gap-y-xs mt-xs max-w-full overflow-hidden">
 		<TitleButton
 			text="Galaxy Studios"
 			onClick={() => (currentNews = 'galaxy')}
 			isActive={currentNews === 'galaxy'} />
 
-		<span class="text-my-black-100 text-sm">
+		<span class="text-my-black-50 text-sm">
 			<Icon.DotOutline weight="thin" />
 		</span>
 
 		<TitleButton
-			text="The Last Few Months"
+			text="Recent Gigs"
 			onClick={() => (currentNews = 'last few months')}
 			isActive={currentNews === 'last few months'} />
 
-		<span class="text-my-black-100 text-sm">
+		<span class="text-my-black-50 text-sm">
 			<Icon.DotOutline weight="thin" />
 		</span>
 

@@ -15,7 +15,7 @@
 	class="flex items-center gap-sm"
 	on:click={musicPlayer.paused ? updateMusicPlayer.play : updateMusicPlayer.pause}
 	type="button">
-	<span class="text-my-black-100 opacity-40 text-xl md:text-2xl">
+	<span class="text-my-black-50 opacity-30 text-xl md:text-2xl">
 		{#if musicPlayer.paused}
 			<Icon.Play weight="fill" />
 		{:else}
@@ -23,7 +23,8 @@
 		{/if}
 	</span>
 
-	<span class="text-my-black-800 font-light text-[0.925rem] md:text-base tracking-widest uppercase">
+	<span
+		class="text-my-black-600 italic sm:text-my-black-700 font-light text-[0.8rem] md:text-base tracking-widest sm:uppercase">
 		{#if musicPlayer.paused}
 			Play music
 		{:else}

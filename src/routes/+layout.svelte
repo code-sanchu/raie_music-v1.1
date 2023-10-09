@@ -29,7 +29,9 @@
 	class="fixed left-0 top-0 z-50 w-full transition-transform duration-300 ease-in-out"
 	style:transform={hideHeader && headerHeight ? `translateY(-${headerHeight}px)` : ''}
 	bind:clientHeight={headerHeight}>
-	<Header />
+	<PageLayout.HorizontalSpacing>
+		<Header />
+	</PageLayout.HorizontalSpacing>
 </div>
 
 <div

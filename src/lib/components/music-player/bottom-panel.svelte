@@ -65,7 +65,7 @@
 		</div>
 
 		<div
-			class={`py-xxs px-xs sm:p-xs rounded-sm grid place-items-center`}
+			class={`py-xxs px-xs sm:p-xs rounded-xl grid place-items-center`}
 			style:background="radial-gradient(white, transparent)">
 			<button
 				class={`group/button relative flex items-end justify-between transition-all ease-out duration-700 ${
@@ -81,7 +81,7 @@
 				type="button">
 				<span class="flex items-center gap-xs">
 					<span
-						class={`text-my-black-500 whitespace-nowrap text-[0.7rem] italic transition-all ease-out duration-300 uppercase tracking-wider ${
+						class={`text-my-black-500 bg-white/50 rounded-xl whitespace-nowrap text-[0.7rem] italic transition-all ease-out duration-300 uppercase tracking-wider ${
 							closedOrClosing ? 'text-my-black-500 group-hover/panel:text-my-black-700' : ''
 						}`}>
 						{#if closedOrClosing}
@@ -121,11 +121,3 @@
 
 	<MusicPlayer pxFromBottom={bottomPannelHeight} />
 </div>
-
-<!-- <div
-	class={`fixed inset-0 -z-[20] bg-my-black/40 transition-opacity ease-in-out duration-300 ${
-		musicPlayer.visibility === 'opening' || musicPlayer.visibility === 'open'
-			? ''
-			: 'pointer-events-none opacity-0'
-	}`}
-/> -->

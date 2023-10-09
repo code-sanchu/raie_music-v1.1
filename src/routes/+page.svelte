@@ -83,7 +83,8 @@
 				]} />
 		</div>
 
-		<div class="mt-sm xs:mt-md -translate-x-[5.5px] sm:-translate-x-[7.5px]">
+		<div
+			class="flex justify-center sm:justify-start xs:mt-md -translate-x-[5.5px] sm:-translate-x-[7.5px] -mt-xs">
 			<PlayMusicButton />
 		</div>
 	</div>
@@ -95,14 +96,14 @@
 
 <PageLayout.VerticalSpacing />
 
-<div class="px-lg h-[12px] sm:h-[16px] md:h-auto sm:px-0 overflow-hidden">
+<div class="px-xs xs:px-lg h-[12px] sm:h-[16px] md:h-auto sm:px-0 overflow-hidden">
 	<Images.BrickBg.HorizontalThree />
 </div>
 
 <PageLayout.VerticalSpacing />
 
 <div class="flex flex-col sm:flex-row justify-between sm:gap-lg lg:gap-xl flex-shrink-0">
-	<div class="pl-md pr-sm sm:px-0">
+	<div class="pl-sm xs:pl-md pr-sm sm:px-0">
 		<LatestNews />
 	</div>
 
@@ -110,7 +111,7 @@
 		<PageLayout.VerticalSpacing />
 	</div>
 
-	<div class="px-lg h-[12px] sm:hidden md:h-auto sm:px-0 overflow-hidden">
+	<div class="px-xs xs:px-lg h-[12px] sm:hidden overflow-hidden">
 		<Images.BrickBg.HorizontalThree />
 	</div>
 
