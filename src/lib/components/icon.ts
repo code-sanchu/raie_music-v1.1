@@ -30,7 +30,8 @@ import {
 	CaretLeft,
 	CaretRight,
 	ArrowUpRight,
-	Playlist
+	Playlist,
+	DotOutline
 } from 'phosphor-svelte';
 import type { ComponentProps } from 'svelte';
 
@@ -68,5 +69,6 @@ export const Icon = {
 	Quotes,
 	CaretUpSmall: Control,
 	ExternalLink: ArrowUpRight,
-	Tracks: Playlist
+	Tracks: Playlist,
+	DotOutline
 };

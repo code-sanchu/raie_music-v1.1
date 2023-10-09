@@ -51,7 +51,7 @@
 
 <PageLayout.VerticalSpacing sizing={'1.5'} />
 
-<div
+<!-- <div
 	class="flex items-center justify-center sm:items-start sm:justify-between gap-xl md:gap-[4.5rem] lg:gap-2xl">
 	<div class="flex flex-col gap-1.5xl sm:gap-xl">
 		<div class="pl-md sm:pl-0">
@@ -80,7 +80,7 @@
 				]} />
 		</div>
 
-		<div class="mt-sm xs:mt-md -translate-x-[7.5px]">
+		<div class="mt-sm xs:mt-md -translate-x-[5.5px] sm:-translate-x-[7.5px]">
 			<PlayMusicButton />
 		</div>
 	</div>
@@ -88,25 +88,32 @@
 	<div class="hidden sm:block md:max-w-[400px] lg:max-w-[400px] xl:max-w-[450px] 2xl:max-w-[500px]">
 		<Picture imageClass="" meta={images.faceshots[1].src} sizes={'50vw'} loading="eager" alt="" />
 	</div>
+</div> -->
+
+<PageLayout.VerticalSpacing />
+
+<div class="px-lg h-[12px] sm:h-[16px] md:h-auto sm:px-0 overflow-hidden">
+	<Images.BrickBg.HorizontalThree />
 </div>
 
 <PageLayout.VerticalSpacing />
 
-<div class="px-lg h-[12px] overflow-hidden">
-	<Images.BrickBg.HorizontalThree />
-</div>
+<div class="flex flex-col sm:flex-row justify-between sm:gap-lg lg:gap-xl flex-shrink-0">
+	<div class="pl-md pr-sm sm:px-0">
+		<LatestNews />
+	</div>
 
-<!-- <PageLayout.VerticalSpacing />
+	<PageLayout.VerticalSpacing />
 
-<div class="flex flex-col sm:flex-row justify-between gap-lg lg:gap-xl flex-shrink-0">
-	<LatestNews />
-
-	<div class="sm:hidden mt-md">
+	<div class="px-lg h-[12px] sm:h-[16px] md:h-auto sm:px-0 overflow-hidden">
 		<Images.BrickBg.HorizontalThree />
 	</div>
 
-	<div class="pt-xs sm:pt-[40px]">
+	<div class="sm:hidden">
+		<PageLayout.VerticalSpacing sizing="half" />
+	</div>
+
+	<div class="sm:pt-[40px] px-md sm:px-0">
 		<PageLinks />
 	</div>
 </div>
- -->
