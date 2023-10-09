@@ -14,7 +14,7 @@
 				alt="" />
 		</div>
 
-		<div class="prose text-my-black leading-relaxed mt-sm sm:mt-0">
+		<div class="prose prose-a:no-underline text-my-black leading-relaxed mt-sm sm:mt-0">
 			<p>
 				Raie successfully raised £4000 to help pay for the trip to Belgium’s <a
 					href="https://galaxystudios.com/"

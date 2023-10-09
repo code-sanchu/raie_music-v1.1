@@ -44,24 +44,33 @@
 
 		<div class="prose mt-xl text-my-black tracking-wider">
 			<p class="">
-				We release Raie’s ‘Red Brick Angels’ album on November 8th ’23 at The Camden Club, 72 Chalk
-				Farm Road, London NW1 8AN.
+				Red Brick Angel is Raie’s third album project with the award winning Wesonator!
 			</p>
 			<p class="">
-				It’s a beautiful 12 song album played live in an intensive six days with Wes Maebe at the
-				helm in Europe’s renowned Galaxy Studios.
+				Recorded in six days at Galaxy studios in Belgium, the ‘live and real’ feel of the tracks is
+				distinctive and inimitably superb! Raie is joined again by Christiano Tortoioli on electric
+				bass, Chris Bell on drums as well as Jon Klein and Elliot Randal who both feature on guitar
+				solo outros for the tracks Free Now and Convoy of Tears respectively.
 			</p>
 			<p>
-				Much of the early work was rehearsed at Raie’s place in SE London and then we deepened
-				rehearsals at Music Rooms London in SE14 – the staff and service there and the equipment are
-				all just ‘the bom’ and we were made to feel so welcome! Any musician will tell you that the
-				vibe at a rehearsal studio really can impact the success of the time spent there!
+				The wonderful Jon Dunn headed up the musical direction for strings and most of the song
+				arrangements as well as playing acoustic and electric guitars … Louis Bell brought a
+				beautiful array of electric guitar effects and superb slide then we were blessed with Tim
+				Gardner who came off tour with Ry X to join us for piano, keys and second violin; Altea
+				Narici’s cello is exquisite as is Maria Timus’ searingly beautiful violin work.
 			</p>
 			<p>
-				We tested out some of the songs pre and post Galaxy Studios … see our news page for the mini
-				London tour and also all about how we pulled this incredible Red Brick Angels achievement
-				together … the story behind the title track Red Brick Angel and news on the upcoming single
-				Young Love!!!
+				In London at GMS (where This Music Thing was recorded) we put down the background vocals
+				with Nazarene and Nathan Devonte who have worked with Raie for over a decade now; they were
+				joined by Emily MacLean, Ethan Fleming and Damien James.
+			</p>
+			<p>
+				Jill Cumberbatch added Mandolin to Crystal Girl and Mojo Wellington put some keys on This
+				Thing Called Love.
+			</p>
+			<p>
+				Thanks to Sean Woodlock as studio assistant/manager for the day, our visit to GMS was
+				seamless and totally fruitful!
 			</p>
 		</div>
 	</div>
@@ -70,5 +79,4 @@
 <ImageGalleryModal
 	bind:currentIndex={imageShowIndex}
 	bind:isOpen={imageShowIsOpen}
-	images={albumImages}
-/>
+	images={albumImages} />

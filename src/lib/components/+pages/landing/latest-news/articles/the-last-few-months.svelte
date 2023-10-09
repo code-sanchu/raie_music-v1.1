@@ -3,7 +3,7 @@
 </script>
 
 <Container>
-	<div class="prose text-my-black leading-relaxed">
+	<div class="prose prose-a:no-underline text-my-black leading-relaxed">
 		<p>
 			Raie sold out Hope and Anchor – home of The Stranglers and Sinead O’Connor and we were
 			delighted to have Sinead’s guitarist Jon Klein play lead for us on the night; check out a

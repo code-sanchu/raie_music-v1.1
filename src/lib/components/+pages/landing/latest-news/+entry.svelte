@@ -37,7 +37,7 @@
 			isActive={currentNews === 'album launch'} />
 	</div>
 
-	<div class="mt-md lg:mt-lg h-[330px] sm:h-auto">
+	<div class="mt-md lg:mt-lg h-[330px]">
 		{#if currentNews === 'galaxy'}
 			<GalaxyStudios />
 		{:else if currentNews === 'last few months'}

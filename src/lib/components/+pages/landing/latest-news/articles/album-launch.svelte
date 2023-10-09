@@ -3,7 +3,7 @@
 </script>
 
 <Container
-	><div class="prose text-my-black leading-relaxed">
+	><div class="prose prose-a:no-underline text-my-black leading-relaxed">
 		<p>
 			We launch at <a href="https://thecamdenclub.co.uk/" target="_blank">The Camden Club </a>
 			on November 8th – doors at 18.15 – on stage at 19.15 – an early one so we can encourage industry
