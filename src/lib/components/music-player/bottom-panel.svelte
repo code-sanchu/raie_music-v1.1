@@ -65,7 +65,7 @@
 		</div>
 
 		<div
-			class={`py-xxs px-xs sm:p-xs rounded-md grid place-items-center`}
+			class="py-xxs px-xs sm:p-xs rounded-xl grid place-items-center"
 			style:background="radial-gradient(white, transparent)">
 			<button
 				class={`group/button relative flex items-end justify-between transition-all ease-out duration-700 ${
@@ -83,8 +83,7 @@
 					<span
 						class={`text-my-black-500 rounded-md whitespace-nowrap text-[0.7rem] italic transition-all ease-out duration-300 uppercase tracking-wider ${
 							closedOrClosing ? 'text-my-black-500 group-hover/panel:text-my-black-700' : ''
-						}`}
-						style:background="radial-gradient(white, transparent)">
+						}`}>
 						{#if closedOrClosing}
 							music
 						{:else}
