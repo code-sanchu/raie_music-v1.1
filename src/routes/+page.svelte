@@ -17,6 +17,7 @@
 	// TO DO
 	// □ loading song feedback..
 	// □ disable tooltips on touchscreens
+	// □ blink in of scroll bar when mving between latest news articles
 	// □ draw attention to music controls
 	// □ height transition for landing latest news
 	// □ go over gallery + voice coaching responsiveness

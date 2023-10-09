@@ -65,9 +65,9 @@
 			</ImageScroller.Container>
 		</div>
 
-		<div class="prose mt-xl text-my-black tracking-wider">
+		<div class="prose prose-a:no-underline mt-xl text-my-black tracking-wider max-w-[650px]">
 			{#each album.description as line}
-				<p>{line}</p>
+				<p>{@html line}</p>
 			{/each}
 		</div>
 

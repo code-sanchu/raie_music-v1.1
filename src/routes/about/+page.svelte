@@ -1,15 +1,29 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
-	import { Icon, PageLayout, Picture, Tooltip, LinkIconSwitch } from '$lib/components';
-	import { raie_links_arrs, contacts } from '$lib/data';
+	import { LinkIconSwitch, PageLayout, Picture, Tooltip } from '$lib/components';
+	import { contacts, raie_links_arrs } from '$lib/data';
 </script>
 
 <PageLayout.VerticalSpacing sizing="1.5" />
 
-<div class="relative prose max-w-full leading-relaxed text-lg sm:text-2xl tracking-wide">
+<div
+	class="relative prose prose-a:no-underline max-w-[880px] leading-relaxed text-lg sm:text-xl tracking-wide">
 	<p>
 		<span class="uppercase tracking-widest text-xs italic mr-lg">About Raie</span>
-		<span class="font-medium">Raie</span> was born in Scotland and came to London when she was 17
+		Raie has performed in a host of top venues in London including Hammersmith Apollo, The Forge Camden,
+		Camden Round House, The Albany Theatre in Deptford as well as more recently at Purcell Room on London’s
+		Southbank.<br /><br />
+		Raie’s debut as a singer songwriter was a tour of London’s South East with guitarist Dan Cochrane;
+		she went on to collaborate with a line up of superb musicians including Peter J Pinto and Manley
+		O’Connor … to continue on the London Country Blues circuit.<br /><br />
+		Music has been in Raie’s life from a young age when she sang for audiences in various contests in
+		Scotland – winning accolades as a young ‘protest singer’.<br /><br />
+		Raie came to her singer songwriter career later in life but has enjoyed a successful career working
+		with upcoming artistes in her role as vocal tutor and coach … you can read about her work in the
+		<a href="/voice-coaching">coaching section</a>.<br /><br />
+		Raie prefers to keep details of her family life relatively private as she is now a grandmother to
+		two beautiful children … and the proud mother of a wonderful son.
+		<!-- 		<span class="font-medium">Raie</span> was born in Scotland and came to London when she was 17
 		years of age. Raie focused on being a young Mum to her son Ben before training at drama school
 		in her late twenties; she moved into a music career writing for theatre and dance and also sang
 		background vocals for a number of bands including the
@@ -32,16 +46,16 @@
 			class="inline-block text-base text-my-black-400"
 			href="https://www.youtube.com/watch?v=-5prnBpWN6E&ab_channel=alkis09"
 			id="dudu-video"><Icon.ExternalLink weight="thin" /></a
-		>.<Tooltip text="have a listen..." triggeredById="dudu-video" />
+		>.<Tooltip text="have a listen..." triggeredById="dudu-video" /> -->
 	</p>
 
-	<p>
+	<!-- <p>
 		<span class=" uppercase tracking-widest text-xs italic mr-lg">Albums</span>
 		Raie's first album - This Music Thing - was 'birthed' at GMS studio in SE London with Wes at the
 		helm - engineering and producing the full album; Wes brought in a host of wonderful players including
 		Jon Klein (Specimen, Siouxie and the Banshees, Sinead O'Connor) and Chris Bell (Specimen, Thompson
 		Twins, Hugh Cornwell).
-	</p>
+	</p> -->
 
 	<PageLayout.VerticalSpacing sizing="3/4" />
 </div>

@@ -13,12 +13,11 @@ const earthbound = {
 	},
 	releaseDate: 'October 2016',
 	description: [
-		'Earthbound is an Indie/Folk Ballad about human determination and resourcefulness.',
-		'Raie journeyed to Goa in India with friends and Earthbound was inspired by seeing the incredible resourcefulness of the people.  '
+		'Earthbound is Raie’s first EP recording to radio standard – produced by Wes Maebe, and is the forerunner for two further albums created by the Raie/Wes team and produced by The Wesonator! The album features world renowned guitarist Elliot Randal on two tracks – Waxn’ Wane and Goliath.',
+		"It was her solo singer-songwriter debut and launched at South East London’s Albany Empire … check out the trailer <a href='https://www.youtube.com/watch?v=x0tdI3czVmE' target='_blank'>here</a>. … the full Albany film is also on Raie’s YouTube channel … tune in to hear a really wonderful 13 piece band of top players! (flute, Cuban tres guitar, trumpet, percussion, accordion, keys and rhythm section plus 4 phenomenal backing singers with all the moves!"
 	],
 	summary: [
-		'Earthbound is an Indie/Folk Ballad about human determination and resourcefulness.',
-		'Raie journeyed to Goa in India with friends and Earthbound was inspired by seeing the incredible resourcefulness of the people.'
+		'Earthbound is Raie’s first EP recording to radio standard – produced by Wes Maebe, and is the forerunner for two further albums created by the Raie/Wes team and produced by The Wesonator! The album features world renowned guitarist Elliot Randal on two tracks – Waxn’ Wane and Goliath.'
 	]
 } as const;
 
@@ -58,12 +57,14 @@ const this_music_thing = {
 	},
 	releaseDate: 'February 13, 2020',
 	description: [
-		'This Music Thing is a beautiful album of storytelling in the Country Americana music style.',
-		"It's produced by Wes Maebe and features artists such as Chris Bell (Specimen, Gene Loves Jezebel, Spear Of Destiny, Thompson Twins, Hugh Cornwell) and Jon Klein (Specimen, The Banshees, Sinead O'Connor)... and a host of other wonderful musicians."
+		'Raie worked with <a href="https://www.highvioletprandplugging.com/" target="_blank" >High Violet PR</a> to promote the re-launch of This Music Thing.',
+		'The album has attracted some notoriety across the globe – featuring on various radio stations.',
+		"Raie was interviewed with Wes on US <a href='' target='_blank'>radio</a>.",
+		'You can listen to the full album on Spotify and check out a couple of ‘moments from different performances on Raie’s YouTube channel … from a sofa performance to The Camden Round House and Cotton’s Restaurant …'
 	],
 	summary: [
-		'This Music Thing is a beautiful album of storytelling in the Country Americana music style.',
-		"It's produced by Wes Maebe and features artists such as Chris Bell (Specimen, Gene Loves Jezebel, Spear Of Destiny, Thompson Twins, Hugh Cornwell) and Jon Klein (Specimen, The Banshees, Sinead O'Connor)... and a host of other wonderful musicians."
+		'Raie worked with <a href="https://www.highvioletprandplugging.com/" target="_blank" >High Violet PR</a> to promote the re-launch of This Music Thing.',
+		'The album has attracted some notoriety across the globe – featuring on various radio stations.'
 	]
 } as const;
 

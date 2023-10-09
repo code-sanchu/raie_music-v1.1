@@ -34,7 +34,7 @@
 	use:onClickOutside={updateMusicPlayer.close}
 	bind:clientHeight={bottomPannelHeight}>
 	<div
-		class={`flex justify-between items-center px-[1.5rem] pb-xs transition-all ease-in-out duration-300`}>
+		class="flex justify-between items-center pb-xs transition-all ease-in-out duration-300 px-3 md:px-7 lg:px-11">
 		<div
 			class={`p-xs rounded-sm group/button invisible xs:visible grid place-items-center`}
 			style:background="radial-gradient(white, transparent)">
@@ -65,7 +65,7 @@
 		</div>
 
 		<div
-			class={`py-xxs px-xs sm:p-xs rounded-xl grid place-items-center`}
+			class={`py-xxs px-xs sm:p-xs rounded-md grid place-items-center`}
 			style:background="radial-gradient(white, transparent)">
 			<button
 				class={`group/button relative flex items-end justify-between transition-all ease-out duration-700 ${
@@ -81,9 +81,10 @@
 				type="button">
 				<span class="flex items-center gap-xs">
 					<span
-						class={`text-my-black-500 bg-white/50 rounded-xl whitespace-nowrap text-[0.7rem] italic transition-all ease-out duration-300 uppercase tracking-wider ${
+						class={`text-my-black-500 rounded-md whitespace-nowrap text-[0.7rem] italic transition-all ease-out duration-300 uppercase tracking-wider ${
 							closedOrClosing ? 'text-my-black-500 group-hover/panel:text-my-black-700' : ''
-						}`}>
+						}`}
+						style:background="radial-gradient(white, transparent)">
 						{#if closedOrClosing}
 							music
 						{:else}

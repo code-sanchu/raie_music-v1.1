@@ -28,7 +28,7 @@
 
 		<PageLayout.VerticalSpacing sizing="2/3" />
 
-		<div class="flex gap-xl items-end">
+		<div class="flex gap-x-xl flex-col sm:flex-row gap-y-sm sm:items-end">
 			<h1 class="text-3xl lg:text-4xl tracking-widest">Red Brick Angels</h1>
 
 			<p class="text-my-black-300 tracking-wide italic">November 8 2023</p>
@@ -42,7 +42,7 @@
 			</ImageScroller.Container>
 		</div>
 
-		<div class="prose mt-xl text-my-black tracking-wider">
+		<div class="prose prose-a:no-underline mt-xl text-my-black tracking-wider max-w-[650px]">
 			<p class="">
 				Red Brick Angel is Raie’s third album project with the award winning Wesonator!
 			</p>
