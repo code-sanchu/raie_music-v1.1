@@ -1,5 +1,5 @@
 import AlbumLaunch from './album-launch.svelte';
 import GalaxyStudios from './galaxy-studios.svelte';
-import TheLastFewMonths from './the-last-few-months.svelte';
+import RecentGigs from './recent-gigs.svelte';
 
-export { AlbumLaunch, GalaxyStudios, TheLastFewMonths };
+export { AlbumLaunch, GalaxyStudios, RecentGigs };

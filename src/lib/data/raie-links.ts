@@ -16,7 +16,11 @@ const listen = {
 		id: 'spotify',
 		name: 'Spotify'
 	},
-	youtube: { href: 'https://www.youtube.com/rachelbennettraie', id: 'youtube', name: 'Youtube' }
+	youtube: {
+		href: 'https://www.youtube.com/@RachelBennettraiemusic/videos',
+		id: 'youtube',
+		name: 'Youtube'
+	}
 } as const;
 
 const buy = {

@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
 	import { Icon } from '$lib/components';
 
-	import { AlbumLaunch, GalaxyStudios, TheLastFewMonths } from './articles';
+	import { AlbumLaunch, GalaxyStudios, RecentGigs } from './articles';
 	import TitleButton from './title-button.svelte';
 </script>
 
@@ -42,7 +42,7 @@
 		{#if currentNews === 'galaxy'}
 			<GalaxyStudios />
 		{:else if currentNews === 'last few months'}
-			<TheLastFewMonths />
+			<RecentGigs />
 		{:else}
 			<AlbumLaunch />
 		{/if}
