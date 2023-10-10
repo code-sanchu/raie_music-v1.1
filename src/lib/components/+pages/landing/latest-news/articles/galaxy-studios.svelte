@@ -7,7 +7,7 @@
 
 <Container>
 	<div class="flex flex-row gap-sm sm:gap-lg lg:gap-xl">
-		<div class="w-[220px] lg:w-[250px] shrink-0 max-w-full">
+		<div class="w-[200px] lg:w-[250px] shrink-0 hidden md:block">
 			<Picture
 				imageClass="rounded-sm"
 				meta={images.galaxy['full-band'].src}
@@ -16,6 +16,13 @@
 		</div>
 
 		<TextContainer numColumns={1} extraClasses="mt-sm sm:mt-0">
+			<div class="w-[200px] lg:w-[250px] mb-sm md:hidden">
+				<Picture
+					imageClass="rounded-sm"
+					meta={images.galaxy['full-band'].src}
+					sizes={'250px'}
+					alt="" />
+			</div>
 			Raie successfully raised £4000 to help pay for the trip to Belgium’s
 			<a href="https://galaxystudios.com/" target="_blank">Galaxy Studios</a>.
 			<br /><br />

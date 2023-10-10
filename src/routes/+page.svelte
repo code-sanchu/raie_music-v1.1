@@ -54,7 +54,7 @@
 
 <PageLayout.VerticalSpacing sizing={'1.5'} />
 
-<!-- <div
+<div
 	class="flex items-center justify-center sm:items-start sm:justify-between gap-xl md:gap-[4.5rem] lg:gap-2xl">
 	<div class="flex flex-col gap-1.5xl sm:gap-xl">
 		<div class="">
@@ -93,7 +93,7 @@
 	<div class="hidden sm:block md:max-w-[400px] lg:max-w-[400px] xl:max-w-[450px] 2xl:max-w-[500px]">
 		<Picture imageClass="" meta={images.faceshots[1].src} sizes={'50vw'} loading="eager" alt="" />
 	</div>
-</div> -->
+</div>
 
 <PageLayout.VerticalSpacing />
 
