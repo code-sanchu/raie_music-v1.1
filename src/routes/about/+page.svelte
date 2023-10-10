@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
-	import { Icon, LinkIconSwitch, PageLayout, Picture, Tooltip } from '$lib/components';
+	import { Icon, LinkIconSwitch, PageLayout, Picture, Tooltip, Caption } from '$lib/components';
 	import { Link } from '$lib/components/prose';
 	import { contacts, raie_links_arrs } from '$lib/data';
 </script>
@@ -39,10 +39,7 @@
 				sizes={'200px'}
 				loading="eager"
 				alt="" />
-			<p
-				class="text-sm mt-xxs tracking-wide text-my-black-700 underline decoration-my-black-400 underline-offset-1">
-				Raie as a young performer – singing Joan Baez’ Ghetto
-			</p>
+			<Caption>Raie as a young performer – singing Joan Baez’ Ghetto</Caption>
 		</div>
 
 		<div>
@@ -110,10 +107,7 @@
 				sizes={'200px'}
 				loading="eager"
 				alt="" />
-			<p
-				class="text-sm mt-xxs tracking-wide text-my-black-700 underline decoration-my-black-400 underline-offset-1">
-				Raie as a young performer – singing Joan Baez’ Ghetto
-			</p>
+			<Caption>Raie as a young performer – singing Joan Baez’ Ghetto</Caption>
 		</div>
 
 		<div class="flex flex-col xs/sm:items-end gap-lg">
@@ -125,10 +119,7 @@
 					sizes={'200px'}
 					loading="eager"
 					alt="" />
-				<p
-					class="text-sm mt-xxs tracking-wide text-my-black-700 underline decoration-my-black-400 underline-offset-1">
-					The band ends six beautiful days at Galaxy
-				</p>
+				<Caption>The band ends six beautiful days at Galaxy</Caption>
 			</div>
 
 			<div class="w-[250px] max-w-full self-end">
@@ -139,10 +130,7 @@
 					sizes={'200px'}
 					loading="eager"
 					alt="" />
-				<p
-					class="text-sm mt-xxs tracking-wide text-my-black-700 underline decoration-my-black-400 underline-offset-1">
-					Raie at the mic in Galaxy Studios
-				</p>
+				<Caption>Raie at the mic in Galaxy Studios</Caption>
 			</div>
 		</div>
 	</div>

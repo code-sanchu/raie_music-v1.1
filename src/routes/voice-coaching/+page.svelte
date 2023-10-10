@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
-	import { ImageGalleryModal, Images, PageLayout, Picture } from '$lib/components';
+	import { Caption, ImageGalleryModal, Images, PageLayout, Picture } from '$lib/components';
 	import { voiceCoaching } from '$lib/data';
 	import PersonalTestimony from './personal-testimony.svelte';
 
@@ -49,11 +49,19 @@
 						meta={images.singing_coach[1].src}
 						sizes={`${images.singing_coach[1].naturalDimensions.width}px`}
 						alt="" />
+
+					<Caption extraClasses="decoration-my-black-200"
+						>Portrait of Raie by <a
+							class="italic"
+							href="https://www.sarashamsavari.com/"
+							target="_blank">Sara Samshavari</a
+						></Caption>
 				</div>
 
 				<h3 class="text-lg tracking-widest mt-xs sm:mt-md italic">
 					Realise and release your true potential
 				</h3>
+
 				<p class="mt-sm prose text-my-black tracking-wide">
 					Let Rachel help you realise and release the natural beauty of your voice. Learn about
 					breath support and body awareness, phrasing and clarity; hone performance skills,
@@ -67,6 +75,15 @@
 					meta={images.singing_coach[1].src}
 					sizes={`${images.singing_coach[1].naturalDimensions.width}px`}
 					alt="" />
+
+				<div class="mt-sm">
+					<Caption extraClasses="decoration-my-black-200"
+						>Portrait of Raie by <a
+							class="italic"
+							href="https://www.sarashamsavari.com/"
+							target="_blank">Sara Samshavari</a
+						></Caption>
+				</div>
 
 				<div class="absolute -bottom-sm right-0 w-full translate-y-full">
 					<Images.BrickBg.Horizontal />

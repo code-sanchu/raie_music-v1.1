@@ -9,6 +9,17 @@ import jill_cumberbatch_mandolin from '$assets/images/jill_cumberbatch-mandolin-
 import md_and_producer_chillin_GMS from '$assets/images/md_and_producer_chillin-GMS.jpg?w=640&format=avif;webp;jpg&as=picture&imagetools';
 import naz_and_nate_warmin_up from '$assets/images/naz_and_nate_warmin_up.jpg?w=640&format=avif;webp;jpg&as=picture&imagetools';
 
+import altea_grey from '$assets/images/altea-grey.jpg?w=1200&format=avif;webp;jpg&as=picture&imagetools';
+import christiano_in_full_flow from '$assets/images/christiano-in_full_flow.jpg?w=1536&format=avif;webp;jpg&as=picture&imagetools';
+import farwell_drinks_day_6 from '$assets/images/farwell_drinks_day_6.jpg?w=587&format=avif;webp;jpg&as=picture&imagetools';
+import jon_conducts_strings from '$assets/images/jon_conducts_strings.jpg?w=1200&format=avif;webp;jpg&as=picture&imagetools';
+import jon_steinway from '$assets/images/jon-steinway.jpg?w=526&format=avif;webp;jpg&as=picture&imagetools';
+import louis_chords from '$assets/images/louis-chords.jpg?w=640&format=avif;webp;jpg&as=picture&imagetools';
+import maria_crystal_girl from '$assets/images/maria-crystal_girl.jpg?w=1600&format=avif;webp;jpg&as=picture&imagetools';
+import string_section_warm_up from '$assets/images/string_section-warm_up.jpg?w=548&format=avif;webp;jpg&as=picture&imagetools';
+import wes_and_sean_setting_up from '$assets/images/wes_and_sean-setting_up.jpg?w=480&format=avif;webp;jpg&as=picture&imagetools';
+import wes_mics_up_strings from '$assets/images/wes-mics_up_strings.jpg?w=1600&format=avif;webp;jpg&as=picture&imagetools';
+
 import galaxy_chris from '$assets/images/galaxy/chris_bell.jpg?w=500&format=avif;webp;jpg&as=picture&imagetools';
 import galaxy_christiano from '$assets/images/galaxy/christiano-bass.jpg?w=500&format=avif;webp;jpg&as=picture&imagetools';
 import galaxy_full_band from '$assets/images/galaxy/full-band.jpg?w=250&format=avif;webp;jpg&as=picture&imagetools';
@@ -59,6 +70,46 @@ export const images = {
 	naz_and_nate_warmin_up: {
 		src: naz_and_nate_warmin_up,
 		naturalDimensions: { width: 640, height: 480 }
+	},
+	altea_grey: {
+		src: altea_grey,
+		naturalDimensions: { width: 1200, height: 1600 }
+	},
+	christiano_in_full_flow: {
+		src: christiano_in_full_flow,
+		naturalDimensions: { width: 1536, height: 2048 }
+	},
+	farwell_drinks_day_6: {
+		src: farwell_drinks_day_6,
+		naturalDimensions: { width: 587, height: 311 }
+	},
+	jon_conducts_strings: {
+		src: jon_conducts_strings,
+		naturalDimensions: { width: 1200, height: 1600 }
+	},
+	jon_steinway: {
+		src: jon_steinway,
+		naturalDimensions: { width: 526, height: 480 }
+	},
+	louis_chords: {
+		src: louis_chords,
+		naturalDimensions: { width: 640, height: 480 }
+	},
+	maria_crystal_girl: {
+		src: maria_crystal_girl,
+		naturalDimensions: { width: 1600, height: 1200 }
+	},
+	string_section_warm_up: {
+		src: string_section_warm_up,
+		naturalDimensions: { width: 548, height: 480 }
+	},
+	wes_and_sean_setting_up: {
+		src: wes_and_sean_setting_up,
+		naturalDimensions: { width: 480, height: 640 }
+	},
+	wes_mics_up_strings: {
+		src: wes_mics_up_strings,
+		naturalDimensions: { width: 1600, height: 1200 }
 	},
 
 	faceshots: {

@@ -2,7 +2,7 @@
 	import BrickBgHorizontal from './brick-bg-horizontal.svelte';
 </script>
 
-<div class="flex">
+<div class="grid grid-cols-3">
 	<BrickBgHorizontal />
 	<BrickBgHorizontal />
 	<BrickBgHorizontal />

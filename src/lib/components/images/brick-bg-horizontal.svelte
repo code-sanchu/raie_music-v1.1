@@ -4,8 +4,7 @@
 </script>
 
 <Picture
-	imageClass="w-[400px] h-[20px] overflow-hidden opacity-80"
+	imageClass="w-full h-[20px] overflow-hidden opacity-80"
 	meta={images.brick_bg.src}
 	sizes={'400px'}
-	alt=""
-/>
+	alt="" />

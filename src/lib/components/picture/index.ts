@@ -1,4 +1,5 @@
 import Picture from './+entry.svelte';
+import Caption from './caption.svelte';
 
-export { Picture };
+export { Picture, Caption };
 export * from './types';

@@ -40,7 +40,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@egjs/svelte-grid": "^1.14.2",
 		"@rgossiaux/svelte-headlessui": "^2.0.0",
-		"immer": "^10.0.2"
+		"immer": "^10.0.2",
+		"svelte-grid": "^5.1.2"
 	}
 }
