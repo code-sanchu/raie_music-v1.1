@@ -2,15 +2,12 @@
 	import { fade } from 'svelte/transition';
 
 	import type { ImageAsset } from '$lib/assets';
-	import { ImageGalleryModal, Images, PageLayout, Tooltip } from '$lib/components';
-	import { ImageScroller } from '$lib/components/+pages/album';
-	import { TrackNew as Track } from '$lib/components/+pages/album/track';
 	import { albums_meta, songsArr, type AlbumKey } from '$lib/data';
+	import { ImageGalleryModal, Images, PageLayout, Tooltip, LinkIconSwitch } from '$lib/components';
+	import { ImageScroller, Track } from '$lib/components/+pages/album';
 </script>
 
 <script lang="ts">
-	import LinkIconSwitch from '$lib/components/link-icon-switch.svelte';
-
 	export let images: ImageAsset[];
 	export let tracksMinWidth: number;
 	export let albumKey: AlbumKey;
@@ -65,7 +62,8 @@
 			</ImageScroller.Container>
 		</div>
 
-		<div class="prose prose-a:no-underline mt-xl text-my-black tracking-wider max-w-[650px]">
+		<div
+			class="prose prose-a:decoration-my-black-50/30 prose-a:font-thin prose-a:text-inherit prose-a:underline-offset-2 mt-xl text-my-black tracking-wider max-w-[650px]">
 			{#each album.description as line}
 				<p>{@html line}</p>
 			{/each}

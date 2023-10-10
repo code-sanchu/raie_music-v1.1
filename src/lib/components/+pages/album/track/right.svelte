@@ -14,6 +14,7 @@
 
 	let videoIsOpen = false;
 	let lyricsIsOpen = false;
+	let musicWasPlayingBeforeVideo = false;
 
 	let musicPlayer: MusicPlayer;
 
@@ -38,8 +39,11 @@
 					id="track-video"
 					on:click={() => {
 						if (!musicPlayer.paused) {
+							musicWasPlayingBeforeVideo = true;
+
 							updateMusicPlayer.pause();
 						}
+
 						videoIsOpen = true;
 					}}
 					type="button"><Icon.Video weight="thin" /></button>
@@ -95,7 +99,16 @@
 </div>
 
 {#if youtubeEmbed}
-	<YoutubeVideoModal src={youtubeEmbed} bind:isOpen={videoIsOpen} />
+	<YoutubeVideoModal
+		src={youtubeEmbed}
+		bind:isOpen={videoIsOpen}
+		onClose={() => {
+			if (musicWasPlayingBeforeVideo) {
+				setTimeout(() => {
+					updateMusicPlayer.play();
+				}, 900);
+			}
+		}} />
 {/if}
 
 <LyricsModal {name} {lyrics} bind:isOpen={lyricsIsOpen} />

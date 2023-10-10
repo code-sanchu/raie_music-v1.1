@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
-	import { PageFrame } from '$lib/components/+pages/album';
+	import { Page } from '$lib/components/+pages/album';
 
 	const albumImages = [
 		images.albums.earthbound.album_cover,
@@ -11,4 +11,4 @@
 	];
 </script>
 
-<PageFrame images={albumImages} tracksMinWidth={480} albumKey="earthbound" noVideos />
+<Page images={albumImages} tracksMinWidth={480} albumKey="earthbound" />

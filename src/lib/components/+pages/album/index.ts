@@ -1,6 +1,6 @@
-import PageFrame from './page-frame.svelte';
+import Page from './page.svelte';
 
-export { PageFrame };
+export { Page };
 
 export * from './image-scroller';
 export * from './track';

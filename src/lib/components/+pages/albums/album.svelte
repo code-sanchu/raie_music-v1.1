@@ -12,7 +12,7 @@
 		<h4 class="text-2xl tracking-widest">{title}</h4>
 
 		<span
-			class="hidden sm:block text-sm tracking-wide uppercase -translate-y-[3px] gap-sm opacity-0 transition-opacity ease-in-out text-my-black-100 duration-100 group-hover/album:opacity-100">
+			class="hidden sm:block text-sm tracking-wider uppercase -translate-y-[3px] gap-sm opacity-0 transition-opacity ease-in-out text-my-black-100 duration-100 group-hover/album:opacity-100">
 			visit
 		</span>
 
@@ -22,8 +22,7 @@
 	</div>
 
 	<div class="mt-lg">
-		<p
-			class="prose prose-a:no-underline text-my-black leading-relaxed text-lg max-w-[550px] tracking-wide">
+		<p class="prose text-my-black leading-relaxed text-lg max-w-[550px] tracking-wide">
 			<slot name="description" />
 		</p>
 	</div>

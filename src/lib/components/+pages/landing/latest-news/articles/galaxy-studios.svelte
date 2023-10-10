@@ -1,8 +1,8 @@
 <script context="module" lang="ts">
 	import { images } from '$lib/assets';
 	import { Picture } from '$lib/components';
-	import Container from './_components/container.svelte';
-	import TextContainer from './_components/text-container.svelte';
+	import { Link } from '$lib/components/prose';
+	import { Container, TextContainer } from './_components/';
 </script>
 
 <Container>
@@ -24,7 +24,7 @@
 					alt="" />
 			</div>
 			Raie successfully raised £4000 to help pay for the trip to Belgium’s
-			<a href="https://galaxystudios.com/" target="_blank">Galaxy Studios</a>.
+			<Link href="https://galaxystudios.com/">Galaxy Studios</Link>.
 			<br /><br />
 			This was an opportunity of a lifetime – to record an album in six days at a world leading studio
 			– that houses the quietest room in the world by the way!
@@ -37,7 +37,7 @@
 			the guest list for the album launch …
 			<br /><br />
 			This news bulletin can’t go out without a big shout out to
-			<a href="https://www.wesonator.com/" target="_blank">Wes Maebe</a>.
+			<Link href="https://www.wesonator.com/">Wes Maebe</Link>.
 			<br /><br />
 			Wes is employed regularly by Galaxy and he convinced the studio that Raie were worth ‘a deal’ –
 			he really believes in the project and is now a co-writer with Raie … plus his exquisite guitar

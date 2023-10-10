@@ -12,7 +12,6 @@
 	// □ go through music player functionality. play pause skip, etc. on all pages.
 
 	// MUST DO
-	// □ pause music on play youtube video. And replay on close again?
 
 	// TO DO
 	// □ loading song feedback..

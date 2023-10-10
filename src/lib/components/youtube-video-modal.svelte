@@ -5,6 +5,7 @@
 <script lang="ts">
 	export let isOpen = false;
 	export let src: string;
+	export let onClose: () => void;
 
 	const params = `?modestbranding=1&rel=0&color=white&frameborder=0&autoplay=1&origin=${
 		import.meta.env.PROD ? 'http://www.raiemusic.com' : ''
@@ -12,15 +13,20 @@
 </script>
 
 <Transition show={isOpen}>
-	<Dialog class="relative z-[70]" on:close={() => (isOpen = false)}>
+	<Dialog
+		class="relative z-[70]"
+		on:close={() => {
+			isOpen = false;
+
+			onClose();
+		}}>
 		<TransitionChild
 			enter="ease-out duration-300"
 			enterFrom="opacity-0"
 			enterTo="opacity-100"
 			leave="ease-in duration-200"
 			leaveFrom="opacity-100"
-			leaveTo="opacity-0"
-		>
+			leaveTo="opacity-0">
 			<DialogOverlay class="fixed inset-0 bg-white/80" />
 		</TransitionChild>
 
@@ -32,8 +38,7 @@
 			enterTo="opacity-100 scale-100"
 			leave="ease-in duration-200"
 			leaveFrom="opacity-100 scale-100"
-			leaveTo="opacity-0 scale-95"
-		>
+			leaveTo="opacity-0 scale-95">
 			<iframe
 				width="100%"
 				height="100%"
@@ -41,8 +46,7 @@
 				title="YouTube video player"
 				frameborder="0"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				allowfullscreen
-			/>
+				allowfullscreen />
 		</TransitionChild>
 	</Dialog>
 </Transition>
