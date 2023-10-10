@@ -31,7 +31,9 @@ import {
 	CaretRight,
 	ArrowUpRight,
 	Playlist,
-	DotOutline
+	DotOutline,
+	Phone,
+	Envelope
 } from 'phosphor-svelte';
 import type { ComponentProps } from 'svelte';
 
@@ -70,5 +72,7 @@ export const Icon = {
 	CaretUpSmall: Control,
 	ExternalLink: ArrowUpRight,
 	Tracks: Playlist,
-	DotOutline
+	DotOutline,
+	Tel: Phone,
+	Email: Envelope
 };

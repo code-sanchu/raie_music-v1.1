@@ -1,10 +1,8 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
 	import { Icon, LinkIconSwitch, PageLayout, Picture, Tooltip } from '$lib/components';
-	import Bar from '$lib/components/music-player/animated-bars/bar.svelte';
 	import { Link } from '$lib/components/prose';
 	import { contacts, raie_links_arrs } from '$lib/data';
-	import { Envelope, Phone } from 'phosphor-svelte';
 </script>
 
 <PageLayout.VerticalSpacing sizing="1.5" />
@@ -39,16 +37,15 @@
 			<div class="mt-md flex flex-col gap-x-md items-end gap-y-md">
 				<div class="flex items-center gap-xs">
 					<span class="text-my-black-300">
-						<Envelope weight="thin" />
+						<Icon.Email weight="thin" />
 					</span>
 					<a class="tracking-wider" href={`mailto:${contacts.email}`} target="_blank"
 						>{contacts.email}</a>
 				</div>
 
-				<!-- <span class="text-my-black-100 self-center text-xs"> | </span> -->
 				<div class="flex items-center gap-xs">
 					<span class="text-my-black-300">
-						<Phone weight="thin" />
+						<Icon.Tel weight="thin" />
 					</span>
 					<a class="text-sm tracking-wider" href={`tel:${contacts.phone}`}>{contacts.phone}</a>
 				</div>
