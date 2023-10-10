@@ -29,8 +29,22 @@
 <PageLayout.VerticalSpacing sizing="3/4" />
 
 <div
-	class="flex flex-col-reverse sm:flex-row flex-wrap-reverse gap-lg gap-y-[4.5rem] justify-between">
+	class="flex flex-col xs/sm:flex-col-reverse sm:flex-row flex-wrap-reverse gap-lg gap-y-[4.5rem] justify-between">
 	<div class="flex flex-col gap-xl">
+		<div class="w-[200px] max-w-full xs/sm:hidden">
+			<Picture
+				imageClass="w-full rounded-sm"
+				pictureClass="grayscale"
+				meta={images.raie_as_child.src}
+				sizes={'200px'}
+				loading="eager"
+				alt="" />
+			<p
+				class="text-sm mt-xxs tracking-wide text-my-black-700 underline decoration-my-black-400 underline-offset-1">
+				Raie as a young performer – singing Joan Baez’ Ghetto
+			</p>
+		</div>
+
 		<div>
 			<h2 class="uppercase italic tracking-widest text-my-black-600 text-sm">contacts</h2>
 
@@ -87,8 +101,8 @@
 		</div>
 	</div>
 
-	<div class="flex gap-lg justify-end flex-grow">
-		<div class="w-[200px]">
+	<div class="flex flex-col xs/sm:flex-row gap-lg justify-end flex-grow">
+		<div class="w-[200px] max-w-full hidden xs/sm:block">
 			<Picture
 				imageClass="w-full rounded-sm"
 				pictureClass="grayscale"
@@ -102,8 +116,8 @@
 			</p>
 		</div>
 
-		<div class="flex flex-col items-end gap-lg">
-			<div class="w-[250px]">
+		<div class="flex flex-col xs/sm:items-end gap-lg">
+			<div class="w-[250px] max-w-full">
 				<Picture
 					imageClass="w-full rounded-sm"
 					pictureClass="grayscale"
@@ -117,7 +131,7 @@
 				</p>
 			</div>
 
-			<div class="w-[250px]">
+			<div class="w-[250px] max-w-full self-end">
 				<Picture
 					imageClass="w-full rounded-sm"
 					pictureClass="grayscale"

@@ -41,7 +41,7 @@
 	// □ page transitions
 	// □ on track, caret rotates on read less
 	// □ fix grab handle for youtube popup
-	// □ (blur) placeholder for images
+	// □ (blur) placeholder for image
 	// □ use local storage to save default user setting.
 	// □ overlay on music player open?
 	// □ for phone number, have it so click on to connect to mobile for mobiles?

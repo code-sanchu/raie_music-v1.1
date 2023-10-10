@@ -54,7 +54,7 @@
 
 	{#if isOverflow && !userHasScrolledTracks}
 		<div class="mt-xs flex justify-end" out:fade>
-			<div class="flex items-center gap-xs text-my-black-400 text-sm italic tracking-wide">
+			<div class="flex items-center gap-xs text-my-black-400 text-xs italic tracking-wide">
 				<p>scroll right for more...</p>
 			</div>
 		</div>
