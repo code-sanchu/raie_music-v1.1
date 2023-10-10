@@ -12,5 +12,4 @@
 	type="custom"
 	shadow={false}
 	arrow={false}
-	triggeredBy={`[id^='${triggeredById}']`}>{text}</Tooltip
->
+	triggeredBy={`[id^='${triggeredById}']`}>{text}</Tooltip>

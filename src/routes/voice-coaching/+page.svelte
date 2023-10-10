@@ -48,8 +48,7 @@
 						imageClass={`h-[320px] sm:h-[300px] md:h-[420px]`}
 						meta={images.singing_coach[1].src}
 						sizes={`${images.singing_coach[1].naturalDimensions.width}px`}
-						alt=""
-					/>
+						alt="" />
 				</div>
 
 				<h3 class="text-lg tracking-widest mt-xs sm:mt-md italic">
@@ -67,8 +66,7 @@
 					imageClass={`h-[320px] sm:h-[300px] md:h-[420px]`}
 					meta={images.singing_coach[1].src}
 					sizes={`${images.singing_coach[1].naturalDimensions.width}px`}
-					alt=""
-				/>
+					alt="" />
 
 				<div class="absolute -bottom-sm right-0 w-full translate-y-full">
 					<Images.BrickBg.Horizontal />
@@ -113,17 +111,15 @@
 			artiste showcases as well as preparation for audition technique.
 		</p>
 
-		<div class="border p-md mt-xl grid border-my-black-200 rounded-sm">
+		<div class="border p-md mt-xl grid max-w-[65ch] border-my-black-200 rounded-sm">
 			<div>
 				<h2
-					class="text-lg tracking-widest uppercase italic border-b border-my-black-400 inline-block"
-				>
+					class="text-lg tracking-widest uppercase italic border-b border-my-black-400 inline-block">
 					Rates
 				</h2>
 
 				<p
-					class="mt-sm border-my-black-50/20 prose text-my-black italic max-w-[500px] tracking-wide"
-				>
+					class="mt-sm border-my-black-50/20 prose text-my-black italic max-w-[500px] tracking-wide">
 					Tuition rates on a sliding scale.
 				</p>
 
@@ -132,8 +128,7 @@
 						<div class="flex flex-wrap gap-xs">
 							<span>E:</span>
 							<a class="block tracking-wide" href="mailto:rachel@raiemusic.com" target="_blank"
-								>rachel@raiemusic.com</a
-							>
+								>rachel@raiemusic.com</a>
 						</div>
 
 						<div class="flex gap-xs">
@@ -147,19 +142,19 @@
 
 		<h2 class="text-xl tracking-widest uppercase mt-xl">Company Testimony</h2>
 
-		<p class="mt-lg border-my-black-50/20 prose text-my-black max-w-[500px] tracking-wide">
+		<p class="mt-lg border-my-black-50/20 prose text-my-black max-w-[65ch] tracking-wide">
 			"With over two decades of superb vocal development behind Rachel Bennett we at Midas
 			Productions trust when she undertakes to develop a voice it will be nourished with care,
 			diligence, passion and excellence."
 		</p>
-		<p class="pl-xs mt-xs italic text-my-black-700">— Kevin Leo</p>
+		<p class="pl-xs mt-xs italic text-my-black-700 font-medium">— Kevin Leo</p>
 
-		<p class="mt-lg border-my-black-50/20 prose text-my-black max-w-[500px] tracking-wide">
+		<p class="mt-lg border-my-black-50/20 prose text-my-black max-w-[65ch] tracking-wide">
 			"Rachel Bennett is an extremely competent, skilled and inspiring vocal coach with years of
 			experience as a performer/singer. Her techniques have provided students and singers alike with
 			the confidence and ability to progress their professional careers."
 		</p>
-		<p class="pl-xs mt-xs italic text-my-black-700">
+		<p class="pl-xs mt-xs italic text-my-black-700 font-medium">
 			— Wozzy Brewster, OBE, Executive Director, The Midi Music Company
 		</p>
 
@@ -177,8 +172,7 @@
 			imageClass={`h-[420px]`}
 			meta={images.singing_coach[1].src}
 			sizes={`${images.singing_coach[1].naturalDimensions.width}px`}
-			alt=""
-		/>
+			alt="" />
 
 		<div class="absolute -bottom-sm right-0 w-full translate-y-full">
 			<Images.BrickBg.Horizontal />
@@ -189,5 +183,4 @@
 <ImageGalleryModal
 	bind:currentIndex={imageModalCurrentImageIndex}
 	bind:isOpen={imageModalIsOpen}
-	images={galleryImages}
-/>
+	images={galleryImages} />

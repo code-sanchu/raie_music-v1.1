@@ -1,12 +1,16 @@
 <script lang="ts" context="module">
-	import { Icon } from '$lib/components';
+	import { fade } from 'svelte/transition';
 
+	import { Icon } from '$lib/components';
 	import { AlbumLaunch, GalaxyStudios, RecentGigs } from './articles';
 	import TitleButton from './title-button.svelte';
 </script>
 
 <script lang="ts">
 	let currentNews: 'galaxy' | 'last few months' | 'album launch' = 'galaxy';
+
+	let isOverflow = false;
+	let userHasScrolledTracks = false;
 </script>
 
 <div>
@@ -38,13 +42,21 @@
 			isActive={currentNews === 'album launch'} />
 	</div>
 
-	<div class="mt-md lg:mt-lg h-[330px]">
+	<div class="mt-md lg:mt-lg h-[345px] overflow-y-hidden">
 		{#if currentNews === 'galaxy'}
-			<GalaxyStudios />
+			<GalaxyStudios bind:isOverflow bind:userHasScrolledTracks />
 		{:else if currentNews === 'last few months'}
-			<RecentGigs />
+			<RecentGigs bind:isOverflow bind:userHasScrolledTracks />
 		{:else}
-			<AlbumLaunch />
+			<AlbumLaunch bind:isOverflow bind:userHasScrolledTracks />
 		{/if}
 	</div>
+
+	{#if isOverflow && !userHasScrolledTracks}
+		<div class="mt-xs flex justify-end" out:fade>
+			<div class="flex items-center gap-xs text-my-black-400 text-sm italic tracking-wide">
+				<p>scroll right for more...</p>
+			</div>
+		</div>
+	{/if}
 </div>

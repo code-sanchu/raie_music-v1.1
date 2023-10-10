@@ -5,7 +5,12 @@
 	import { Container, TextContainer } from './_components/';
 </script>
 
-<Container>
+<script lang="ts">
+	export let userHasScrolledTracks = false;
+	export let isOverflow = false;
+</script>
+
+<Container bind:userHasScrolledTracks bind:isOverflow>
 	<div class="flex flex-row gap-sm sm:gap-lg lg:gap-xl">
 		<div class="w-[200px] lg:w-[250px] shrink-0 hidden md:block">
 			<Picture

@@ -3,7 +3,12 @@
 	import { Container, TextContainer } from './_components';
 </script>
 
-<Container>
+<script lang="ts">
+	export let userHasScrolledTracks = false;
+	export let isOverflow = false;
+</script>
+
+<Container bind:userHasScrolledTracks bind:isOverflow>
 	<TextContainer numColumns={2}>
 		Raie sold out Hope and Anchor – home of The Stranglers and Sinead O’Connor and we were delighted
 		to have Sinead’s guitarist Jon Klein play lead for us on the night; check out a couple of clips

@@ -8,6 +8,8 @@ export default {
 		'./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'
 	],
 
+	future: { hoverOnlyWhenSupported: true },
+
 	theme: {
 		extend: {
 			colors: {
