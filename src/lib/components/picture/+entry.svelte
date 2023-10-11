@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import type { ImgMeta } from './types';
 
 	export let meta: ImgMeta[];
@@ -15,7 +16,22 @@
 	export let imageClass = '';
 	export let pictureClass = '';
 
+	let imgNode: HTMLImageElement;
+
 	let loadingComplete = false;
+
+	onMount(() => {
+		if (!imgNode) {
+			return;
+		}
+		if (imgNode.complete) {
+			loadingComplete = true;
+			return;
+		}
+		imgNode.onload = () => {
+			loadingComplete = true;
+		};
+	});
 </script>
 
 <picture class={pictureClass}>
@@ -25,6 +41,7 @@
 			{sizes}
 			srcset={srcMeta.map((m) => `${m.src} ${m.w}w`).join(', ')} />
 	{/each}
+
 	<img
 		src={fallback.src}
 		{alt}
@@ -32,6 +49,7 @@
 		class={`${imageClass} transition-opacity ease-in-out duration-300 ${
 			loadingComplete ? 'opacity-100' : 'opacity-0'
 		}`}
-		on:load={() => (loadingComplete = true)}
-		draggable={false} />
+		on:loadstart={() => console.log('loading START')}
+		draggable={false}
+		bind:this={imgNode} />
 </picture>
