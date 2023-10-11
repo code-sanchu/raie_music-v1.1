@@ -12,6 +12,7 @@
 	// □ go through music player functionality. play pause skip, etc. on all pages.
 
 	// MUST DO
+	// □ what if someone wants to pinch zoom modal image..
 
 	// TO DO
 	// □ loading song feedback..

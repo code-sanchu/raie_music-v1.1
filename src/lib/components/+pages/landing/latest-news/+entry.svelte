@@ -1,6 +1,4 @@
 <script lang="ts" context="module">
-	import { fade } from 'svelte/transition';
-
 	import { Icon } from '$lib/components';
 	import { AlbumLaunch, GalaxyStudios, RecentGigs } from './articles';
 	import TitleButton from './title-button.svelte';
@@ -52,11 +50,12 @@
 		{/if}
 	</div>
 
-	{#if isOverflow && !userHasScrolledTracks}
-		<div class="mt-xs flex justify-end" out:fade>
-			<div class="flex items-center gap-xs text-my-black-400 text-xs italic tracking-wide">
-				<p>scroll right for more...</p>
-			</div>
+	<div
+		class={`mt-xs flex justify-end transition-opacity ease-in-out duration-300 ${
+			isOverflow && !userHasScrolledTracks ? '' : 'opacity-0'
+		}`}>
+		<div class="flex items-center gap-xs text-my-black-400 text-xs italic tracking-wide">
+			<p>scroll right for more...</p>
 		</div>
-	{/if}
+	</div>
 </div>

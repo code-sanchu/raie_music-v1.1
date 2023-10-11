@@ -21,6 +21,8 @@
 
 		<a class="" href="/gallery">Gallery</a>
 
+		<a class="" href="/news">News</a>
+
 		<button class="mt-md" on:click={updateLinksPanel.open} type="button">Links</button>
 	</div>
 </div>

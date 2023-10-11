@@ -12,7 +12,8 @@
 		{ route: '/albums', text: 'Albums' },
 		{ route: '/about', text: 'About' },
 		{ route: '/voice-coaching', text: 'Voice Coaching' },
-		{ route: '/gallery', text: 'Gallery' }
+		{ route: '/gallery', text: 'Gallery' },
+		{ route: '/news', text: 'News' }
 	];
 </script>
 

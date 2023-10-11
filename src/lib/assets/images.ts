@@ -8,6 +8,13 @@ import crew_and_artists_red_brick_angels_GMS_2 from '$assets/images/crew_and_art
 import jill_cumberbatch_mandolin from '$assets/images/jill_cumberbatch-mandolin-no-exif.jpg?w=640&format=avif;webp;jpg&as=picture&imagetools';
 import md_and_producer_chillin_GMS from '$assets/images/md_and_producer_chillin-GMS.jpg?w=640&format=avif;webp;jpg&as=picture&imagetools';
 import naz_and_nate_warmin_up from '$assets/images/naz_and_nate_warmin_up.jpg?w=640&format=avif;webp;jpg&as=picture&imagetools';
+import raie_concert from '$assets/images/raie-concert-opt.png?w=600&format=avif;webp;jpg&as=picture&imagetools';
+
+import review_blue_bloods_by_steve_yourglivch_and_rachel_bennett from '$assets/images/reviews/blue_bloods-by_steve_yourglivch_and_rachel_bennett.jpg?w=583&format=avif;webp;jpg&as=picture&imagetools';
+import review_martin_cooke_blues_matters from '$assets/images/reviews/martin_cooke-blues_matters.png?w=1058&format=avif;webp;jpg&as=picture&imagetools';
+import review_martin_slidel_whats_on_london from '$assets/images/reviews/martin_slidel-whats_on_london.png?w=1407&format=avif;webp;jpg&as=picture&imagetools';
+import review_martin_webb_on_raie from '$assets/images/reviews/martin_webb-on_raie.jpg?w=868&format=avif;webp;jpg&as=picture&imagetools';
+import review_martin_webb_this_music_thing from '$assets/images/reviews/martin_webb-this_music_thing.jpg?w=938&format=avif;webp;jpg&as=picture&imagetools';
 
 import altea_grey from '$assets/images/altea-grey.jpg?w=1200&format=avif;webp;jpg&as=picture&imagetools';
 import christiano_in_full_flow from '$assets/images/christiano-in_full_flow.jpg?w=1536&format=avif;webp;jpg&as=picture&imagetools';
@@ -53,6 +60,10 @@ export const images = {
 		src: raie_as_child,
 		naturalDimensions: { width: 480, height: 640 },
 		caption: 'Raie as a young performer – singing Joan Baez’ Ghetto'
+	},
+	raie_concert: {
+		src: raie_concert,
+		naturalDimensions: { width: 600, height: 392 }
 	},
 	dog_carpet: {
 		src: dog_carpet,
@@ -133,6 +144,29 @@ export const images = {
 
 	faceshots: {
 		1: { src: faceshot1, naturalDimensions: { width: 1037, height: 1300 } }
+	},
+
+	reviews: {
+		review_blue_bloods_by_steve_yourglivch_and_rachel_bennett: {
+			src: review_blue_bloods_by_steve_yourglivch_and_rachel_bennett,
+			naturalDimensions: { width: 583, height: 827 }
+		},
+		review_martin_cooke_blues_matters: {
+			src: review_martin_cooke_blues_matters,
+			naturalDimensions: { width: 1058, height: 945 }
+		},
+		review_martin_slidel_whats_on_london: {
+			src: review_martin_slidel_whats_on_london,
+			naturalDimensions: { width: 1407, height: 710 }
+		},
+		review_martin_webb_on_raie: {
+			src: review_martin_webb_on_raie,
+			naturalDimensions: { width: 868, height: 1999 }
+		},
+		review_martin_webb_this_music_thing: {
+			src: review_martin_webb_this_music_thing,
+			naturalDimensions: { width: 938, height: 943 }
+		}
 	},
 
 	singing_coach: {

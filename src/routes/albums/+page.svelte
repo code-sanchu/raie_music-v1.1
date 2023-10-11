@@ -2,7 +2,7 @@
 	import { Images, PageLayout } from '$lib/components';
 	import { Album } from '$lib/components/+pages/albums';
 	import { Link } from '$lib/components/prose';
-	import { albums_meta, raie_links } from '$lib/data';
+	import { raie_links } from '$lib/data';
 </script>
 
 <PageLayout.VerticalSpacing sizing="1.5" />
