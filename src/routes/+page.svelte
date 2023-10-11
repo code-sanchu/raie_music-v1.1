@@ -15,6 +15,9 @@
 
 	// TO DO
 	// □ loading song feedback..
+	// □ lyrics modal cursor. + bg change?
+	// □ images modal bg on load. all images bg on load?
+	// □ onload working. or same problem as on amy site?
 	// □ disable tooltips on touchscreens
 	// □ blink in of scroll bar when mving between latest news articles
 	// □ draw attention to music controls

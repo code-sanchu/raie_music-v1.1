@@ -39,7 +39,7 @@
 			class={`p-xs rounded-sm group/button invisible xs:visible grid place-items-center`}
 			style:background="radial-gradient(white, transparent)">
 			<button
-				class={`relative z-10 text-sm sm:text-base transition-colors ease-in-out duration-150 flex items-end gap-xs ${
+				class={`relative z-10 bg-white/10 pr-xs rounded-sm text-sm sm:text-base transition-colors ease-in-out duration-150 flex items-end gap-xs ${
 					closedOrClosing ? 'text-my-black-500 group-hover/panel:text-my-black-700' : ''
 				}`}
 				on:click={() => {
@@ -56,7 +56,7 @@
 				<span class="italic text-[0.925rem] tracking-wide">{currentSong.name}</span>
 
 				<span
-					class={`text-[0.6rem] uppercase tracking-widest italic absolute text-my-black-300 -bottom-[3px] -right-sm translate-x-full opacity-0 ease-in-out duration-150 bg-white/80 px-xs py-xxxs delay-300 pointer-events-none ${
+					class={`text-[0.6rem] uppercase tracking-widest italic absolute text-my-black-800 -bottom-[3px] -right-sm translate-x-full opacity-0 ease-in-out duration-150 bg-white/80 px-xs py-xxxs delay-300 pointer-events-none ${
 						musicPlayer.visibility === 'closed' ? 'group-hover/button:opacity-100' : ''
 					}`}>
 					Change track
@@ -71,18 +71,12 @@
 				class={`group/button relative flex items-end justify-between transition-all ease-out duration-700 ${
 					musicPlayer.paused ? 'w-[89.963px]' : 'w-[159.087px]'
 				}`}
-				on:click={() => {
-					if (closedOrClosing) {
-						updateMusicPlayer.open();
-					} else {
-						updateMusicPlayer.close();
-					}
-				}}
+				on:click={closedOrClosing ? updateMusicPlayer.open : updateMusicPlayer.close}
 				type="button">
 				<span class="flex items-center gap-xs">
 					<span
-						class={`text-my-black-500 rounded-md whitespace-nowrap text-[0.7rem] italic transition-all ease-out duration-300 uppercase tracking-wider ${
-							closedOrClosing ? 'text-my-black-500 group-hover/panel:text-my-black-700' : ''
+						class={`text-my-black-900 bg-white/10 pl-xs rounded-sm whitespace-nowrap text-[0.7rem] italic transition-all ease-out duration-300 uppercase tracking-wider ${
+							closedOrClosing ? '' : ''
 						}`}>
 						{#if closedOrClosing}
 							music
@@ -110,7 +104,7 @@
 				</div>
 
 				<span
-					class={`text-[0.6rem] uppercase tracking-widest italic absolute text-my-black-300 -bottom-[1px] -left-sm -translate-x-full opacity-0 ease-in-out duration-150 bg-white/80 px-xs py-xxxs delay-300 pointer-events-none ${
+					class={`text-[0.6rem] uppercase tracking-widest italic absolute text-my-black-700 -bottom-[1px] -left-sm -translate-x-full opacity-0 ease-in-out duration-150 bg-white/80 px-xs py-xxxs delay-300 pointer-events-none ${
 						musicPlayer.visibility === 'closed' ? 'group-hover/button:opacity-100' : ''
 					}`}>
 					Open

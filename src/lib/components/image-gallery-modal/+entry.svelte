@@ -35,7 +35,7 @@
 			leave="ease-in duration-200"
 			leaveFrom="opacity-100"
 			leaveTo="opacity-0">
-			<DialogOverlay class="fixed inset-0 bg-white/80 cursor-zoom-out" />
+			<DialogOverlay class="fixed inset-0 bg-white cursor-zoom-out" />
 		</TransitionChild>
 
 		<TransitionChild
