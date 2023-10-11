@@ -32,5 +32,6 @@
 		class={`${imageClass} transition-opacity ease-in-out duration-300 ${
 			loadingComplete ? 'opacity-100' : 'opacity-0'
 		}`}
-		on:load={() => (loadingComplete = true)} />
+		on:load={() => (loadingComplete = true)}
+		draggable={false} />
 </picture>

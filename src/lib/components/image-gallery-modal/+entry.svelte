@@ -3,7 +3,7 @@
 
 	import { Icon } from '$lib/components';
 	import type { Data } from '$lib/types';
-	import Image from './image.svelte';
+	import MyImage from './my-image.svelte';
 </script>
 
 <script lang="ts">
@@ -12,6 +12,18 @@
 	export let currentIndex = 0;
 
 	export let images: Data['Image'][];
+
+	let openStatus: 'closed' | 'open' = 'closed';
+
+	$: {
+		if (isOpen && openStatus === 'closed') {
+			const transitionDuration = 200;
+
+			setTimeout(() => {
+				openStatus = 'open';
+			}, transitionDuration);
+		}
+	}
 </script>
 
 <Transition show={isOpen}>
@@ -23,7 +35,7 @@
 			leave="ease-in duration-200"
 			leaveFrom="opacity-100"
 			leaveTo="opacity-0">
-			<DialogOverlay class="fixed inset-0 bg-white/80" />
+			<DialogOverlay class="fixed inset-0 bg-white/80 cursor-zoom-out" />
 		</TransitionChild>
 
 		<TransitionChild
@@ -49,13 +61,18 @@
 					type="button"><Icon.CaretLeft /></button>
 			</div>
 
-			<div class="flex-grow w-[80vw] max-h-[80vh] overflow-hidden">
+			<div class="flex-grow w-[80vw] max-h-[90vh] overflow-hidden">
 				<div
 					class="overflow-visible flex transition-transform ease-in-out duration-500"
 					style:transform={`translateX(-${currentIndex * 80}vw)`}>
 					{#each images as image}
-						<div class="w-[80vw] h-[80vh] shrink-0 grid place-items-center">
-							<Image {image} onClick={() => (isOpen = false)} />
+						<div class="w-[80vw] h-[90vh] shrink-0 grid place-items-center">
+							<MyImage
+								{image}
+								onClick={() => {
+									isOpen = false;
+								}}
+								bind:openStatus />
 						</div>
 					{/each}
 				</div>

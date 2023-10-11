@@ -24,12 +24,10 @@
 
 <script lang="ts">
 	let imageModalIsOpen = false;
-	let imageModalCurrentImageIndex = 0;
+	let imageModalCurrentIndex = 0;
 
 	let imageWidth: number;
-	$: console.log('imageWidth:', imageWidth);
 	let containerHeight: number;
-	$: console.log('containerHeight:', containerHeight);
 
 	let showImages = false;
 
@@ -55,12 +53,12 @@
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<div style:width={`${imageWidth}px`}>
 				<div
-					class={`relative cursor-zoom-in`}
+					class={`relative cursor-zoom-in bg-my-black-50/10`}
 					style:height={`${
 						imageWidth / (image.naturalDimensions.width / image.naturalDimensions.height)
 					}px`}
 					on:click={() => {
-						imageModalCurrentImageIndex = i;
+						imageModalCurrentIndex = i;
 						imageModalIsOpen = true;
 					}}>
 					<Picture
@@ -84,6 +82,6 @@
 <Measure images={galleryImages} bind:imageWidth bind:containerHeight />
 
 <ImageGalleryModal
-	bind:currentIndex={imageModalCurrentImageIndex}
+	bind:currentIndex={imageModalCurrentIndex}
 	bind:isOpen={imageModalIsOpen}
 	images={galleryImages} />
