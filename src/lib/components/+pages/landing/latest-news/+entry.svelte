@@ -7,7 +7,7 @@
 </script>
 
 <script lang="ts">
-	let currentNews: 'galaxy' | 'last few months' | 'album launch' = 'galaxy';
+	let currentNews: 'galaxy' | 'last few months' | 'album launch' = 'album launch';
 
 	let isOverflow = false;
 	let userHasScrolledTracks = false;
@@ -18,6 +18,15 @@
 
 	<div
 		class="flex items-center flex-wrap gap-x-xxs xs:gap-x-xs sm:gap-x-sm gap-y-xs mt-xs max-w-full overflow-hidden">
+		<TitleButton
+			text="Album Launch"
+			onClick={() => (currentNews = 'album launch')}
+			isActive={currentNews === 'album launch'} />
+
+		<span class="text-my-black-50 text-sm">
+			<Icon.DotOutline weight="thin" />
+		</span>
+
 		<TitleButton
 			text="Galaxy Studios"
 			onClick={() => (currentNews = 'galaxy')}
@@ -31,24 +40,15 @@
 			text="Recent Gigs"
 			onClick={() => (currentNews = 'last few months')}
 			isActive={currentNews === 'last few months'} />
-
-		<span class="text-my-black-50 text-sm">
-			<Icon.DotOutline weight="thin" />
-		</span>
-
-		<TitleButton
-			text="Album Launch"
-			onClick={() => (currentNews = 'album launch')}
-			isActive={currentNews === 'album launch'} />
 	</div>
 
 	<div class="mt-md lg:mt-lg h-[345px] overflow-y-hidden">
-		{#if currentNews === 'galaxy'}
-			<GalaxyStudios bind:isOverflow bind:userHasScrolledTracks />
-		{:else if currentNews === 'last few months'}
-			<RecentGigs bind:isOverflow bind:userHasScrolledTracks />
-		{:else}
+		{#if currentNews === 'album launch'}
 			<AlbumLaunch bind:isOverflow bind:userHasScrolledTracks />
+		{:else if currentNews === 'galaxy'}
+			<GalaxyStudios bind:isOverflow bind:userHasScrolledTracks />
+		{:else}
+			<RecentGigs bind:isOverflow bind:userHasScrolledTracks />
 		{/if}
 	</div>
 

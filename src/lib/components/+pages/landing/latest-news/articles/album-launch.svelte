@@ -14,5 +14,11 @@
 		on November 8th – doors at 18.15 – on stage at 19.15 – an early one so we can encourage industry
 		to pop in after work!.. and besides it’s a mid-week gig so we have to think of work mornings on the
 		9th!
+		<br /><br />
+		<!-- <span>Tickets:</span> -->
+		<a
+			class="border py-xxs px-xs text-sm text-my-black-700 rounded-sm border-my-black-50/70 tracking-widest"
+			href="https://www.fatsoma.com/e/un29hce9/raie-red-brick-angel-album-launch?fbclid=IwAR0kNsjw8-5Jh8ewuSZ7QSuG_J4tc-1V7BF8lAUr0KoCp0tHRXIs102nSqs"
+			target="_blank">Buy Tickets</a>
 	</TextContainer>
 </Container>

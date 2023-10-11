@@ -42,7 +42,6 @@
 						? 'text-my-black-300 group-hover/button:text-my-black-500'
 						: 'text-my-black-100 group-hover/button:text-my-black-400'
 				}`}>about</span>
-			<!-- >read{showReadMore ? ' less' : ' more'}</span> -->
 
 			<span
 				class={`text-[0.65rem] border-[0.8px] border-transparent p-xxxs rounded-full transition-all ease-in-out duration-300 ${

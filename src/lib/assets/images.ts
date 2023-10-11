@@ -49,8 +49,16 @@ import singing_coach_1 from '$assets/images/singing-coach/singing_coach-1.jpg?w=
 export const images = {
 	logo: { src: logo, naturalDimensions: { width: 497, height: 166 } },
 	brick_bg: { src: brick_bg, naturalDimensions: { width: 315, height: 37 } },
-	raie_as_child: { src: raie_as_child, naturalDimensions: { width: 480, height: 640 } },
-	dog_carpet: { src: dog_carpet, naturalDimensions: { width: 640, height: 480 } },
+	raie_as_child: {
+		src: raie_as_child,
+		naturalDimensions: { width: 480, height: 640 },
+		caption: 'Raie as a young performer – singing Joan Baez’ Ghetto'
+	},
+	dog_carpet: {
+		src: dog_carpet,
+		naturalDimensions: { width: 640, height: 480 },
+		caption: 'Isra – the band mascot'
+	},
 	crew_and_artists_red_brick_angels_GMS: {
 		src: crew_and_artists_red_brick_angels_GMS,
 		naturalDimensions: { width: 640, height: 480 }
@@ -61,7 +69,8 @@ export const images = {
 	},
 	jill_cumberbatch_mandolin: {
 		src: jill_cumberbatch_mandolin,
-		naturalDimensions: { width: 480, height: 640 }
+		naturalDimensions: { width: 480, height: 640 },
+		caption: 'Jill Cumberbatch gets ready to play mandolin on Crystal Girl at GMS'
 	},
 	md_and_producer_chillin_GMS: {
 		src: md_and_producer_chillin_GMS,
@@ -69,39 +78,48 @@ export const images = {
 	},
 	naz_and_nate_warmin_up: {
 		src: naz_and_nate_warmin_up,
-		naturalDimensions: { width: 640, height: 480 }
+		naturalDimensions: { width: 640, height: 480 },
+		caption: 'Day one of backing vocals on Red Brick Angel at GMS'
 	},
 	altea_grey: {
 		src: altea_grey,
-		naturalDimensions: { width: 1200, height: 1600 }
+		naturalDimensions: { width: 1200, height: 1600 },
+		caption: 'Altea plays on Grey'
 	},
 	christiano_in_full_flow: {
 		src: christiano_in_full_flow,
-		naturalDimensions: { width: 1536, height: 2048 }
+		naturalDimensions: { width: 1536, height: 2048 },
+		caption: 'Christiano self portait in full flow'
 	},
 	farwell_drinks_day_6: {
 		src: farwell_drinks_day_6,
-		naturalDimensions: { width: 587, height: 311 }
+		naturalDimensions: { width: 587, height: 311 },
+		caption: 'Farewell drink at the bar – day 6!'
 	},
 	jon_conducts_strings: {
 		src: jon_conducts_strings,
-		naturalDimensions: { width: 1200, height: 1600 }
+		naturalDimensions: { width: 1200, height: 1600 },
+		caption: 'Jon conducts the string section'
 	},
 	jon_steinway: {
 		src: jon_steinway,
-		naturalDimensions: { width: 526, height: 480 }
+		naturalDimensions: { width: 526, height: 480 },
+		caption: 'Jon at the Steinway'
 	},
 	louis_chords: {
 		src: louis_chords,
-		naturalDimensions: { width: 640, height: 480 }
+		naturalDimensions: { width: 640, height: 480 },
+		caption: 'Louis checks out his chords'
 	},
 	maria_crystal_girl: {
 		src: maria_crystal_girl,
-		naturalDimensions: { width: 1600, height: 1200 }
+		naturalDimensions: { width: 1600, height: 1200 },
+		caption: 'Maria plays her solo on Crystal Girl'
 	},
 	string_section_warm_up: {
 		src: string_section_warm_up,
-		naturalDimensions: { width: 548, height: 480 }
+		naturalDimensions: { width: 548, height: 480 },
+		caption: 'The string section warm up'
 	},
 	wes_and_sean_setting_up: {
 		src: wes_and_sean_setting_up,
@@ -109,7 +127,8 @@ export const images = {
 	},
 	wes_mics_up_strings: {
 		src: wes_mics_up_strings,
-		naturalDimensions: { width: 1600, height: 1200 }
+		naturalDimensions: { width: 1600, height: 1200 },
+		caption: 'Wes mics up the strings (1)'
 	},
 
 	faceshots: {
@@ -123,15 +142,18 @@ export const images = {
 	galaxy: {
 		chris: {
 			src: galaxy_chris,
-			naturalDimensions: { width: 480, height: 640 }
+			naturalDimensions: { width: 480, height: 640 },
+			caption: 'Chris Bell listening intently!'
 		},
 		['christiano-bass']: {
 			src: galaxy_christiano,
-			naturalDimensions: { width: 2048, height: 1536 }
+			naturalDimensions: { width: 2048, height: 1536 },
+			caption: 'Christiano on bass'
 		},
 		'full-band': {
 			src: galaxy_full_band,
-			naturalDimensions: { width: 661, height: 371 }
+			naturalDimensions: { width: 661, height: 371 },
+			caption: 'The band ends six beautiful days at Galaxy'
 		},
 		['jon_dunn-acoustic']: {
 			src: galaxy_jon,
@@ -139,15 +161,18 @@ export const images = {
 		},
 		['raie-lead_vocal-young_love']: {
 			src: galaxy_raie,
-			naturalDimensions: { width: 1538, height: 1594 }
+			naturalDimensions: { width: 1538, height: 1594 },
+			caption: 'Raie at the mic in Galaxy Studios'
 		},
 		['tim_gardner-violin-free_now']: {
 			src: galaxy_tim,
-			naturalDimensions: { width: 1600, height: 1200 }
+			naturalDimensions: { width: 1600, height: 1200 },
+			caption: 'Tim gets focused!'
 		},
 		wesonator: {
 			src: galaxy_wes,
-			naturalDimensions: { width: 640, height: 481 }
+			naturalDimensions: { width: 640, height: 481 },
+			caption: 'Wes at the desk'
 		}
 	},
 

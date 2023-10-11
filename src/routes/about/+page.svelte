@@ -39,7 +39,7 @@
 				sizes={'200px'}
 				loading="eager"
 				alt="" />
-			<Caption>Raie as a young performer – singing Joan Baez’ Ghetto</Caption>
+			<Caption>{images.raie_as_child.caption}</Caption>
 		</div>
 
 		<div>
@@ -107,7 +107,7 @@
 				sizes={'200px'}
 				loading="eager"
 				alt="" />
-			<Caption>Raie as a young performer – singing Joan Baez’ Ghetto</Caption>
+			<Caption>{images.raie_as_child.caption}</Caption>
 		</div>
 
 		<div class="flex flex-col xs/sm:items-end gap-lg">
@@ -119,7 +119,7 @@
 					sizes={'200px'}
 					loading="eager"
 					alt="" />
-				<Caption>The band ends six beautiful days at Galaxy</Caption>
+				<Caption>{images.galaxy['full-band'].caption}</Caption>
 			</div>
 
 			<div class="w-[250px] max-w-full self-end">
@@ -130,7 +130,7 @@
 					sizes={'200px'}
 					loading="eager"
 					alt="" />
-				<Caption>Raie at the mic in Galaxy Studios</Caption>
+				<Caption>{images.galaxy['raie-lead_vocal-young_love'].caption}</Caption>
 			</div>
 		</div>
 	</div>
