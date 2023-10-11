@@ -128,7 +128,7 @@ export const images = {
 	wes_mics_up_strings: {
 		src: wes_mics_up_strings,
 		naturalDimensions: { width: 1600, height: 1200 },
-		caption: 'Wes mics up the strings (1)'
+		caption: 'Wes mics up the strings'
 	},
 
 	faceshots: {

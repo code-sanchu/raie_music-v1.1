@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
 	import { Caption, ImageGalleryModal, Images, PageLayout, Picture } from '$lib/components';
-	import MeasureImages from './measure-images.svelte';
+	import Measure from './measure.svelte';
 
 	const galleryImages = [
 		images.dog_carpet,
@@ -27,12 +27,14 @@
 	let imageModalCurrentImageIndex = 0;
 
 	let imageWidth: number;
+	$: console.log('imageWidth:', imageWidth);
 	let containerHeight: number;
+	$: console.log('containerHeight:', containerHeight);
 
 	let showImages = false;
 
 	$: {
-		if (containerHeight) {
+		if (imageWidth && containerHeight) {
 			setTimeout(() => {
 				showImages = true;
 			}, 400);
@@ -47,9 +49,7 @@
 <PageLayout.VerticalSpacing sizing="half" />
 
 {#if showImages}
-	<div
-		class="flex flex-col flex-wrap gap-sm overflow-x-hidden"
-		style:height={`${containerHeight}px`}>
+	<div class="flex flex-col flex-wrap gap-sm" style:height={`${containerHeight}px`}>
 		{#each galleryImages as image, i}
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -81,26 +81,7 @@
 	</div>
 {/if}
 
-<MeasureImages images={galleryImages} bind:imageWidth bind:containerHeight />
-<!-- <div
-	class="fixed left-0 flex flex-col -z-10 invisible gap-sm w-[calc(100vw-2rem)] sm:w-[calc(100vw-4rem)] md:w-[calc(100vw-6rem)] lg:w-[calc(100vw-8rem)]"
-	bind:clientWidth={containerOffsetWidth}
-	bind:clientHeight={dummyHeight}>
-	{#each galleryImages as image, i}
-		<div style:width={`${imageWidth}px`}>
-			<div
-				style:height={`${
-					imageWidth / (image.naturalDimensions.width / image.naturalDimensions.height)
-				}px`} />
-
-			{#if image.caption}
-				<Caption extraClasses="sm:!mt-xs no-underline !text-my-black-500 sm:!text-base">
-					{image.caption}
-				</Caption>
-			{/if}
-		</div>
-	{/each}
-</div> -->
+<Measure images={galleryImages} bind:imageWidth bind:containerHeight />
 
 <ImageGalleryModal
 	bind:currentIndex={imageModalCurrentImageIndex}
