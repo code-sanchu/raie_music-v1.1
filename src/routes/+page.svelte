@@ -33,6 +33,7 @@
 
 	// NICE TO HAVE
 	// □ curate gallery as in https://cargo.site/Templates#services&programs
+	// □ cascade images opacity
 	// □ song time for open player (and closed?). on right side?
 	// □ reset song button
 	// □ auto rotate latest articles. (Interaction resets timer)

@@ -12,6 +12,7 @@ type Image = {
 		width: number;
 		height: number;
 	};
+	caption?: string;
 };
 
 export type Data = { Image: Image };

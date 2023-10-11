@@ -14,6 +14,8 @@
 
 	export let imageClass = '';
 	export let pictureClass = '';
+
+	let loadingComplete = false;
 </script>
 
 <picture class={pictureClass}>
@@ -21,8 +23,14 @@
 		<source
 			type="image/{type}"
 			{sizes}
-			srcset={srcMeta.map((m) => `${m.src} ${m.w}w`).join(', ')}
-		/>
+			srcset={srcMeta.map((m) => `${m.src} ${m.w}w`).join(', ')} />
 	{/each}
-	<img src={fallback.src} {alt} {loading} class={imageClass} />
+	<img
+		src={fallback.src}
+		{alt}
+		{loading}
+		class={`${imageClass} transition-opacity ease-in-out duration-300 ${
+			loadingComplete ? 'opacity-100' : 'opacity-0'
+		}`}
+		on:load={() => (loadingComplete = true)} />
 </picture>

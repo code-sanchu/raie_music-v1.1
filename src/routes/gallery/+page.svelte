@@ -1,8 +1,7 @@
 <script lang="ts" context="module">
-	import { onMount } from 'svelte';
-
 	import { images } from '$lib/assets';
-	import { Images, PageLayout, ImageGalleryModal, Picture, Caption } from '$lib/components';
+	import { Caption, ImageGalleryModal, Images, PageLayout, Picture } from '$lib/components';
+	import MeasureImages from './measure-images.svelte';
 
 	const galleryImages = [
 		images.dog_carpet,
@@ -25,57 +24,21 @@
 
 <script lang="ts">
 	let imageModalIsOpen = false;
-
 	let imageModalCurrentImageIndex = 0;
 
-	let windowWidth: number;
-	let containerOffsetWidth: number;
+	let imageWidth: number;
+	let containerHeight: number;
 
-	let remPxValue: number;
-
-	onMount(() => {
-		if (document) {
-			const fontSize = getComputedStyle(document.documentElement).fontSize;
-			remPxValue = parseFloat(fontSize);
-		}
-	});
-
-	$: gapPxValue = remPxValue * 1;
-
-	$: numCols = windowWidth < 704 ? 2 : 3;
-
-	$: imageWidth = (containerOffsetWidth - (numCols - 1) * gapPxValue) / numCols;
-
-	let dummyHeight: number;
-
-	$: console.log('dummyHeight:', dummyHeight);
-
-	$: containerHeight =
-		dummyHeight && windowWidth < 704 ? dummyHeight / 2 + 200 : dummyHeight / 3 + 200;
-
-	/* 	$: console.log('imageWidth:', imageWidth);
-
-	let imagesTotalHeightWithGaps: number;
+	let showImages = false;
 
 	$: {
-		if (imageWidth) {
-			let totalHeightWithoutGaps = 0;
-
-			galleryImages.forEach((image) => {
-				let height = imageWidth / (image.naturalDimensions.width / image.naturalDimensions.height);
-
-				totalHeightWithoutGaps += height;
-			});
-
-			// const totalGapsHeight = galleryImages
-			imagesTotalHeightWithGaps = totalHeightWithoutGaps + 600;
+		if (containerHeight) {
+			setTimeout(() => {
+				showImages = true;
+			}, 400);
 		}
 	}
-
-	$: containerHeight = imagesTotalHeightWithGaps / 3; */
 </script>
-
-<svelte:window bind:innerWidth={windowWidth} />
 
 <PageLayout.VerticalSpacing sizing="1.5" />
 
@@ -83,12 +46,48 @@
 
 <PageLayout.VerticalSpacing sizing="half" />
 
-<div
-	class="flex flex-col -z-10 pointer-events-none opacity-0 gap-sm bg-white absolute left-4 right-4 sm:left-8 sm:right-8 md:left-12 md:right-12 lg:left-16 lg:right-16"
+{#if showImages}
+	<div
+		class="flex flex-col flex-wrap gap-sm overflow-x-hidden"
+		style:height={`${containerHeight}px`}>
+		{#each galleryImages as image, i}
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
+			<!-- svelte-ignore a11y-no-static-element-interactions -->
+			<div style:width={`${imageWidth}px`}>
+				<div
+					class={`relative cursor-zoom-in`}
+					style:height={`${
+						imageWidth / (image.naturalDimensions.width / image.naturalDimensions.height)
+					}px`}
+					on:click={() => {
+						imageModalCurrentImageIndex = i;
+						imageModalIsOpen = true;
+					}}>
+					<Picture
+						pictureClass="absolute inset-0"
+						imageClass={`grayscale hover:grayscale-0`}
+						meta={image.src}
+						sizes={`${image.naturalDimensions.width}px`}
+						alt="" />
+				</div>
+
+				{#if image.caption}
+					<Caption extraClasses="sm:!mt-xs no-underline !text-my-black-500 sm:!text-base">
+						{image.caption}
+					</Caption>
+				{/if}
+			</div>
+		{/each}
+	</div>
+{/if}
+
+<MeasureImages images={galleryImages} bind:imageWidth bind:containerHeight />
+<!-- <div
+	class="fixed left-0 flex flex-col -z-10 invisible gap-sm w-[calc(100vw-2rem)] sm:w-[calc(100vw-4rem)] md:w-[calc(100vw-6rem)] lg:w-[calc(100vw-8rem)]"
 	bind:clientWidth={containerOffsetWidth}
 	bind:clientHeight={dummyHeight}>
 	{#each galleryImages as image, i}
-		<div class="border border-blue-400" style:width={`${imageWidth}px`}>
+		<div style:width={`${imageWidth}px`}>
 			<div
 				style:height={`${
 					imageWidth / (image.naturalDimensions.width / image.naturalDimensions.height)
@@ -101,38 +100,7 @@
 			{/if}
 		</div>
 	{/each}
-</div>
-
-<div class="flex flex-col flex-wrap gap-sm overflow-x-hidden" style:height={`${containerHeight}px`}>
-	{#each galleryImages as image, i}
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<!-- svelte-ignore a11y-no-static-element-interactions -->
-		<div style:width={`${imageWidth}px`}>
-			<div
-				class={`relative cursor-zoom-in`}
-				style:height={`${
-					imageWidth / (image.naturalDimensions.width / image.naturalDimensions.height)
-				}px`}
-				on:click={() => {
-					imageModalCurrentImageIndex = i;
-					imageModalIsOpen = true;
-				}}>
-				<Picture
-					pictureClass="absolute inset-0"
-					imageClass={`grayscale hover:grayscale-0`}
-					meta={image.src}
-					sizes={`${image.naturalDimensions.width}px`}
-					alt="" />
-			</div>
-
-			{#if image.caption}
-				<Caption extraClasses="sm:!mt-xs no-underline !text-my-black-500 sm:!text-base">
-					{image.caption}
-				</Caption>
-			{/if}
-		</div>
-	{/each}
-</div>
+</div> -->
 
 <ImageGalleryModal
 	bind:currentIndex={imageModalCurrentImageIndex}
