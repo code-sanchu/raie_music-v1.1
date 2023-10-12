@@ -46,10 +46,9 @@
 		src={fallback.src}
 		{alt}
 		{loading}
-		class={`${imageClass} transition-opacity ease-in-out duration-300 ${
+		class={`${imageClass} transition-opacity ease-in-out duration-300 select-none ${
 			loadingComplete ? 'opacity-100' : 'opacity-0'
 		}`}
-		on:loadstart={() => console.log('loading START')}
 		draggable={false}
 		bind:this={imgNode} />
 </picture>

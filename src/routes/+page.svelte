@@ -12,12 +12,13 @@
 	// □ go through music player functionality. play pause skip, etc. on all pages.
 
 	// MUST DO
-	// □ lyrics modal cursor. + bg change?
 
 	// TO DO
-	// □ wait for pg load before music player etc load.
 	// □ image gallerys + other swipe to move
+
 	// □ one run through of page transitions
+	// □ sometimes gallery modal image text doesn't show
+	// □ wait for pg load before music player etc load.
 	// □ images modal bg on load. all images bg on load?
 	// □ height transition for landing latest news
 	// □ page transitions on enter and exit

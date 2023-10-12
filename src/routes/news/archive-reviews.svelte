@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
-	import { Picture, Icon, ImageGalleryModal } from '$lib/components';
+	import { ImageGalleryModal, Picture } from '$lib/components';
 	import { ImageScroller } from '$lib/components/+pages/news';
 
 	const reviewImages = Object.values(images.reviews);

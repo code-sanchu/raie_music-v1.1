@@ -1,5 +1,25 @@
 <script lang="ts" context="module">
-	import { CaretLeft, CaretRight } from 'phosphor-svelte';
+	import {
+		swipe as untypedSwipe,
+		type ParametersSwitch,
+		type SwipeParameters
+	} from 'svelte-gestures';
+	import type { Action } from 'svelte/action';
+
+	import { Icon } from '$lib/components';
+
+	const swipe: Action<
+		HTMLElement,
+		ParametersSwitch<SwipeParameters>,
+		{
+			'on:swipe': (
+				e: CustomEvent<{
+					[x: string]: string;
+					// detail: { direction: 'left' | 'right' };
+				}>
+			) => void;
+		}
+	> = untypedSwipe as any;
 </script>
 
 <script lang="ts">
@@ -66,7 +86,7 @@
 
 	$: scrollLeft, inViewFunc({ imagesContainer });
 
-	const onClickNextButton = () => {
+	const goNextImage = () => {
 		if (!imageElements) {
 			return;
 		}
@@ -85,7 +105,7 @@
 		}
 	};
 
-	const onClickPrevButton = () => {
+	const goPrevImage = () => {
 		if (!imageElements) {
 			return;
 		}
@@ -105,7 +125,11 @@
 	};
 </script>
 
-<div class="relative">
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div
+	class={`relative`}
+	use:swipe={{ timeframe: 300, minSwipeDistance: 100, touchAction: 'pan-y' }}
+	on:swipe={(e) => (e.detail.direction === 'left' ? goNextImage() : goPrevImage())}>
 	<div
 		class="overflow-hidden relative mt-sm w-full h-[190px]"
 		bind:this={imagesContainer}
@@ -121,15 +145,15 @@
 		<button
 			class="absolute bg-white/80 hover:bg-white/60 rounded-lg left-0 top-1/2 -translate-y-1/2 z-10 text-3xl hover:opacity-100 opacity-70 transition-all ease-in-out duration-75"
 			type="button"
-			on:click={onClickPrevButton}>
-			<CaretLeft />
+			on:click={goPrevImage}>
+			<Icon.CaretLeft />
 		</button>
 
 		<button
 			class="absolute right-0 bg-white/60 top-1/2 -translate-y-1/2 rounded-lg z-10 text-3xl hover:bg-white/40 opacity-70 hover:opacity-100 transition-all ease-in-out duration-75"
 			type="button"
-			on:click={onClickNextButton}>
-			<CaretRight />
+			on:click={goNextImage}>
+			<Icon.CaretRight />
 		</button>
 	{/if}
 </div>

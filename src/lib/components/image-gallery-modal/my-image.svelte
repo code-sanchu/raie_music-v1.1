@@ -5,7 +5,6 @@
 
 <script lang="ts">
 	export let image: Data['Image'];
-	export let onClick: () => void;
 	export let openStatus: 'closed' | 'open';
 
 	let imageWidth = 0;
@@ -23,16 +22,20 @@
 			imageWidth = imageContainer.getBoundingClientRect().width;
 		}
 	}
+
+	let mouseIsDown = false;
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
-	class="h-full w-[98%] flex flex-col items-center justify-center cursor-zoom-out"
-	on:click={onClick}>
+	class={`h-full w-[98%] flex flex-col items-center justify-center ${
+		mouseIsDown ? 'cursor-grabbing' : 'cursor-grab'
+	}`}
+	on:mousedown={() => (mouseIsDown = true)}
+	on:mouseup={() => (mouseIsDown = false)}>
 	<div class="" bind:this={imageContainer}>
-		<!-- <div class="cursor-zoom-out bg-green-200" on:click={onClick} bind:clientWidth={imageWidth}> -->
 		<Picture
 			imageClass={`max-h-[80vh]`}
 			meta={image.src}
