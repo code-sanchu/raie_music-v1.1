@@ -1,12 +1,16 @@
 <script lang="ts" context="module">
 	import '../app.css';
 
+	import { navigating } from '$app/stores';
+
 	import { AudioElement, Header, MusicBottomPanel, LinksPanel, PageLayout } from '$lib/components';
 </script>
 
 <script lang="ts">
 	let windowHeight: number | undefined;
 	let headerHeight: number | undefined;
+
+	$: console.log('headerHeight:', headerHeight);
 
 	let bodyElement: HTMLDivElement | undefined;
 
@@ -21,6 +25,12 @@
 		windowHeight < 769 &&
 		scrollDirection === 'down' &&
 		currentScrollTop > (headerHeight ? headerHeight * 3 : 100);
+
+	$: {
+		if ($navigating && bodyElement) {
+			bodyElement.scrollTop = 0;
+		}
+	}
 </script>
 
 <svelte:window bind:innerHeight={windowHeight} />
@@ -32,27 +42,29 @@
 	<Header />
 </div>
 
-<div
-	class="overflow-y-auto flex flex-col overflow-x-hidden transition-all duration-300 ease-in-out h-screen"
-	style:padding-top={`${headerHeight}px`}
-	bind:this={bodyElement}
-	on:scroll={() => {
-		if (!bodyElement) {
-			return;
-		}
+{#if headerHeight}
+	<div
+		class="overflow-y-auto flex flex-col overflow-x-hidden transition-all duration-300 ease-in-out h-screen"
+		style:padding-top={`${headerHeight}px`}
+		bind:this={bodyElement}
+		on:scroll={() => {
+			if (!bodyElement) {
+				return;
+			}
 
-		previousScrollTop = currentScrollTop;
-		currentScrollTop = bodyElement.scrollTop;
-	}}>
-	<PageLayout.HorizontalSpacing>
-		<slot />
-	</PageLayout.HorizontalSpacing>
+			previousScrollTop = currentScrollTop;
+			currentScrollTop = bodyElement.scrollTop;
+		}}>
+		<PageLayout.HorizontalSpacing>
+			<slot />
+		</PageLayout.HorizontalSpacing>
 
-	<PageLayout.VerticalSpacing sizing="double" />
-</div>
+		<PageLayout.VerticalSpacing sizing="double" />
+	</div>
 
-<LinksPanel />
+	<LinksPanel />
 
-<MusicBottomPanel />
+	<MusicBottomPanel />
 
-<AudioElement />
+	<AudioElement />
+{/if}

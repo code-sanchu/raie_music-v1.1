@@ -12,7 +12,7 @@
 
 <Container bind:userHasScrolledTracks bind:isOverflow>
 	<div class="flex flex-row gap-sm sm:gap-lg lg:gap-xl">
-		<div class="w-[200px] lg:w-[250px] shrink-0 hidden md:block">
+		<div class="w-[180px] lg:w-[200px] shrink-0 hidden md:block">
 			<Picture
 				imageClass="rounded-sm grayscale opacity-80"
 				meta={images.raie_concert.src}

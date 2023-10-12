@@ -12,32 +12,33 @@
 	// □ go through music player functionality. play pause skip, etc. on all pages.
 
 	// MUST DO
-	// □ what if someone wants to pinch zoom modal image..
+	// □ seo stuff
+	// □ page speed recommendations
 
 	// TO DO
-	// □ loading song feedback..
+	// □ image gallerys + other swipe to move
 	// □ lyrics modal cursor. + bg change?
 	// □ images modal bg on load. all images bg on load?
-	// □ onload working. or same problem as on amy site?
-	// □ disable tooltips on touchscreens
-	// □ blink in of scroll bar when mving between latest news articles
-	// □ draw attention to music controls
 	// □ height transition for landing latest news
-	// □ go over gallery + voice coaching responsiveness
 	// □ page transitions on enter and exit
-	// □ bind actual width values for bottom right panel
-	// □ highlight album being played in music player tracks
+	// □ image sizes
+	// □ remove extra images on about pg for mobiles?
 
-	// □ loading priority for images (as opposed to lazy/eager)
-	// □ clean up functions in event listeners
-	// □ max width for blown up images
-
-	// □ make icon - take 'R' from logo
 	// □ sort out raie logo
+	// □ make icon - take 'R' from logo
+
+	// □ highlight album being played in music player tracks
+	// □ disable tooltips on touchscreens
+	// □ loading song feedback..
+	// □ draw attention to music controls
+	// □ bind actual width values for bottom right panel
+
+	// □ clean up functions in event listeners
 
 	// NICE TO HAVE
-	// □ curate gallery as in https://cargo.site/Templates#services&programs
+	// □ curate gallery as in https://cargo.site/Templates#services&programs ?
 	// □ cascade images opacity
+	// □ loading priority for images (as opposed to lazy/eager)
 	// □ song time for open player (and closed?). on right side?
 	// □ reset song button
 	// □ auto rotate latest articles. (Interaction resets timer)
@@ -90,7 +91,7 @@
 		</div>
 
 		<div
-			class="flex justify-center sm:justify-start xs:mt-md -translate-x-[5.5px] sm:-translate-x-[7.5px] -mt-xs">
+			class="flex justify-center bg-gray-50/50 sm:justify-start xs:mt-md -translate-x-[5.5px] sm:-translate-x-[7.5px] -mt-xs">
 			<PlayMusicButton />
 		</div>
 	</div>
