@@ -6,10 +6,6 @@
 	let audioElement: HTMLAudioElement;
 	let musicPlayer: MusicPlayer;
 
-	$: isLoadingAudio = false;
-
-	$: console.log('isLoadingAudio:', isLoadingAudio);
-
 	musicPlayerStore.subscribe((playerStore) => {
 		musicPlayer = playerStore;
 	});
@@ -64,8 +60,6 @@
 
 	// could only get this func to run on track change with currentSong as argument; not with musicPlayer.currentTrackIndex, nor trackHasChanged;
 	function handleAudioOnTrackChange(_currentSong: (typeof songsList)[number]) {
-		// console.log('HANDLE TRACK CHAGE:', musicPlayer);
-
 		if (!musicPlayer || !audioElement || !musicPlayer.hasBeenPlayed) {
 			return;
 		}

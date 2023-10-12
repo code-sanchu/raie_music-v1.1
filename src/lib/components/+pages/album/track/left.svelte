@@ -2,25 +2,25 @@
 	import { Icon } from '$lib/components';
 
 	import type { Song } from '$lib/data';
-	import { musicPlayerStore, songsList, type MusicPlayer } from '$lib/stores';
+	// import { musicPlayerStore, songsList, type MusicPlayer } from '$lib/stores';
 </script>
 
 <script lang="ts">
 	export let data: Song;
 	export let showAbout: boolean;
 
-	const { name, number, id } = data;
+	const { name, number } = data;
 
-	let musicPlayer: MusicPlayer;
+	/* 	let musicPlayer: MusicPlayer;
 
 	musicPlayerStore.subscribe((playerStore) => {
 		musicPlayer = playerStore;
-	});
+	}); */
 
-	const songListIndex = songsList.findIndex((songListSong) => songListSong.id === id);
+	// const songListIndex = songsList.findIndex((songListSong) => songListSong.id === id);
 
-	$: currentTrackIndex = musicPlayer.currentTrackIndex;
-	$: isCurrentTrack = currentTrackIndex === songListIndex;
+	// $: currentTrackIndex = musicPlayer.currentTrackIndex;
+	// $: isCurrentTrack = currentTrackIndex === songListIndex;
 </script>
 
 <div class="flex gap-md flex-nowrap items-end flex-grow">
@@ -53,10 +53,4 @@
 			</span>
 		</span>
 	</button>
-
-	{#if !musicPlayer.paused && isCurrentTrack}
-		<p class="hidden sm:block text-[0.8rem] italic text-my-black-300 tracking-wide">
-			currently playing
-		</p>
-	{/if}
 </div>

@@ -9,13 +9,13 @@
 	export let noVideos = false;
 	export let minWidth: number;
 
-	let readMoreElement: HTMLDivElement;
-	let showReadMore: boolean;
+	let aboutNode: HTMLDivElement;
+	let showAbout: boolean;
 </script>
 
 <div>
 	<div class="grid grid-cols-2 gap-xl" style:min-width={`${minWidth}px`}>
-		<Left {data} bind:showReadMore />
+		<Left {data} bind:showAbout />
 
 		<div class="flex justify-end pr-xs">
 			<Right {data} {noVideos} />
@@ -24,9 +24,9 @@
 
 	<div
 		class="translate-x-0 ease-out duration-300 overflow-hidden"
-		bind:this={readMoreElement}
-		style:height={!showReadMore ? '0px' : `${readMoreElement.scrollHeight}px`}
-		style:opacity={!showReadMore ? '0' : '1'}>
+		bind:this={aboutNode}
+		style:height={!showAbout ? '0px' : `${aboutNode.scrollHeight}px`}
+		style:opacity={!showAbout ? '0' : '1'}>
 		<div class="prose border-b border-my-black-50 pb-md pl-[2.5rem] pr-sm mt-md">
 			{@html data.description}
 

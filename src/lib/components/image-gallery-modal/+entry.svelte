@@ -83,7 +83,8 @@
 			<button
 				class="border-[0.8px] border-my-black-100 text-my-black-900 p-xxs rounded-md"
 				on:click={() => (isOpen = false)}
-				type="button"><Icon.X weight="thin" /></button>
+				type="button"
+				aria-label="close images modal"><Icon.X weight="thin" /></button>
 		</TransitionChild>
 
 		<TransitionChild

@@ -10,8 +10,6 @@
 <script lang="ts">
 	let globalFlags: GlobalFlagsState;
 
-	$: console.log('globalFlags.firstPageHasMounted:', globalFlags.firstPageHasMounted);
-
 	globalFlagsStore.subscribe((store) => {
 		globalFlags = store;
 	});

@@ -20,21 +20,18 @@
 
 	// □ one run through of page transitions
 	// □ wait for pg load before music player etc load.
-	// □ page speed recommendations
-	// □ loading song feedback..
 
 	// □ calc aspect ratio for image modal images. apply to caption width.
 	// □ images modal bg on load. all images bg on load?
 	// □ sometimes gallery modal image text doesn't show
 	// □ image sizes
 
-	// □ disable tooltips on touchscreens
 	// □ bind actual width values for bottom right panel
 
 	// □ clean up functions in event listeners?
 
 	// NICE TO HAVE
-	// □ draw more attention to music controls?
+	// □ draw more attention to music player?
 	// □ curate gallery as in https://cargo.site/Templates#services&programs ?
 	// □ cascade images opacity
 	// □ loading priority for images (as opposed to lazy/eager)
