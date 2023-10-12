@@ -12,6 +12,7 @@ type MusicPlayer = {
 	volume: number;
 	visibility: 'closed' | 'opening' | 'open' | 'closing';
 	tracksVisibility: 'closed' | 'opening' | 'open' | 'closing';
+	isLoadingAudio: boolean;
 };
 
 export const musicPlayerInitData: MusicPlayer = {
@@ -21,7 +22,8 @@ export const musicPlayerInitData: MusicPlayer = {
 	hasBeenPlayed: false,
 	volume: 0.6,
 	visibility: 'closed',
-	tracksVisibility: 'closed'
+	tracksVisibility: 'closed',
+	isLoadingAudio: false
 };
 
 const musicPlayerStore = writable(musicPlayerInitData);
@@ -99,6 +101,9 @@ export const updateMusicPlayer = {
 		setTimeout(() => {
 			updateMusicPlayerStore('tracksVisibility', 'closed');
 		}, 150);
+	},
+	isLoadingAudio: (value: boolean) => {
+		updateMusicPlayerStore('isLoadingAudio', value);
 	}
 };
 

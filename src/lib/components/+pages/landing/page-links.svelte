@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
 	import { Icon, Images } from '$lib/components';
-	import { updateLinksPanel } from '$lib/stores';
+	import { updateGlobalFlags } from '$lib/stores';
 </script>
 
 <div class="flex gap-xl justify-end sm:justify-normal">
@@ -23,6 +23,6 @@
 
 		<a class="" href="/about">About</a>
 
-		<button class="mt-md" on:click={updateLinksPanel.open} type="button">Links</button>
+		<button class="mt-md" on:click={updateGlobalFlags.openLinksPanel} type="button">Links</button>
 	</div>
 </div>

@@ -6,6 +6,10 @@
 	let audioElement: HTMLAudioElement;
 	let musicPlayer: MusicPlayer;
 
+	$: isLoadingAudio = false;
+
+	$: console.log('isLoadingAudio:', isLoadingAudio);
+
 	musicPlayerStore.subscribe((playerStore) => {
 		musicPlayer = playerStore;
 	});
@@ -30,6 +34,22 @@
 						...state,
 						paused: false
 					}));
+				},
+				{ passive: true }
+			);
+
+			audioElement.addEventListener(
+				'loadstart',
+				() => {
+					updateMusicPlayer.isLoadingAudio(true);
+				},
+				{ passive: true }
+			);
+
+			audioElement.addEventListener(
+				'canplay',
+				() => {
+					updateMusicPlayer.isLoadingAudio(false);
 				},
 				{ passive: true }
 			);

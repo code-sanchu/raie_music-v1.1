@@ -57,6 +57,9 @@
 			<div class="w-full pt-md md:pt-lg pb-xs md:pl-md bg-white">
 				<div class="pt-sm md:pt-md border-t md:border-t-2 border-my-black-700">
 					<div class="flex items-center gap-md justify-end text-my-black-800">
+						{#if musicPlayer.isLoadingAudio}
+							<p class="text-my-black-400 text-sm">loading song...</p>
+						{/if}
 						<button
 							class="rounded-full p-xxs"
 							on:click={musicPlayer.paused ? updateMusicPlayer.play : updateMusicPlayer.pause}

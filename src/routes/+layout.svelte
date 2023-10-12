@@ -2,11 +2,20 @@
 	import '../app.css';
 
 	import { navigating } from '$app/stores';
+	import { globalFlagsStore, type GlobalFlagsState } from '$lib/stores';
 
 	import { AudioElement, Header, MusicBottomPanel, LinksPanel, PageLayout } from '$lib/components';
 </script>
 
 <script lang="ts">
+	let globalFlags: GlobalFlagsState;
+
+	$: console.log('globalFlags.firstPageHasMounted:', globalFlags.firstPageHasMounted);
+
+	globalFlagsStore.subscribe((store) => {
+		globalFlags = store;
+	});
+
 	let windowHeight: number | undefined;
 	let headerHeight: number | undefined;
 
@@ -65,9 +74,11 @@
 		<PageLayout.VerticalSpacing sizing="double" />
 	</div>
 
-	<LinksPanel />
+	{#if globalFlags.firstPageHasMounted}
+		<LinksPanel />
 
-	<MusicBottomPanel />
+		<MusicBottomPanel />
 
-	<AudioElement />
+		<AudioElement />
+	{/if}
 {/if}

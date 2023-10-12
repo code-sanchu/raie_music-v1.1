@@ -1,24 +1,25 @@
 <script context="module" lang="ts">
 	import { Icon, Tooltip } from '$lib/components';
 	import { onClickOutside } from '$lib/helpers';
-	import { linksPanelStore, updateLinksPanel, type LinksPanel } from '$lib/stores';
+	import { globalFlagsStore, updateGlobalFlags, type GlobalFlagsState } from '$lib/stores';
 </script>
 
 <script lang="ts">
-	let linksPanelState: LinksPanel;
+	let linksPanelState: GlobalFlagsState;
 
-	linksPanelStore.subscribe((currentState) => {
+	globalFlagsStore.subscribe((currentState) => {
 		linksPanelState = currentState;
 	});
 </script>
 
 <div
 	class={`fixed z-30 w-screen pb-lg px-md bottom-0 bg-white left-0 transition-all ease-out duration-300 pt-lg ${
-		linksPanelState.visibility === 'closing' || linksPanelState.visibility === 'closed'
+		linksPanelState.linksPanelVisibility === 'closing' ||
+		linksPanelState.linksPanelVisibility === 'closed'
 			? 'translate-y-full'
 			: 'translate-y-0'
 	}`}
-	use:onClickOutside={updateLinksPanel.close}>
+	use:onClickOutside={updateGlobalFlags.closeLinksPanel}>
 	<div class="grid sm:grid-cols-2 gap-md sm:gap-xl">
 		<div class="pt-xs border-t-2 border-my-black">
 			<h3 class="italic text-sm">Buy songs</h3>

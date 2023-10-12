@@ -10,6 +10,9 @@ dependencies:
   immer:
     specifier: ^10.0.2
     version: 10.0.2
+  svelte-device-info:
+    specifier: ^1.0.0
+    version: 1.0.0
   svelte-gestures:
     specifier: ^1.5.2
     version: 1.5.2
@@ -21,6 +24,9 @@ devDependencies:
   '@sveltejs/adapter-auto':
     specifier: ^2.0.0
     version: 2.1.0(@sveltejs/kit@1.25.0)
+  '@sveltejs/adapter-static':
+    specifier: ^2.0.3
+    version: 2.0.3(@sveltejs/kit@1.25.0)
   '@sveltejs/kit':
     specifier: ^1.20.4
     version: 1.25.0(svelte@4.2.0)(vite@4.4.9)
@@ -509,6 +515,14 @@ packages:
     dependencies:
       '@sveltejs/kit': 1.25.0(svelte@4.2.0)(vite@4.4.9)
       import-meta-resolve: 3.0.0
+    dev: true
+
+  /@sveltejs/adapter-static@2.0.3(@sveltejs/kit@1.25.0):
+    resolution: {integrity: sha512-VUqTfXsxYGugCpMqQv1U0LIdbR3S5nBkMMDmpjGVJyM6Q2jHVMFtdWJCkeHMySc6mZxJ+0eZK3T7IgmUCDrcUQ==}
+    peerDependencies:
+      '@sveltejs/kit': ^1.5.0
+    dependencies:
+      '@sveltejs/kit': 1.25.0(svelte@4.2.0)(vite@4.4.9)
     dev: true
 
   /@sveltejs/kit@1.25.0(svelte@4.2.0)(vite@4.4.9):
@@ -2382,6 +2396,10 @@ packages:
       - stylus
       - sugarss
     dev: true
+
+  /svelte-device-info@1.0.0:
+    resolution: {integrity: sha512-KL5/fXmhKVtM4ogoj9xrFTPjoWtTy/a8VFA5kEooIJiL48+aETCG2/owMvrsoyBRybUkzVf4ixkj+DncpNWMqw==}
+    dev: false
 
   /svelte-eslint-parser@0.33.0(svelte@4.2.0):
     resolution: {integrity: sha512-5awZ6Bs+Tb/zQwa41PSdcLynAVQTwW0HGyCBjtbAQ59taLZqDgQSMzRlDmapjZdDtzERm0oXDZNE0E+PKJ6ryg==}
