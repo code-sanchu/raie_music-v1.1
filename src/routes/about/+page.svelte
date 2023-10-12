@@ -72,7 +72,8 @@
 						class="rounded-full p-xxs"
 						href={raieLink.href}
 						target="_blank"
-						id={`about-${raieLink.id}`}>
+						id={`about-${raieLink.id}`}
+						aria-label={`${raieLink.name} link`}>
 						<LinkIconSwitch type={raieLink.id} weight="thin" />
 					</a>
 					<Tooltip text={raieLink.name} triggeredById={`about-${raieLink.id}`} />
@@ -89,7 +90,8 @@
 						class="rounded-full p-xxs"
 						href={raieLink.href}
 						target="_blank"
-						id={`about-${raieLink.id}`}>
+						id={`about-${raieLink.id}`}
+						aria-label={`${raieLink.name} link`}>
 						<LinkIconSwitch type={raieLink.id} weight="thin" />
 					</a>
 					<Tooltip text={raieLink.name} triggeredById={`about-${raieLink.id}`} />

@@ -32,6 +32,7 @@
 <button
 	class="grid place-items-center text-2xl xs:text-3xl text-my-black-400 relative"
 	on:click={() => (isOpen = true)}
+	aria-label="Menu"
 	type="button">
 	<List weight="light" />
 </button>
@@ -51,7 +52,7 @@
 
 		<div class="grid md:grid-cols-2 gap-xl md:gap-lg w-full mt-md">
 			<div class="pt-xs border-t-2 border-my-black">
-				<h2 class="tracking-widest font-medium text-sm italic">Site</h2>
+				<h3 class="tracking-widest font-medium text-sm italic">Site</h3>
 
 				<div class="tracking-widest flex flex-col gap-sm mt-md text-my-black-700">
 					{#each sitePageArr as sitePage}
@@ -78,7 +79,7 @@
 			</div>
 
 			<div class="pt-xs border-t md:border-t-2 border-my-black">
-				<h2 class="tracking-widest font-medium text-sm italic">Listen, Buy & Follow</h2>
+				<h3 class="tracking-widest font-medium text-sm italic">Listen, Buy & Follow</h3>
 
 				<div class="flex text-base items-center gap-sm mt-md">
 					{#each [...raie_links_arrs.listen, ...raie_links_arrs.buy, ...raie_links_arrs.follow] as raieLink}
@@ -86,16 +87,17 @@
 							class="rounded-full p-xxs"
 							href={raieLink.href}
 							target="_blank"
-							id={`site_menu-${raieLink.id}`}>
+							id={`site_menu-${raieLink.id}`}
+							aria-label={`${raieLink.name} link`}>
 							<LinkIconSwitch type={raieLink.id} weight="fill" />
 						</a>
 						<Tooltip text={raieLink.name} triggeredById={`site_menu-${raieLink.id}`} />
 					{/each}
 				</div>
 
-				<h2 class="mt-xl tracking-widest font-medium text-sm italic border-t border-my-black pt-xs">
+				<h3 class="mt-xl tracking-widest font-medium text-sm italic border-t border-my-black pt-xs">
 					Contact
-				</h2>
+				</h3>
 
 				<div class="mt-md">
 					<div class="flex gap-md tracking-wider items-end">

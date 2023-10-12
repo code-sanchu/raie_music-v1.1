@@ -18,11 +18,10 @@
 			? 'translate-y-full'
 			: 'translate-y-0'
 	}`}
-	use:onClickOutside={updateLinksPanel.close}
->
+	use:onClickOutside={updateLinksPanel.close}>
 	<div class="grid sm:grid-cols-2 gap-md sm:gap-xl">
 		<div class="pt-xs border-t-2 border-my-black">
-			<h5 class="italic text-sm">Buy songs</h5>
+			<h3 class="italic text-sm">Buy songs</h3>
 
 			<div class="flex items-center gap-md mt-sm sm:mt-md text-my-black-900">
 				<a class="rounded-full p-xxs" href="." id="links_panel-bandcamp">
@@ -38,7 +37,7 @@
 		</div>
 
 		<div class="pt-xs border-t sm:border-t-2 border-my-black">
-			<h5 class="italic text-sm">Listen & Follow</h5>
+			<h3 class="italic text-sm">Listen & Follow</h3>
 
 			<div class="flex items-center gap-md mt-sm sm:mt-md text-my-black-900">
 				<a class="rounded-full p-xxs" href="." id="links_panel-soundcloud">

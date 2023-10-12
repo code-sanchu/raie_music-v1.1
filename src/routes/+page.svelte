@@ -15,6 +15,7 @@
 	// □ lyrics modal cursor. + bg change?
 
 	// TO DO
+	// □ wait for pg load before music player etc load.
 	// □ image gallerys + other swipe to move
 	// □ one run through of page transitions
 	// □ images modal bg on load. all images bg on load?

@@ -59,7 +59,8 @@
 					<div class="flex items-center gap-md justify-end text-my-black-800">
 						<button
 							class="rounded-full p-xxs"
-							on:click={musicPlayer.paused ? updateMusicPlayer.play : updateMusicPlayer.pause}>
+							on:click={musicPlayer.paused ? updateMusicPlayer.play : updateMusicPlayer.pause}
+							aria-label="toggle music playing">
 							{#if musicPlayer.paused}
 								<Icon.Play weight="fill" />
 							{:else}
@@ -67,11 +68,17 @@
 							{/if}
 						</button>
 
-						<button class="rounded-full p-xxs" on:click={() => updateMusicPlayer.track('prev')}>
+						<button
+							class="rounded-full p-xxs"
+							on:click={() => updateMusicPlayer.track('prev')}
+							aria-label="previous track">
 							<Icon.Prev weight="fill" />
 						</button>
 
-						<button class="rounded-full p-xxs" on:click={() => updateMusicPlayer.track('next')}>
+						<button
+							class="rounded-full p-xxs"
+							on:click={() => updateMusicPlayer.track('next')}
+							aria-label="next track">
 							<Icon.Next weight="fill" />
 						</button>
 					</div>
