@@ -8,9 +8,10 @@
 <script lang="ts">
 	export let userHasScrolledTracks = false;
 	export let isOverflow = false;
+	export let height: number;
 </script>
 
-<Container bind:userHasScrolledTracks bind:isOverflow>
+<Container bind:userHasScrolledTracks bind:isOverflow bind:height>
 	<div class="flex flex-row gap-sm sm:gap-lg lg:gap-xl">
 		<div class="w-[200px] lg:w-[250px] shrink-0 hidden md:block">
 			<Picture

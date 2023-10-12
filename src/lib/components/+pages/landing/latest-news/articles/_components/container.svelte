@@ -6,6 +6,7 @@
 <script lang="ts">
 	export let userHasScrolledTracks = false;
 	export let isOverflow = false;
+	export let height: number;
 
 	let node: HTMLDivElement;
 
@@ -32,7 +33,9 @@
 </script>
 
 <div
-	class="max-w-full overflow-x-auto overflow-y-hidden scrollbar-track-white scrollbar-thumb-[#f4f4f4] hover:scrollbar-thumb-[#f4f4f4]"
+	class={`max-w-full overflow-x-auto overflow-y-hidden scrollbar-track-white scrollbar-thumb-[#f4f4f4] hover:scrollbar-thumb-[#f4f4f4] ${
+		isOverflow ? '' : ''
+	}`}
 	in:fade={{ easing: sineInOut, duration: 400, delay: 100 }}
 	out:fade={{ easing: sineInOut, duration: 100 }}
 	bind:this={node}
@@ -42,6 +45,7 @@
 		if (scrollLeft > 20) {
 			userHasScrolledTracks = true;
 		}
-	}}>
+	}}
+	bind:clientHeight={height}>
 	<slot />
 </div>

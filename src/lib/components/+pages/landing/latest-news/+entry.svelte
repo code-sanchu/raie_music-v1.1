@@ -9,6 +9,10 @@
 
 	let isOverflow = false;
 	let userHasScrolledTracks = false;
+
+	let albumLaunchHeight: number;
+	let galaxyStudiosHeight: number;
+	let recentGigsHeight: number;
 </script>
 
 <div>
@@ -40,13 +44,21 @@
 			isActive={currentNews === 'last few months'} />
 	</div>
 
-	<div class="mt-md lg:mt-lg h-[345px] overflow-y-hidden">
+	<div
+		class="mt-md lg:mt-lg max-h-[345px] overflow-y-hidden transition-all ease-in-out duration-300"
+		style:height={`${
+			currentNews === 'album launch'
+				? albumLaunchHeight
+				: currentNews === 'galaxy'
+				? galaxyStudiosHeight
+				: recentGigsHeight
+		}px`}>
 		{#if currentNews === 'album launch'}
-			<AlbumLaunch bind:isOverflow bind:userHasScrolledTracks />
+			<AlbumLaunch bind:isOverflow bind:userHasScrolledTracks bind:height={albumLaunchHeight} />
 		{:else if currentNews === 'galaxy'}
-			<GalaxyStudios bind:isOverflow bind:userHasScrolledTracks />
+			<GalaxyStudios bind:isOverflow bind:userHasScrolledTracks bind:height={galaxyStudiosHeight} />
 		{:else}
-			<RecentGigs bind:isOverflow bind:userHasScrolledTracks />
+			<RecentGigs bind:isOverflow bind:userHasScrolledTracks bind:height={recentGigsHeight} />
 		{/if}
 	</div>
 

@@ -12,8 +12,7 @@
 	// □ go through music player functionality. play pause skip, etc. on all pages.
 
 	// MUST DO
-	// □ seo stuff
-	// □ page speed recommendations
+	// □ one run through of page transitions
 
 	// TO DO
 	// □ image gallerys + other swipe to move
@@ -23,6 +22,7 @@
 	// □ page transitions on enter and exit
 	// □ image sizes
 	// □ remove extra images on about pg for mobiles?
+	// □ page speed recommendations
 
 	// □ sort out raie logo
 	// □ make icon - take 'R' from logo
@@ -41,6 +41,7 @@
 	// □ loading priority for images (as opposed to lazy/eager)
 	// □ song time for open player (and closed?). on right side?
 	// □ reset song button
+	// □ snap to next column in horizontal scrollers - latest news
 	// □ auto rotate latest articles. (Interaction resets timer)
 	// □ optimise images - sizes; width queries; if add width to w= on img query string and number is over the image natural wdth, vite won't create a source for that.
 	// □ ...check image strings for max width for those that need to be max
@@ -115,7 +116,7 @@
 	</div>
 
 	<div class="sm:hidden">
-		<PageLayout.VerticalSpacing />
+		<PageLayout.VerticalSpacing sizing="2/3" />
 	</div>
 
 	<div class="px-xs xs:px-lg h-[12px] sm:hidden overflow-hidden">

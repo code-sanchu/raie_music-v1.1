@@ -10,8 +10,6 @@
 	let windowHeight: number | undefined;
 	let headerHeight: number | undefined;
 
-	$: console.log('headerHeight:', headerHeight);
-
 	let bodyElement: HTMLDivElement | undefined;
 
 	let currentScrollTop = 0;
@@ -32,6 +30,11 @@
 		}
 	}
 </script>
+
+<svelte:head>
+	<title>Raie</title>
+	<meta name="description" content="The official site of Raie" />
+</svelte:head>
 
 <svelte:window bind:innerHeight={windowHeight} />
 
