@@ -12,19 +12,27 @@
 
 	$: {
 		if (audioElement) {
-			audioElement.addEventListener('pause', () => {
-				musicPlayerStore.update((state) => ({
-					...state,
-					paused: true
-				}));
-			});
+			audioElement.addEventListener(
+				'pause',
+				() => {
+					musicPlayerStore.update((state) => ({
+						...state,
+						paused: true
+					}));
+				},
+				{ passive: true }
+			);
 
-			audioElement.addEventListener('play', () => {
-				musicPlayerStore.update((state) => ({
-					...state,
-					paused: false
-				}));
-			});
+			audioElement.addEventListener(
+				'play',
+				() => {
+					musicPlayerStore.update((state) => ({
+						...state,
+						paused: false
+					}));
+				},
+				{ passive: true }
+			);
 		}
 	}
 
@@ -66,5 +74,4 @@
 	bind:this={audioElement}
 	on:ended={() => {
 		updateMusicPlayer.track('next');
-	}}
-/>
+	}} />

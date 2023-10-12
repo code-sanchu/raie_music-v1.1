@@ -14,11 +14,15 @@
 		if (node) {
 			node.style.scrollBehavior = 'smooth';
 
-			node.addEventListener('wheel', (event) => {
-				event.preventDefault();
+			node.addEventListener(
+				'wheel',
+				(event) => {
+					event.preventDefault();
 
-				node.scrollTo({ left: node.scrollLeft + event.deltaY, behavior: 'smooth' });
-			});
+					node.scrollTo({ left: node.scrollLeft + event.deltaY, behavior: 'smooth' });
+				},
+				{ passive: true }
+			);
 		}
 	}
 

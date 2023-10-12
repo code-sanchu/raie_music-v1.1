@@ -12,11 +12,11 @@
 	// □ go through music player functionality. play pause skip, etc. on all pages.
 
 	// MUST DO
-	// □ one run through of page transitions
+	// □ lyrics modal cursor. + bg change?
 
 	// TO DO
 	// □ image gallerys + other swipe to move
-	// □ lyrics modal cursor. + bg change?
+	// □ one run through of page transitions
 	// □ images modal bg on load. all images bg on load?
 	// □ height transition for landing latest news
 	// □ page transitions on enter and exit
@@ -97,8 +97,16 @@
 		</div>
 	</div>
 
-	<div class="hidden sm:block md:max-w-[400px] lg:max-w-[400px] xl:max-w-[450px] 2xl:max-w-[500px]">
-		<Picture imageClass="" meta={images.faceshots[1].src} sizes={'50vw'} loading="eager" alt="" />
+	<div
+		class="hidden sm:block md:max-w-[400px] lg:max-w-[400px] xl:max-w-[450px] 2xl:max-w-[500px]"
+		style:aspect-ratio={images.faceshots[1].naturalDimensions.width /
+			images.faceshots[1].naturalDimensions.height}>
+		<Picture
+			imageClass={`w-full h-full`}
+			meta={images.faceshots[1].src}
+			sizes={'50vw'}
+			loading="eager"
+			alt="" />
 	</div>
 </div>
 

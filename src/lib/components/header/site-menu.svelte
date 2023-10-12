@@ -10,10 +10,10 @@
 	const sitePageArr = [
 		{ route: '/', text: 'Home' },
 		{ route: '/albums', text: 'Albums' },
-		{ route: '/about', text: 'About' },
+		{ route: '/news', text: 'News' },
 		{ route: '/voice-coaching', text: 'Voice Coaching' },
 		{ route: '/gallery', text: 'Gallery' },
-		{ route: '/news', text: 'News' }
+		{ route: '/about', text: 'About' }
 	];
 </script>
 

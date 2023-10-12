@@ -15,13 +15,13 @@
 
 		<a class="" href="/albums">Albums</a>
 
-		<a class="" href="/about">About</a>
+		<a class="" href="/news">News</a>
 
 		<a class="whitespace-nowrap" href="/voice-coaching">Voice Coaching</a>
 
 		<a class="" href="/gallery">Gallery</a>
 
-		<a class="" href="/news">News</a>
+		<a class="" href="/about">About</a>
 
 		<button class="mt-md" on:click={updateLinksPanel.open} type="button">Links</button>
 	</div>
