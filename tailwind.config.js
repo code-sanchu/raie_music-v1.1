@@ -49,7 +49,8 @@ export default {
 				lg: '1024px',
 				xl: '1280px',
 				'2xl': '1536px',
-				'3xl': '1800px'
+				'3xl': '1800px',
+				'hover-hover': { raw: '(hover: hover)' }
 			},
 
 			spacing: {

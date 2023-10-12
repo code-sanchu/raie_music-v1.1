@@ -14,28 +14,22 @@
 	// MUST DO
 
 	// TO DO
-	// □ image gallerys + other swipe to move
 
 	// □ one run through of page transitions
-	// □ sometimes gallery modal image text doesn't show
 	// □ wait for pg load before music player etc load.
-	// □ images modal bg on load. all images bg on load?
-	// □ height transition for landing latest news
-	// □ page transitions on enter and exit
-	// □ image sizes
-	// □ remove extra images on about pg for mobiles?
 	// □ page speed recommendations
-
-	// □ sort out raie logo
-	// □ make icon - take 'R' from logo
-
-	// □ highlight album being played in music player tracks
-	// □ disable tooltips on touchscreens
 	// □ loading song feedback..
-	// □ draw attention to music controls
+
+	// □ calc aspect ratio for image modal images. apply to caption width.
+	// □ images modal bg on load. all images bg on load?
+	// □ sometimes gallery modal image text doesn't show
+	// □ image sizes
+
+	// □ disable tooltips on touchscreens
+	// □ draw attention to music controls?
 	// □ bind actual width values for bottom right panel
 
-	// □ clean up functions in event listeners
+	// □ clean up functions in event listeners?
 
 	// NICE TO HAVE
 	// □ curate gallery as in https://cargo.site/Templates#services&programs ?
@@ -44,17 +38,12 @@
 	// □ song time for open player (and closed?). on right side?
 	// □ reset song button
 	// □ snap to next column in horizontal scrollers - latest news
-	// □ auto rotate latest articles. (Interaction resets timer)
+	// □ auto rotate latest articles? (Interaction resets timer)
 	// □ optimise images - sizes; width queries; if add width to w= on img query string and number is over the image natural wdth, vite won't create a source for that.
 	// □ ...check image strings for max width for those that need to be max
-	// □ prev/next news article
-	// □ page transitions
-	// □ on track, caret rotates on read less
-	// □ fix grab handle for youtube popup
-	// □ (blur) placeholder for image
+	// □ prev/next news article? prev/next album?
 	// □ use local storage to save default user setting.
 	// □ overlay on music player open?
-	// □ for phone number, have it so click on to connect to mobile for mobiles?
 	// □ in music player > tracks: give track numbers uniform width
 
 	// CONFIG

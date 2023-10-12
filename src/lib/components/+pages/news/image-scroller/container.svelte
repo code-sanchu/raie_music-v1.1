@@ -141,7 +141,7 @@
 	<span class="text-my-black-50 text-sm"> | </span>
 
 	<button class="text-my-black-400" on:click={() => scrollImageIntoView(1)} type="button"
-		>Steve Yourglivch for Blue Bloods</button>
+		>Martin Cooke for Blues Matters</button>
 
 	<span class="text-my-black-50 text-sm"> | </span>
 

@@ -108,12 +108,12 @@
 				<div
 					class="overflow-visible flex transition-transform ease-in-out duration-500"
 					style:transform={`translateX(-${currentIndex * 80}vw)`}>
-					{#each images as image}
+					{#each images as image, i}
 						<div
 							class="w-[80vw] h-[90vh] shrink-0 grid place-items-center"
 							use:swipe={{ timeframe: 300, minSwipeDistance: 100, touchAction: 'pan-y' }}
 							on:swipe={(e) => (e.detail.direction === 'left' ? goNextImage() : goPrevImage())}>
-							<MyImage {image} bind:openStatus />
+							<MyImage {image} />
 						</div>
 					{/each}
 				</div>

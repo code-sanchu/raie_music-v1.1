@@ -6,10 +6,6 @@
 
 <PageLayout.VerticalSpacing sizing="1.5" />
 
-<!-- <Images.BrickBg.HorizontalThree /> -->
-
-<!-- <PageLayout.VerticalSpacing /> -->
-
 <h1 class="tracking-widest text-xl text-my-black-50/70 uppercase font-medium">News</h1>
 
 <PageLayout.VerticalSpacing sizing="2/3" />

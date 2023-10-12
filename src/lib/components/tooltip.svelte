@@ -8,7 +8,7 @@
 </script>
 
 <Tooltip
-	class="py-xxs px-xs bg-my-black-300 text-white rounded-sm"
+	class="py-xxs px-xs bg-my-black-300 text-white rounded-sm hover-hover:inline-block hidden"
 	type="custom"
 	shadow={false}
 	arrow={false}

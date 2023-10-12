@@ -41,7 +41,7 @@
 			type="button">
 			<span class="relative">
 				<span
-					class="group-hover/track:opacity-0 text-my-black-600 text-xs md:text-sm transition-opacity ease-in-out duration-100">
+					class="group-hover/track:opacity-0 inline-block text-my-black-600 text-xs md:text-sm transition-opacity ease-in-out duration-100 w-[18px]">
 					{i + 1}
 				</span>
 				<span
