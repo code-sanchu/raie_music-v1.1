@@ -89,7 +89,7 @@
 							target="_blank"
 							id={`site_menu-${raieLink.id}`}
 							aria-label={`${raieLink.name} link`}>
-							<LinkIconSwitch type={raieLink.id} weight="fill" />
+							<LinkIconSwitch type={raieLink.id} weight="thin" />
 						</a>
 						<Tooltip text={raieLink.name} triggeredById={`site_menu-${raieLink.id}`} />
 					{/each}
@@ -117,7 +117,7 @@
 				</div>
 			</div>
 
-			<div class="mt-sm flex justify-center md:hidden mb-lg">
+			<div class="mt-sm flex justify-center md:hidden mb-2xl">
 				<button
 					class="border-[0.8px] border-my-black-100 text-my-black-900 p-xxs rounded-md"
 					on:click={() => (isOpen = false)}

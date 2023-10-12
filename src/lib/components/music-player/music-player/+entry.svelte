@@ -33,7 +33,7 @@
 							: updateMusicPlayer.closeTracks}
 						type="button">
 						<span class="text-my-black-600 py-xxs">
-							<Icon.Tracks weight="fill" />
+							<Icon.Tracks weight="thin" />
 						</span>
 
 						<span class={`text-[0.7rem] text-my-black-600 uppercase`}>
@@ -62,9 +62,9 @@
 							on:click={musicPlayer.paused ? updateMusicPlayer.play : updateMusicPlayer.pause}
 							aria-label="toggle music playing">
 							{#if musicPlayer.paused}
-								<Icon.Play weight="fill" />
+								<Icon.Play weight="thin" />
 							{:else}
-								<Icon.Pause weight="fill" />
+								<Icon.Pause weight="thin" />
 							{/if}
 						</button>
 
@@ -72,14 +72,14 @@
 							class="rounded-full p-xxs"
 							on:click={() => updateMusicPlayer.track('prev')}
 							aria-label="previous track">
-							<Icon.Prev weight="fill" />
+							<Icon.Prev weight="thin" />
 						</button>
 
 						<button
 							class="rounded-full p-xxs"
 							on:click={() => updateMusicPlayer.track('next')}
 							aria-label="next track">
-							<Icon.Next weight="fill" />
+							<Icon.Next weight="thin" />
 						</button>
 					</div>
 				</div>
