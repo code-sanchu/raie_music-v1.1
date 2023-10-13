@@ -1,8 +1,17 @@
 <script lang="ts" context="module">
+	import { onMount } from 'svelte';
+
 	import { Images, PageLayout } from '$lib/components';
 	import { Album } from '$lib/components/+pages/albums';
 	import { Link } from '$lib/components/prose';
 	import { raie_links } from '$lib/data';
+	import { updateGlobalFlags } from '$lib/stores';
+</script>
+
+<script lang="ts">
+	onMount(() => {
+		updateGlobalFlags.firstPageHasMounted();
+	});
 </script>
 
 <PageLayout.VerticalSpacing sizing="1.5" />

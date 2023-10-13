@@ -1,7 +1,10 @@
 <script lang="ts" context="module">
+	import { onMount } from 'svelte';
+
 	import { images } from '$lib/assets';
-	import { Caption, ImageGalleryModal, Images, PageLayout, Picture } from '$lib/components';
 	import { voiceCoaching } from '$lib/data';
+	import { updateGlobalFlags } from '$lib/stores';
+	import { Caption, ImageGalleryModal, Images, PageLayout, Picture } from '$lib/components';
 	import PersonalTestimony from './personal-testimony.svelte';
 
 	const galleryImages = [
@@ -19,6 +22,10 @@
 	let imageModalIsOpen = false;
 
 	let imageModalCurrentImageIndex = 0;
+
+	onMount(() => {
+		updateGlobalFlags.firstPageHasMounted();
+	});
 </script>
 
 <PageLayout.VerticalSpacing sizing="1.5" />

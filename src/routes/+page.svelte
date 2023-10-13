@@ -10,21 +10,13 @@
 	import { updateGlobalFlags } from '$lib/stores';
 	import { fade } from 'svelte/transition';
 
-	// DONE PENDING LIVE CHECK
-
 	// GO LIVE CHECKLIST
 	// □ go through music player functionality. play pause skip, etc. on all pages.
 
 	// MUST DO
-	// □ update first page has mounted on each page
 
 	// TO DO
-	// □ sort out image modal gallery - could have situation where image is loading for a while and user has no idea what's going on.
-	// □ one run through of page transitions
-
-	// □ calc aspect ratio for image modal images. apply to caption width.
-	// □ images modal bg on load. all images bg on load?
-	// □ sometimes gallery modal image text doesn't show
+	// □ try giving images actual widths and heights
 	// □ image sizes
 
 	// □ bind actual width values for bottom right panel
@@ -87,7 +79,6 @@
 					sizes={'50vw'}
 					loading="eager"
 					onLoad={() => (criticalContentIsLoaded = true)}
-					duration="duration-500"
 					alt="" />
 			</div>
 		</div>
@@ -102,7 +93,7 @@
 					'Heart-tuggingly moving and edgily',
 					'joyous. Love it!'
 				]}
-				delay={200} />
+				delay={100} />
 		</div>
 	</div>
 
@@ -140,7 +131,9 @@
 {#if criticalContentIsLoaded}
 	<PageLayout.VerticalSpacing />
 
-	<div class="flex flex-col sm:flex-row justify-between sm:gap-lg lg:gap-xl flex-shrink-0" in:fade>
+	<div
+		class="flex flex-col sm:flex-row justify-between sm:gap-lg lg:gap-xl flex-shrink-0"
+		in:fade={{ delay: 400 }}>
 		<div class="">
 			<LatestNews />
 		</div>
