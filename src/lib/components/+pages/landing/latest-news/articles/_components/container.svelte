@@ -7,19 +7,9 @@
 	export let height: number;
 	export let isActive: boolean;
 
+	let isOverflow = false;
+
 	let node: HTMLDivElement;
-
-	$: {
-		if (node) {
-			node.style.scrollBehavior = 'smooth';
-
-			node.addEventListener('wheel', (event) => {
-				event.preventDefault();
-
-				node.scrollTo({ left: node.scrollLeft + event.deltaY, behavior: 'smooth' });
-			});
-		}
-	}
 
 	$: {
 		if (node) {
@@ -27,10 +17,19 @@
 			const offsetWidth = node.offsetWidth;
 
 			isOverflow = scrollWidth > offsetWidth;
+
+			if (scrollWidth > offsetWidth) {
+				node.style.scrollBehavior = 'smooth';
+
+				node.addEventListener('wheel', (event) => {
+					event.preventDefault();
+
+					node.scrollTo({ left: node.scrollLeft + event.deltaY, behavior: 'smooth' });
+				});
+			}
 		}
 	}
 
-	let isOverflow = false;
 	let userHasScrolledTracks = false;
 
 	let showScrollRightMessage = false;

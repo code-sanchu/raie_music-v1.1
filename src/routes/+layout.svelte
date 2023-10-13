@@ -41,6 +41,12 @@
 <svelte:head>
 	<title>Raie</title>
 	<meta name="description" content="The official site of Raie" />
+	<link
+		rel="preload"
+		href="/fonts/HelveticaNeue-Thin.otf"
+		as="font"
+		type="font/otf"
+		crossorigin="true" />
 </svelte:head>
 
 <svelte:window bind:innerHeight={windowHeight} />

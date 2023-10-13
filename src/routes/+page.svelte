@@ -1,8 +1,5 @@
 <script context="module" lang="ts">
-	import { onMount } from 'svelte';
-
 	import { images } from '$lib/assets';
-	import { updateGlobalFlags } from '$lib/stores';
 	import { Images, PageLayout, Picture } from '$lib/components';
 	import {
 		LatestNews,
@@ -10,20 +7,20 @@
 		PlayMusicButton,
 		ReviewQuote
 	} from '$lib/components/+pages/landing';
+	import { updateGlobalFlags } from '$lib/stores';
+	import { fade } from 'svelte/transition';
 
 	// DONE PENDING LIVE CHECK
-	// □ scroll right doesn't work on galaxy studios
-	// □ about page responsivenes not correct
-	// □ latest news is out of line with top half of the page on landing
 
 	// GO LIVE CHECKLIST
 	// □ go through music player functionality. play pause skip, etc. on all pages.
 
 	// MUST DO
+	// □ update first page has mounted on each page
 
 	// TO DO
+	// □ sort out image modal gallery - could have situation where image is loading for a while and user has no idea what's going on.
 	// □ one run through of page transitions
-	// □ wait for pg load before music player etc load.
 
 	// □ calc aspect ratio for image modal images. apply to caption width.
 	// □ images modal bg on load. all images bg on load?
@@ -55,9 +52,13 @@
 </script>
 
 <script lang="ts">
-	onMount(() => {
-		updateGlobalFlags.firstPageHasMounted();
-	});
+	let criticalContentIsLoaded = false;
+
+	$: {
+		if (criticalContentIsLoaded) {
+			updateGlobalFlags.firstPageHasMounted();
+		}
+	}
 </script>
 
 <PageLayout.VerticalSpacing sizing={'1.5'} />
@@ -77,7 +78,18 @@
 		</div>
 
 		<div class="sm:hidden max-w-[500px] flex justify-center">
-			<Picture imageClass="" meta={images.faceshots[1].src} sizes={'50vw'} loading="eager" alt="" />
+			<div
+				style:aspect-ratio={images.faceshots[1].naturalDimensions.width /
+					images.faceshots[1].naturalDimensions.height}>
+				<Picture
+					imageClass=""
+					meta={images.faceshots[1].src}
+					sizes={'50vw'}
+					loading="eager"
+					onLoad={() => (criticalContentIsLoaded = true)}
+					duration="duration-500"
+					alt="" />
+			</div>
 		</div>
 
 		<div
@@ -89,7 +101,8 @@
 					'beautifully assured solo album...',
 					'Heart-tuggingly moving and edgily',
 					'joyous. Love it!'
-				]} />
+				]}
+				delay={200} />
 		</div>
 	</div>
 
@@ -102,42 +115,50 @@
 			meta={images.faceshots[1].src}
 			sizes={'50vw'}
 			loading="eager"
+			onLoad={() => (criticalContentIsLoaded = true)}
+			duration="duration-500"
 			alt="" />
 	</div>
 </div>
 
 <PageLayout.VerticalSpacing sizing="1.5" />
 
-<div class="flex justify-center">
-	<PlayMusicButton />
-</div>
-
-<PageLayout.VerticalSpacing />
-
-<div class="px-xs xs:px-lg h-[12px] sm:h-[16px] md:h-auto sm:px-0 overflow-hidden">
-	<Images.BrickBg.HorizontalThree />
-</div>
-
-<PageLayout.VerticalSpacing />
-
-<div class="flex flex-col sm:flex-row justify-between sm:gap-lg lg:gap-xl flex-shrink-0">
-	<div class="">
-		<LatestNews />
+{#if criticalContentIsLoaded}
+	<div class="flex justify-center" in:fade>
+		<PlayMusicButton />
 	</div>
+{/if}
 
-	<div class="sm:hidden">
-		<PageLayout.VerticalSpacing sizing="2/3" />
-	</div>
+{#if criticalContentIsLoaded}
+	<PageLayout.VerticalSpacing />
 
-	<div class="px-xs xs:px-lg h-[12px] sm:hidden overflow-hidden">
+	<div class="px-xs xs:px-lg h-[12px] sm:h-[16px] md:h-auto sm:px-0 overflow-hidden">
 		<Images.BrickBg.HorizontalThree />
 	</div>
+{/if}
 
-	<div class="sm:hidden">
-		<PageLayout.VerticalSpacing sizing="half" />
-	</div>
+{#if criticalContentIsLoaded}
+	<PageLayout.VerticalSpacing />
 
-	<div class="sm:pt-[40px] px-md sm:px-0">
-		<PageLinks />
+	<div class="flex flex-col sm:flex-row justify-between sm:gap-lg lg:gap-xl flex-shrink-0" in:fade>
+		<div class="">
+			<LatestNews />
+		</div>
+
+		<div class="sm:hidden">
+			<PageLayout.VerticalSpacing sizing="2/3" />
+		</div>
+
+		<div class="px-xs xs:px-lg h-[12px] sm:hidden overflow-hidden">
+			<Images.BrickBg.HorizontalThree />
+		</div>
+
+		<div class="sm:hidden">
+			<PageLayout.VerticalSpacing sizing="half" />
+		</div>
+
+		<div class="sm:pt-[40px] px-md sm:px-0">
+			<PageLinks />
+		</div>
 	</div>
-</div>
+{/if}

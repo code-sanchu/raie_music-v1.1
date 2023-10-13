@@ -3,45 +3,11 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: 'Quicksand';
-	font-style: normal;
-	font-weight: 300;
-	src: url('/fonts/Quicksand-Light.ttf');
-}
-
-@font-face {
-	font-family: 'Quicksand';
-	font-style: normal;
-	font-weight: 400;
-	src: url('/fonts/Quicksand-Regular.ttf');
-}
-
-@font-face {
-	font-family: 'Quicksand';
-	font-style: normal;
-	font-weight: 500;
-	src: url('/fonts/Quicksand-Medium.ttf');
-}
-
-@font-face {
-	font-family: 'Quicksand';
-	font-style: normal;
-	font-weight: 600;
-	src: url('/fonts/Quicksand-SemiBold.ttf');
-}
-
-@font-face {
-	font-family: 'Quicksand';
-	font-style: normal;
-	font-weight: 700;
-	src: url('/fonts/Quicksand-Bold.ttf');
-}
-
-@font-face {
 	font-family: 'Helvetica';
 	font-style: normal;
 	font-weight: 500;
 	src: url('/fonts/HelveticaNeue-Light.otf');
+	font-display: swap;
 }
 
 @font-face {
@@ -49,6 +15,7 @@
 	font-style: normal;
 	font-weight: 400;
 	src: url('/fonts/HelveticaNeue-Thin.otf');
+	font-display: swap;
 }
 
 html {
@@ -56,7 +23,7 @@ html {
 }
 
 * {
-	@apply outline-none active:outline-none focus:outline-none;
+	@apply outline-none active:outline-none focus:outline-none font-thin;
 
 	-webkit-tap-highlight-color: transparent;
 }

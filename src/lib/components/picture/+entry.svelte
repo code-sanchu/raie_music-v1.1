@@ -15,6 +15,8 @@
 
 	export let imageClass = '';
 	export let pictureClass = '';
+	export let onLoad: () => void = () => null;
+	export let duration: 'duration-300' | 'duration-500' = 'duration-300';
 
 	let imgNode: HTMLImageElement;
 
@@ -26,10 +28,12 @@
 		}
 		if (imgNode.complete) {
 			loadingComplete = true;
+			onLoad();
 			return;
 		}
 		imgNode.onload = () => {
 			loadingComplete = true;
+			onLoad();
 		};
 	});
 </script>
@@ -46,9 +50,9 @@
 		src={fallback.src}
 		{alt}
 		{loading}
-		class={`${imageClass} transition-opacity ease-in-out duration-300 select-none ${
+		class={`${imageClass} transition-opacity ease-in-out select-none  ${
 			loadingComplete ? 'opacity-100' : 'opacity-0'
-		}`}
+		} ${duration}`}
 		draggable={false}
 		bind:this={imgNode} />
 </picture>
