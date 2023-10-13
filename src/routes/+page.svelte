@@ -11,11 +11,13 @@
 		ReviewQuote
 	} from '$lib/components/+pages/landing';
 
+	// DONE PENDING CHECK
+	// □ scroll right doesn't work on galaxy studios
+
 	// GO LIVE CHECKLIST
 	// □ go through music player functionality. play pause skip, etc. on all pages.
 
 	// MUST DO
-	// □ scroll right doesn't work on galaxy studios
 	// □ about page responsivenes not correct
 	// □ latest news is out of line with top half of the page on landing
 
