@@ -73,7 +73,7 @@
 
 		<TransitionChild
 			as="div"
-			class="z-20 fixed top-sm left-1/2 -translate-x-1/2"
+			class="z-20 fixed top-sm right-sm md:right-auto md:left-1/2 md:-translate-x-1/2 "
 			enter="ease-out duration-300"
 			enterFrom="opacity-0 scale-95"
 			enterTo="opacity-100 scale-100"
@@ -81,7 +81,7 @@
 			leaveFrom="opacity-100 scale-100"
 			leaveTo="opacity-0 scale-95">
 			<button
-				class="border-[0.8px] border-my-black-100 text-my-black-900 p-xxs rounded-md"
+				class="border-[0.8px] border-my-black-100 bg-white/70 text-my-black-900 p-xxs rounded-md"
 				on:click={() => (isOpen = false)}
 				type="button"
 				aria-label="close images modal"><Icon.X weight="thin" /></button>
