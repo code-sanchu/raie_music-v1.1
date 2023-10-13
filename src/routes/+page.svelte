@@ -15,9 +15,12 @@
 	// □ go through music player functionality. play pause skip, etc. on all pages.
 
 	// MUST DO
+	// □ scroll right doesn't work on galaxy studios
+	// □ about page responsivenes not correct
+	// □ latest news is out of line with top half of the page on landing
 
 	// TO DO
-
+	// □ song names on albums are misaligned
 	// □ one run through of page transitions
 	// □ wait for pg load before music player etc load.
 

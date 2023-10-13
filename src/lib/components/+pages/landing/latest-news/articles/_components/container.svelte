@@ -33,7 +33,7 @@
 </script>
 
 <div
-	class={`max-w-full overflow-x-auto overflow-y-hidden scrollbar-track-white scrollbar-thumb-[#f4f4f4] hover:scrollbar-thumb-[#f4f4f4] ${
+	class={`max-w-full max-h-[330px] overflow-x-auto overflow-y-hidden scrollbar-track-white scrollbar-thumb-[#f4f4f4] hover:scrollbar-thumb-[#f4f4f4] ${
 		isOverflow ? '' : ''
 	}`}
 	in:fade={{ easing: sineInOut, duration: 400, delay: 100 }}

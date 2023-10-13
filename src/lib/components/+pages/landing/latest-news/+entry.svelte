@@ -5,7 +5,8 @@
 </script>
 
 <script lang="ts">
-	let currentNews: 'galaxy' | 'last few months' | 'album launch' = 'album launch';
+	let currentNews: 'galaxy' | 'last few months' | 'album launch' = 'galaxy';
+	// let currentNews: 'galaxy' | 'last few months' | 'album launch' = 'album launch';
 
 	let isOverflow = false;
 	let userHasScrolledTracks = false;
@@ -45,7 +46,7 @@
 	</div>
 
 	<div
-		class="mt-md lg:mt-lg max-h-[345px] overflow-y-hidden transition-all ease-in-out duration-300"
+		class="mt-md lg:mt-lg transition-all ease-in-out duration-300"
 		style:height={`${
 			currentNews === 'album launch'
 				? albumLaunchHeight
