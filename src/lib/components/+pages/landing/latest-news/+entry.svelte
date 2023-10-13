@@ -5,11 +5,7 @@
 </script>
 
 <script lang="ts">
-	let currentNews: 'galaxy' | 'last few months' | 'album launch' = 'galaxy';
-	// let currentNews: 'galaxy' | 'last few months' | 'album launch' = 'album launch';
-
-	let isOverflow = false;
-	let userHasScrolledTracks = false;
+	let currentNews: 'galaxy' | 'recent gigs' | 'album launch' = 'album launch';
 
 	let albumLaunchHeight: number;
 	let galaxyStudiosHeight: number;
@@ -41,8 +37,8 @@
 
 		<TitleButton
 			text="Recent Gigs"
-			onClick={() => (currentNews = 'last few months')}
-			isActive={currentNews === 'last few months'} />
+			onClick={() => (currentNews = 'recent gigs')}
+			isActive={currentNews === 'recent gigs'} />
 	</div>
 
 	<div
@@ -55,20 +51,11 @@
 				: recentGigsHeight
 		}px`}>
 		{#if currentNews === 'album launch'}
-			<AlbumLaunch bind:isOverflow bind:userHasScrolledTracks bind:height={albumLaunchHeight} />
+			<AlbumLaunch bind:height={albumLaunchHeight} isActive={currentNews === 'album launch'} />
 		{:else if currentNews === 'galaxy'}
-			<GalaxyStudios bind:isOverflow bind:userHasScrolledTracks bind:height={galaxyStudiosHeight} />
+			<GalaxyStudios bind:height={galaxyStudiosHeight} isActive={currentNews === 'galaxy'} />
 		{:else}
-			<RecentGigs bind:isOverflow bind:userHasScrolledTracks bind:height={recentGigsHeight} />
+			<RecentGigs bind:height={recentGigsHeight} isActive={currentNews === 'recent gigs'} />
 		{/if}
-	</div>
-
-	<div
-		class={`mt-xs flex justify-end transition-opacity ease-in-out duration-300 ${
-			isOverflow && !userHasScrolledTracks ? '' : 'opacity-0'
-		}`}>
-		<div class="flex items-center gap-xs text-my-black-400 text-xs italic tracking-wide">
-			<p>scroll right for more...</p>
-		</div>
 	</div>
 </div>

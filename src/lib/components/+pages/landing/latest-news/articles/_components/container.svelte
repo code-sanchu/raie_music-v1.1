@@ -4,9 +4,8 @@
 </script>
 
 <script lang="ts">
-	export let userHasScrolledTracks = false;
-	export let isOverflow = false;
 	export let height: number;
+	export let isActive: boolean;
 
 	let node: HTMLDivElement;
 
@@ -30,6 +29,19 @@
 			isOverflow = scrollWidth > offsetWidth;
 		}
 	}
+
+	let isOverflow = false;
+	let userHasScrolledTracks = false;
+
+	let showScrollRightMessage = false;
+
+	$: {
+		if (isActive && isOverflow && !userHasScrolledTracks && !showScrollRightMessage) {
+			setTimeout(() => {
+				showScrollRightMessage = true;
+			}, 100);
+		}
+	}
 </script>
 
 <div
@@ -48,4 +60,13 @@
 	}}
 	bind:clientHeight={height}>
 	<slot />
+</div>
+
+<div
+	class={`mt-xs flex justify-end transition-opacity ease-in-out duration-300 ${
+		showScrollRightMessage ? '' : 'opacity-0'
+	}`}>
+	<div class="flex items-center gap-xs text-my-black-400 text-xs italic tracking-wide">
+		<p>scroll right for more...</p>
+	</div>
 </div>

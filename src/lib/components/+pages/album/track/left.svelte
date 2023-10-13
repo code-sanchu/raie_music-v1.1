@@ -24,7 +24,7 @@
 </script>
 
 <div class="flex gap-md flex-nowrap items-end flex-grow">
-	<p class="text-my-black-400 text-sm w-[16px]">{number}</p>
+	<p class="text-my-black-400 text-sm w-[16px] shrink-0">{number}</p>
 
 	<button
 		class="self-end flex flex-nowrap items-end gap-sm sm:gap-md group/button"

@@ -23,8 +23,7 @@
 		{/if}
 	</span>
 
-	<span
-		class="text-my-black-600 italic sm:text-my-black-700 font-light text-[0.8rem] md:text-base tracking-widest sm:uppercase">
+	<span class="text-my-black-600 italic font-light md:text-[1.06rem] tracking-widest">
 		{#if musicPlayer.paused}
 			Play music
 		{:else}

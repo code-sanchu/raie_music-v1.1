@@ -52,7 +52,8 @@
 			<button
 				class="flex-grow h-full cursor-auto"
 				on:click={updateMusicPlayer.close}
-				type="button" />
+				type="button"
+				aria-label="close music player" />
 
 			<div class="w-full pt-md md:pt-lg pb-xs md:pl-md bg-white">
 				<div class="pt-sm md:pt-md border-t md:border-t-2 border-my-black-700">

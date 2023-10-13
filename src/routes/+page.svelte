@@ -11,18 +11,17 @@
 		ReviewQuote
 	} from '$lib/components/+pages/landing';
 
-	// DONE PENDING CHECK
+	// DONE PENDING LIVE CHECK
 	// □ scroll right doesn't work on galaxy studios
+	// □ about page responsivenes not correct
+	// □ latest news is out of line with top half of the page on landing
 
 	// GO LIVE CHECKLIST
 	// □ go through music player functionality. play pause skip, etc. on all pages.
 
 	// MUST DO
-	// □ about page responsivenes not correct
-	// □ latest news is out of line with top half of the page on landing
 
 	// TO DO
-	// □ song names on albums are misaligned
 	// □ one run through of page transitions
 	// □ wait for pg load before music player etc load.
 
@@ -65,7 +64,7 @@
 
 <div
 	class="flex items-center justify-center sm:items-start sm:justify-between gap-xl md:gap-[4.5rem] lg:gap-2xl">
-	<div class="flex flex-col gap-1.5xl sm:gap-xl">
+	<div class="flex flex-col gap-1.5xl sm:gap-2xl">
 		<div class="">
 			<ReviewQuote
 				reviewer={{ name: 'Martin Cooke', org: 'Bluesmatters Magazine' }}
@@ -82,7 +81,7 @@
 		</div>
 
 		<div
-			class="translate-x-sm xxs:translate-x-md xs:translate-x-xl xs/sm:translate-x-[4rem] sm:translate-x-0">
+			class="translate-x-sm xxs:translate-x-md xs:translate-x-xl xs/sm:translate-x-[4rem] sm:translate-x-[0rem]">
 			<ReviewQuote
 				reviewer={{ name: 'Martin Webb', org: 'R&R Magazine' }}
 				text={[
@@ -91,11 +90,6 @@
 					'Heart-tuggingly moving and edgily',
 					'joyous. Love it!'
 				]} />
-		</div>
-
-		<div
-			class="flex justify-center sm:justify-start xs:mt-md -translate-x-[5.5px] sm:-translate-x-[7.5px] -mt-xs">
-			<PlayMusicButton />
 		</div>
 	</div>
 
@@ -112,6 +106,12 @@
 	</div>
 </div>
 
+<PageLayout.VerticalSpacing sizing="1.5" />
+
+<div class="flex justify-center">
+	<PlayMusicButton />
+</div>
+
 <PageLayout.VerticalSpacing />
 
 <div class="px-xs xs:px-lg h-[12px] sm:h-[16px] md:h-auto sm:px-0 overflow-hidden">
@@ -121,7 +121,7 @@
 <PageLayout.VerticalSpacing />
 
 <div class="flex flex-col sm:flex-row justify-between sm:gap-lg lg:gap-xl flex-shrink-0">
-	<div class="pl-sm xs:pl-md pr-sm sm:px-0">
+	<div class="">
 		<LatestNews />
 	</div>
 

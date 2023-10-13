@@ -6,12 +6,11 @@
 </script>
 
 <script lang="ts">
-	export let userHasScrolledTracks = false;
-	export let isOverflow = false;
 	export let height: number;
+	export let isActive: boolean;
 </script>
 
-<Container bind:userHasScrolledTracks bind:isOverflow bind:height>
+<Container bind:height bind:isActive>
 	<div class="flex flex-row gap-sm sm:gap-lg lg:gap-xl">
 		<div class="w-[200px] lg:w-[250px] shrink-0 hidden md:block">
 			<Picture

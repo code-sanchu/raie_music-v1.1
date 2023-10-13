@@ -26,15 +26,15 @@
 	class={`transition-all ease-out duration-150 flex flex-col bg-white ${
 		closedOrClosing ? 'h-0 opacity-0 pointer-events-none' : 'h-[250px] mb-sm'
 	}`}>
-	<h5 class="italic text-sm flex-shrink-0">Music player</h5>
+	<h3 class="italic text-sm flex-shrink-0">Music player</h3>
 
 	<div class="mt-md flex-grow overflow-hidden flex flex-col">
-		<h3
+		<h4
 			class={`self-start text-xs mr-sm text-my-black-200 italic pt-xs border-t border-my-black-100 ${
 				visibleAlbumKey === 'earthbound' ? 'pr-2xl' : 'pr-sm'
 			}`}>
 			Albums
-		</h3>
+		</h4>
 
 		<div
 			class="self-start pr-xl pb-xs flex items-end tracking-wider flex-shrink-0 border-b border-b-my-black-100">

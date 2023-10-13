@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
-	import { Icon, Tooltip } from '$lib/components';
+	import { LinkIconSwitch, Tooltip } from '$lib/components';
+	import { raie_links_arrs } from '$lib/data';
 	import { onClickOutside } from '$lib/helpers';
 	import { globalFlagsStore, updateGlobalFlags, type GlobalFlagsState } from '$lib/stores';
 </script>
@@ -25,15 +26,17 @@
 			<h3 class="italic text-sm">Buy songs</h3>
 
 			<div class="flex items-center gap-md mt-sm sm:mt-md text-my-black-900">
-				<a class="rounded-full p-xxs" href="." id="links_panel-bandcamp">
-					<Icon.Bandcamp weight="fill" />
-				</a>
-				<Tooltip text="Bandcamp" triggeredById="links_panel-bandcamp" />
-
-				<a class="rounded-full p-xxs" href="." id="links_panel-itunes">
-					<Icon.Itunes weight="fill" />
-				</a>
-				<Tooltip text="Itunes" triggeredById="links_panel-itunes" />
+				{#each [...raie_links_arrs.buy] as raieLink}
+					<a
+						class="rounded-full p-xxs"
+						href={raieLink.href}
+						target="_blank"
+						id={`links-panel-${raieLink.id}`}
+						aria-label={`${raieLink.name} link`}>
+						<LinkIconSwitch type={raieLink.id} weight="fill" />
+					</a>
+					<Tooltip text={raieLink.name} triggeredById={`links-panel-${raieLink.id}`} />
+				{/each}
 			</div>
 		</div>
 
@@ -41,30 +44,17 @@
 			<h3 class="italic text-sm">Listen & Follow</h3>
 
 			<div class="flex items-center gap-md mt-sm sm:mt-md text-my-black-900">
-				<a class="rounded-full p-xxs" href="." id="links_panel-soundcloud">
-					<Icon.Soundcloud weight="fill" />
-				</a>
-				<Tooltip text="Soundcloud" triggeredById="links_panel-soundcloud" />
-
-				<a class="rounded-full p-xxs" href="." id="links_panel-youtube">
-					<Icon.Youtube weight="fill" />
-				</a>
-				<Tooltip text="Youtube" triggeredById="links_panel-youtube" />
-
-				<a class="rounded-full p-xxs" href="." id="links_panel-spotify">
-					<Icon.Spotify weight="fill" />
-				</a>
-				<Tooltip text="Spotify" triggeredById="links_panel-spotify" />
-
-				<a class="rounded-full p-xxs" href="." id="links_panel-facebook">
-					<Icon.Facebook weight="fill" />
-				</a>
-				<Tooltip text="Facebook" triggeredById="links_panel-facebook" />
-
-				<a class="rounded-full p-xxs" href="." id="links_panel-insta">
-					<Icon.Instagram weight="fill" />
-				</a>
-				<Tooltip text="Instagram" triggeredById="links_panel-insta" />
+				{#each [...raie_links_arrs.listen, ...raie_links_arrs.follow] as raieLink}
+					<a
+						class="rounded-full p-xxs"
+						href={raieLink.href}
+						target="_blank"
+						id={`links-panel-${raieLink.id}`}
+						aria-label={`${raieLink.name} link`}>
+						<LinkIconSwitch type={raieLink.id} weight="fill" />
+					</a>
+					<Tooltip text={raieLink.name} triggeredById={`links-panel-${raieLink.id}`} />
+				{/each}
 			</div>
 		</div>
 	</div>

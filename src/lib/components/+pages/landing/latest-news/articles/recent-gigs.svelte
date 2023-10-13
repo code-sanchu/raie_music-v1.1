@@ -4,12 +4,11 @@
 </script>
 
 <script lang="ts">
-	export let userHasScrolledTracks = false;
-	export let isOverflow = false;
 	export let height: number;
+	export let isActive: boolean;
 </script>
 
-<Container bind:userHasScrolledTracks bind:isOverflow bind:height>
+<Container bind:height bind:isActive>
 	<div>
 		<TextContainer numColumns={2}>
 			Raie sold out Hope and Anchor – home of The Stranglers and Sinead O’Connor and we were
