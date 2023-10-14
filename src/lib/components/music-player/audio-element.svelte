@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
-	import { musicPlayerStore, type MusicPlayer, songsList, updateMusicPlayer } from '$lib/stores';
+	import { musicPlayerStore, type MusicPlayer, updateMusicPlayer } from '$lib/stores';
+	import { songsList } from '$lib/data';
 </script>
 
 <script lang="ts">

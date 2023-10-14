@@ -1,7 +1,27 @@
 <script context="module" lang="ts">
+	import {
+		swipe as untypedSwipe,
+		type ParametersSwitch,
+		type SwipeParameters
+	} from 'svelte-gestures';
+	import type { Action } from 'svelte/action';
+
 	import { musicPlayerStore, updateMusicPlayer, type MusicPlayer } from '$lib/stores';
 	import { Icon } from '$lib/components';
 	import { Tracks } from './tracks';
+
+	const swipe: Action<
+		HTMLElement,
+		ParametersSwitch<SwipeParameters>,
+		{
+			'on:swipe': (
+				e: CustomEvent<{
+					[x: string]: string;
+					// detail: { direction: 'left' | 'right' };
+				}>
+			) => void;
+		}
+	> = untypedSwipe as any;
 </script>
 
 <script lang="ts">
@@ -18,7 +38,13 @@
 	class={`absolute -z-10 w-screen px-sm sm:px-md md:px-lg pt-sm bottom-0 left-0 transition-all ease-out duration-300 $`}
 	style:transform={musicPlayer.visibility === 'closing' || musicPlayer.visibility === 'closed'
 		? 'translateY(100%)'
-		: `translateY(-${pxFromBottom}px)`}>
+		: `translateY(-${pxFromBottom}px)`}
+	use:swipe={{ timeframe: 300, minSwipeDistance: 100, touchAction: 'pan-x' }}
+	on:swipe={(e) => {
+		if (e.detail.direction === 'bottom') {
+			updateMusicPlayer.close();
+		}
+	}}>
 	<div class={`flex flex-col md:flex-row`}>
 		<div class="bg-white md:w-1/2 pt-lg pb-xs md:pr-md">
 			<div class="pt-md border-t-2 border-my-black">

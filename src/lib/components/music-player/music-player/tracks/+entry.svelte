@@ -4,7 +4,8 @@
 		this_music_thing_track_names_only,
 		type AlbumKey
 	} from '$lib/data';
-	import { musicPlayerInitData, musicPlayerStore, songsList, type MusicPlayer } from '$lib/stores';
+	import { musicPlayerInitData, musicPlayerStore, type MusicPlayer } from '$lib/stores';
+	import { songsList } from '$lib/data';
 	import TrackList from './trackList.svelte';
 
 	const albumButtonsData: { key: AlbumKey; name: string }[] = [

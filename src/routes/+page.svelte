@@ -17,9 +17,7 @@
 	// MUST DO
 
 	// TO DO
-	// □ performance: apply .css * and div to relevant containers only; also prose?; pull in only needed data to music player.
 	// □ try giving images actual widths and heights
-	// □ different colour highlight
 	// □ image sizes
 	// □ swipe to close music player
 	// □ grab latest news to scroll
@@ -31,6 +29,7 @@
 	// NICE TO HAVE
 	// □ draw more attention to music player?
 	// □ curate gallery as in https://cargo.site/Templates#services&programs ?
+	// □ different colour highlight
 	// □ cascade images opacity
 	// □ loading priority for images (as opposed to lazy/eager)
 	// □ song time for open player (and closed?). on right side?

@@ -3,8 +3,8 @@
 	import { fade } from 'svelte/transition';
 
 	import { Icon } from '$lib/components';
-	import { type SongTrackNamesOnly, songs_tracks_names_only } from '$lib/data';
-	import { musicPlayerStore, songsList, updateMusicPlayer, type MusicPlayer } from '$lib/stores';
+	import { type SongTrackNamesOnly, songs_tracks_names_only, songsList } from '$lib/data';
+	import { musicPlayerStore, updateMusicPlayer, type MusicPlayer } from '$lib/stores';
 </script>
 
 <script lang="ts">
@@ -20,7 +20,7 @@
 </script>
 
 <div
-	class={`h-full w-full max-w-full flex flex-col items-start gap-xs scrollbar-track-white scrollbar-thumb-my-black-100 ${
+	class={`h-full select-none w-full max-w-full flex flex-col items-start gap-xs scrollbar-track-white scrollbar-thumb-my-black-100 ${
 		musicPlayer.visibility === 'open' ? 'overflow-y-auto' : 'overflow-hidden'
 	}`}
 	transition:fade={{ easing: sineIn, duration: 200 }}>

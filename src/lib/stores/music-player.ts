@@ -1,9 +1,5 @@
 import { writable } from 'svelte/store';
 
-import { songsArr } from '$lib/data';
-
-const songsList = [...songsArr.this_music_thing, ...songsArr.earthbound];
-
 type MusicPlayer = {
 	currentTrackIndex: number;
 	trackIndexOnLastInteraction: number | null;
@@ -40,6 +36,8 @@ function updateMusicPlayerStore<TField extends keyof MusicPlayer>(
 	});
 }
 
+const numSongs = 17;
+
 export const updateMusicPlayer = {
 	track: (index: number | 'next' | 'prev') => {
 		musicPlayerStore.update((state) => {
@@ -47,11 +45,11 @@ export const updateMusicPlayer = {
 				typeof index === 'number'
 					? index
 					: index === 'next'
-					? state.currentTrackIndex === songsList.length - 1
+					? state.currentTrackIndex === numSongs - 1
 						? 0
 						: state.currentTrackIndex + 1
 					: state.currentTrackIndex === 0
-					? songsList.length - 1
+					? numSongs - 1
 					: state.currentTrackIndex - 1;
 
 			return {
@@ -107,4 +105,4 @@ export const updateMusicPlayer = {
 	}
 };
 
-export { songsList, type MusicPlayer, musicPlayerStore };
+export { type MusicPlayer, musicPlayerStore };

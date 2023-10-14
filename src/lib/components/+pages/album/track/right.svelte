@@ -2,8 +2,8 @@
 	import { Icon, Tooltip, YoutubeVideoModal } from '$lib/components';
 	import LyricsModal from './lyrics-modal.svelte';
 
-	import type { Song } from '$lib/data';
-	import { musicPlayerStore, type MusicPlayer, songsList, updateMusicPlayer } from '$lib/stores';
+	import { type Song, songsList } from '$lib/data';
+	import { musicPlayerStore, type MusicPlayer, updateMusicPlayer } from '$lib/stores';
 </script>
 
 <script lang="ts">

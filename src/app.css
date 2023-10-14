@@ -28,6 +28,6 @@ html {
 	-webkit-tap-highlight-color: transparent;
 }
 
-/* div {
+div {
 	@apply md:scrollbar-thin md:scrollbar-track-my-black-50/50 md:scrollbar-thumb-my-black-100 md:hover:scrollbar-thumb-my-black-200;
-} */
+}

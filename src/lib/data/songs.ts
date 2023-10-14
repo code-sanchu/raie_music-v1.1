@@ -430,3 +430,5 @@ export type Song = {
 	credits: string;
 	youtubeEmbed: string | null;
 };
+
+export const songsList = [...songsArr.this_music_thing, ...songsArr.earthbound];
