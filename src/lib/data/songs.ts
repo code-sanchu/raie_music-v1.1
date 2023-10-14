@@ -1,3 +1,112 @@
+import { objToArr } from '$lib/helpers';
+
+export type SongTrackNamesOnly = {
+	id: string;
+	name: string;
+};
+
+const earthbound_track_names_only_obj = {
+	wax_n_wane: {
+		id: 'earthbound-wax_n_wane',
+		name: "Wax 'n Wane"
+	},
+
+	talkin_bout_you: {
+		id: 'earthbound-talkin_bout_you',
+		name: 'Talkin Bout You'
+	},
+
+	blood: {
+		id: 'earthbound-blood',
+		name: 'Blood'
+	},
+
+	katyas_song: {
+		id: 'earthbound-katyas_song',
+		name: "Katya's song"
+	},
+
+	earthbound: {
+		id: 'earthbound-earthbound',
+		name: 'Earthbound'
+	},
+
+	goliath: {
+		id: 'earthbound-goliath',
+		name: 'Goliath'
+	}
+} as const;
+
+export const earthbound_track_names_only = objToArr(
+	earthbound_track_names_only_obj
+) as SongTrackNamesOnly[];
+
+const this_music_thing_track_names_only_obj = {
+	healin_train: {
+		id: 'this_music_thing-healin_train',
+		name: "Healin' train"
+	},
+
+	rebekahs_lullaby: {
+		id: 'this_music_thing-rebekahs_lullaby',
+		name: "Rebekah's Lullaby"
+	},
+
+	pegasus: {
+		id: 'this_music_thing-pegasus',
+		name: 'Pegasus'
+	},
+
+	blackbird_for_liam: {
+		id: 'this_music_thing-blackbird_for_liam',
+		name: 'Blackbird for Liam'
+	},
+
+	national_tv: {
+		id: 'this_music_thing-national_tv',
+		name: 'National TV - A Lament for Anneli Alderton'
+	},
+
+	melody_for_ruth: {
+		id: 'this_music_thing-melody_for_ruth',
+		name: 'Melody for Ruth'
+	},
+
+	this_music_thing: {
+		id: 'this_music_thing-this_music_thing',
+		name: 'This Music Thing'
+	},
+
+	lenas_song: {
+		id: 'this_music_thing-lenas_song',
+		name: "Lena's Song"
+	},
+
+	the_trial_of_ruby_bates: {
+		id: 'this_music_thing-the_trial_of_ruby_bates',
+		name: 'The Trial of Ruby Bates'
+	},
+
+	for_jasmine_a_ghost_story: {
+		id: 'this_music_thing-for_jasmine_a_ghost_story',
+		name: 'For Jasmine - a Ghost Story'
+	},
+
+	azhia: {
+		id: 'this_music_thing-azhia',
+		name: 'Azhia'
+	}
+} as const;
+
+export const this_music_thing_track_names_only = objToArr(
+	this_music_thing_track_names_only_obj
+) as SongTrackNamesOnly[];
+
+export const songs_tracks_names_only = [
+	...earthbound_track_names_only,
+	...this_music_thing_track_names_only
+];
+
 const earthbound = {
 	wax_n_wane: {
 		albumName: 'Earthbound',

@@ -88,7 +88,7 @@
 			<h3 class="italic tracking-widest text-sm">Tracklist</h3>
 
 			<div
-				class="relative flex flex-col gap-sm mt-md overflow-x-auto max-w-[calc(100vw-2rem)] pb-lg"
+				class="relative flex flex-col gap-sm mt-md overflow-x-auto max-w-[calc(100vw-2rem)] pb-lg md:scrollbar-thin md:scrollbar-track-my-black-50/50 md:scrollbar-thumb-my-black-100 md:hover:scrollbar-thumb-my-black-200"
 				bind:this={tracksContainer}
 				on:scroll={(e) => {
 					const scrollLeft = e.currentTarget.scrollLeft;

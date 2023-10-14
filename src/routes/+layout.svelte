@@ -25,6 +25,7 @@
 	$: scrollDirection = !previousScrollTop || previousScrollTop < currentScrollTop ? 'down' : 'up';
 
 	$: hideHeader =
+		!globalFlags.firstPageHasMounted &&
 		windowHeight &&
 		headerHeight &&
 		windowHeight < 769 &&
@@ -60,7 +61,7 @@
 
 {#if headerHeight}
 	<div
-		class="overflow-y-auto flex flex-col overflow-x-hidden transition-all duration-300 ease-in-out h-screen"
+		class="overflow-y-auto flex flex-col overflow-x-hidden transition-all duration-300 ease-in-out h-screen md:scrollbar-thin md:scrollbar-track-my-black-50/50 md:scrollbar-thumb-my-black-100 md:hover:scrollbar-thumb-my-black-200"
 		style:padding-top={`${headerHeight}px`}
 		bind:this={bodyElement}
 		on:scroll={() => {

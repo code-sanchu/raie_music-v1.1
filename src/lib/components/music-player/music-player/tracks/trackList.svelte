@@ -1,14 +1,14 @@
 <script context="module" lang="ts">
-	import { fade } from 'svelte/transition';
 	import { sineIn } from 'svelte/easing';
+	import { fade } from 'svelte/transition';
 
-	import { songsArr, type AlbumKey } from '$lib/data';
-	import { musicPlayerStore, songsList, updateMusicPlayer, type MusicPlayer } from '$lib/stores';
 	import { Icon } from '$lib/components';
+	import { type SongTrackNamesOnly, songs_tracks_names_only } from '$lib/data';
+	import { musicPlayerStore, songsList, updateMusicPlayer, type MusicPlayer } from '$lib/stores';
 </script>
 
 <script lang="ts">
-	export let albumKey: AlbumKey;
+	export let songs: SongTrackNamesOnly[];
 
 	let musicPlayer: MusicPlayer;
 
@@ -20,16 +20,16 @@
 </script>
 
 <div
-	class={`h-full w-full max-w-full flex flex-col items-start gap-xs scrollbar-track-white scrollbar-thumb-my-black-100  ${
+	class={`h-full w-full max-w-full flex flex-col items-start gap-xs scrollbar-track-white scrollbar-thumb-my-black-100 ${
 		musicPlayer.visibility === 'open' ? 'overflow-y-auto' : 'overflow-hidden'
 	}`}
 	transition:fade={{ easing: sineIn, duration: 200 }}>
-	{#each songsArr[albumKey] as albumSong, i}
+	{#each songs as song, i}
 		<button
 			class="flex gap-sm md:gap-md group/track"
 			on:click={() => {
-				const songListIndex = songsList.findIndex(
-					(songListSong) => songListSong.id === albumSong.id
+				const songListIndex = songs_tracks_names_only.findIndex(
+					(songListSong) => songListSong.id === song.id
 				);
 
 				if (songListIndex < 0) {
@@ -50,8 +50,8 @@
 				</span>
 			</span>
 
-			<span class={`whitespace-nowrap ${albumSong.id === currentSong.id ? 'italic' : ''}`}
-				>{albumSong.name}</span>
+			<span class={`whitespace-nowrap ${song.id === currentSong.id ? 'italic' : ''}`}
+				>{song.name}</span>
 		</button>
 	{/each}
 </div>

@@ -44,7 +44,7 @@
 </script>
 
 <div
-	class={`max-w-full max-h-[330px] overflow-x-auto overflow-y-hidden scrollbar-track-white scrollbar-thumb-[#f4f4f4] hover:scrollbar-thumb-[#f4f4f4] ${
+	class={`max-w-full max-h-[330px] select-none overflow-x-auto overflow-y-hidden scrollbar-track-bricks-bg-gray scrollbar-thumb-my-black-50/50 hover:scrollbar-thumb-my-black-50/50 md:scrollbar-thin md:scrollbar-track-my-black-50/50 md:scrollbar-thumb-my-black-100 md:hover:scrollbar-thumb-my-black-200 ${
 		isOverflow ? '' : ''
 	}`}
 	in:fade={{ easing: sineInOut, duration: 400, delay: 100 }}

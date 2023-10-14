@@ -46,6 +46,13 @@
 
 <PageLayout.VerticalSpacing sizing="half" />
 
+<h2
+	class="tracking-widest text-sm md:text-base underline decoration-my-black-50 underline-offset-2 text-my-black-500">
+	From the making of Red Brick Angel
+</h2>
+
+<PageLayout.VerticalSpacing sizing="half" />
+
 {#if showImages}
 	<div class="flex flex-col flex-wrap gap-sm" style:height={`${containerHeight}px`}>
 		{#each galleryImages as image, i}

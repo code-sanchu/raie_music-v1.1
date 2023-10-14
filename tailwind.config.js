@@ -26,7 +26,8 @@ export default {
 					800: '#323232',
 					900: '#161616',
 					950: '#080808'
-				}
+				},
+				'bricks-bg-gray': '#f4f4f4'
 			},
 
 			fontFamily: {

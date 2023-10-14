@@ -69,7 +69,9 @@
 		{/if}
 
 		{#if image.caption && imageWidth}
-			<div class="max-h-[10vh] overflow-y-auto text-center" style:width="{imageWidth}px">
+			<div
+				class="max-h-[10vh] overflow-y-auto text-center md:scrollbar-thin md:scrollbar-track-my-black-50/50 md:scrollbar-thumb-my-black-100 md:hover:scrollbar-thumb-my-black-200"
+				style:width="{imageWidth}px">
 				<Caption
 					extraClasses="!mt-0 py-xs pl-xs no-underline !text-my-black bg-white/60 sm:!text-base rounded-b-sm">
 					{image.caption}

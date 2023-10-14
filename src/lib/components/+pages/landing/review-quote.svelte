@@ -1,8 +1,7 @@
 <script lang="ts" context="module">
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 	import QuoteMarkIcon from './quote-mark-icon.svelte';
-	import { fade, slide } from 'svelte/transition';
-	import { cubicOut } from 'svelte/easing';
 </script>
 
 <script lang="ts">

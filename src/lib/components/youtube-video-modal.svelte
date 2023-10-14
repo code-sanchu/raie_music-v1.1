@@ -1,5 +1,6 @@
 <script lang="ts" context="module">
-	import { Dialog, DialogOverlay, Transition, TransitionChild } from '@rgossiaux/svelte-headlessui';
+	import { Icon, MyDialog } from '$lib/components';
+	import { Dialog, Transition } from '@rgossiaux/svelte-headlessui';
 </script>
 
 <script lang="ts">
@@ -20,25 +21,18 @@
 
 			onClose();
 		}}>
-		<TransitionChild
-			enter="ease-out duration-300"
-			enterFrom="opacity-0"
-			enterTo="opacity-100"
-			leave="ease-in duration-200"
-			leaveFrom="opacity-100"
-			leaveTo="opacity-0">
-			<DialogOverlay class="fixed inset-0 bg-white/80" />
-		</TransitionChild>
+		<MyDialog.Bg bg="bg-white/80" />
 
-		<TransitionChild
-			as="div"
-			class="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[1600px] aspect-video"
-			enter="ease-out duration-300"
-			enterFrom="opacity-0 scale-95"
-			enterTo="opacity-100 scale-100"
-			leave="ease-in duration-200"
-			leaveFrom="opacity-100 scale-100"
-			leaveTo="opacity-0 scale-95">
+		<MyDialog.ContentContainer classes="z-20 fixed top-xs left-1/2 -translate-x-1/2">
+			<button
+				class="border-[0.8px] border-my-black-100 bg-white/70 text-my-black-900 p-xxs rounded-md"
+				on:click={() => (isOpen = false)}
+				type="button"
+				aria-label="close images modal"><Icon.X weight="thin" /></button>
+		</MyDialog.ContentContainer>
+
+		<MyDialog.ContentContainer
+			classes="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[1600px] aspect-video">
 			<iframe
 				width="100%"
 				height="100%"
@@ -47,6 +41,6 @@
 				frameborder="0"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				allowfullscreen />
-		</TransitionChild>
+		</MyDialog.ContentContainer>
 	</Dialog>
 </Transition>

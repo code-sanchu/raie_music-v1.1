@@ -1,18 +1,18 @@
 <script context="module" lang="ts">
+	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	import { Control } from 'phosphor-svelte';
 
 	import { onClickOutside } from '$lib/helpers';
 	import {
 		musicPlayerStore,
-		songsList,
 		updateMusicPlayer,
 		type MusicPlayer as MusicPlayerType
 	} from '$lib/stores';
+	import { songs_tracks_names_only } from '$lib/data';
 
+	import { Icon } from '$lib/components';
 	import { AnimatedBars } from './animated-bars';
-	import MusicPlayer from './music-player/+entry.svelte';
-	import { onMount } from 'svelte';
+	import { MusicPlayer } from './music-player';
 </script>
 
 <script lang="ts">
@@ -22,7 +22,7 @@
 		musicPlayer = playerStore;
 	});
 
-	$: currentSong = songsList[musicPlayer.currentTrackIndex];
+	$: currentSong = songs_tracks_names_only[musicPlayer.currentTrackIndex];
 
 	$: closedOrClosing = musicPlayer.visibility === 'closed' || musicPlayer.visibility === 'closing';
 
@@ -102,7 +102,7 @@
 									? 'text-my-black-400 group-hover/panel:text-my-black-600'
 									: 'rotate-180'
 							}`}>
-							<Control />
+							<Icon.CaretUpSmall />
 						</span>
 					</span>
 

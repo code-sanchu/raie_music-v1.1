@@ -1,4 +1,6 @@
 <script context="module" lang="ts">
+	import { fade } from 'svelte/transition';
+
 	import { images } from '$lib/assets';
 	import { Images, PageLayout, Picture } from '$lib/components';
 	import {
@@ -8,7 +10,6 @@
 		ReviewQuote
 	} from '$lib/components/+pages/landing';
 	import { updateGlobalFlags } from '$lib/stores';
-	import { fade } from 'svelte/transition';
 
 	// GO LIVE CHECKLIST
 	// □ go through music player functionality. play pause skip, etc. on all pages.
@@ -17,11 +18,11 @@
 
 	// TO DO
 	// □ performance: apply .css * and div to relevant containers only; also prose?; pull in only needed data to music player.
-	// □ close button on video modal. Could be hard to close on mobile landscape
 	// □ try giving images actual widths and heights
-	// □ next/prev through browser. Add listeners?
 	// □ different colour highlight
 	// □ image sizes
+	// □ swipe to close music player
+	// □ grab latest news to scroll
 
 	// □ bind actual width values for bottom right panel
 
@@ -42,9 +43,6 @@
 	// □ use local storage to save default user setting.
 	// □ overlay on music player open?
 	// □ in music player > tracks: give track numbers uniform width
-
-	// CONFIG
-	// □ everything is prerendering?
 </script>
 
 <script lang="ts">
@@ -143,7 +141,7 @@
 		</div>
 
 		<div class="sm:hidden">
-			<PageLayout.VerticalSpacing sizing="2/3" />
+			<PageLayout.VerticalSpacing sizing="1.5" />
 		</div>
 
 		<div class="px-xs xs:px-lg h-[12px] sm:hidden overflow-hidden">

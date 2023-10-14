@@ -38,7 +38,7 @@
 </button>
 
 <div
-	class={`fixed top-0 left-0 w-screen max-h-screen overflow-y-auto px-xs xs:px-sm sm:px-md md:px-lg pb-lg flex justify-center gap-lg bg-white z-[80] transition-transform ease-in-out duration-300 ${
+	class={`fixed top-0 left-0 w-screen max-h-screen overflow-y-auto md:scrollbar-thin md:scrollbar-track-my-black-50/50 md:scrollbar-thumb-my-black-100 md:hover:scrollbar-thumb-my-black-200 px-xs xs:px-sm sm:px-md md:px-lg pb-lg flex justify-center gap-lg bg-white z-[80] transition-transform ease-in-out duration-300 ${
 		isOpen ? '' : '-translate-y-full'
 	}`}
 	use:onClickOutside={() => (isOpen = false)}>

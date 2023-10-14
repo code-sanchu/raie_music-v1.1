@@ -26,7 +26,7 @@
 
 		<TransitionChild
 			as="div"
-			class="fixed z-[70] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 prose max-h-[70vh] overflow-y-auto max-w-screen overflow-x-auto max-w-[80vw]"
+			class="fixed z-[70] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 prose max-h-[70vh] overflow-y-auto max-w-screen overflow-x-auto max-w-[80vw] md:scrollbar-thin md:scrollbar-track-my-black-50/50 md:scrollbar-thumb-my-black-100 md:hover:scrollbar-thumb-my-black-200"
 			enter="ease-out duration-300"
 			enterFrom="opacity-0 scale-95"
 			enterTo="opacity-100 scale-100"

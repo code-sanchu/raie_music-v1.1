@@ -1,5 +1,9 @@
 <script context="module" lang="ts">
-	import type { AlbumKey } from '$lib/data';
+	import {
+		earthbound_track_names_only,
+		this_music_thing_track_names_only,
+		type AlbumKey
+	} from '$lib/data';
 	import { musicPlayerInitData, musicPlayerStore, songsList, type MusicPlayer } from '$lib/stores';
 	import TrackList from './trackList.svelte';
 
@@ -58,9 +62,9 @@
 
 		<div class={`h-full w-full max-w-full mt-sm self-start overflow-hidden`}>
 			{#if visibleAlbumKey === 'this_music_thing'}
-				<TrackList albumKey="this_music_thing" />
+				<TrackList songs={this_music_thing_track_names_only} />
 			{:else}
-				<TrackList albumKey="earthbound" />
+				<TrackList songs={earthbound_track_names_only} />
 			{/if}
 		</div>
 	</div>
