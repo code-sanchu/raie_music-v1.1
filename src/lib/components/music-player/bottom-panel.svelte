@@ -35,6 +35,13 @@
 	});
 </script>
 
+<!-- <div
+	class={`fixed inset-0 z-[10] bg-white/60 transition-opacity ease-in-out duration-300 ${
+		musicPlayer.visibility === 'open' || musicPlayer.visibility === 'opening'
+			? ''
+			: 'pointer-events-none opacity-0'
+	}`} /> -->
+
 {#if show}
 	<div
 		class={`fixed z-20 group/panel bottom-0 left-0 w-screen transition-all ease-in-out duration-300 ${

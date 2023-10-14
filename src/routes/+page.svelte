@@ -17,9 +17,16 @@
 	// MUST DO
 
 	// TO DO
+	// □ grab latest news to scroll
+	// □ overlay on music player open?
+	// □ music player bottom panel positioning.
+	// □ music player collapsed - no need for 2 sections.
+	// □ scroll right for more message is always there now.
+
+	// □ refactor: e.g. latest news.
+
 	// □ try giving images actual widths and heights
 	// □ image sizes
-	// □ grab latest news to scroll
 
 	// □ bind actual width values for bottom right panel
 
@@ -27,8 +34,6 @@
 
 	// NICE TO HAVE
 	// □ draw more attention to music player?
-	// □ curate gallery as in https://cargo.site/Templates#services&programs ?
-	// □ different colour highlight
 	// □ cascade images opacity
 	// □ loading priority for images (as opposed to lazy/eager)
 	// □ song time for open player (and closed?). on right side?
@@ -39,8 +44,9 @@
 	// □ ...check image strings for max width for those that need to be max
 	// □ prev/next news article? prev/next album?
 	// □ use local storage to save default user setting.
-	// □ overlay on music player open?
-	// □ in music player > tracks: give track numbers uniform width
+
+	// FUTURE
+	// □ with more photos, curate gallery as in https://cargo.site/Templates#services&programs ?
 </script>
 
 <script lang="ts">

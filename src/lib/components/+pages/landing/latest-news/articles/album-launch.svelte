@@ -21,7 +21,7 @@
 		</div>
 
 		<TextContainer numColumns={1} extraClasses="mt-sm sm:mt-0">
-			<div class="w-[98px] aspect-video overflow-hidden mb-sm md:hidden">
+			<div class="w-[98px] aspect-square overflow-hidden mb-sm md:hidden">
 				<Picture
 					imageClass="rounded-sm grayscale opacity-80"
 					meta={images.faceshots[2].src}

@@ -101,19 +101,19 @@
 				</h3>
 
 				<div class="mt-md">
-					<div class="flex gap-md tracking-wider items-end">
-						<p class="uppercase text-[0.6rem] tracking-widest -translate-y-[3px] italic">Email</p>
+					<div class="flex gap-md tracking-wider items-center">
+						<p class="uppercase text-[0.6rem] tracking-widest italic text-my-black-600">Email</p>
 
-						<a class="tracking-widest" href={`mailto:${contacts.email}`} target="_blank"
-							>{contacts.email}</a>
+						<a
+							class="tracking-widest italic text-sm"
+							href={`mailto:${contacts.email}`}
+							target="_blank">{contacts.email}</a>
 					</div>
 
-					<div class="flex gap-md tracking-wider items-end mt-xs">
-						<p class="uppercase text-[0.6rem] tracking-widest -translate-y-[2.01px] italic">
-							Phone
-						</p>
+					<div class="flex gap-md tracking-wider items-center mt-xs">
+						<p class="uppercase text-[0.6rem] tracking-widest italic text-my-black-600">Phone</p>
 
-						<a class="text-sm" href={`tel:${contacts.phone}`}>{contacts.phone}</a>
+						<a class="text-sm italic" href={`tel:${contacts.phone}`}>{contacts.phone}</a>
 					</div>
 				</div>
 			</div>
