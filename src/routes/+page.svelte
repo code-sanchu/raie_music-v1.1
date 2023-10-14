@@ -16,7 +16,11 @@
 	// MUST DO
 
 	// TO DO
+	// □ performance: apply .css * and div to relevant containers only; also prose?; pull in only needed data to music player.
+	// □ close button on video modal. Could be hard to close on mobile landscape
 	// □ try giving images actual widths and heights
+	// □ next/prev through browser. Add listeners?
+	// □ different colour highlight
 	// □ image sizes
 
 	// □ bind actual width values for bottom right panel
