@@ -48,8 +48,10 @@
 
 <h2
 	class="tracking-widest text-sm md:text-base underline decoration-my-black-50 underline-offset-2 text-my-black-500">
-	From the making of Red Brick Angel
+	Red Brick Angel pic update
 </h2>
+
+<p class="mt-sm italic text-my-black-600">Galaxy Studio images by Christiano Tortoioli.</p>
 
 <PageLayout.VerticalSpacing sizing="half" />
 

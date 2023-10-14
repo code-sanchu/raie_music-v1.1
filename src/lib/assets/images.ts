@@ -2,6 +2,7 @@ import brick_bg from '$assets/images/brick_bg.png?w=400&format=avif;webp;jpg&as=
 import raie_as_child from '$assets/images/raie-as-child.jpeg?w=480&format=avif;webp;jpg&as=picture&imagetools';
 import dog_carpet from '$assets/images/dog_carpet_gms.jpg?w=500&format=avif;webp;jpg&as=picture&imagetools';
 import faceshot1 from '$assets/images/face_shot-1.png?w=500&format=avif;webp;jpg&as=picture&imagetools';
+import faceshot2 from '$assets/images/raie-face-shot-2.jpg?w=98&format=avif;webp;jpg&as=picture&imagetools';
 import crew_and_artists_red_brick_angels_GMS from '$assets/images/crew_and_artists-red_brick_angels-GMS.jpg?w=640&format=avif;webp;jpg&as=picture&imagetools';
 import crew_and_artists_red_brick_angels_GMS_2 from '$assets/images/crew_and_artists-red_brick_angels-GMS-2.jpg?w=640&format=avif;webp;jpg&as=picture&imagetools';
 import jill_cumberbatch_mandolin from '$assets/images/jill_cumberbatch-mandolin-no-exif.jpg?w=640&format=avif;webp;jpg&as=picture&imagetools';
@@ -141,7 +142,8 @@ export const images = {
 	},
 
 	faceshots: {
-		1: { src: faceshot1, naturalDimensions: { width: 1037, height: 1300 } }
+		1: { src: faceshot1, naturalDimensions: { width: 1037, height: 1300 } },
+		2: { src: faceshot2, naturalDimensions: { width: 98, height: 98 } }
 	},
 
 	reviews: {

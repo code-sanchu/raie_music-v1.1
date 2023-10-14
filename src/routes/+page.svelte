@@ -19,7 +19,6 @@
 	// TO DO
 	// □ try giving images actual widths and heights
 	// □ image sizes
-	// □ swipe to close music player
 	// □ grab latest news to scroll
 
 	// □ bind actual width values for bottom right panel
@@ -110,6 +109,9 @@
 			onLoad={() => (criticalContentIsLoaded = true)}
 			duration="duration-500"
 			alt="" />
+		<!-- <p class="text-end mt-xs text-my-black-100 text-sm italic underline">
+			Portrait of Raie by Alex Waespi
+		</p> -->
 	</div>
 </div>
 

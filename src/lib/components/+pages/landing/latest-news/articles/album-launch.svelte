@@ -12,20 +12,20 @@
 
 <Container bind:height bind:isActive>
 	<div class="flex flex-row gap-sm sm:gap-lg lg:gap-xl">
-		<div class="w-[180px] lg:w-[200px] shrink-0 hidden md:block">
+		<div class="w-[98px] shrink-0 hidden md:block">
 			<Picture
 				imageClass="rounded-sm grayscale opacity-80"
-				meta={images.raie_concert.src}
-				sizes={'200px'}
+				meta={images.faceshots[2].src}
+				sizes={'98px'}
 				alt="" />
 		</div>
 
 		<TextContainer numColumns={1} extraClasses="mt-sm sm:mt-0">
-			<div class="w-[180px] aspect-video overflow-hidden lg:w-[200px] mb-sm md:hidden">
+			<div class="w-[98px] aspect-video overflow-hidden mb-sm md:hidden">
 				<Picture
 					imageClass="rounded-sm grayscale opacity-80"
-					meta={images.raie_concert.src}
-					sizes={'200px'}
+					meta={images.faceshots[2].src}
+					sizes={'98px'}
 					alt="" />
 			</div>
 			<a
@@ -43,7 +43,8 @@
 				<br />
 			</span>
 
-			We launch at <Link href="https://thecamdenclub.co.uk/">The Camden Club</Link>
+			We launch the new album Red Brick Angels at <Link href="https://thecamdenclub.co.uk/"
+				>The Camden Club</Link>
 			on November 8th – doors at 18.15 – on stage at 19.15 – an early one so we can encourage industry
 			to pop in after work!.. and besides it’s a mid-week gig so we have to think of work mornings on
 			the 9th!
@@ -59,6 +60,11 @@
 					class="text-xs text-my-black-400 group-hover/button:text-my-black-700 transition-colors ease-in-out duration-150"
 					><Icon.ExternalLink weight="thin" /></span>
 			</a>
+			<br />
+			<br />
+			... all 12 beautiful new tracks are being mastered as you read this … and will be available on
+			this site via the best streaming platform - yet to be decided … after the launch performance at
+			midnight on November 8th … just so you don’t sneak an early peak!
 		</TextContainer>
 	</div>
 </Container>
