@@ -13,4 +13,4 @@
 	];
 </script>
 
-<Page images={albumImages} tracksMinWidth={600} albumKey="this_music_thing" noVideos />
+<Page images={albumImages} tracksMinWidth={600} albumKey="this_music_thing" />

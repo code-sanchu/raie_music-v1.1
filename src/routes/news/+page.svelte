@@ -29,7 +29,7 @@
 	<LatestNews />
 </div>
 
-<PageLayout.VerticalSpacing sizing="2/3" />
+<PageLayout.VerticalSpacing />
 
 <div class="h-[10px] overflow-hidden">
 	<Images.BrickBg.HorizontalThree />

@@ -8,6 +8,8 @@
 	export let isActive: boolean;
 
 	let isOverflow = false;
+	let userHasScrolledTracks = false;
+	let showScrollRightMessage = false;
 
 	let node: HTMLDivElement;
 
@@ -25,14 +27,13 @@
 					event.preventDefault();
 
 					node.scrollTo({ left: node.scrollLeft + event.deltaY, behavior: 'smooth' });
+
+					userHasScrolledTracks = true;
+					showScrollRightMessage = false;
 				});
 			}
 		}
 	}
-
-	let userHasScrolledTracks = false;
-
-	let showScrollRightMessage = false;
 
 	$: {
 		if (isActive && isOverflow && !userHasScrolledTracks && !showScrollRightMessage) {

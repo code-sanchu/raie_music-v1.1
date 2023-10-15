@@ -47,13 +47,12 @@
 <PageLayout.VerticalSpacing sizing="half" />
 
 <h2
-	class="tracking-widest text-sm md:text-base underline decoration-my-black-50 underline-offset-2 text-my-black-500">
-	Red Brick Angel pic update
+	class="tracking-widest uppercase text-sm md:text-sm decoration-my-black-50/80 underline-offset-4 text-my-black-200 flex gap-xs items-center">
+	<span class="w-[1.5px] h-[18px] bg-my-black-50/30" />
+	<span> Red Brick Angel pic update</span>
 </h2>
 
-<p class="mt-sm italic text-my-black-600">Galaxy Studio images by Christiano Tortoioli.</p>
-
-<PageLayout.VerticalSpacing sizing="half" />
+<PageLayout.VerticalSpacing sizing="2/3" />
 
 {#if showImages}
 	<div class="flex flex-col flex-wrap gap-sm" style:height={`${containerHeight}px`}>
@@ -86,6 +85,11 @@
 			</div>
 		{/each}
 	</div>
+
+	<p class="mt-sm text-sm md:text-base text-my-black-400 flex gap-xs items-center">
+		<span class="w-[1.5px] h-[12px] bg-my-black-50/40" />
+		<span class="italic"> Galaxy Studio images by Christiano Tortoioli.</span>
+	</p>
 {/if}
 
 <Measure images={galleryImages} bind:imageWidth bind:containerHeight />

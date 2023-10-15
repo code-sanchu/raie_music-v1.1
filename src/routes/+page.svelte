@@ -18,10 +18,9 @@
 
 	// TO DO
 	// □ grab latest news to scroll
-	// □ overlay on music player open?
 	// □ music player bottom panel positioning.
 	// □ music player collapsed - no need for 2 sections.
-	// □ scroll right for more message is always there now.
+	// □ isn't loading bg on e.g. archive reviews images; change loading bg on album pages images.
 
 	// □ refactor: e.g. latest news.
 
@@ -34,6 +33,7 @@
 
 	// NICE TO HAVE
 	// □ draw more attention to music player?
+	// □ overlay on music player open?
 	// □ cascade images opacity
 	// □ loading priority for images (as opposed to lazy/eager)
 	// □ song time for open player (and closed?). on right side?

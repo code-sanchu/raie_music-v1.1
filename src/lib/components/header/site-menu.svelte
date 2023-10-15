@@ -30,11 +30,11 @@
 </script>
 
 <button
-	class="grid place-items-center text-2xl xs:text-3xl text-my-black-400 relative"
+	class="grid place-items-center text-[1.73rem] xs:text-3xl text-my-black-300 relative bg-white/60 rounded-full p-xxs translate-x-xxs"
 	on:click={() => (isOpen = true)}
 	aria-label="Menu"
 	type="button">
-	<List weight="light" />
+	<List weight="thin" />
 </button>
 
 <div
@@ -71,10 +71,10 @@
 							updateMusicPlayer.open();
 						}}
 						type="button">
-						<p class="tracking-widest text-my-black-700">Music player</p>
+						<p class="tracking-widest text-my-black-500">Music player</p>
 
-						<span class="text-[0.6rem] text-my-black-400 italic -translate-y-[1.5px] uppercase"
-							>open</span>
+						<!-- <span class="text-[0.6rem] text-my-black-400 italic -translate-y-[1.5px] uppercase"
+							>open</span> -->
 					</button>
 				</div>
 			</div>
