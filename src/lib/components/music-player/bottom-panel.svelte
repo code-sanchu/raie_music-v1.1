@@ -35,13 +35,6 @@
 	});
 </script>
 
-<!-- <div
-	class={`fixed inset-0 z-[10] bg-white/60 transition-opacity ease-in-out duration-300 ${
-		musicPlayer.visibility === 'open' || musicPlayer.visibility === 'opening'
-			? ''
-			: 'pointer-events-none opacity-0'
-	}`} /> -->
-
 {#if show}
 	<div
 		class={`fixed z-20 group/panel bottom-0 left-0 w-screen transition-all ease-in-out duration-300 ${
@@ -85,8 +78,8 @@
 				class="py-xxs px-xs sm:p-xs rounded-xl grid place-items-center"
 				style:background="radial-gradient(white, transparent)">
 				<button
-					class={`group/button relative flex items-end justify-between transition-all ease-out duration-700 ${
-						musicPlayer.paused ? 'w-[89.963px]' : 'w-[159.087px]'
+					class={`group/button relative flex items-center justify-between transition-all ease-out duration-700 ${
+						musicPlayer.paused ? 'w-[107.075px]' : 'w-[159.075px]'
 					}`}
 					on:click={closedOrClosing ? updateMusicPlayer.open : updateMusicPlayer.close}
 					type="button">
@@ -121,7 +114,7 @@
 					</div>
 
 					<span
-						class={`text-[0.6rem] uppercase tracking-widest italic absolute text-my-black-700 -bottom-[1px] -left-sm -translate-x-full opacity-0 ease-in-out duration-150 bg-white/80 px-xs py-xxxs delay-300 pointer-events-none ${
+						class={`text-[0.6rem] uppercase tracking-widest italic absolute text-my-black-700 bottom-0 -left-sm -translate-x-full opacity-0 ease-in-out duration-150 bg-white/80 px-xs py-xxxs delay-300 pointer-events-none ${
 							musicPlayer.visibility === 'closed' ? 'group-hover/button:opacity-100' : ''
 						}`}>
 						Open

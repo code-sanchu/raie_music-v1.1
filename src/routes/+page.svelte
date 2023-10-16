@@ -17,8 +17,6 @@
 	// □ music player collapsed - no need for 2 sections.
 	// □ isn't loading bg on e.g. archive reviews images; change loading bg on album pages images.
 
-	// □ refactor: e.g. latest news.
-
 	// □ try giving images actual widths and heights
 	// □ image sizes
 
