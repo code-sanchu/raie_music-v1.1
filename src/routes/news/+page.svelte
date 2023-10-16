@@ -2,8 +2,7 @@
 	import { onMount } from 'svelte';
 
 	import { updateGlobalFlags } from '$lib/stores';
-	import { Images, PageLayout } from '$lib/components';
-	import { LatestNews } from '$lib/components/+pages/landing/latest-news';
+	import { Images, PageLayout, LatestNews } from '$lib/components';
 	import ArchiveReviews from './archive-reviews.svelte';
 </script>
 

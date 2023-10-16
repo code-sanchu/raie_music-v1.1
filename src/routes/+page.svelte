@@ -2,13 +2,8 @@
 	import { fade } from 'svelte/transition';
 
 	import { images } from '$lib/assets';
-	import { Images, PageLayout, Picture } from '$lib/components';
-	import {
-		LatestNews,
-		PageLinks,
-		PlayMusicButton,
-		ReviewQuote
-	} from '$lib/components/+pages/landing';
+	import { Images, PageLayout, Picture, LatestNews } from '$lib/components';
+	import { PageLinks, PlayMusicButton, ReviewQuote } from '$lib/components/+pages/landing';
 	import { updateGlobalFlags } from '$lib/stores';
 
 	// GO LIVE CHECKLIST
@@ -17,8 +12,8 @@
 	// MUST DO
 
 	// TO DO
-	// □ grab latest news to scroll
 	// □ music player bottom panel positioning.
+	// □ is layout shift on mobile landing.
 	// □ music player collapsed - no need for 2 sections.
 	// □ isn't loading bg on e.g. archive reviews images; change loading bg on album pages images.
 
@@ -75,12 +70,13 @@
 				]} />
 		</div>
 
-		<div class="sm:hidden max-w-[500px] flex justify-center">
+		<div class="sm:hidden px-[4.5rem]">
 			<div
+				class="w-full"
 				style:aspect-ratio={images.faceshots[1].naturalDimensions.width /
 					images.faceshots[1].naturalDimensions.height}>
 				<Picture
-					imageClass=""
+					imageClass="w-full"
 					meta={images.faceshots[1].src}
 					sizes={'50vw'}
 					loading="eager"
@@ -104,20 +100,17 @@
 	</div>
 
 	<div
-		class="hidden sm:block md:max-w-[400px] lg:max-w-[400px] xl:max-w-[450px] 2xl:max-w-[500px]"
+		class="hidden sm:block md:w-[400px] lg:w-[400px] xl:w-[450px] 2xl:w-[500px]"
 		style:aspect-ratio={images.faceshots[1].naturalDimensions.width /
 			images.faceshots[1].naturalDimensions.height}>
 		<Picture
-			imageClass={`w-full h-full`}
+			imageClass={`w-full`}
 			meta={images.faceshots[1].src}
 			sizes={'50vw'}
 			loading="eager"
 			onLoad={() => (criticalContentIsLoaded = true)}
 			duration="duration-500"
 			alt="" />
-		<!-- <p class="text-end mt-xs text-my-black-100 text-sm italic underline">
-			Portrait of Raie by Alex Waespi
-		</p> -->
 	</div>
 </div>
 

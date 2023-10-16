@@ -14,3 +14,4 @@ export * from './music-player';
 export * from './links-panel';
 export * from './image-gallery-modal';
 export * from './my-dialog';
+export * from './sections';
