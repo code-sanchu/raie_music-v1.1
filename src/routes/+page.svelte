@@ -12,9 +12,7 @@
 	// MUST DO
 
 	// TO DO
-	// □ music player bottom panel positioning.
 	// □ is layout shift on mobile landing.
-	// □ music player collapsed - no need for 2 sections.
 	// □ isn't loading bg on e.g. archive reviews images; change loading bg on album pages images.
 
 	// □ try giving images actual widths and heights
