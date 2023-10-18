@@ -6,9 +6,6 @@
 	import { PageLinks, PlayMusicButton, ReviewQuote } from '$lib/components/+pages/landing';
 	import { updateGlobalFlags } from '$lib/stores';
 
-	// GO LIVE CHECKLIST
-	// □ go through music player functionality. play pause skip, etc. on all pages.
-
 	// MUST DO
 
 	// TO DO

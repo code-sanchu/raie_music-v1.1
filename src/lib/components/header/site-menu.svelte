@@ -6,8 +6,8 @@
 	import { contacts, raie_links_arrs } from '$lib/data';
 	import { onClickOutside } from '$lib/helpers';
 	import { updateMusicPlayer } from '$lib/stores';
-	import { quadInOut } from 'svelte/easing';
-	import { fade, fly } from 'svelte/transition';
+	import { expoOut, quadInOut } from 'svelte/easing';
+	import { fade, fly, slide } from 'svelte/transition';
 
 	const sitePageArr = [
 		{ route: '/', text: 'Home' },
@@ -29,6 +29,18 @@
 			currentRoute = pageStore.route.id;
 		}
 	});
+
+	let fadeIn = false;
+
+	$: {
+		if (isOpen) {
+			setTimeout(() => {
+				fadeIn = true;
+			}, 200);
+		} else {
+			fadeIn = false;
+		}
+	}
 </script>
 
 <button
@@ -41,12 +53,9 @@
 
 {#if isOpen}
 	<div
-		class={`fixed top-0 left-0 w-screen max-h-screen overflow-y-auto md:scrollbar-thin md:scrollbar-track-my-black-50/50 md:scrollbar-thumb-my-black-100 md:hover:scrollbar-thumb-my-black-200 px-xs xs:px-sm sm:px-md md:px-lg pb-lg flex justify-center gap-lg bg-white z-[80] transition-transform ease-in-out duration-300 ${
-			isOpen ? '' : ''
-			// isOpen ? '' : '-translate-y-full'
-		}`}
+		class={`fixed top-0 left-0 w-screen h-[396px] max-h-screen overflow-y-auto md:scrollbar-thin md:scrollbar-track-my-black-50/50 md:scrollbar-thumb-my-black-100 md:hover:scrollbar-thumb-my-black-200 px-xs xs:px-sm sm:px-md md:px-lg pb-lg flex justify-center gap-lg bg-white z-[80] `}
 		use:onClickOutside={() => (isOpen = false)}
-		transition:fly={{ y: '-100%', duration: 750, easing: quadInOut }}>
+		transition:slide={{ axis: 'y', easing: expoOut, duration: 1100 }}>
 		<PageLayout.HorizontalSpacing>
 			<div class="flex justify-center md:hidden mt-sm">
 				<button
@@ -58,80 +67,113 @@
 
 			<div class="grid md:grid-cols-2 gap-xl md:gap-lg w-full mt-md">
 				<div class="pt-xs border-t border-my-black-50/50">
-					<h3 class="tracking-widest text-[0.8rem] italic text-my-black-600">Site</h3>
+					{#if fadeIn}
+						<h3
+							class="tracking-widest text-[0.8rem] italic text-my-black-600"
+							in:fly={{ duration: 1300, y: '50%', easing: expoOut }}>
+							Site
+						</h3>
+					{/if}
 
-					<div class="tracking-widest flex flex-col gap-sm mt-md text-my-black-700">
+					<div class="tracking-widest flex flex-col gap-sm mt-md text-my-black-700 items-start">
 						{#each sitePageArr as sitePage}
-							<a
-								class={`${sitePage.route === currentRoute ? 'italic' : ''}`}
-								on:click={() => (isOpen = false)}
-								href={sitePage.route}>{sitePage.text}</a>
+							{#if fadeIn}
+								<a
+									class={`block ${sitePage.route === currentRoute ? 'italic' : ''}`}
+									on:click={() => (isOpen = false)}
+									href={sitePage.route}
+									in:fly={{
+										duration: 1600,
+										y: '50%',
+										easing: expoOut
+									}}>{sitePage.text}</a>
+							{/if}
 						{/each}
 
-						<button
-							class="flex gap-md mt-md items-end"
-							on:click={() => {
-								isOpen = false;
+						{#if fadeIn}
+							<button
+								class="mt-md tracking-widest text-my-black-500"
+								on:click={() => {
+									isOpen = false;
 
-								updateMusicPlayer.open();
-							}}
-							type="button">
-							<p class="tracking-widest text-my-black-500">Music player</p>
-
-							<!-- <span class="text-[0.6rem] text-my-black-400 italic -translate-y-[1.5px] uppercase"
-							>open</span> -->
-						</button>
+									updateMusicPlayer.open();
+								}}
+								type="button"
+								in:fly={{ duration: 1600, y: '100%' }}>
+								Music player
+							</button>
+						{/if}
 					</div>
 				</div>
 
 				<div class="pt-xs border-t md:border-t border-my-black-50/50">
-					<!-- <h3 class="tracking-widest font-medium text-sm italic">Listen, Buy & Follow</h3> -->
-					<h3 class="tracking-widest text-[0.8rem] italic text-my-black-600">
-						Listen, Buy & Follow
-					</h3>
+					{#if fadeIn}
+						<h3
+							class="tracking-widest text-[0.8rem] italic text-my-black-600"
+							in:fly={{ duration: 1300, y: '50%', easing: expoOut }}>
+							Listen, Buy & Follow
+						</h3>
+					{/if}
 
-					<div class="flex text-base items-center gap-sm mt-md">
-						{#each [...raie_links_arrs.listen, ...raie_links_arrs.buy, ...raie_links_arrs.follow] as raieLink}
-							<a
-								class="rounded-full p-xxs"
-								href={raieLink.href}
-								target="_blank"
-								id={`site_menu-${raieLink.id}`}
-								aria-label={`${raieLink.name} link`}>
-								<LinkIconSwitch type={raieLink.id} weight="thin" />
-							</a>
-							<Tooltip text={raieLink.name} triggeredById={`site_menu-${raieLink.id}`} />
-						{/each}
-					</div>
+					{#if fadeIn}
+						<div
+							class="flex text-base items-center gap-sm mt-md"
+							in:fly={{
+								duration: 1600,
+								y: '50%',
+								easing: expoOut
+							}}>
+							{#each [...raie_links_arrs.listen, ...raie_links_arrs.buy, ...raie_links_arrs.follow] as raieLink}
+								<a
+									class="block rounded-full p-xxs"
+									href={raieLink.href}
+									target="_blank"
+									id={`site_menu-${raieLink.id}`}
+									aria-label={`${raieLink.name} link`}>
+									<LinkIconSwitch type={raieLink.id} weight="thin" />
+								</a>
+								<Tooltip text={raieLink.name} triggeredById={`site_menu-${raieLink.id}`} />
+							{/each}
+						</div>
+					{/if}
 
-					<!-- <h3
-						class="mt-xl tracking-widest font-medium text-sm italic border-t border-my-black pt-xs">
-						Contact
-					</h3> -->
-					<h3
-						class="mt-xl tracking-widest text-[0.8rem] italic text-my-black-600 border-t border-my-black-50/50 pt-xs">
-						Contact
-					</h3>
+					{#if fadeIn}
+						<h3
+							class="mt-xl tracking-widest text-[0.8rem] italic text-my-black-600 border-t border-my-black-50/50 pt-xs"
+							in:fly={{ duration: 1300, y: '50%', easing: expoOut }}>
+							Contact
+						</h3>
+					{/if}
 
 					<div class="mt-md">
-						<div class="flex gap-md items-baseline">
-							<p
-								class="uppercase text-[0.6rem] w-[35.913px] tracking-widest italic text-my-black-600">
-								Email
-							</p>
+						{#if fadeIn}
+							<div
+								class="flex gap-md items-baseline"
+								in:fly={{ duration: 1600, y: '50%', easing: expoOut }}>
+								<p
+									class="uppercase text-[0.6rem] w-[35.913px] tracking-widest italic text-my-black-600">
+									Email
+								</p>
 
-							<a
-								class="tracking-wider text-my-black-700"
-								href={`mailto:${contacts.email}`}
-								target="_blank">{contacts.email}</a>
-						</div>
+								<a
+									class="tracking-wider text-my-black-700"
+									href={`mailto:${contacts.email}`}
+									target="_blank">{contacts.email}</a>
+							</div>
+						{/if}
 
-						<div class="flex gap-md items-baseline mt-xs">
-							<p class="uppercase text-[0.6rem] tracking-widest italic text-my-black-600">Phone</p>
+						{#if fadeIn}
+							<div
+								class="flex gap-md items-baseline mt-xs"
+								in:fly={{ duration: 1600, y: '50%', easing: expoOut }}>
+								<p class="uppercase text-[0.6rem] tracking-widest italic text-my-black-600">
+									Phone
+								</p>
 
-							<a class="text-sm tracking-wider text-my-black-700" href={`tel:${contacts.phone}`}
-								>{contacts.phone}</a>
-						</div>
+								<a class="text-sm tracking-wider text-my-black-700" href={`tel:${contacts.phone}`}
+									>{contacts.phone}</a>
+							</div>
+						{/if}
 					</div>
 				</div>
 
@@ -149,9 +191,6 @@
 
 {#if isOpen}
 	<div
-		class={`fixed inset-0 z-[70] bg-my-black/40 transition-opacity ease-in-out duration-300 ${
-			isOpen ? '' : ''
-			// isOpen ? '' : 'pointer-events-none opacity-0'
-		}`}
-		transition:fade={{ duration: 750, easing: quadInOut }} />
+		class={`fixed inset-0 z-[70] bg-my-black/40 ${isOpen ? '' : ''}`}
+		transition:fade={{ easing: expoOut, duration: 1100 }} />
 {/if}
