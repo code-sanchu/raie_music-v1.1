@@ -9,7 +9,6 @@
 	// MUST DO
 
 	// TO DO
-	// □ isn't loading bg on e.g. archive reviews images; change loading bg on album pages images.
 
 	// □ try giving images actual widths and heights
 	// □ image sizes

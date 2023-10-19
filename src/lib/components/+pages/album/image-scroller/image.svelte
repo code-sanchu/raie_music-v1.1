@@ -1,6 +1,4 @@
 <script lang="ts" context="module">
-	import { Spinner } from 'phosphor-svelte';
-
 	import type { Data } from '$lib/types';
 	import { Picture } from '$lib/components';
 </script>
@@ -15,20 +13,16 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
-	class={`rounded-md border scroll-mx-lg p-xs ${
+	class={`rounded-md border scroll-mx-lg p-xs shrink-0 ${
 		mouseIsDown ? 'cursor-grabbing' : 'cursor-zoom-in'
 	}`}
 	style:aspect-ratio={data.naturalDimensions.width / data.naturalDimensions.height}
 	on:click={onClick}>
-	<div class="relative h-full">
+	<div class="relative w-full h-full bg-my-black-50/10">
 		<Picture
 			imageClass="object-cover grayscale hover:grayscale-0 transition-all ease-in-out duration-300 z-10 absolute w-full h-full bg-gray-100"
 			meta={data.src}
 			sizes="300px"
 			alt="" />
-
-		<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-			<Spinner />
-		</div>
 	</div>
 </div>

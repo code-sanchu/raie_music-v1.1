@@ -127,7 +127,7 @@
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
-	class={`relative`}
+	class="relative"
 	use:swipe={{ timeframe: 300, minSwipeDistance: 100, touchAction: 'pan-y' }}
 	on:swipe={(e) => (e.detail.direction === 'left' ? goNextImage() : goPrevImage())}>
 	<div
@@ -136,7 +136,7 @@
 		on:scroll={() => {
 			scrollLeft = imagesContainer.scrollLeft;
 		}}>
-		<div class="absolute left-0 top-0 flex gap-sm h-full">
+		<div class="absolute left-0 w-full top-0 flex gap-sm h-full">
 			<slot />
 		</div>
 	</div>
