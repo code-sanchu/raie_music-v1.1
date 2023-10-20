@@ -60,8 +60,6 @@
 					class="text-xs text-my-black-400 group-hover/button:text-my-black-700 transition-colors ease-in-out duration-150"
 					><Icon.ExternalLink weight="thin" /></span>
 			</a>
-			<br />
-			<br />
 			... all 12 beautiful new tracks are being mastered as you read this … and will be available on
 			this site via the best streaming platform - yet to be decided … after the launch performance at
 			midnight on November 8th … just so you don’t sneak an early peak!
