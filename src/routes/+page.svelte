@@ -10,6 +10,8 @@
 
 	// TO DO
 
+	// □ page transition out
+
 	// □ try giving images actual widths and heights? ...for page.dev recommendations
 	// □ image sizes
 	// □ max image width inline with natural size
@@ -40,7 +42,7 @@
 
 	$: {
 		if (criticalContentIsLoaded) {
-			updateGlobalFlags.firstPageHasMounted();
+			updateGlobalFlags.firstPageIsReady();
 		}
 	}
 </script>

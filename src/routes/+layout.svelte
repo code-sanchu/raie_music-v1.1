@@ -49,7 +49,7 @@
 			: 'up';
 
 	$: hideHeader =
-		!globalFlags.firstPageHasMounted &&
+		!globalFlags.firstPageIsReady &&
 		windowHeight &&
 		layoutState.headerHeight &&
 		windowHeight < 769 &&
@@ -84,7 +84,7 @@
 
 <slot />
 
-{#if globalFlags.firstPageHasMounted}
+{#if globalFlags.firstPageIsReady}
 	<LinksPanel />
 
 	<MusicBottomPanel />

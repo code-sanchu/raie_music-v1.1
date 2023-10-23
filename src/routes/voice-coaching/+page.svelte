@@ -23,7 +23,7 @@
 	let mounted = false;
 
 	onMount(() => {
-		updateGlobalFlags.firstPageHasMounted();
+		updateGlobalFlags.firstPageIsReady();
 
 		mounted = true;
 	});

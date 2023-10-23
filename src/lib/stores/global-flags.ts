@@ -2,12 +2,12 @@ import { writable } from 'svelte/store';
 
 type GlobalFlagsState = {
 	linksPanelVisibility: 'closed' | 'opening' | 'open' | 'closing';
-	firstPageHasMounted: boolean;
+	firstPageIsReady: boolean;
 };
 
 export const linksPanelInitData: GlobalFlagsState = {
 	linksPanelVisibility: 'closed',
-	firstPageHasMounted: false
+	firstPageIsReady: false
 };
 
 const globalFlagsStore = writable(linksPanelInitData);
@@ -40,7 +40,7 @@ const updateGlobalFlags = {
 		}, 300);
 	},
 
-	firstPageHasMounted: () => updateGlobalFlagsStore('firstPageHasMounted', true)
+	firstPageIsReady: () => updateGlobalFlagsStore('firstPageIsReady', true)
 };
 
 export { type GlobalFlagsState, globalFlagsStore, updateGlobalFlags };
