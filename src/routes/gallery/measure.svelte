@@ -32,10 +32,13 @@
 
 	$: {
 		if (windowWidth && dummyContainerWidth && dummyContainerHeight) {
+			const extraSpace =
+				dummyContainerHeight && windowWidth < 704 ? 200 : windowWidth < 900 ? 200 : 200;
+
 			containerHeight =
 				dummyContainerHeight && windowWidth < 704
-					? dummyContainerHeight / 2 + 200
-					: dummyContainerHeight / 3 + 200;
+					? dummyContainerHeight / 2 + extraSpace
+					: dummyContainerHeight / 3 + extraSpace;
 		}
 	}
 </script>

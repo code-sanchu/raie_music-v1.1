@@ -4,6 +4,7 @@
 </script>
 
 <script lang="ts">
+	// exists seperate from +layout.svelte at root because each page needs its own scroll container
 	let layoutState: LayoutState;
 
 	layoutStore.subscribe((store) => {
