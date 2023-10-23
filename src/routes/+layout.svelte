@@ -1,42 +1,60 @@
 <script lang="ts" context="module">
 	import '../app.css';
 
-	import { navigating } from '$app/stores';
-	import { globalFlagsStore, type GlobalFlagsState } from '$lib/stores';
+	import {
+		globalFlagsStore,
+		layoutStore,
+		updateLayoutStore,
+		type GlobalFlagsState,
+		type LayoutState
+	} from '$lib/stores';
 
-	import { AudioElement, Header, MusicBottomPanel, LinksPanel, PageLayout } from '$lib/components';
+	import { AudioElement, Header, LinksPanel, MusicBottomPanel } from '$lib/components';
+	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 </script>
 
 <script lang="ts">
+	let mounted = false;
+
+	onMount(() => {
+		mounted = true;
+	});
+
 	let globalFlags: GlobalFlagsState;
 
 	globalFlagsStore.subscribe((store) => {
 		globalFlags = store;
 	});
 
+	let layoutState: LayoutState;
+
+	layoutStore.subscribe((store) => {
+		layoutState = store;
+	});
+
 	let windowHeight: number | undefined;
-	let headerHeight: number | undefined;
 
-	let bodyElement: HTMLDivElement | undefined;
+	let headerNode: HTMLDivElement | undefined;
 
-	let currentScrollTop = 0;
-	let previousScrollTop = 1;
+	$: {
+		if (headerNode) {
+			updateLayoutStore.headerHeight(headerNode.getBoundingClientRect().height);
+		}
+	}
 
-	$: scrollDirection = !previousScrollTop || previousScrollTop < currentScrollTop ? 'down' : 'up';
+	$: scrollDirection =
+		!layoutState.scrollTopPrevious || layoutState.scrollTopPrevious < layoutState.scrollTopCurrent
+			? 'down'
+			: 'up';
 
 	$: hideHeader =
 		!globalFlags.firstPageHasMounted &&
 		windowHeight &&
-		headerHeight &&
+		layoutState.headerHeight &&
 		windowHeight < 769 &&
 		scrollDirection === 'down' &&
-		currentScrollTop > (headerHeight ? headerHeight * 3 : 100);
-
-	$: {
-		if ($navigating && bodyElement) {
-			bodyElement.scrollTop = 0;
-		}
-	}
+		layoutState.scrollTopCurrent > (layoutState.headerHeight ? layoutState.headerHeight * 3 : 100);
 </script>
 
 <svelte:head>
@@ -52,38 +70,24 @@
 
 <svelte:window bind:innerHeight={windowHeight} />
 
-<div
-	class="fixed left-0 top-0 z-50 w-full transition-transform duration-300 ease-in-out"
-	style:transform={hideHeader && headerHeight ? `translateY(-${headerHeight}px)` : ''}
-	bind:clientHeight={headerHeight}>
-	<Header />
-</div>
-
-{#if headerHeight}
+{#if mounted}
 	<div
-		class="overflow-y-auto flex flex-col overflow-x-hidden transition-all duration-300 ease-in-out h-screen md:scrollbar-thin md:scrollbar-track-my-black-50/50 md:scrollbar-thumb-my-black-100 md:hover:scrollbar-thumb-my-black-200"
-		style:padding-top={`${headerHeight}px`}
-		bind:this={bodyElement}
-		on:scroll={() => {
-			if (!bodyElement) {
-				return;
-			}
-
-			previousScrollTop = currentScrollTop;
-			currentScrollTop = bodyElement.scrollTop;
-		}}>
-		<PageLayout.HorizontalSpacing>
-			<slot />
-		</PageLayout.HorizontalSpacing>
-
-		<PageLayout.VerticalSpacing sizing="double" />
+		class="fixed left-0 top-0 z-50 w-full transition-transform duration-300 ease-in-out"
+		style:transform={hideHeader && layoutState.headerHeight
+			? `translateY(-${layoutState.headerHeight}px)`
+			: ''}
+		bind:this={headerNode}
+		in:fade>
+		<Header />
 	</div>
+{/if}
 
-	{#if globalFlags.firstPageHasMounted}
-		<LinksPanel />
+<slot />
 
-		<MusicBottomPanel />
+{#if globalFlags.firstPageHasMounted}
+	<LinksPanel />
 
-		<AudioElement />
-	{/if}
+	<MusicBottomPanel />
+
+	<AudioElement />
 {/if}
