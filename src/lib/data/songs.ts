@@ -103,8 +103,8 @@ export const this_music_thing_track_names_only = objToArr(
 ) as SongTrackNamesOnly[];
 
 export const songs_tracks_names_only = [
-	...earthbound_track_names_only,
-	...this_music_thing_track_names_only
+	...this_music_thing_track_names_only,
+	...earthbound_track_names_only
 ];
 
 const earthbound = {

@@ -10,8 +10,9 @@
 
 	// TO DO
 
-	// □ try giving images actual widths and heights
+	// □ try giving images actual widths and heights? ...for page.dev recommendations
 	// □ image sizes
+	// □ max image width inline with natural size
 
 	// □ bind actual width values for bottom right panel
 
@@ -19,20 +20,19 @@
 
 	// NICE TO HAVE
 	// □ draw more attention to music player?
-	// □ overlay on music player open?
-	// □ cascade images opacity
-	// □ loading priority for images (as opposed to lazy/eager)
+	// □ cascade images opacity?
+	// □ loading priority for images (as opposed to lazy/eager)?
 	// □ song time for open player (and closed?). on right side?
 	// □ reset song button
+	// □ song progress bar. Can drag.
 	// □ snap to next column in horizontal scrollers - latest news
 	// □ auto rotate latest articles? (Interaction resets timer)
 	// □ optimise images - sizes; width queries; if add width to w= on img query string and number is over the image natural wdth, vite won't create a source for that.
-	// □ ...check image strings for max width for those that need to be max
 	// □ prev/next news article? prev/next album?
 	// □ use local storage to save default user setting.
 
 	// FUTURE
-	// □ with more photos, curate gallery as in https://cargo.site/Templates#services&programs ?
+	// □ with more photos, curate gallery as in https://cargo.site/Templates#services&programs?
 </script>
 
 <script lang="ts">

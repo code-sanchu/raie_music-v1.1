@@ -86,9 +86,10 @@
 		{/each}
 	</div>
 
-	<p class="mt-sm text-sm md:text-base text-my-black-400 flex gap-xs items-center">
-		<span class="w-[1.5px] h-[12px] bg-my-black-50/40" />
-		<span class="italic"> Galaxy Studio images by Christiano Tortoioli.</span>
+	<p class="mt-sm flex gap-xs items-center">
+		<span class="w-[10px] h-[1.2px] bg-my-black-50" />
+		<span class="text-sm md:text-base text-my-black-900">
+			Galaxy Studio images by Christiano Tortoioli.</span>
 	</p>
 {/if}
 

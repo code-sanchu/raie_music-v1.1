@@ -10,26 +10,31 @@
 	export let maxHeightPx: number;
 	export let isActive: boolean;
 
+	let windowHeight: number;
+
 	let imageWidth: number;
 	let imageHeight: number;
 
 	$: {
-		if (maxHeightPx && maxWidthPx) {
+		if (maxHeightPx && maxWidthPx && windowHeight) {
+			let captionAllowanceHeight = windowHeight * 0.1;
+			let maxImageHeight = maxHeightPx - captionAllowanceHeight;
+
 			const imageAspectRatio = image.naturalDimensions.width / image.naturalDimensions.height;
 
 			if (imageAspectRatio >= 1) {
 				let tempImageWidth = maxWidthPx;
 				let tempImageHeight = tempImageWidth / imageAspectRatio;
 
-				if (tempImageHeight <= maxHeightPx) {
+				if (tempImageHeight <= maxImageHeight) {
 					imageWidth = tempImageWidth;
 					imageHeight = tempImageHeight;
 				} else {
-					imageHeight = maxHeightPx;
-					imageWidth = maxHeightPx * imageAspectRatio;
+					imageHeight = maxImageHeight;
+					imageWidth = maxImageHeight * imageAspectRatio;
 				}
 			} else {
-				let tempImageHeight = maxHeightPx;
+				let tempImageHeight = maxImageHeight;
 				let tempImageWidth = tempImageHeight * imageAspectRatio;
 
 				if (tempImageWidth <= maxWidthPx) {
@@ -45,6 +50,8 @@
 
 	let mouseIsDown = false;
 </script>
+
+<svelte:window bind:innerHeight={windowHeight} />
 
 {#if isActive}
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
