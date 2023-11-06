@@ -478,6 +478,7 @@ const red_brick_angel = {
 		youtubeEmbed: null,
 		lyrics: '',
 		localSrc: '/songs/red_brick_angel/01-young_love.mp3',
+		localVideoSrc: '/videos/young_love.mp4',
 		description:
 			'Is a tribute to the memory of my first real love and heartbreak … I was 16 … running a bit wild … in a mining town just outside of Glasgow city…<br/>',
 		credits:
@@ -614,7 +615,7 @@ const red_brick_angel = {
 		albumName: 'Red Brick Angel',
 		albumKey: 'red_brick_angel',
 		id: 'red_brick_angel-whisky_song',
-		name: 'Whisy Song',
+		name: 'Whisky Song',
 		number: '10',
 		length: '4:06',
 		youtubeEmbed: null,
@@ -691,6 +692,7 @@ export type Song = {
 	description: string;
 	credits: string;
 	youtubeEmbed: string | null;
+	localVideoSrc?: string;
 };
 
 export const songsList = [

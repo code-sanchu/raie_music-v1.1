@@ -17,7 +17,6 @@
 	});
 
 	$: currentSong = songsList[musicPlayer.currentTrackIndex];
-	$: console.log('currentSong:', currentSong);
 </script>
 
 <div

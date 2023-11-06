@@ -125,7 +125,7 @@
 							}
 						}}>
 						{#each songsArr['red_brick_angel'] as track}
-							<Track data={track} minWidth={480} noVideos noLyrics />
+							<Track data={track} minWidth={480} noLyrics noVideos />
 						{/each}
 					</div>
 

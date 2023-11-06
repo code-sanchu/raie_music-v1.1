@@ -21,7 +21,6 @@
 	// □ clean up functions in event listeners?
 
 	// NICE TO HAVE
-	// □ draw more attention to music player?
 	// □ cascade images opacity?
 	// □ loading priority for images (as opposed to lazy/eager)?
 	// □ song time for open player (and closed?). on right side?
@@ -29,7 +28,7 @@
 	// □ song progress bar. Can drag.
 	// □ snap to next column in horizontal scrollers - latest news
 	// □ auto rotate latest articles? (Interaction resets timer)
-	// □ optimise images - sizes; width queries; if add width to w= on img query string and number is over the image natural wdth, vite won't create a source for that.
+	// □ fully optimise images - sizes; width queries; if add width to w= on img query string and number is over the image natural wdth, vite won't create a source for that.
 	// □ prev/next news article? prev/next album?
 	// □ use local storage to save default user setting.
 
