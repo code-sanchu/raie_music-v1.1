@@ -7,6 +7,7 @@
 <script lang="ts">
 	export let data: Song;
 	export let noVideos = false;
+	export let noLyrics = false;
 	export let minWidth: number;
 
 	let aboutNode: HTMLDivElement;
@@ -18,7 +19,7 @@
 		<Left {data} bind:showAbout />
 
 		<div class="flex justify-end pr-xs">
-			<Right {data} {noVideos} />
+			<Right {data} {noVideos} {noLyrics} />
 		</div>
 	</div>
 

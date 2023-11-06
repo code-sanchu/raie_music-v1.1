@@ -102,9 +102,76 @@ export const this_music_thing_track_names_only = objToArr(
 	this_music_thing_track_names_only_obj
 ) as SongTrackNamesOnly[];
 
+const red_brick_angel_track_names_only_obj = {
+	young_love: {
+		id: 'red_brick_angel-young_love',
+		name: 'Young Love'
+	},
+
+	grown_man: {
+		id: 'red_brick_angel-grown_man',
+		name: 'Grown Man'
+	},
+
+	crystal_girl: {
+		id: 'red_brick_angel-crystal_girl',
+		name: 'Crystal Girl'
+	},
+
+	red_brick_angel: {
+		id: 'red_brick_angel-red_brick_angel',
+		name: 'Red Brick Angel'
+	},
+
+	this_thing_called_love: {
+		id: 'red_brick_angel-this_thing_called_love',
+		name: 'This Thing Called Love'
+	},
+
+	free_now: {
+		id: 'red_brick_angel-free_now',
+		name: 'Free Now'
+	},
+
+	back_room_angel: {
+		id: 'red_brick_angel-back_room_angel',
+		name: 'Back Room Angel'
+	},
+
+	bringing_me_back_home: {
+		id: 'red_brick_angel-bringing_me_back_home',
+		name: 'Bringing Me Back Home'
+	},
+
+	grey: {
+		id: 'red_brick_angel-grey',
+		name: 'Grey'
+	},
+
+	whisky_song: {
+		id: 'red_brick_angel-whisky_song',
+		name: 'Whisky Song'
+	},
+
+	you_cant_fly: {
+		id: 'red_brick_angel-you_cant_fly',
+		name: "You Can't Fly"
+	},
+
+	convoy_of_tears: {
+		id: 'red_brick_angel-convoy_of_tears',
+		name: 'Convoy of Tears'
+	}
+} as const;
+
+export const red_brick_angel_track_names_only = objToArr(
+	red_brick_angel_track_names_only_obj
+) as SongTrackNamesOnly[];
+
 export const songs_tracks_names_only = [
 	...this_music_thing_track_names_only,
-	...earthbound_track_names_only
+	...earthbound_track_names_only,
+	...red_brick_angel_track_names_only
 ];
 
 const earthbound = {
@@ -400,21 +467,216 @@ const this_music_thing = {
 	}
 } as const;
 
-export type AlbumKey = 'earthbound' | 'this_music_thing';
+const red_brick_angel = {
+	young_love: {
+		albumName: 'Red Brick Angel',
+		albumKey: 'red_brick_angel',
+		id: 'red_brick_angel-young_love',
+		name: 'Young Love',
+		number: '1',
+		length: '4:19',
+		youtubeEmbed: null,
+		lyrics: '',
+		localSrc: '/songs/red_brick_angel/01-young_love.mp3',
+		description:
+			'Is a tribute to the memory of my first real love and heartbreak … I was 16 … running a bit wild … in a mining town just outside of Glasgow city…<br/>',
+		credits:
+			'Written Bennett/Maebe<br /> Drums and Percussion Chris Bell<br /> Bass Cristiano Tortoioli<br /> Acoustic Guitar Jon Dunn<br /> Electric Guitar Louis Bell<br /> Piano Wes Maebe<br /> Lead Vocal Rachel Bennett<br /> Background Vocals Ethan Fleming Damien James Wes Maebe Emily McLean'
+	},
+
+	grown_man: {
+		albumName: 'Red Brick Angel',
+		albumKey: 'red_brick_angel',
+		id: 'red_brick_angel-grown_man',
+		name: 'Grown Man',
+		number: '2',
+		length: '3:51',
+		youtubeEmbed: null,
+		lyrics: '',
+		localSrc: '/songs/red_brick_angel/02-grown_man.mp3',
+		description:
+			'Is an address to a dear friend – a relationship that was best kept ‘as friends’!<br/>',
+		credits:
+			'Written Bennett<br /> Arranged Dunn/Tortoioli<br /> Drums and Percussion Chris Bell<br /> Bass Cristiano Tortoioli<br /> Acoustic Guitar Jon Dunn<br /> Electric Guitars Louis Bell Jon Dunn<br /> Hammond Wes Maebe<br /> Lead Vocal Rachel Bennett<br /> Background Vocals Rachel Bennett Nathan Devonte Wes Maebe <br /> Emily McLean Nazarene'
+	},
+
+	crystal_girl: {
+		albumName: 'Red Brick Angel',
+		albumKey: 'red_brick_angel',
+		id: 'red_brick_angel-crystal_girl',
+		name: 'Crystal Girl',
+		number: '3',
+		length: '3:12',
+		youtubeEmbed: null,
+		lyrics: '',
+		localSrc: '/songs/red_brick_angel/03-crystal_girl.mp3',
+		description: 'A description of my young life … city born and bred but ever moving …<br/>',
+		credits:
+			'Written Bennett/Maebe and arranged Dunn/Tortoioli<br /> Drums Chris Bell <br /> Bass Cristiano Tortoioli<br /> Acoustic Guitar Jon Dunn<br /> Electric Guitars Louis Bell Wes Maebe<br /> Violin Maria Timus<br /> Mandolin Jill Cumberbatch<br /> Lead Vocal Rachel Bennett<br/>Background Vocal Emily McLean'
+	},
+
+	red_brick_angel: {
+		albumName: 'Red Brick Angel',
+		albumKey: 'red_brick_angel',
+		id: 'red_brick_angel-red_brick_angel',
+		name: 'Red Brick Angel',
+		number: '4',
+		length: '5:27',
+		youtubeEmbed: null,
+		lyrics: '',
+		localSrc: '/songs/red_brick_angel/04-red_brick_angel.mp3',
+		description:
+			'This song was inspired by my brother’s beautiful guitar part … he woke from a dream about an angel on a tenement wall .. got up and wrote this part … he lives in NZ and we are on Face Time to communicate … he is my one close nuclear family sibling … we come from a broken home<br/>',
+		credits:
+			'Written Peter &amp; Rachel Bennett/Dunn and arranged Dunn/Tortoioli<br /> Drums Chris Bell<br /> Bass Cristiano Tortoioli<br /> Acoustic Guitars Louis Bell Jon Dunn<br /> Electric Guitars Louis Bell Peter Bennett Wes Maebe <br /> Piano Tim Gardner<br /> Cello Altea Narici<br /> Lead Vocal Rachel Bennett<br /> Background Vocals Ethan Fleming Damien James Wes Maebe Emily McLean'
+	},
+
+	this_thing_called_love: {
+		albumName: 'Red Brick Angel',
+		albumKey: 'red_brick_angel',
+		id: 'red_brick_angel-this_thing_called_love',
+		name: 'This Thing Called Love',
+		number: '5',
+		length: '3:49',
+		youtubeEmbed: null,
+		lyrics: '',
+		localSrc: '/songs/red_brick_angel/05-this_thing_called_love.mp3',
+		description: 'Just a good time song about the trials of love …<br/>',
+		credits:
+			'Written Bennett<br /> Drums Chris Bell<br /> Percussion Wes Maebe<br /> Bass Cristiano Tortoioli<br /> Acoustic Guitar Jon Dunn<br /> Electric Guitar Louis Bell<br /> Piano Mojo Wellington<br /> Lead Vocal Rachel Bennett<br /> Background Vocals Rachel Bennett Nathan Devonte Ethan Fleming Damien James Emily McLean Nazarene'
+	},
+
+	free_now: {
+		albumName: 'Red Brick Angel',
+		albumKey: 'red_brick_angel',
+		id: 'red_brick_angel-free_now',
+		name: 'Grown Man',
+		number: '6',
+		length: '5:29',
+		youtubeEmbed: null,
+		lyrics: '',
+		localSrc: '/songs/red_brick_angel/06-free_now.mp3',
+		description:
+			'I wrote this for my dear friend who lost her son to a motor bike accident &#8230; her grief was overwhelming &#8230; she is un-named<br /> I am very proud that Jon Klein (Siouxie and the Banshees/Sinead O&rsquo;Connor/Jah Wobble) was involved in writing this track with me and that he is playing a solo on the outro!<br/>',
+		credits:
+			'Written Bennett/Klein<br /> Drums Chris Bell<br /> Bass Cristiano Tortoioli<br /> Acoustic Guitar Jon Dunn<br /> Electric Guitars Louis Bell Wes Maebe<br /> Guitar solo Jon Klein<br /> Piano Tim Gardner<br /> Violins Tim Gardner Maria Timus <br /> Cello Altea Narici<br /> Lead Vocal Rachel Bennett<br /> Background Vocals Nathan Devonte Wes Maebe Emily McLean Nazarene'
+	},
+
+	back_room_angel: {
+		albumName: 'Red Brick Angel',
+		albumKey: 'red_brick_angel',
+		id: 'red_brick_angel-back_room_angel',
+		name: 'Back Room Angel',
+		number: '7',
+		length: '4:19',
+		youtubeEmbed: null,
+		lyrics: '',
+		localSrc: '/songs/red_brick_angel/07-back_room_angel.mp3',
+		description:
+			'I actually dreamed this but in fact, in the dream, I was inside the angel’s ribs and could see the quill ends of his feathers in his spine; he was colossal inside yet I was unafraid<br/>',
+		credits:
+			'Written Bennett and arranged Dunn/Tortoioli<br /> Drums Chris Bell<br /> Percussion Wes Maebe<br /> Bass Cristiano Tortoioli<br /> Acoustic Guitar Jon Dunn<br /> Electric Guitar Louis Bell<br /> Piano Tim Gardner<br /> Hammond Tim Gardner<br /> Keys Tim Gardner<br /> Lead Vocal Rachel Bennett<br /> Background Vocals Nathan Devonte Wes Maebe Emily McLean Nazarene'
+	},
+
+	bringing_me_back_home: {
+		albumName: 'Red Brick Angel',
+		albumKey: 'red_brick_angel',
+		id: 'red_brick_angel-bringing_me_back_home',
+		name: 'Bringing Me Back Home',
+		number: '8',
+		length: '3:05',
+		youtubeEmbed: null,
+		lyrics: '',
+		localSrc: '/songs/red_brick_angel/08-bringing_me_back_home.mp3',
+		description:
+			'I have read a great deal about the origins of Country Music and just wanted to express my feelings about the hardships endured, particularly during the ‘dust bowl’ but also by the Nation People whose land was rent asunder<br/>',
+		credits:
+			'Written Bennett/Maebe/Dunn and arranged Dunn/Tortoioli<br /> Drums Chris Bell<br /> Percussion Wes Maebe<br /> Bass Cristiano Tortoioli<br /> Acoustic Guitar Jon Dunn<br /> Electric Guitar Louis Bell<br /> Violins Tim Gardner Maria Timus <br /> Cello Altea Narici<br /> Lead Vocal Rachel Bennett<br /> Background Vocals Wes Maebe Emily McLean'
+	},
+
+	grey: {
+		albumName: 'Red Brick Angel',
+		albumKey: 'red_brick_angel',
+		id: 'red_brick_angel-grey',
+		name: 'Grey',
+		number: '9',
+		length: '3:57',
+		youtubeEmbed: null,
+		lyrics: '',
+		localSrc: '/songs/red_brick_angel/09-grey.mp3',
+		description:
+			'I live with a beautiful rescue greyhound whom I named Isra; the name means &lsquo;nocturnal journey&rsquo; but is metaphorical for a journey through darkness; greyhounds are used until they cannot provide income and their &lsquo;endings&rsquo; are usually very difficult (they are often shot or abandoned)<br /> The sport itself is associated with many injuries and deaths on the track &ndash; I support Action For Greyhounds and this song is my protest against the sport<br /> I am so proud that my producer Wes Maebe contributed a beautiful classical guitar solo on the intro to lift this song to new heights<br />',
+		credits:
+			'Written Bennett/Dunn<br /> Drums Chris Bell<br /> Bass Cristiano Tortoioli<br /> Acoustic Guitars Louis Bell Jon Dunn<br /> Electric Guitar Louis Bell <br /> Guitar solo Wes Maebe<br /> Piano Tim Gardner<br /> Violins Tim Gardner Maria Timus<br /> Cello Altea Narici<br /> Lead Vocal Rachel Bennett'
+	},
+
+	whisky_song: {
+		albumName: 'Red Brick Angel',
+		albumKey: 'red_brick_angel',
+		id: 'red_brick_angel-whisky_song',
+		name: 'Whisy Song',
+		number: '10',
+		length: '4:06',
+		youtubeEmbed: null,
+		lyrics: '',
+		localSrc: '/songs/red_brick_angel/10-whisky_song.mp3',
+		description:
+			'My father was a Londoner who loved Scotland and everything Scottish – particularly a good singe malt whisky!<br/>',
+		credits:
+			'Written Bennett/Cochrane and arranged Maebe/Dunn/Tortoioli<br /> Drums and Percussion Chris Bell <br /> Bass Cristiano Tortoioli<br /> Acoustic Guitar Jon Dunn<br /> Electric Guitar Louis Bell<br /> Keys Tim Gardner<br /> Lead Vocal Rachel Bennett<br /> Background Vocals Ethan Fleming Damien James Wes Maebe Emily McLean'
+	},
+
+	you_cant_fly: {
+		albumName: 'Red Brick Angel',
+		albumKey: 'red_brick_angel',
+		id: 'red_brick_angel-you_cant_fly',
+		name: "You Can't Fly",
+		number: '11',
+		length: '4:47',
+		youtubeEmbed: null,
+		lyrics: '',
+		localSrc: '/songs/red_brick_angel/11-you_cant_fly.mp3',
+		description:
+			'This song is a protest I wrote to express my abhorrence of the usury and ugliness associated with the drug trade<br/>',
+		credits:
+			'Written Bennett/Dunn/Tortoioli<br /> Drums Chris Bell<br /> Percussion Wes Maebe<br /> Bass Cristiano Tortoioli<br /> Acoustic Guitar Jon Dunn<br /> Electric Guitars Louis Bell Wes Maebe<br /> Lead Vocal Rachel Bennett<br /> Background Vocals Ethan Fleming Damien James Wes Maebe Emily McLean'
+	},
+
+	convoy_of_tears: {
+		albumName: 'Red Brick Angel',
+		albumKey: 'red_brick_angel',
+		id: 'red_brick_angel-convoy_of_tears',
+		name: 'Convoy of Tears',
+		number: '12',
+		length: '7:14',
+		youtubeEmbed: null,
+		lyrics: '',
+		localSrc: '/songs/red_brick_angel/12-convoy_of_tears.mp3',
+		description:
+			'I wrote this song with Wes after many conversations; initially I wrote it independently, inspired by the Netflix series &lsquo;Vietnam&rsquo; then Wes got on board and told stories of friends&rsquo; fathers who are/were vets &ndash; he has a wide knowledge of the names of platoons, military codes for operations, names of flights and helicopters &#8230; and a lot more <br /> Somehow our united minds created a piece that I am extremely proud of <br /> Add to this the fact that when Elliott Randall (Doobie Bros./Steely Dan) heard the track, he requested permission to solo on the outro!<br />',
+		credits:
+			'Written Bennett/Maebe<br /> Drums Chris Bell<br /> Bass Cristiano Tortoioli<br /> Acoustic Guitar Jon Dunn<br /> Electric Guitars Louis Bell Jon Dunn Wes Maebe<br /> Guitar solo Elliott Randall<br /> Percussion Wes Maebe<br /> Violins Tim Gardner Maria Timus<br /> Cello Altea Narici<br /> Lead Vocal Rachel Bennett<br /> Background Vocals Ethan Fleming Damien James Emily McLean Altea Narici'
+	}
+} as const;
+
+export type AlbumKey = 'earthbound' | 'this_music_thing' | 'red_brick_angel';
 
 export const albumsArr = [
 	{ name: 'Earthbound', key: 'earthbound' },
-	{ name: 'This Music Thing', key: 'this_music_thing' }
+	{ name: 'This Music Thing', key: 'this_music_thing' },
+	{ name: 'Red Brick Angel', key: 'red_brick_angel' }
 ] as const;
 
 export const songsArr = {
 	earthbound: Object.values(earthbound),
-	this_music_thing: Object.values(this_music_thing)
+	this_music_thing: Object.values(this_music_thing),
+	red_brick_angel: Object.values(red_brick_angel)
 };
 
 export const songsMap = {
 	earthbound,
-	this_music_thing
+	this_music_thing,
+	red_brick_angel
 };
 
 export type Song = {
@@ -431,4 +693,8 @@ export type Song = {
 	youtubeEmbed: string | null;
 };
 
-export const songsList = [...songsArr.this_music_thing, ...songsArr.earthbound];
+export const songsList = [
+	...songsArr.this_music_thing,
+	...songsArr.earthbound,
+	...songsArr.red_brick_angel
+];

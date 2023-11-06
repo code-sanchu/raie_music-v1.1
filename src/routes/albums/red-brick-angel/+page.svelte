@@ -1,16 +1,18 @@
 <script lang="ts" context="module">
 	import { onMount } from 'svelte';
-
-	import { images } from '$lib/assets';
-	import { ImageGalleryModal, Images, PageLayout } from '$lib/components';
-	import { Link } from '$lib/components/prose';
-	import { ImageScroller } from '$lib/components/+pages/album';
-	import { updateGlobalFlags } from '$lib/stores';
 	import { fade } from 'svelte/transition';
+
+	import { updateGlobalFlags } from '$lib/stores';
+	import { images } from '$lib/assets';
+	import { songsArr } from '$lib/data';
+	import { ImageGalleryModal, Images, PageLayout } from '$lib/components';
+	import { ImageScroller, Track } from '$lib/components/+pages/album';
+	import { Link } from '$lib/components/prose';
 
 	const albumImages = [
 		images.albums.red_brick_angels.band_hope_and_anchor,
-		images.galaxy['full-band']
+		images.galaxy['full-band'],
+		images.albums.red_brick_angels.album_sleeve
 	];
 </script>
 
@@ -23,14 +25,29 @@
 		mounted = true;
 	});
 
-	let imageShowIsOpen = false;
+	let imageModalIsOpen = false;
 
-	let imageShowIndex = 0;
+	let imageModalCurrentIndex = 0;
 
 	const onClickImage = (index: number) => {
-		imageShowIndex = index;
-		imageShowIsOpen = true;
+		imageModalCurrentIndex = index;
+		imageModalIsOpen = true;
 	};
+
+	let tracksContainer: HTMLDivElement;
+
+	$: isTracksOverflow = false;
+
+	$: {
+		if (tracksContainer) {
+			const scrollWidth = tracksContainer.scrollWidth;
+			const offsetWidth = tracksContainer.offsetWidth;
+
+			isTracksOverflow = scrollWidth > offsetWidth;
+		}
+	}
+
+	let userHasScrolledTracks = false;
 </script>
 
 <PageLayout.Body>
@@ -94,43 +111,44 @@
 					</p>
 				</div>
 
-				<PageLayout.VerticalSpacing sizing="1/3" />
+				<div class="mt-xl">
+					<h3 class="italic tracking-widest text-sm">Tracklist</h3>
 
-				<Images.BrickBg.HorizontalThree />
+					<div
+						class="relative flex flex-col gap-sm mt-md overflow-x-auto max-w-[calc(100vw-2rem)] pb-lg md:scrollbar-thin md:scrollbar-track-my-black-50/50 md:scrollbar-thumb-my-black-100 md:hover:scrollbar-thumb-my-black-200"
+						bind:this={tracksContainer}
+						on:scroll={(e) => {
+							const scrollLeft = e.currentTarget.scrollLeft;
 
-				<PageLayout.VerticalSpacing sizing="1/3" />
+							if (scrollLeft > 20) {
+								userHasScrolledTracks = true;
+							}
+						}}>
+						{#each songsArr['red_brick_angel'] as track}
+							<Track data={track} minWidth={480} noVideos noLyrics />
+						{/each}
+					</div>
 
-				<div class="prose text-my-black tracking-wider max-w-[650px]">
-					<p>
-						Whilst we wait on the mastered album to go live – check out some moments from Raie’s 6
-						beautiful days at Galaxy Studios:
-					</p>
+					{#if isTracksOverflow && !userHasScrolledTracks}
+						<div class="flex justify-end" transition:fade>
+							<div class="flex items-center gap-xs text-my-black-400 text-sm italic tracking-wide">
+								<p>scroll right for more...</p>
+							</div>
+						</div>
+					{/if}
+				</div>
 
-					<ul>
-						<li>
-							<Link href="https://www.facebook.com/rachel.bennett.56863/videos/1477803819694223"
-								>Maria Timus puts down violin on Crystal Girl – one take!
-							</Link>
-						</li>
+				<PageLayout.VerticalSpacing sizing="2/3" />
 
-						<li>
-							<Link href="https://www.facebook.com/rachel.bennett.56863/videos/600233685497969"
-								>Tim Gardner magics another one take keys part for Whisky Song
-							</Link>
-						</li>
+				<h3 class="text-my-black-500 tracking-widest text-xs uppercase">Credits</h3>
 
-						<li>
-							<Link href="https://www.facebook.com/rachel.bennett.56863/videos/611123494271915"
-								>A rehearsal for Grey in Galaxy’s beautiful ‘quietest room in the world’
-							</Link>
-						</li>
-
-						<li>
-							<Link href="https://www.facebook.com/rachel.bennett.56863/videos/1421341705302857"
-								>The inimitable Louis Bell gets that amazing guitar sound down on Young Love
-							</Link>
-						</li>
-					</ul>
+				<div class="prose mt-sm">
+					Produced by Wes &lsquo;Wesonator&rsquo; Maebe.<br />
+					Mixed and Mastered by Wes Maebe at The Wheelhouse.<br />
+					Recorded and Engineered by Wes Maebe at Galaxy Studios Belgium and at GMS London.<br />
+					Peter Bennett&rsquo;s guitar recorded by Phil Riley at Life of Riley Studio NZ.<br />
+					Album Musical Director Jon Dunn.<br />
+					Copyright 2023 Raie Music.
 				</div>
 			</div>
 		</div>
@@ -138,6 +156,6 @@
 </PageLayout.Body>
 
 <ImageGalleryModal
-	bind:currentIndex={imageShowIndex}
-	bind:isOpen={imageShowIsOpen}
+	bind:currentIndex={imageModalCurrentIndex}
+	bind:isOpen={imageModalIsOpen}
 	images={albumImages} />

@@ -69,9 +69,31 @@ const this_music_thing = {
 	]
 } as const;
 
+const red_brick_angel = {
+	title: 'Red Brick Angel',
+	id: 'red_brick_angel',
+	links: {
+		listen: [],
+		buy: []
+	},
+	releaseDate: 'November 8 2023',
+	description: [
+		'Red Brick Angel is Raie’s third album project with the award winning Wesonator!',
+		"Recorded in six days at Galaxy studios in Belgium, the ‘live and real’ feel of the tracks is distinctive and inimitably superb! Raie is joined again by <a href='https://www.linkedin.com/in/cristiano-tortoioli-b2b355294/' target='_blank'>Christiano Tortoioli</a> on electric bass, <a href='https://www.discogs.com/artist/532116-Chris-Bell-3' target='_blank'>Chris Bell</a> on drums as well as <a href='https://en.wikipedia.org/wiki/Jon_Klein_(musician)' target='_blank'>Jon Klein</a> and <a href='https://en.wikipedia.org/wiki/Elliott_Randall' target='_blank'>Elliot Randal</a> who both feature on guitar solo outros for the tracks Free Now and Convoy of Tears respectively.",
+		'In London at GMS (where This Music Thing was recorded) we put down the background vocals with Nazarene and Nathan Devonte who have worked with Raie for over a decade now; they were joined by Emily MacLean, Ethan Fleming and Damien James.',
+		'Jill Cumberbatch added Mandolin to Crystal Girl and Mojo Wellington put some keys on This Thing Called Love.',
+		'Thanks to Sean Woodlock as studio assistant/manager for the day, our visit to GMS was seamless and totally fruitful!'
+	],
+	summary: [
+		'Earthbound is Raie’s first EP recording to radio standard – produced by Wes Maebe, and is the forerunner for two further albums created by the Raie/Wes team and produced by The Wesonator!  The album features world renowned guitarist <a href="https://en.wikipedia.org/wiki/Elliott_Randall">Elliot Randal</a> on two tracks – Waxn’ Wane and Goliath – you can hear these on Raie’s Soundcloud',
+		"Recorded in six days at Galaxy studios in Belgium, the ‘live and real’ feel of the tracks is distinctive and inimitably superb! Raie is joined again by <a href='https://www.linkedin.com/in/cristiano-tortoioli-b2b355294/' target='_blank'>Christiano Tortoioli</a> on electric bass, <a href='https://www.discogs.com/artist/532116-Chris-Bell-3' target='_blank'>Chris Bell</a> on drums as well as <a href='https://en.wikipedia.org/wiki/Jon_Klein_(musician)' target='_blank'>Jon Klein</a> and <a href='https://en.wikipedia.org/wiki/Elliott_Randall' target='_blank'>Elliot Randal</a> who both feature on guitar solo outros for the tracks Free Now and Convoy of Tears respectively."
+	]
+} as const;
+
 export const albums_meta = {
 	earthbound,
-	this_music_thing
+	this_music_thing,
+	red_brick_angel
 };
 
 export type AlbumMeta = {

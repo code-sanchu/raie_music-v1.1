@@ -9,6 +9,7 @@
 <script lang="ts">
 	export let data: Song;
 	export let noVideos = false;
+	export let noLyrics = false;
 
 	const { name, length, lyrics, localSrc, youtubeEmbed, id } = data;
 
@@ -54,12 +55,17 @@
 			{/if}
 		{/if}
 
-		<button
-			class="p-xxs text-my-black-500 rounded-full"
-			on:click={() => (lyricsIsOpen = !lyricsIsOpen)}
-			id="track-lyrics"
-			type="button"><Icon.Lyrics weight="thin" /></button>
-		<Tooltip text="lyrics" triggeredById="track-lyrics" />
+		{#if data.lyrics.length}
+			<button
+				class="p-xxs text-my-black-500 rounded-full"
+				on:click={() => (lyricsIsOpen = !lyricsIsOpen)}
+				id="track-lyrics"
+				type="button"><Icon.Lyrics weight="thin" /></button>
+			<Tooltip text="lyrics" triggeredById="track-lyrics" />
+		{:else if !noLyrics}
+			<button class="invisible p-xxs text-my-black-500 rounded-full"
+				><Icon.Lyrics weight="thin" /></button>
+		{/if}
 
 		{#if localSrc}
 			<button

@@ -2,6 +2,7 @@
 	import {
 		earthbound_track_names_only,
 		this_music_thing_track_names_only,
+		red_brick_angel_track_names_only,
 		type AlbumKey
 	} from '$lib/data';
 	import { musicPlayerInitData, musicPlayerStore, type MusicPlayer } from '$lib/stores';
@@ -10,7 +11,8 @@
 
 	const albumButtonsData: { key: AlbumKey; name: string }[] = [
 		{ key: 'this_music_thing', name: 'This Music Thing' },
-		{ key: 'earthbound', name: 'Earthbound' }
+		{ key: 'earthbound', name: 'Earthbound' },
+		{ key: 'red_brick_angel', name: 'Red Brick Angel' }
 	];
 </script>
 
@@ -64,8 +66,10 @@
 		<div class={`h-full w-full max-w-full mt-sm self-start overflow-hidden`}>
 			{#if visibleAlbumKey === 'this_music_thing'}
 				<TrackList songs={this_music_thing_track_names_only} />
-			{:else}
+			{:else if visibleAlbumKey === 'earthbound'}
 				<TrackList songs={earthbound_track_names_only} />
+			{:else}
+				<TrackList songs={red_brick_angel_track_names_only} />
 			{/if}
 		</div>
 	</div>

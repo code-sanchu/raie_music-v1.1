@@ -36,7 +36,7 @@ function updateMusicPlayerStore<TField extends keyof MusicPlayer>(
 	});
 }
 
-const numSongs = 17;
+const numSongs = 29;
 
 export const updateMusicPlayer = {
 	track: (index: number | 'next' | 'prev') => {
