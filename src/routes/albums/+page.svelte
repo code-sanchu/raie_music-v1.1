@@ -67,7 +67,7 @@
 						href="https://www.discogs.com/artist/532116-Chris-Bell-3">Chris Bell</Link>
 					on drums as well as <Link href="https://en.wikipedia.org/wiki/Jon_Klein_(musician)"
 						>Jon Klein</Link> and <Link href="https://en.wikipedia.org/wiki/Elliott_Randall"
-						>Elliot Randal</Link> who both feature on guitar solo outros for the tracks Free Now and
+						>Elliot Randall</Link> who both feature on guitar solo outros for the tracks Free Now and
 					Convoy of Tears respectively.
 				</svelte:fragment>
 			</Album>
@@ -98,7 +98,7 @@
 						Earthbound is Raie’s first EP recording to radio standard – produced by Wes Maebe, and
 						is the forerunner for two further albums created by the Raie/Wes team and produced by
 						The Wesonator! The album features world renowned guitarist <Link
-							href="https://en.wikipedia.org/wiki/Elliott_Randall">Elliot Randal</Link> on two tracks
+							href="https://en.wikipedia.org/wiki/Elliott_Randall">Elliot Randall</Link> on two tracks
 						– Waxn’ Wane and Goliath – you can hear these on Raie’s Soundcloud
 					</p>
 				</svelte:fragment>

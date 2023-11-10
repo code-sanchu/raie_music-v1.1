@@ -51,7 +51,7 @@
 
 				<button
 					class={`italic transition-colors ease-in-out duration-75 ${
-						isActive ? '' : 'text-my-black-400'
+						isActive ? 'text-my-black' : 'text-my-black-400'
 					}`}
 					on:click={() => (visibleAlbumKey = album.key)}
 					type="button">

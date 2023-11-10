@@ -86,7 +86,7 @@
 							href="https://www.discogs.com/artist/532116-Chris-Bell-3">Chris Bell</Link>
 						on drums as well as <Link href="https://en.wikipedia.org/wiki/Jon_Klein_(musician)"
 							>Jon Klein</Link> and <Link href="https://en.wikipedia.org/wiki/Elliott_Randall"
-							>Elliot Randal</Link> who both feature on guitar solo outros for the tracks Free Now and
+							>Elliot Randall</Link> who both feature on guitar solo outros for the tracks Free Now and
 						Convoy of Tears respectively.
 					</p>
 					<p>

@@ -7,8 +7,10 @@
 	import { updateGlobalFlags } from '$lib/stores';
 
 	// MUST DO
+	// □ clicking on new song sometimes doesn't play it. Try with new cache.
 
 	// TO DO
+	// □ commas between album titles in music player are wrong colour.
 
 	// □ page transition out
 
