@@ -3,7 +3,6 @@
 	import { Picture } from '$lib/components';
 	import { Link } from '$lib/components/prose';
 	import { Container, TextContainer } from '../_components/';
-	// import BuyTicketsLink from './buy-tickets-link.svelte';
 	import EpkLink from './epk-link.svelte';
 </script>
 
@@ -23,8 +22,6 @@
 		</div>
 
 		<TextContainer numColumns={1} extraClasses="">
-			<!-- <h3 class="text-my-black-200 tracking-widest uppercase mb-sm">Red Brick Angel</h3> -->
-
 			<div class="w-[98px] aspect-square overflow-hidden md:hidden shrink-0 mb-sm">
 				<Picture
 					imageClass="rounded-sm grayscale opacity-80"
@@ -40,7 +37,6 @@
 			<br /><br />
 
 			<div class="sm:flex gap-md">
-				<!-- <BuyTicketsLink extraClasses="inline-flex" /> -->
 				<EpkLink extraClasses="inline-flex" />
 			</div>
 
