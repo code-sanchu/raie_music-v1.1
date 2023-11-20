@@ -32,7 +32,10 @@
 
 			We launched the new album Red Brick Angel at <Link href="https://thecamdenclub.co.uk/"
 				>The Camden Club</Link>
-			on November 8th.
+			on November 8th to a standing ovation and we have now released our first Red Brick Angel album
+			single YOUNG LOVE...... listen on <Link
+				href="https://open.spotify.com/track/4f6sNMRPmhYUTKSNrBdQGM?fbclid=IwAR1Hq03ZHNhzSkHdSD_lmZK8-kkLxkAzqIhS5wOloJdqe6H_rYK2AxjEWxw"
+				>the link</Link> and help us increase our algorithms...
 
 			<br /><br />
 

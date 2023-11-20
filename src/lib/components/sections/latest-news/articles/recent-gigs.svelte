@@ -11,9 +11,24 @@
 <Container bind:height bind:isActive>
 	<div>
 		<TextContainer numColumns={2}>
-			Raie sold out Hope and Anchor – home of The Stranglers and Sinead O’Connor and we were
-			delighted to have Sinead’s guitarist Jon Klein play lead for us on the night; check out a
-			couple of clips on Raie’s <Link href="https://www.youtube.com/@RachelBennettraiemusic/videos"
+			Raie performed to a full house and a standing ovation at The Camden Club when we launched the
+			album Red Brick Angel ... highlights included Jon Klein's solo for Free Now and the whole room
+			singing the chorus of This Thing Called Love!
+			<br /><br />
+			We sang the album single release Young Love for our encore The venue manager Andrew Hart is a total
+			angel himself - we were looked after 'with stars on' and will definitely go back to play there
+			again.
+			<br /><br />
+			Sound man Giovanni Dominici did a great job on monitoring and our very own album producer and co-writer
+			Wes Maebe ran FOH sound; Wes used an ipad system for this ... it was a new experience but his genius
+			shone through - it might be the best sound I ever played to ...
+			<br /><br />
+			Jack Stanton photographed the night with Gregory Nice on still camera so watch this space for the
+			full length footage of the live album...
+			<br /><br />
+			Raie sold out Hope and Anchor – home of The Stranglers and Sinead O’Connor and we were delighted
+			to have Sinead’s guitarist Jon Klein play lead for us on the night; check out a couple of clips
+			on Raie’s <Link href="https://www.youtube.com/@RachelBennettraiemusic/videos"
 				>YouTube channel</Link
 			>.
 			<br /><br />

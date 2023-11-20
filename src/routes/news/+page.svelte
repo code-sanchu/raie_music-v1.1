@@ -22,6 +22,13 @@
 
 	{#if mounted}
 		<h1 class="tracking-widest text-xl text-my-black-50/70 uppercase font-medium" in:fade>News</h1>
+
+		<PageLayout.VerticalSpacing sizing="1/3" />
+
+		<p class="text-my-black tracking-wide leading-relaxed max-w-[768px]">
+			Raie is about to start a blog all about the journey of the album and her experiences in the
+			industry ... watch this space...
+		</p>
 	{/if}
 
 	<PageLayout.VerticalSpacing sizing="2/3" />

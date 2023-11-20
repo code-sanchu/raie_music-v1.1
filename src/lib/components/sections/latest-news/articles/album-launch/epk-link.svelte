@@ -12,7 +12,7 @@
 	target="_blank">
 	<span
 		class="text-sm text-my-black-600 italic rounded-sm border-my-black-50/60 tracking-widest group-hover/button:text-my-black transition-colors ease-in-out duration-150"
-		>Album EPK</span>
+		>Raie EPK</span>
 	<span
 		class="text-xs text-my-black-400 group-hover/button:text-my-black-700 transition-colors ease-in-out duration-150"
 		><Icon.ExternalLink weight="thin" /></span>
