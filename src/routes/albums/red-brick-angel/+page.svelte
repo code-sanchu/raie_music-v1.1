@@ -12,7 +12,9 @@
 	const albumImages = [
 		images.albums.red_brick_angels.band_hope_and_anchor,
 		images.galaxy['full-band'],
-		images.albums.red_brick_angels.album_sleeve
+		images.albums.red_brick_angels.album_sleeve,
+		images.albums.red_brick_angels.jon_k_solo_2,
+		images.albums.red_brick_angels.the_house_sing_2
 	];
 </script>
 

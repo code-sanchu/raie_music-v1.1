@@ -51,6 +51,8 @@ import this_music_thing_studio_dog_and_others from '$assets/images/albums/this-m
 
 import red_brick_angels_band_hope_and_anchor from '$assets/images/albums/red-brick-angels/band-hope_and_anchor.jpg?w=359&format=avif;webp;jpg&as=picture&imagetools';
 import red_brick_angels_album_sleeve from '$assets/images/albums/red-brick-angels/album-sleeve.png?w=1211&format=avif;webp;jpg&as=picture&imagetools';
+import red_brick_angels_jon_k_solo_2 from '$assets/images/albums/red-brick-angels/jon k solo 2.jpg?w=976&format=avif;webp;jpg&as=picture&imagetools';
+import red_brick_angels_the_house_sing_2 from '$assets/images/albums/red-brick-angels/the house sing  2.jpg?w=1951&format=avif;webp;jpg&as=picture&imagetools';
 
 import singing_coach_1 from '$assets/images/singing-coach/singing_coach-1.jpg?w=359&format=avif;webp;jpg&as=picture&imagetools';
 
@@ -274,6 +276,14 @@ export const images = {
 			album_sleeve: {
 				src: red_brick_angels_album_sleeve,
 				naturalDimensions: { width: 1211, height: 643 }
+			},
+			jon_k_solo_2: {
+				src: red_brick_angels_jon_k_solo_2,
+				naturalDimensions: { width: 976, height: 1288 }
+			},
+			the_house_sing_2: {
+				src: red_brick_angels_the_house_sing_2,
+				naturalDimensions: { width: 1951, height: 1295 }
 			}
 		}
 	}
