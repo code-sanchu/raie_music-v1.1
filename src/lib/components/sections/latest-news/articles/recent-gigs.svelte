@@ -3,6 +3,7 @@
 	import { Link } from '$lib/components/prose';
 	import { Picture } from '$lib/components';
 	import { Container, TextContainer } from './_components';
+	import { raie_links } from '$lib/data';
 </script>
 
 <script lang="ts">
@@ -48,9 +49,7 @@
 			<br /><br />
 			Raie sold out Hope and Anchor – home of The Stranglers and Sinead O’Connor and we were delighted
 			to have Sinead’s guitarist Jon Klein play lead for us on the night; check out a couple of clips
-			on Raie’s <Link href="https://www.youtube.com/@RachelBennettraiemusic/videos"
-				>YouTube channel</Link
-			>.
+			on Raie’s <Link href={raie_links.listen.youtube.href}>YouTube channel</Link>.
 			<br /><br />
 			Raie went on to play for Piri Markus’ photographic exhibition at ArtFix Greenwich … a gentle but
 			very appreciative crowd supported us; we were a downsized band for this cosy venue … take a

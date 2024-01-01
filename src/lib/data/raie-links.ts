@@ -17,7 +17,7 @@ const listen = {
 		name: 'Spotify'
 	},
 	youtube: {
-		href: 'https://www.youtube.com/@RachelBennettraiemusic/videos',
+		href: 'https://www.youtube.com/channel/UCsJyxmD4BoTDQOocamxkgBQ',
 		id: 'youtube',
 		name: 'Youtube'
 	}
