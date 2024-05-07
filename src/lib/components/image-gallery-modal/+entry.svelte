@@ -1,28 +1,14 @@
 <script lang="ts" context="module">
 	import { Dialog, Transition } from '@rgossiaux/svelte-headlessui';
-	import {
-		swipe as untypedSwipe,
-		type ParametersSwitch,
-		type SwipeParameters
-	} from 'svelte-gestures';
-	import type { Action } from 'svelte/action';
+	import { swipe as untypedSwipe } from 'svelte-gestures';
+
+	import type { Swipe } from '$lib/types';
 
 	import { Icon, MyDialog } from '$lib/components';
 	import type { Data } from '$lib/types';
 	import MyImage from './my-image.svelte';
 
-	const swipe: Action<
-		HTMLElement,
-		ParametersSwitch<SwipeParameters>,
-		{
-			'on:swipe': (
-				e: CustomEvent<{
-					[x: string]: string;
-					// detail: { direction: 'left' | 'right' };
-				}>
-			) => void;
-		}
-	> = untypedSwipe as any;
+	const swipe: Swipe = untypedSwipe as any;
 </script>
 
 <script lang="ts">

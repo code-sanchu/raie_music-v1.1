@@ -69,7 +69,7 @@
 						class={`text-[0.6rem] uppercase tracking-widest italic absolute text-my-black-800 -bottom-[3px] -right-sm translate-x-full opacity-0 ease-in-out duration-150 bg-white/80 px-xs py-xxxs delay-300 pointer-events-none ${
 							musicPlayer.visibility === 'closed' ? 'group-hover/button:opacity-100' : ''
 						}`}>
-						Change track
+						Click to see more
 					</span>
 				</button>
 			</div>

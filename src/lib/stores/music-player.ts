@@ -12,7 +12,7 @@ type MusicPlayer = {
 };
 
 export const musicPlayerInitData: MusicPlayer = {
-	currentTrackIndex: 0,
+	currentTrackIndex: 19,
 	trackIndexOnLastInteraction: null,
 	paused: true,
 	hasBeenPlayed: false,
@@ -45,12 +45,12 @@ export const updateMusicPlayer = {
 				typeof index === 'number'
 					? index
 					: index === 'next'
-					? state.currentTrackIndex === numSongs - 1
-						? 0
-						: state.currentTrackIndex + 1
-					: state.currentTrackIndex === 0
-					? numSongs - 1
-					: state.currentTrackIndex - 1;
+						? state.currentTrackIndex === numSongs - 1
+							? 0
+							: state.currentTrackIndex + 1
+						: state.currentTrackIndex === 0
+							? numSongs - 1
+							: state.currentTrackIndex - 1;
 
 			return {
 				...state,

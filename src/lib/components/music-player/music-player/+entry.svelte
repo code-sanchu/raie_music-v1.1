@@ -1,27 +1,13 @@
 <script context="module" lang="ts">
-	import {
-		swipe as untypedSwipe,
-		type ParametersSwitch,
-		type SwipeParameters
-	} from 'svelte-gestures';
-	import type { Action } from 'svelte/action';
+	import { swipe as untypedSwipe } from 'svelte-gestures';
 
-	import { musicPlayerStore, updateMusicPlayer, type MusicPlayer } from '$lib/stores';
+	import type { Swipe } from '$lib/types';
+
 	import { Icon } from '$lib/components';
+	import { musicPlayerStore, updateMusicPlayer, type MusicPlayer } from '$lib/stores';
 	import { Tracks } from './tracks';
 
-	const swipe: Action<
-		HTMLElement,
-		ParametersSwitch<SwipeParameters>,
-		{
-			'on:swipe': (
-				e: CustomEvent<{
-					[x: string]: string;
-					// detail: { direction: 'left' | 'right' };
-				}>
-			) => void;
-		}
-	> = untypedSwipe as any;
+	const swipe: Swipe = untypedSwipe as any;
 </script>
 
 <script lang="ts">
