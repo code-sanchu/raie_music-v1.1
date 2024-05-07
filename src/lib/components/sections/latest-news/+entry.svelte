@@ -1,12 +1,13 @@
 <script lang="ts" context="module">
 	import { Icon } from '$lib/components';
-	import { AlbumLaunch, GalaxyStudios, RecentGigs } from './articles';
+	import { AlbumLaunch, GalaxyStudios, Gigs, RedBrickAngelNews } from './articles';
 	import TitleButton from './title-button.svelte';
 </script>
 
 <script lang="ts">
-	let currentNews: 'galaxy' | 'recent gigs' | 'album launch' = 'album launch';
+	let showing: 'galaxy' | 'gigs' | 'album launch' | 'red brick angel news' = 'red brick angel news';
 
+	let redBrickNewsHeight: number;
 	let albumLaunchHeight: number;
 	let galaxyStudiosHeight: number;
 	let recentGigsHeight: number;
@@ -18,9 +19,18 @@
 	<div
 		class="flex items-center flex-wrap gap-x-xxs xs:gap-x-xs sm:gap-x-sm gap-y-xs mt-xs max-w-full overflow-hidden">
 		<TitleButton
+			text="Red Brick Angel News"
+			onClick={() => (showing = 'red brick angel news')}
+			isActive={showing === 'red brick angel news'} />
+
+		<span class="text-my-black-50 text-sm">
+			<Icon.DotOutline weight="thin" />
+		</span>
+
+		<TitleButton
 			text="Album Launch"
-			onClick={() => (currentNews = 'album launch')}
-			isActive={currentNews === 'album launch'} />
+			onClick={() => (showing = 'album launch')}
+			isActive={showing === 'album launch'} />
 
 		<span class="text-my-black-50 text-sm">
 			<Icon.DotOutline weight="thin" />
@@ -28,34 +38,35 @@
 
 		<TitleButton
 			text="Galaxy Studios"
-			onClick={() => (currentNews = 'galaxy')}
-			isActive={currentNews === 'galaxy'} />
+			onClick={() => (showing = 'galaxy')}
+			isActive={showing === 'galaxy'} />
 
 		<span class="text-my-black-50 text-sm">
 			<Icon.DotOutline weight="thin" />
 		</span>
 
-		<TitleButton
-			text="Recent Gigs"
-			onClick={() => (currentNews = 'recent gigs')}
-			isActive={currentNews === 'recent gigs'} />
+		<TitleButton text="Gigs" onClick={() => (showing = 'gigs')} isActive={showing === 'gigs'} />
 	</div>
 
 	<div
 		class="mt-md lg:mt-lg transition-all ease-in-out duration-300"
 		style:height={`${
-			currentNews === 'album launch'
+			showing === 'album launch'
 				? albumLaunchHeight
-				: currentNews === 'galaxy'
+				: showing === 'galaxy'
 				? galaxyStudiosHeight
 				: recentGigsHeight
 		}px`}>
-		{#if currentNews === 'album launch'}
-			<AlbumLaunch bind:height={albumLaunchHeight} isActive={currentNews === 'album launch'} />
-		{:else if currentNews === 'galaxy'}
-			<GalaxyStudios bind:height={galaxyStudiosHeight} isActive={currentNews === 'galaxy'} />
+		{#if showing === 'red brick angel news'}
+			<RedBrickAngelNews
+				bind:height={redBrickNewsHeight}
+				isActive={showing === 'red brick angel news'} />
+		{:else if showing === 'album launch'}
+			<AlbumLaunch bind:height={albumLaunchHeight} isActive={showing === 'album launch'} />
+		{:else if showing === 'galaxy'}
+			<GalaxyStudios bind:height={galaxyStudiosHeight} isActive={showing === 'galaxy'} />
 		{:else}
-			<RecentGigs bind:height={recentGigsHeight} isActive={currentNews === 'recent gigs'} />
+			<Gigs bind:height={recentGigsHeight} isActive={showing === 'gigs'} />
 		{/if}
 	</div>
 </div>

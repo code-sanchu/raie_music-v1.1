@@ -1,6 +1,7 @@
 import GalaxyStudios from './galaxy-studios.svelte';
-import RecentGigs from './recent-gigs.svelte';
+import Gigs from './gigs.svelte';
+import RedBrickAngelNews from "./red-brick-angel-news.svelte";
 
-export { GalaxyStudios, RecentGigs };
+export { GalaxyStudios, Gigs, RedBrickAngelNews };
 
 export * from './album-launch';

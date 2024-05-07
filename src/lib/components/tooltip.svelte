@@ -21,7 +21,7 @@
 
 {#if canHover && windowWidth > 648}
 	<Tooltip
-		class="py-xxs px-xs bg-my-black-300 text-white rounded-sm"
+		class="py-xxs px-xs bg-my-black-300 text-white rounded-sm whitespace-nowrap"
 		type="custom"
 		shadow={false}
 		arrow={false}

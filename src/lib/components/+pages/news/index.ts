@@ -1,1 +1,1 @@
-export * from './image-scroller';
+export * from './review-carousel';

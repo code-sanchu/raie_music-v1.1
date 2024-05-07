@@ -33,7 +33,7 @@ import {
 	Playlist,
 	DotOutline,
 	Phone,
-	Envelope
+	Envelope, CalendarCheck
 } from 'phosphor-svelte';
 import type { ComponentProps } from 'svelte';
 
@@ -74,5 +74,6 @@ export const Icon = {
 	Tracks: Playlist,
 	DotOutline,
 	Tel: Phone,
-	Email: Envelope
+	Email: Envelope,
+	Event: CalendarCheck
 };

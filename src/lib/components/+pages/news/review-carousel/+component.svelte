@@ -7,8 +7,8 @@
 
 	import { Icon } from '$lib/components';
 
-	import TitleButton from './+title-button.svelte';
-	import PrevNextButton from './prev-next-button.svelte';
+	import TitleButton from './_title-button.svelte';
+	import PrevNextButton from './_prev-next-button.svelte';
 
 	const swipe: Swipe = untypedSwipe as any;
 

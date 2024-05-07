@@ -1,7 +1,8 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
+
 	import { ImageGalleryModal, Picture } from '$lib/components';
-	import { ImageScroller } from '$lib/components/+pages/news';
+	import { ReviewCarousel } from '$lib/components/+pages/news';
 
 	const reviewImages = Object.values(images.reviews);
 </script>
@@ -25,7 +26,7 @@
 
 {#if windowWidth}
 	<div class="mt-md">
-		<ImageScroller.Container>
+		<ReviewCarousel>
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			{#each reviewImages as image, i}
@@ -47,7 +48,7 @@
 					</div>
 				</div>
 			{/each}
-		</ImageScroller.Container>
+		</ReviewCarousel>
 	</div>
 {/if}
 
