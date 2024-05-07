@@ -56,7 +56,32 @@ import red_brick_angels_the_house_sing_2 from '$assets/images/albums/red-brick-a
 
 import singing_coach_1 from '$assets/images/singing-coach/singing_coach-1.jpg?w=359&format=avif;webp;jpg&as=picture&imagetools';
 
+import red_brick_angels_may_2024_altea_narici from '$assets/images/red_brick_angels-latest-may_2024/Altea Narici on cello.jpg?w=1800&format=avif;webp;jpg&as=picture&imagetools';
+import red_brick_angels_may_2024_backing_singers from '$assets/images/red_brick_angels-latest-may_2024/Backing singers L to R Emily McLean Nathan Devonte and Nazarene.jpg?w=1800&format=avif;webp;jpg&as=picture&imagetools';
+import red_brick_angels_may_2024_chris_bell from '$assets/images/red_brick_angels-latest-may_2024/Chris Bell on kit.jpg?w=1800&format=avif;webp;jpg&as=picture&imagetools';
+import red_brick_angels_may_2024_christiano_tortoioli from '$assets/images/red_brick_angels-latest-may_2024/Christiano Tortoioli on electric bass.jpg?w=1800&format=avif;webp;jpg&as=picture&imagetools';
+import red_brick_angels_may_2024_jon_dunn from '$assets/images/red_brick_angels-latest-may_2024/Jon Dunn - album launch Music Director and rhythm guitar .jpg?w=1800&format=avif;webp;jpg&as=picture&imagetools';
+import red_brick_angels_may_2024_jon_klein from '$assets/images/red_brick_angels-latest-may_2024/Jon Klein _Free Now_ solo applause.jpg?w=1800&format=avif;webp;jpg&as=picture&imagetools';
+import red_brick_angels_may_2024_louis_bell from '$assets/images/red_brick_angels-latest-may_2024/Louis Bell on lead guitar.jpg?w=1800&format=avif;webp;jpg&as=picture&imagetools';
+import red_brick_angels_may_2024_maria_tiimus from '$assets/images/red_brick_angels-latest-may_2024/Maria Tiimus on violin.jpg?w=1800&format=avif;webp;jpg&as=picture&imagetools';
+import red_brick_angels_may_2024_standing_ovation from '$assets/images/red_brick_angels-latest-may_2024/Standing ovation.jpg?w=1800&format=avif;webp;jpg&as=picture&imagetools';
+import red_brick_angels_may_2024_final_song from '$assets/images/red_brick_angels-latest-may_2024/The final song of the nite.jpg?w=1800&format=avif;webp;jpg&as=picture&imagetools';
+import red_brick_angels_may_2024_tim_gardner from '$assets/images/red_brick_angels-latest-may_2024/Tim Gardner on keys.jpg?w=1800&format=avif;webp;jpg&as=picture&imagetools';
+
 export const images = {
+	red_brick_angels_may_2024: {
+		altea_narici: { src: red_brick_angels_may_2024_altea_narici, naturalDimensions: { width: 5028, height: 5464 } },
+		backing_singers: { src: red_brick_angels_may_2024_backing_singers, naturalDimensions: { width: 7928, height: 5288 } },
+		chris_bell: { src: red_brick_angels_may_2024_chris_bell, naturalDimensions: { width: 5978, height: 5028 } },
+		christiano_tortoioli: { src: red_brick_angels_may_2024_christiano_tortoioli, naturalDimensions: { width: 5994, height: 5464 } },
+		jon_dunn: { src: red_brick_angels_may_2024_jon_dunn, naturalDimensions: { width: 3113, height: 5464 } },
+		jon_klein: { src: red_brick_angels_may_2024_jon_klein, naturalDimensions: { width: 1958, height: 5464 } },
+		louis_bell: { src: red_brick_angels_may_2024_louis_bell, naturalDimensions: { width: 921, height: 1340 } },
+		maria_tiimus: { src: red_brick_angels_may_2024_maria_tiimus, naturalDimensions: { width: 4240, height: 5006 } },
+		standing_ovation: { src: red_brick_angels_may_2024_standing_ovation, naturalDimensions: { width: 2160, height: 1441 } },
+		final_song: { src: red_brick_angels_may_2024_final_song, naturalDimensions: { width: 2160, height: 1441 } },
+		tim_gardner: { src: red_brick_angels_may_2024_tim_gardner, naturalDimensions: { width: 5387, height: 5464 } },
+	},
 	brick_bg: { src: brick_bg, naturalDimensions: { width: 315, height: 37 } },
 	raie_as_child: {
 		src: raie_as_child,

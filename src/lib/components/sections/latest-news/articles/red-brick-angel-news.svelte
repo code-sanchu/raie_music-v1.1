@@ -1,8 +1,6 @@
 <script context="module" lang="ts">
 	import { images } from '$lib/assets';
 
-	import { raie_links } from '$lib/data';
-
 	import { Link } from '$lib/components/prose';
 	import { Picture, Tooltip } from '$lib/components';
 	import { Container, TextContainer } from './_components';
@@ -13,6 +11,8 @@
 
 	export let height: number;
 	export let isActive: boolean;
+
+	// todo: upload video to yt and add embed. 2 or 1 other video too - either upload to yt or straight on website.
 </script>
 
 <Container bind:height bind:isActive>
@@ -24,6 +24,16 @@
 
 			<br /><br />
 
+			<div class="w-[180px] xs:w-[220px] shrink-0">
+				<Picture
+					imageClass="rounded-sm"
+					meta={images.red_brick_angels_may_2024.standing_ovation.src}
+					sizes={'250px'}
+					alt="" />
+			</div>
+
+			<br /><br />
+
 			We had a beautiful night at The Camden Club – special thanks to Andrew Hart proprietor – We
 			played to a full house and a standing ovation... was a night to remember Check out the footage
 			– you’ll need an evening and a glass of wine!
@@ -31,6 +41,29 @@
 			<br /><br />
 
 			[link to launch footage coming soon...]
+
+			<!-- <br /><br /> -->
+
+			<div class="flex gap-sm my-xs">
+				<div class="w-[150px] xs:w-[190px] shrink-0">
+					<Picture
+						imageClass="rounded-sm"
+						meta={images.red_brick_angels_may_2024.backing_singers.src}
+						sizes={'250px'}
+						alt="" />
+					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">
+						Backing singers L to R Emily McLean Nathan Devonte and Nazarene
+					</p>
+				</div>
+				<div class="w-[110px] xs:w-[150px] shrink-0">
+					<Picture
+						imageClass="rounded-sm"
+						meta={images.red_brick_angels_may_2024.louis_bell.src}
+						sizes={'250px'}
+						alt="" />
+					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">Louis Bell on lead guitar.</p>
+				</div>
+			</div>
 
 			<br /><br />
 
@@ -105,24 +138,84 @@
 			We are also proud to be one of the bands opening the Brockley Max Festival this year on May
 			31st... watch this space for coverage... We’ll be back soon with more news!...
 
+			<div class="flex gap-sm my-xs">
+				<div class="w-[150px] xs:w-[190px] shrink-0">
+					<Picture
+						imageClass="rounded-sm"
+						meta={images.red_brick_angels_may_2024.altea_narici.src}
+						sizes={'250px'}
+						alt="" />
+					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">Altea Narici</p>
+				</div>
+				<div class="w-[110px] xs:w-[150px] shrink-0">
+					<Picture
+						imageClass="rounded-sm"
+						meta={images.red_brick_angels_may_2024.chris_bell.src}
+						sizes={'250px'}
+						alt="" />
+					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">Chris Bell</p>
+				</div>
+			</div>
+
+			<div class="flex gap-sm my-xs">
+				<div class="w-[150px] xs:w-[190px] shrink-0">
+					<Picture
+						imageClass="rounded-sm"
+						meta={images.red_brick_angels_may_2024.christiano_tortoioli.src}
+						sizes={'250px'}
+						alt="" />
+					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">Christiano Tortoioli</p>
+				</div>
+
+				<div class="w-[110px] xs:w-[150px] shrink-0">
+					<Picture
+						imageClass="rounded-sm"
+						meta={images.red_brick_angels_may_2024.jon_dunn.src}
+						sizes={'250px'}
+						alt="" />
+					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">Jon Dunn</p>
+				</div>
+			</div>
+
 			<!-- <div class="flex gap-sm my-xs">
 				<div class="w-[110px] xs:w-[150px] shrink-0">
 					<Picture
 						imageClass="rounded-sm"
-						meta={images.albums.red_brick_angels.jon_k_solo_2.src}
+						meta={images.red_brick_angels_may_2024.jon_klein.src}
 						sizes={'250px'}
 						alt="" />
-					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">Jon Klein on free now</p>
+					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">Jon Klein</p>
 				</div>
+
+				<div class="w-[110px] xs:w-[150px] shrink-0">
+					<Picture
+						imageClass="rounded-sm"
+						meta={images.red_brick_angels_may_2024.maria_tiimus.src}
+						sizes={'250px'}
+						alt="" />
+					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">Maria Tiimus</p>
+				</div>
+			</div> -->
+
+			<div class="flex gap-sm my-xs">
 				<div class="w-[150px] xs:w-[190px] shrink-0">
 					<Picture
 						imageClass="rounded-sm"
-						meta={images.albums.red_brick_angels.the_house_sing_2.src}
+						meta={images.red_brick_angels_may_2024.final_song.src}
 						sizes={'250px'}
 						alt="" />
-					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">The whole house singing</p>
+					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">The final song of the night!</p>
 				</div>
-			</div> -->
+
+				<div class="w-[110px] xs:w-[150px] shrink-0">
+					<Picture
+						imageClass="rounded-sm"
+						meta={images.red_brick_angels_may_2024.tim_gardner.src}
+						sizes={'250px'}
+						alt="" />
+					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">Tim Gardner</p>
+				</div>
+			</div>
 		</TextContainer>
 	</div>
 </Container>
