@@ -47,7 +47,7 @@
 		</div>
 	{/if}
 
-	<PageLayout.VerticalSpacing />
+	<PageLayout.VerticalSpacing sizing="2/3" />
 
 	{#if mounted}
 		<div class="h-[10px] overflow-hidden" in:fade={{ delay: 400 }}>

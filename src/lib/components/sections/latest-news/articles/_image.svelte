@@ -9,7 +9,8 @@
 <script lang="ts">
 	export let img: ImageAsset;
 
-	let windowWidth: number;
+	let containerWidth: number;
+	let containerHeight: number;
 
 	let containerNode: HTMLDivElement;
 	let captionNode: HTMLDivElement;
@@ -82,14 +83,14 @@
 		}
 	};
 
-	$: windowWidth, containerNode, captionNode, calcImageDimensions();
+	$: containerWidth, containerNode, captionNode, calcImageDimensions();
 </script>
-
-<svelte:window bind:innerWidth={windowWidth} />
 
 <div
 	class="w-full h-[95%] flex justify-center bg-my-black-100/20 pb-xxs border-2 border-my-black-200/10 rounded-sm"
-	bind:this={containerNode}>
+	bind:this={containerNode}
+	bind:clientWidth={containerWidth}
+	bind:clientHeight={containerHeight}>
 	<div class="h-full flex flex-col items-center">
 		<div class="relative" style:height="{imageHeight}px" style:width="{imageWidth}px">
 			<Picture

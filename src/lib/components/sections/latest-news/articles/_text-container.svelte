@@ -6,7 +6,7 @@
 </script>
 
 <div
-	class={`h-[310px] pb-sm text-my-black tracking-wide leading-relaxed gap-md ${
+	class={`h-[360px] pb-sm text-my-black tracking-wide leading-relaxed gap-md ${
 		numColumns === 1 || containerWidth <= 768 ? 'columns-1 max-w-[650px]' : 'columns-1 sm:columns-2'
 	} ${extraClasses}`}
 	bind:clientWidth={containerWidth}>
