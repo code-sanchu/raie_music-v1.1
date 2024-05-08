@@ -39,19 +39,7 @@
 
 	let scrollLeft: number;
 
-	let inViewArr: boolean[];
-
-	const inViewFunc = ({ imagesContainer }: { imagesContainer: HTMLDivElement }) => {
-		if (!imagesContainer || !imageElements) {
-			return;
-		}
-
-		inViewArr = imageElements.map((imageElement) =>
-			checkIsInView({ container: imagesContainer, node: imageElement })
-		);
-	};
-
-	$: scrollLeft, inViewFunc({ imagesContainer });
+	let clickedOnImageIndex = 0;
 
 	const scrollImageIntoView = (index: number) => {
 		if (!imageElements) {
@@ -61,23 +49,26 @@
 		imageElements[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
 	};
 
+	const handleGoToImage = (index: number) => {
+		scrollImageIntoView(index);
+
+		clickedOnImageIndex = index;
+	};
+
 	const goNextImage = () => {
 		if (!imageElements) {
 			return;
 		}
 
-		const endIndex = imageElements.length - 1;
+		const nextImageIndex = clickedOnImageIndex + 1;
 
-		if (inViewArr[endIndex]) {
+		const isLastImage = nextImageIndex > imageElements.length - 1;
+
+		if (isLastImage) {
 			return;
 		}
 
-		for (let i = endIndex; i >= 1; i--) {
-			if (inViewArr[i - 1] && !inViewArr[i]) {
-				scrollImageIntoView(i);
-				break;
-			}
-		}
+		handleGoToImage(nextImageIndex);
 	};
 
 	const goPrevImage = () => {
@@ -85,37 +76,34 @@
 			return;
 		}
 
-		if (inViewArr[0]) {
+		const prevImageIndex = clickedOnImageIndex - 1;
+
+		if (prevImageIndex < 0) {
 			return;
 		}
 
-		const endIndex = imageElements.length - 1;
-
-		for (let i = 0; i < endIndex; i++) {
-			if (inViewArr[i + 1] && !inViewArr[i]) {
-				scrollImageIntoView(i);
-				break;
-			}
-		}
+		handleGoToImage(prevImageIndex);
 	};
 </script>
 
-<div
-	class="flex items-center flex-wrap gap-x-xxs xs:gap-x-xs sm:gap-x-sm gap-y-xs mt-xs max-w-full">
-	{#each reviewTitles as reviewTitle, i}
-		<TitleButton
-			onClick={() => scrollImageIntoView(i)}
-			imageNode={!imageElements ? undefined : imageElements[i]}
-			{imagesContainer}
-			recalcOn={scrollLeft}>
-			{reviewTitle}
-		</TitleButton>
+{#if imageElements}
+	<div
+		class="flex items-center flex-wrap gap-x-xxs xs:gap-x-xs sm:gap-x-sm gap-y-xs mt-xs max-w-full">
+		{#each reviewTitles as reviewTitle, i}
+			<TitleButton
+				onClick={() => handleGoToImage(i)}
+				checkIsInView={(onUpdate) =>
+					checkIsInView({ container: imagesContainer, node: imageElements[i], onUpdate })}
+				recalcInViewOn={scrollLeft}>
+				{reviewTitle}
+			</TitleButton>
 
-		{#if i < reviewTitles.length - 1}
-			<span class="text-my-black-50 text-sm"> | </span>
-		{/if}
-	{/each}
-</div>
+			{#if i < reviewTitles.length - 1}
+				<span class="text-my-black-50 text-sm"> | </span>
+			{/if}
+		{/each}
+	</div>
+{/if}
 
 <div
 	class="relative"

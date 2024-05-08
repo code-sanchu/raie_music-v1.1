@@ -1,16 +1,9 @@
-<script lang="ts" context="module">
-	import { checkIsInView } from '$lib/helpers';
-</script>
-
 <script lang="ts">
 	export let onClick: () => void;
-	export let imagesContainer: HTMLElement | undefined;
-	export let imageNode: Element | undefined;
-	export let recalcOn: boolean | number | undefined;
+	export let checkIsInView: (onUpdate: (arg0: { isInView: boolean }) => void) => void;
+	export let recalcInViewOn: boolean | number | undefined;
 
 	let node: HTMLButtonElement;
-
-	let isActive = false;
 
 	let initialWidth: number;
 	let initialHeight: number;
@@ -22,16 +15,9 @@
 		initialHeight = rect.height;
 	}
 
-	$: imagesContainer,
-		imageNode,
-		recalcOn,
-		checkIsInView({
-			container: imagesContainer,
-			node: imageNode,
-			onUpdate: ({ isInView }) => {
-				isActive = isInView;
-			}
-		});
+	let isActive = false;
+
+	$: recalcInViewOn, checkIsInView(({ isInView }) => (isActive = isInView));
 </script>
 
 <button
