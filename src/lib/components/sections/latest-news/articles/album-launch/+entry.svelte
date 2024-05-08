@@ -1,9 +1,11 @@
 <script context="module" lang="ts">
 	import { images } from '$lib/assets';
+
 	import { Picture } from '$lib/components';
 	import { Link } from '$lib/components/prose';
-	import { Container, TextContainer } from '../_components/';
 	import EpkLink from './epk-link.svelte';
+	import Container from '../_container.svelte';
+	import TextContainer from '../_text-container.svelte';
 </script>
 
 <script lang="ts">

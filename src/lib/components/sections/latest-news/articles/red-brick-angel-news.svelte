@@ -1,18 +1,17 @@
 <script context="module" lang="ts">
 	import { images } from '$lib/assets';
 
+	import { Tooltip } from '$lib/components';
 	import { Link } from '$lib/components/prose';
-	import { Picture, Tooltip } from '$lib/components';
-	import { Container, TextContainer } from './_components';
+	import { Icon } from '$lib/components/icon';
+	import Container from './_container.svelte';
+	import Image from './_image.svelte';
+	import TextContainer from './_text-container.svelte';
 </script>
 
 <script lang="ts">
-	import { Icon } from '$lib/components/icon';
-
 	export let height: number;
 	export let isActive: boolean;
-
-	// todo: upload video to yt and add embed. 2 or 1 other video too - either upload to yt or straight on website.
 </script>
 
 <Container bind:height bind:isActive>
@@ -24,46 +23,17 @@
 
 			<br /><br />
 
-			<div class="w-[180px] xs:w-[220px] shrink-0">
-				<Picture
-					imageClass="rounded-sm"
-					meta={images.red_brick_angels_may_2024.standing_ovation.src}
-					sizes={'250px'}
-					alt="" />
-			</div>
-
-			<br /><br />
-
 			We had a beautiful night at The Camden Club – special thanks to Andrew Hart proprietor – We
 			played to a full house and a standing ovation... was a night to remember Check out the footage
 			– you’ll need an evening and a glass of wine!
 
-			<br /><br />
+			<div class="gap-sm grid grid-cols-2 w-full h-full">
+				<Image img={images.red_brick_angels_may_2024.backing_singers} />
+
+				<Image img={images.red_brick_angels_may_2024.louis_bell} />
+			</div>
 
 			[link to launch footage coming soon...]
-
-			<!-- <br /><br /> -->
-
-			<div class="flex gap-sm my-xs">
-				<div class="w-[150px] xs:w-[190px] shrink-0">
-					<Picture
-						imageClass="rounded-sm"
-						meta={images.red_brick_angels_may_2024.backing_singers.src}
-						sizes={'250px'}
-						alt="" />
-					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">
-						Backing singers L to R Emily McLean Nathan Devonte and Nazarene
-					</p>
-				</div>
-				<div class="w-[110px] xs:w-[150px] shrink-0">
-					<Picture
-						imageClass="rounded-sm"
-						meta={images.red_brick_angels_may_2024.louis_bell.src}
-						sizes={'250px'}
-						alt="" />
-					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">Louis Bell on lead guitar.</p>
-				</div>
-			</div>
 
 			<br /><br />
 
@@ -101,7 +71,11 @@
 				</span>
 				CRYSTAL GIRL released in April ‘24</Link>
 
-			<br /><br />
+			<div class="gap-sm grid grid-cols-2 w-full h-full">
+				<Image img={images.red_brick_angels_may_2024.altea_narici} />
+
+				<Image img={images.red_brick_angels_may_2024.chris_bell} />
+			</div>
 
 			Since the launch we have played at Bread & Roses pub in Feb ’24... where we played to a rowdy
 			but appreciative audience and they hit the heights when we sang our encore... a sneak peek at
@@ -117,7 +91,11 @@
 			Tim Gardner on violin and keys and Chris Bell on kit have been contracted on tours and
 			labels... we hope to see them return before too long but...
 
-			<br /><br />
+			<div class="gap-sm grid grid-cols-2 w-full h-full">
+				<Image img={images.red_brick_angels_may_2024.maria_tiimus} />
+
+				<Image img={images.red_brick_angels_may_2024.tim_gardner} />
+			</div>
 
 			...meanwhile we are welcoming the Felgate Bros. – a lead guitar and kit duo … and we have a
 			beautiful upcoming gig at Karamel Restaurant N22 on May 11th.
@@ -133,87 +111,31 @@
 					<Icon.Event weight="light" />
 				</span>
 			</Link>
+
 			<br /><br />
 
 			We are also proud to be one of the bands opening the Brockley Max Festival this year on May
 			31st... watch this space for coverage... We’ll be back soon with more news!...
 
-			<div class="flex gap-sm my-xs">
-				<div class="w-[150px] xs:w-[190px] shrink-0">
-					<Picture
-						imageClass="rounded-sm"
-						meta={images.red_brick_angels_may_2024.altea_narici.src}
-						sizes={'250px'}
-						alt="" />
-					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">Altea Narici</p>
-				</div>
-				<div class="w-[110px] xs:w-[150px] shrink-0">
-					<Picture
-						imageClass="rounded-sm"
-						meta={images.red_brick_angels_may_2024.chris_bell.src}
-						sizes={'250px'}
-						alt="" />
-					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">Chris Bell</p>
-				</div>
+			<br /><br />
+
+			<div class="grid grid-cols-1 w-full h-full">
+				<Image img={images.red_brick_angels_may_2024.standing_ovation} />
 			</div>
 
-			<div class="flex gap-sm my-xs">
-				<div class="w-[150px] xs:w-[190px] shrink-0">
-					<Picture
-						imageClass="rounded-sm"
-						meta={images.red_brick_angels_may_2024.christiano_tortoioli.src}
-						sizes={'250px'}
-						alt="" />
-					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">Christiano Tortoioli</p>
-				</div>
+			<div class="gap-sm grid grid-cols-2 w-full h-full">
+				<Image img={images.red_brick_angels_may_2024.christiano_tortoioli} />
 
-				<div class="w-[110px] xs:w-[150px] shrink-0">
-					<Picture
-						imageClass="rounded-sm"
-						meta={images.red_brick_angels_may_2024.jon_dunn.src}
-						sizes={'250px'}
-						alt="" />
-					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">Jon Dunn</p>
-				</div>
+				<Image img={images.red_brick_angels_may_2024.jon_dunn} />
 			</div>
 
-			<!-- <div class="flex gap-sm my-xs">
-				<div class="w-[110px] xs:w-[150px] shrink-0">
-					<Picture
-						imageClass="rounded-sm"
-						meta={images.red_brick_angels_may_2024.jon_klein.src}
-						sizes={'250px'}
-						alt="" />
-					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">Jon Klein</p>
+			<div class="gap-sm flex w-full h-full">
+				<div class="w-[30%]">
+					<Image img={images.red_brick_angels_may_2024.jon_klein} />
 				</div>
 
-				<div class="w-[110px] xs:w-[150px] shrink-0">
-					<Picture
-						imageClass="rounded-sm"
-						meta={images.red_brick_angels_may_2024.maria_tiimus.src}
-						sizes={'250px'}
-						alt="" />
-					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">Maria Tiimus</p>
-				</div>
-			</div> -->
-
-			<div class="flex gap-sm my-xs">
-				<div class="w-[150px] xs:w-[190px] shrink-0">
-					<Picture
-						imageClass="rounded-sm"
-						meta={images.red_brick_angels_may_2024.final_song.src}
-						sizes={'250px'}
-						alt="" />
-					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">The final song of the night!</p>
-				</div>
-
-				<div class="w-[110px] xs:w-[150px] shrink-0">
-					<Picture
-						imageClass="rounded-sm"
-						meta={images.red_brick_angels_may_2024.tim_gardner.src}
-						sizes={'250px'}
-						alt="" />
-					<p class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs">Tim Gardner</p>
+				<div class="w-[70%]">
+					<Image img={images.red_brick_angels_may_2024.final_song} />
 				</div>
 			</div>
 		</TextContainer>

@@ -42,7 +42,7 @@
 	<PageLayout.VerticalSpacing sizing="2/3" />
 
 	{#if mounted}
-		<div class="max-w-[750px]" in:fade={{ delay: 200 }}>
+		<div class="" in:fade={{ delay: 200 }}>
 			<LatestNews />
 		</div>
 	{/if}

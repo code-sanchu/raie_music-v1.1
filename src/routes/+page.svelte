@@ -1,10 +1,12 @@
 <script context="module" lang="ts">
 	import { fade } from 'svelte/transition';
 
+	import { updateGlobalFlags } from '$lib/stores';
+
 	import { images } from '$lib/assets';
+
 	import { Images, PageLayout, Picture, LatestNews } from '$lib/components';
 	import { PageLinks, PlayMusicButton, ReviewQuote } from '$lib/components/+pages/landing';
-	import { updateGlobalFlags } from '$lib/stores';
 
 	// MUST DO
 	// □ clicking on new song sometimes doesn't play it. Try with new cache.
@@ -131,7 +133,7 @@
 		<div
 			class="flex flex-col sm:flex-row justify-between sm:gap-lg lg:gap-xl flex-shrink-0"
 			in:fade={{ delay: 400 }}>
-			<div class="">
+			<div class="px-xs xs:px-lg">
 				<LatestNews />
 			</div>
 

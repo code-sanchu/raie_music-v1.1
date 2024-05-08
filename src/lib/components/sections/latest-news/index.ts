@@ -1,3 +1,3 @@
-import LatestNews from './+entry.svelte';
+import LatestNews from './+component.svelte';
 
 export { LatestNews };

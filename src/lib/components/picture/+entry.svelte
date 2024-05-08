@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { ImgMeta } from './types';
+
+	import type { ImgMeta } from '$lib/types';
 
 	export let meta: ImgMeta[];
 	// if there is only one, vite-imagetools won't wrap the object in an array

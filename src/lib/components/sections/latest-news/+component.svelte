@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
 	import { Icon } from '$lib/components';
 	import { AlbumLaunch, GalaxyStudios, Gigs, RedBrickAngelNews } from './articles';
-	import TitleButton from './title-button.svelte';
+	import TitleButton from './_title-button.svelte';
 </script>
 
 <script lang="ts">

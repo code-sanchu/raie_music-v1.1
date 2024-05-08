@@ -2,8 +2,9 @@
 	import { images } from '$lib/assets';
 	import { Link } from '$lib/components/prose';
 	import { Picture } from '$lib/components';
-	import { Container, TextContainer } from './_components';
 	import { raie_links } from '$lib/data';
+	import Container from './_container.svelte';
+	import TextContainer from './_text-container.svelte';
 </script>
 
 <script lang="ts">

@@ -70,17 +70,17 @@ import red_brick_angels_may_2024_tim_gardner from '$assets/images/red_brick_ange
 
 export const images = {
 	red_brick_angels_may_2024: {
-		altea_narici: { src: red_brick_angels_may_2024_altea_narici, naturalDimensions: { width: 5028, height: 5464 } },
-		backing_singers: { src: red_brick_angels_may_2024_backing_singers, naturalDimensions: { width: 7928, height: 5288 } },
-		chris_bell: { src: red_brick_angels_may_2024_chris_bell, naturalDimensions: { width: 5978, height: 5028 } },
-		christiano_tortoioli: { src: red_brick_angels_may_2024_christiano_tortoioli, naturalDimensions: { width: 5994, height: 5464 } },
-		jon_dunn: { src: red_brick_angels_may_2024_jon_dunn, naturalDimensions: { width: 3113, height: 5464 } },
-		jon_klein: { src: red_brick_angels_may_2024_jon_klein, naturalDimensions: { width: 1958, height: 5464 } },
-		louis_bell: { src: red_brick_angels_may_2024_louis_bell, naturalDimensions: { width: 921, height: 1340 } },
-		maria_tiimus: { src: red_brick_angels_may_2024_maria_tiimus, naturalDimensions: { width: 4240, height: 5006 } },
-		standing_ovation: { src: red_brick_angels_may_2024_standing_ovation, naturalDimensions: { width: 2160, height: 1441 } },
-		final_song: { src: red_brick_angels_may_2024_final_song, naturalDimensions: { width: 2160, height: 1441 } },
-		tim_gardner: { src: red_brick_angels_may_2024_tim_gardner, naturalDimensions: { width: 5387, height: 5464 } },
+		altea_narici: { src: red_brick_angels_may_2024_altea_narici, naturalDimensions: { width: 5028, height: 5464 }, caption: 'Altea Narici on cello.' },
+		backing_singers: { src: red_brick_angels_may_2024_backing_singers, naturalDimensions: { width: 1800, height: 1201 }, caption: 'Backing singers, L to R, Emily McLean Nathan Devonte and Nazarene.' },
+		chris_bell: { src: red_brick_angels_may_2024_chris_bell, naturalDimensions: { width: 5978, height: 5028 }, caption: 'Chris Bell on kit.' },
+		christiano_tortoioli: { src: red_brick_angels_may_2024_christiano_tortoioli, naturalDimensions: { width: 5994, height: 5464 }, caption: 'Christiano Tortoioli on electric bass.' },
+		jon_dunn: { src: red_brick_angels_may_2024_jon_dunn, naturalDimensions: { width: 3113, height: 5464 }, caption: 'Jon Dunn - album launch Music Director and rhythm guitar.' },
+		jon_klein: { src: red_brick_angels_may_2024_jon_klein, naturalDimensions: { width: 1958, height: 5464 }, caption: 'Jon Klein during Free Now.' },
+		louis_bell: { src: red_brick_angels_may_2024_louis_bell, naturalDimensions: { width: 921, height: 1340 }, caption: 'Louis Bell on lead guitar.' },
+		maria_tiimus: { src: red_brick_angels_may_2024_maria_tiimus, naturalDimensions: { width: 4240, height: 5006 }, caption: 'Maria Tiimus on violin.' },
+		standing_ovation: { src: red_brick_angels_may_2024_standing_ovation, naturalDimensions: { width: 2160, height: 1441 }, caption: 'A standing ovation for our final song at the Camden Club.' },
+		final_song: { src: red_brick_angels_may_2024_final_song, naturalDimensions: { width: 2160, height: 1441 }, caption: 'The final song of the nite at The Camden Clum.' },
+		tim_gardner: { src: red_brick_angels_may_2024_tim_gardner, naturalDimensions: { width: 5387, height: 5464 }, caption: 'Tim Gardner on keys.' },
 	},
 	brick_bg: { src: brick_bg, naturalDimensions: { width: 315, height: 37 } },
 	raie_as_child: {
@@ -315,4 +315,4 @@ export const images = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type ImageAsset = { src: any; naturalDimensions: { width: number; height: number } };
+export type ImageAsset = { src: any; naturalDimensions: { width: number; height: number }, caption?: string };
