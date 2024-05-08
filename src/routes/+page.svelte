@@ -133,7 +133,7 @@
 		<div
 			class="flex flex-col sm:flex-row justify-between sm:gap-lg lg:gap-xl flex-shrink-0"
 			in:fade={{ delay: 400 }}>
-			<div class="px-xs xs:px-lg">
+			<div class="px-xs xs:px-lg sm:px-0">
 				<LatestNews />
 			</div>
 
