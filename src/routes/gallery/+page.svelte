@@ -93,6 +93,7 @@
 						imageClass={`grayscale hover:grayscale-0`}
 						meta={image.src}
 						sizes={`${image.naturalDimensions.width}px`}
+						transitionDuration="duration-500"
 						alt="" />
 				</div>
 

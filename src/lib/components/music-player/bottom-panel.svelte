@@ -49,8 +49,8 @@
 				class={`p-xs rounded-sm group/button invisible xs:visible grid place-items-center`}
 				style:background="radial-gradient(white, transparent)">
 				<button
-					class={`relative z-10 bg-white/10 pr-xs rounded-sm text-sm sm:text-base transition-colors ease-in-out duration-150 flex items-end gap-xs ${
-						closedOrClosing ? 'text-my-black-500 group-hover/panel:text-my-black-700' : ''
+					class={`relative z-10 bg-white/40 pr-xs rounded-sm text-sm sm:text-base transition-colors ease-in-out duration-150 flex items-end gap-xs ${
+						closedOrClosing ? 'text-my-black-700 group-hover/panel:text-my-black-900' : ''
 					}`}
 					on:click={() => {
 						if (musicPlayer.visibility === 'open' || musicPlayer.visibility === 'opening') {
@@ -60,10 +60,10 @@
 						updateMusicPlayer.openTracks();
 					}}
 					type="button">
-					<span class="uppercase text-[0.6rem] translate-y-[1.2px] text-my-black-200 tracking-wider"
+					<span class="uppercase text-[0.6rem] translate-y-[1.2px] text-my-black-900 tracking-wider"
 						>Playing</span>
 
-					<span class="italic text-[0.925rem] tracking-wide">{currentSong.name}</span>
+					<span class="italic text-[0.925rem] font-bold tracking-wide">{currentSong.name}</span>
 
 					<span
 						class={`text-[0.6rem] uppercase tracking-widest italic absolute text-my-black-800 -bottom-[3px] -right-sm translate-x-full opacity-0 ease-in-out duration-150 bg-white/80 px-xs py-xxxs delay-300 pointer-events-none ${
@@ -78,14 +78,14 @@
 				class="py-xxs px-xs sm:p-xs rounded-xl grid place-items-center"
 				style:background="radial-gradient(white, transparent)">
 				<button
-					class={`group/button relative flex items-center justify-between transition-all ease-out duration-700 ${
+					class={`group/button relative flex items-center justify-between transition-all ease-out duration-700  ${
 						musicPlayer.paused ? 'w-[107.075px]' : 'w-[159.075px]'
 					}`}
 					on:click={closedOrClosing ? updateMusicPlayer.open : updateMusicPlayer.close}
 					type="button">
-					<span class="flex items-center gap-xs">
+					<span class="flex items-center gap-xs bg-white/40 text-my-black-700 pl-xs rounded-sm">
 						<span
-							class={`text-my-black-900 bg-white/10 pl-xs rounded-sm whitespace-nowrap text-[0.7rem] italic transition-all ease-out duration-300 uppercase tracking-wider ${
+							class={`font-bold whitespace-nowrap text-[0.7rem] italic transition-all ease-out duration-300 uppercase tracking-wider ${
 								closedOrClosing ? '' : ''
 							}`}>
 							{#if closedOrClosing}
@@ -99,7 +99,7 @@
 						<span
 							class={`text-[0.6rem] transition-all ease-in-out duration-300 ${
 								closedOrClosing
-									? 'text-my-black-400 group-hover/panel:text-my-black-600'
+									? 'text-my-black-600 group-hover/panel:text-my-black-600'
 									: 'rotate-180'
 							}`}>
 							<Icon.CaretUpSmall />

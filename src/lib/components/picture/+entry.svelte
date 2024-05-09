@@ -17,7 +17,7 @@
 	export let imageClass = '';
 	export let pictureClass = '';
 	export let onLoad: () => void = () => null;
-	export let duration: 'duration-300' | 'duration-500' = 'duration-300';
+	export let transitionDuration: 'duration-300' | 'duration-500' = 'duration-300';
 
 	let imgNode: HTMLImageElement;
 
@@ -51,9 +51,9 @@
 		src={fallback.src}
 		{alt}
 		{loading}
-		class={`${imageClass} transition-opacity ease-in-out select-none  ${
+		class={`${imageClass} transition-all ease-in-out select-none ${
 			loadingComplete ? 'opacity-100' : 'opacity-0'
-		} ${duration}`}
+		} ${transitionDuration}`}
 		draggable={false}
 		bind:this={imgNode} />
 </picture>

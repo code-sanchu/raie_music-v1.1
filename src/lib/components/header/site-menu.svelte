@@ -32,7 +32,7 @@
 </script>
 
 <button
-	class="grid place-items-center text-[1.73rem] xs:text-3xl text-my-black-300 relative bg-white/60 rounded-full p-xxs translate-x-xxs"
+	class="grid place-items-center text-[1.73rem] xs:text-3xl sm:text-4xl md:text-[2.3rem] md/lg:text-[2.4rem] xl:text-[2.5rem] 2xl:text-[2.8rem] text-my-black-300 relative bg-white/60 rounded-full p-xxs translate-x-xxs"
 	on:click={() => (isOpen = true)}
 	aria-label="Menu"
 	type="button">

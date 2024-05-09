@@ -21,7 +21,7 @@
 </script>
 
 <div
-	class={`absolute -z-10 w-screen px-sm sm:px-md md:px-lg pt-sm bottom-0 left-0 transition-all ease-out duration-300 $`}
+	class={`absolute bg-white md:bg-transparent -z-10 w-screen px-sm sm:px-md md:px-lg pt-sm bottom-0 left-0 transition-all ease-out duration-300 $`}
 	style:transform={musicPlayer.visibility === 'closing' || musicPlayer.visibility === 'closed'
 		? 'translateY(100%)'
 		: `translateY(-${pxFromBottom}px)`}

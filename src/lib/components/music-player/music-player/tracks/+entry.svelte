@@ -44,13 +44,13 @@
 		</h4>
 
 		<div
-			class="self-start pr-xl pb-xs flex items-end tracking-wider flex-shrink-0 border-b border-b-my-black-100">
+			class="self-start pr-xl pb-xs flex flex-wrap gap-y-[2px] items-end tracking-wider flex-shrink-0 border-b border-b-my-black-100 text-my-black-400">
 			{#each albumButtonsData as album, i}
 				{@const isActive = visibleAlbumKey === album.key}
 				{@const isLast = i === albumButtonsData.length - 1}
 
 				<button
-					class={`italic transition-colors ease-in-out duration-75 ${
+					class={`italic transition-colors ease-in-out duration-75 whitespace-nowrap ${
 						isActive ? 'text-my-black' : 'text-my-black-400'
 					}`}
 					on:click={() => (visibleAlbumKey = album.key)}

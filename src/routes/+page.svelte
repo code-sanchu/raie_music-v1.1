@@ -7,37 +7,6 @@
 
 	import { Images, PageLayout, Picture, LatestNews } from '$lib/components';
 	import { PageLinks, PlayMusicButton, ReviewQuote } from '$lib/components/+pages/landing';
-
-	// MUST DO
-	// □ clicking on new song sometimes doesn't play it. Try with new cache.
-
-	// TO DO
-	// □ commas between album titles in music player are wrong colour.
-
-	// □ page transition out
-
-	// □ try giving images actual widths and heights? ...for page.dev recommendations
-	// □ image sizes
-	// □ max image width inline with natural size
-
-	// □ bind actual width values for bottom right panel
-
-	// □ clean up functions in event listeners?
-
-	// NICE TO HAVE
-	// □ cascade images opacity?
-	// □ loading priority for images (as opposed to lazy/eager)?
-	// □ song time for open player (and closed?). on right side?
-	// □ reset song button
-	// □ song progress bar. Can drag.
-	// □ snap to next column in horizontal scrollers - latest news
-	// □ auto rotate latest articles? (Interaction resets timer)
-	// □ fully optimise images - sizes; width queries; if add width to w= on img query string and number is over the image natural wdth, vite won't create a source for that.
-	// □ prev/next news article? prev/next album?
-	// □ use local storage to save default user setting.
-
-	// FUTURE
-	// □ with more photos, curate gallery as in https://cargo.site/Templates#services&programs?
 </script>
 
 <script lang="ts">
@@ -106,7 +75,7 @@
 				sizes={'50vw'}
 				loading="eager"
 				onLoad={() => (criticalContentIsLoaded = true)}
-				duration="duration-500"
+				transitionDuration="duration-500"
 				alt="" />
 		</div>
 	</div>
