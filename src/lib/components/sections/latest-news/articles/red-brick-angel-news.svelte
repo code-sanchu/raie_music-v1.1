@@ -120,7 +120,7 @@
 			<br /><br />
 
 			<div class="grid grid-cols-1 w-full h-full">
-				<Image img={images.red_brick_angels_may_2024.standing_ovation} />
+				<Image img={images.red_brick_angels_may_2024.standing_ovation} containCaptionInImageWidth />
 			</div>
 
 			<div class="gap-sm grid grid-cols-2 w-full h-full">

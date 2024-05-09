@@ -8,6 +8,7 @@
 
 <script lang="ts">
 	export let img: ImageAsset;
+	export let containCaptionInImageWidth: undefined | boolean = undefined;
 
 	let containerWidth: number;
 	let containerHeight: number;
@@ -83,29 +84,35 @@
 		}
 	};
 
-	$: containerWidth, containerNode, captionNode, calcImageDimensions();
+	$: {
+		// update height pseudo-reactively witouht binding (leads to unending rerender).
+		if (containerNode && containerWidth) {
+			containerHeight = containerNode.getBoundingClientRect().height;
+		}
+	}
+
+	$: containerHeight, containerWidth, containerNode, captionNode, calcImageDimensions();
 </script>
 
-<div
-	class="w-full h-[95%] flex justify-center bg-my-black-100/20 pb-xxs border-2 border-my-black-200/10 rounded-sm"
-	bind:this={containerNode}
-	bind:clientWidth={containerWidth}
-	bind:clientHeight={containerHeight}>
-	<div class="h-full flex flex-col items-center">
-		<div class="relative" style:height="{imageHeight}px" style:width="{imageWidth}px">
-			<Picture
-				imageClass="absolute w-full h-full"
-				meta={img.src}
-				sizes={'250px'}
-				alt={img.caption} />
-		</div>
+<div class="w-full h-[95%]" bind:this={containerNode} bind:clientWidth={containerWidth}>
+	<div class="bg-my-black-100/20 border-2 border-my-black-200/10 rounded-sm">
+		<div class="h-full flex flex-col items-center pb-xxs">
+			<div class="relative" style:height="{imageHeight}px" style:width="{imageWidth}px">
+				<Picture
+					imageClass="absolute w-full h-full"
+					meta={img.src}
+					sizes={'250px'}
+					alt={img.caption} />
+			</div>
 
-		{#if img.caption}
-			<p
-				class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs shrink-0 bg-white w-[96%]"
-				bind:this={captionNode}>
-				{img.caption}
-			</p>
-		{/if}
+			{#if img.caption}
+				<p
+					class="pl-xxs border-l-2 text-gray-600 text-xs mt-xs shrink-0 bg-white"
+					style:width={!containCaptionInImageWidth ? '96%' : `${imageWidth}px`}
+					bind:this={captionNode}>
+					{img.caption}
+				</p>
+			{/if}
+		</div>
 	</div>
 </div>
