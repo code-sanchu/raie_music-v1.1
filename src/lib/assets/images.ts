@@ -79,7 +79,7 @@ export const images = {
 		louis_bell: { src: red_brick_angels_may_2024_louis_bell, naturalDimensions: { width: 921, height: 1340 }, caption: 'Louis Bell on lead guitar.' },
 		maria_tiimus: { src: red_brick_angels_may_2024_maria_tiimus, naturalDimensions: { width: 4240, height: 5006 }, caption: 'Maria Tiimus on violin.' },
 		standing_ovation: { src: red_brick_angels_may_2024_standing_ovation, naturalDimensions: { width: 2160, height: 1441 }, caption: 'A standing ovation for our final song at the Camden Club.' },
-		final_song: { src: red_brick_angels_may_2024_final_song, naturalDimensions: { width: 2160, height: 1441 }, caption: 'The final song of the nite at The Camden Clum.' },
+		final_song: { src: red_brick_angels_may_2024_final_song, naturalDimensions: { width: 2160, height: 1441 }, caption: 'The final song of the nite at The Camden Club.' },
 		tim_gardner: { src: red_brick_angels_may_2024_tim_gardner, naturalDimensions: { width: 5387, height: 5464 }, caption: 'Tim Gardner on keys.' },
 	},
 	brick_bg: { src: brick_bg, naturalDimensions: { width: 315, height: 37 } },
