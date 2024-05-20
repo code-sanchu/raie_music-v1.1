@@ -3,14 +3,15 @@
 	import { Link } from '$lib/components/prose';
 
 	import Image from './_image.svelte';
+	import Container from './_container.svelte';
 </script>
 
-<article class="max-h-[360px] pr-sm md:pr-md lg:pr-lg overflow-auto prose max-w-full">
+<Container>
 	<div class="w-full md:w-1/2 md:float-right md:pl-md">
 		<Image img={images.galaxy['full-band']} />
 	</div>
 
-	<p>
+	<p class="mt-0">
 		Raie successfully raised £4000 to help pay for the trip to Belgium’s
 		<Link href="https://galaxystudios.com/">Galaxy Studios</Link>.
 	</p>
@@ -51,4 +52,4 @@
 		(including Steinway piano and a real Hammond set up) was … well … check it out for yourself –
 		the album goes on sale November 9th – see the links page…
 	</p>
-</article>
+</Container>

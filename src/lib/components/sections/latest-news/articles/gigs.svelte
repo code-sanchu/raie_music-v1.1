@@ -1,13 +1,15 @@
 <script context="module" lang="ts">
 	import { images } from '$lib/assets';
-	import { Link } from '$lib/components/prose';
 	import { raie_links } from '$lib/data';
 
+	import { Link } from '$lib/components/prose';
+
 	import Image from './_image.svelte';
+	import Container from './_container.svelte';
 </script>
 
-<article class="max-h-[360px] pr-sm md:pr-md lg:pr-lg overflow-auto prose max-w-full">
-	<p>
+<Container>
+	<p class="mt-0">
 		Raie performed to a full house and a standing ovation at The Camden Club when we launched the
 		album Red Brick Angel ... highlights included Jon Klein's solo for Free Now and the whole room
 		singing the chorus of This Thing Called Love!
@@ -68,4 +70,4 @@
 			>look for yourself</Link
 		>.
 	</p>
-</article>
+</Container>

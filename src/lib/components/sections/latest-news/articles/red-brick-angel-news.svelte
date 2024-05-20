@@ -6,9 +6,10 @@
 	import { Link } from '$lib/components/prose';
 
 	import Image from './_image.svelte';
+	import Container from './_container.svelte';
 </script>
 
-<article class="max-h-[360px] pr-sm md:pr-md lg:pr-lg overflow-auto prose max-w-full">
+<Container>
 	<div class="w-full md:w-1/2 md:float-right md:pl-md">
 		<Image img={images.red_brick_angels_may_2024.backing_singers} />
 	</div>
@@ -96,4 +97,4 @@
 		<Image img={images.red_brick_angels_may_2024.altea_narici} />
 		<Image img={images.red_brick_angels_may_2024.maria_tiimus} />
 	</div>
-</article>
+</Container>
