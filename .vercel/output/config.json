@@ -1,0 +1,135 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"src": "/about",
+			"dest": "/about/"
+		},
+		{
+			"src": "/about/",
+			"status": 308,
+			"headers": {
+				"Location": "/about"
+			}
+		},
+		{
+			"src": "/albums",
+			"dest": "/albums/"
+		},
+		{
+			"src": "/albums/",
+			"status": 308,
+			"headers": {
+				"Location": "/albums"
+			}
+		},
+		{
+			"src": "/albums/earthbound",
+			"dest": "/albums/earthbound/"
+		},
+		{
+			"src": "/albums/earthbound/",
+			"status": 308,
+			"headers": {
+				"Location": "/albums/earthbound"
+			}
+		},
+		{
+			"src": "/albums/red-brick-angel",
+			"dest": "/albums/red-brick-angel/"
+		},
+		{
+			"src": "/albums/red-brick-angel/",
+			"status": 308,
+			"headers": {
+				"Location": "/albums/red-brick-angel"
+			}
+		},
+		{
+			"src": "/albums/this-music-thing",
+			"dest": "/albums/this-music-thing/"
+		},
+		{
+			"src": "/albums/this-music-thing/",
+			"status": 308,
+			"headers": {
+				"Location": "/albums/this-music-thing"
+			}
+		},
+		{
+			"src": "/gallery",
+			"dest": "/gallery/"
+		},
+		{
+			"src": "/gallery/",
+			"status": 308,
+			"headers": {
+				"Location": "/gallery"
+			}
+		},
+		{
+			"src": "/news",
+			"dest": "/news/"
+		},
+		{
+			"src": "/news/",
+			"status": 308,
+			"headers": {
+				"Location": "/news"
+			}
+		},
+		{
+			"src": "/voice-coaching",
+			"dest": "/voice-coaching/"
+		},
+		{
+			"src": "/voice-coaching/",
+			"status": 308,
+			"headers": {
+				"Location": "/voice-coaching"
+			}
+		},
+		{
+			"src": "/_app/immutable/.+",
+			"headers": {
+				"cache-control": "public, immutable, max-age=31536000"
+			}
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "/.*",
+			"dest": "/fn"
+		}
+	],
+	"overrides": {
+		"index.html": {
+			"path": ""
+		},
+		"about.html": {
+			"path": "about"
+		},
+		"albums.html": {
+			"path": "albums"
+		},
+		"albums/earthbound.html": {
+			"path": "albums/earthbound"
+		},
+		"albums/red-brick-angel.html": {
+			"path": "albums/red-brick-angel"
+		},
+		"albums/this-music-thing.html": {
+			"path": "albums/this-music-thing"
+		},
+		"gallery.html": {
+			"path": "gallery"
+		},
+		"news.html": {
+			"path": "news"
+		},
+		"voice-coaching.html": {
+			"path": "voice-coaching"
+		}
+	}
+}

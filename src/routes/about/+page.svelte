@@ -2,9 +2,10 @@
 	import { onMount } from 'svelte';
 
 	import { images } from '$lib/assets';
-	import { updateGlobalFlags } from '$lib/stores';
-	import { Caption, PageLayout, Picture } from '$lib/components';
+	import { Caption, Picture } from '$lib/components';
 	import { Contacts, ListenAndBuy, MainText, SocialMedia } from '$lib/components/+pages/about';
+	import { BodyContainer, VerticalSpacing } from '$lib/components/layout';
+	import { updateGlobalFlags } from '$lib/stores';
 	import { fade } from 'svelte/transition';
 </script>
 
@@ -18,8 +19,8 @@
 	});
 </script>
 
-<PageLayout.Body>
-	<PageLayout.VerticalSpacing sizing="1.5" />
+<BodyContainer>
+	<VerticalSpacing sizing="1.5" />
 
 	{#if mounted}
 		<div class="flex justify-center" in:fade>
@@ -27,7 +28,7 @@
 		</div>
 	{/if}
 
-	<PageLayout.VerticalSpacing sizing="3/4" />
+	<VerticalSpacing sizing="3/4" />
 
 	<div class="flex justify-center">
 		<div class="flex flex-col gap-y-xl md/lg:flex-row max-w-[880px] w-full">
@@ -114,4 +115,4 @@
 			</div>
 		</div>
 	</div>
-</PageLayout.Body>
+</BodyContainer>

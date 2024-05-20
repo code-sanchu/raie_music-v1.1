@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
-	import { PageLayout } from '$lib/components';
+	import { BodyContainer } from '$lib/components/layout';
 </script>
 
-<PageLayout.Body>
+<BodyContainer>
 	<slot />
-</PageLayout.Body>
+</BodyContainer>

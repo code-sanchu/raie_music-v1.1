@@ -36,6 +36,7 @@
 	let windowHeight: number | undefined;
 
 	let headerNode: HTMLDivElement | undefined;
+	$: console.log('headerNode:', headerNode);
 
 	$: {
 		if (headerNode) {

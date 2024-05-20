@@ -6,11 +6,6 @@
 
 <script lang="ts">
 	let showing: 'galaxy' | 'gigs' | 'album launch' | 'red brick angel news' = 'red brick angel news';
-
-	let redBrickNewsHeight: number;
-	let albumLaunchHeight: number;
-	let galaxyStudiosHeight: number;
-	let recentGigsHeight: number;
 </script>
 
 <div>
@@ -48,25 +43,15 @@
 		<TitleButton text="Gigs" onClick={() => (showing = 'gigs')} isActive={showing === 'gigs'} />
 	</div>
 
-	<div
-		class="mt-md lg:mt-lg transition-all ease-in-out duration-300"
-		style:height={`${
-			showing === 'album launch'
-				? albumLaunchHeight
-				: showing === 'galaxy'
-				? galaxyStudiosHeight
-				: recentGigsHeight
-		}px`}>
+	<div class="mt-md max-w-[768px]">
 		{#if showing === 'red brick angel news'}
-			<RedBrickAngelNews
-				bind:height={redBrickNewsHeight}
-				isActive={showing === 'red brick angel news'} />
+			<RedBrickAngelNews />
 		{:else if showing === 'album launch'}
-			<AlbumLaunch bind:height={albumLaunchHeight} isActive={showing === 'album launch'} />
+			<AlbumLaunch />
 		{:else if showing === 'galaxy'}
-			<GalaxyStudios bind:height={galaxyStudiosHeight} isActive={showing === 'galaxy'} />
+			<GalaxyStudios />
 		{:else}
-			<Gigs bind:height={recentGigsHeight} isActive={showing === 'gigs'} />
+			<Gigs />
 		{/if}
 	</div>
 </div>

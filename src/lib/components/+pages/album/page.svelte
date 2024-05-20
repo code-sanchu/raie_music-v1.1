@@ -4,9 +4,10 @@
 
 	import type { ImageAsset } from '$lib/assets';
 	import { albums_meta, songsArr, type AlbumKey } from '$lib/data';
-	import { ImageGalleryModal, Images, PageLayout, Tooltip, LinkIconSwitch } from '$lib/components';
+	import { ImageGalleryModal, Images, Tooltip, LinkIconSwitch } from '$lib/components';
 	import { ImageScroller, Track } from '$lib/components/+pages/album';
 	import { updateGlobalFlags } from '$lib/stores';
+	import { BodyContainer, VerticalSpacing } from '$lib/components/layout';
 </script>
 
 <script lang="ts">
@@ -50,15 +51,15 @@
 	let userHasScrolledTracks = false;
 </script>
 
-<PageLayout.Body>
-	<PageLayout.VerticalSpacing sizing="1.5" />
+<BodyContainer>
+	<VerticalSpacing sizing="1.5" />
 
 	{#if mounted}
 		<div class="flex justify-center" in:fade>
 			<div class="max-w-[900px]">
 				<Images.BrickBg.HorizontalThree />
 
-				<PageLayout.VerticalSpacing sizing="2/3" />
+				<VerticalSpacing sizing="2/3" />
 
 				<div class="flex gap-x-xl flex-col sm:flex-row gap-y-sm sm:items-end">
 					<h1 class="text-3xl lg:text-4xl tracking-widest">{album.title}</h1>
@@ -140,7 +141,7 @@
 			</div>
 		</div>
 	{/if}
-</PageLayout.Body>
+</BodyContainer>
 
 <ImageGalleryModal
 	bind:currentIndex={imageModalCurrentIndex}

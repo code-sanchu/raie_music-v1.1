@@ -2,10 +2,11 @@
 	import { onMount } from 'svelte';
 
 	import { images } from '$lib/assets';
-	import { Caption, ImageGalleryModal, Images, PageLayout, Picture } from '$lib/components';
+	import { Caption, ImageGalleryModal, Images, Picture } from '$lib/components';
+	import { VerticalSpacing } from '$lib/components/layout';
 	import { updateGlobalFlags } from '$lib/stores';
-	import Measure from './measure.svelte';
 	import { fade } from 'svelte/transition';
+	import Measure from './measure.svelte';
 
 	const galleryImages = [
 		images.dog_carpet,
@@ -52,7 +53,7 @@
 	}
 </script>
 
-<PageLayout.VerticalSpacing sizing="1.5" />
+<VerticalSpacing sizing="1.5" />
 
 {#if mounted}
 	<div in:fade>
@@ -60,7 +61,7 @@
 	</div>
 {/if}
 
-<PageLayout.VerticalSpacing sizing="half" />
+<VerticalSpacing sizing="half" />
 
 {#if mounted}
 	<h2
@@ -71,7 +72,7 @@
 	</h2>
 {/if}
 
-<PageLayout.VerticalSpacing sizing="2/3" />
+<VerticalSpacing sizing="2/3" />
 
 {#if showImages}
 	<div class="flex flex-col flex-wrap gap-sm" style:height={`${containerHeight}px`}>

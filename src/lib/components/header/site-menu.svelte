@@ -4,10 +4,11 @@
 	import { List } from 'phosphor-svelte';
 	import { page } from '$app/stores';
 
-	import { Icon, LinkIconSwitch, PageLayout, Tooltip } from '$lib/components';
+	import { Icon, LinkIconSwitch, Tooltip } from '$lib/components';
 	import { contacts, raie_links_arrs } from '$lib/data';
 	import { onClickOutside } from '$lib/helpers';
 	import { updateMusicPlayer } from '$lib/stores';
+	import { HorizontalSpacing } from '$lib/components/layout';
 
 	const sitePageLinks = [
 		{ route: '/', text: 'Home' },
@@ -44,7 +45,7 @@
 		class={`fixed top-0 left-0 w-screen max-h-screen overflow-y-auto md:scrollbar-thin md:scrollbar-track-my-black-50/50 md:scrollbar-thumb-my-black-100 md:hover:scrollbar-thumb-my-black-200 px-xs xs:px-sm sm:px-md md:px-lg pb-lg flex justify-center gap-lg bg-white z-[80]`}
 		use:onClickOutside={() => (isOpen = false)}
 		transition:slide={{ axis: 'y', easing: expoOut, duration: 900 }}>
-		<PageLayout.HorizontalSpacing>
+		<HorizontalSpacing>
 			<div class="flex justify-center md:hidden mt-sm">
 				<button
 					class="border-[0.8px] border-my-black-100 text-my-black-900 p-xxs rounded-md"
@@ -132,7 +133,7 @@
 						aria-label="close menu"><Icon.X weight="thin" /></button>
 				</div>
 			</div>
-		</PageLayout.HorizontalSpacing>
+		</HorizontalSpacing>
 	</div>
 {/if}
 

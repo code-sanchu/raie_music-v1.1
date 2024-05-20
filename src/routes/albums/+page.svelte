@@ -1,8 +1,9 @@
 <script lang="ts" context="module">
 	import { onMount } from 'svelte';
 
-	import { Images, PageLayout } from '$lib/components';
+	import { Images } from '$lib/components';
 	import { Album } from '$lib/components/+pages/albums';
+	import { BodyContainer, VerticalSpacing } from '$lib/components/layout';
 	import { Link } from '$lib/components/prose';
 	import { raie_links } from '$lib/data';
 	import { updateGlobalFlags } from '$lib/stores';
@@ -19,8 +20,8 @@
 	});
 </script>
 
-<PageLayout.Body>
-	<PageLayout.VerticalSpacing sizing="1.5" />
+<BodyContainer>
+	<VerticalSpacing sizing="1.5" />
 
 	{#if mounted}
 		<div in:fade>
@@ -28,7 +29,7 @@
 		</div>
 	{/if}
 
-	<PageLayout.VerticalSpacing sizing="2/3" />
+	<VerticalSpacing sizing="2/3" />
 
 	{#if mounted}
 		<div
@@ -105,4 +106,4 @@
 			</Album>
 		</div>
 	{/if}
-</PageLayout.Body>
+</BodyContainer>

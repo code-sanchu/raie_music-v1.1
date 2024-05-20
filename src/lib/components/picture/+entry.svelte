@@ -1,9 +1,12 @@
-<script lang="ts">
+<script lang="ts" context="module">
 	import { onMount } from 'svelte';
 
 	import type { ImgMeta } from '$lib/types';
+</script>
 
-	export let meta: ImgMeta[];
+<script lang="ts">
+	export let meta: ImgMeta[] | ImgMeta;
+
 	// if there is only one, vite-imagetools won't wrap the object in an array
 	if (!(meta instanceof Array)) meta = [meta];
 
@@ -17,7 +20,9 @@
 	export let imageClass = '';
 	export let pictureClass = '';
 	export let onLoad: () => void = () => null;
-	export let transitionDuration: 'duration-300' | 'duration-500' = 'duration-300';
+	export let duration: 'duration-300' | 'duration-500' = 'duration-300';
+	export let disableTransition = false;
+	export let fetchpriority: 'auto' | 'high' | 'low' | null | undefined = undefined;
 
 	let imgNode: HTMLImageElement;
 
@@ -41,19 +46,17 @@
 
 <picture class={pictureClass}>
 	{#each Object.entries(sources) as [type, srcMeta]}
-		<source
-			type="image/{type}"
-			{sizes}
-			srcset={srcMeta.map((m) => `${m.src} ${m.w}w`).join(', ')} />
+		<source type="image/{type}" {sizes} srcset={srcMeta} />
 	{/each}
 
 	<img
 		src={fallback.src}
 		{alt}
 		{loading}
-		class={`${imageClass} transition-all ease-in-out select-none ${
-			loadingComplete ? 'opacity-100' : 'opacity-0'
-		} ${transitionDuration}`}
+		class={`${imageClass} transition-opacity ease-in-out select-none ${
+			loadingComplete || disableTransition ? 'opacity-100' : 'opacity-0'
+		} ${duration}`}
 		draggable={false}
+		{fetchpriority}
 		bind:this={imgNode} />
 </picture>

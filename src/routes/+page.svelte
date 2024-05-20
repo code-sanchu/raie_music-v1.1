@@ -5,8 +5,9 @@
 
 	import { images } from '$lib/assets';
 
-	import { Images, PageLayout, Picture, LatestNews } from '$lib/components';
+	import { Images, LatestNews, Picture } from '$lib/components';
 	import { PageLinks, PlayMusicButton, ReviewQuote } from '$lib/components/+pages/landing';
+	import { BodyContainer, VerticalSpacing } from '$lib/components/layout';
 </script>
 
 <script lang="ts">
@@ -19,8 +20,8 @@
 	}
 </script>
 
-<PageLayout.Body>
-	<PageLayout.VerticalSpacing sizing={'1.5'} />
+<BodyContainer>
+	<VerticalSpacing sizing={'1.5'} />
 
 	<div
 		class="flex items-center justify-center sm:items-start sm:justify-between gap-xl md:gap-[4.5rem] lg:gap-2xl">
@@ -75,12 +76,12 @@
 				sizes={'50vw'}
 				loading="eager"
 				onLoad={() => (criticalContentIsLoaded = true)}
-				transitionDuration="duration-500"
+				duration="duration-500"
 				alt="" />
 		</div>
 	</div>
 
-	<PageLayout.VerticalSpacing sizing="1.5" />
+	<VerticalSpacing sizing="1.5" />
 
 	{#if criticalContentIsLoaded}
 		<div class="flex justify-center" in:fade>
@@ -89,7 +90,7 @@
 	{/if}
 
 	{#if criticalContentIsLoaded}
-		<PageLayout.VerticalSpacing />
+		<VerticalSpacing />
 
 		<div class="px-xs xs:px-lg h-[12px] sm:h-[16px] md:h-auto sm:px-0 overflow-hidden">
 			<Images.BrickBg.HorizontalThree />
@@ -97,7 +98,7 @@
 	{/if}
 
 	{#if criticalContentIsLoaded}
-		<PageLayout.VerticalSpacing />
+		<VerticalSpacing />
 
 		<div
 			class="flex flex-col sm:flex-row justify-between sm:gap-lg lg:gap-xl flex-shrink-0"
@@ -107,7 +108,7 @@
 			</div>
 
 			<div class="sm:hidden">
-				<PageLayout.VerticalSpacing sizing="1.5" />
+				<VerticalSpacing sizing="1.5" />
 			</div>
 
 			<div class="px-xs xs:px-lg h-[12px] sm:hidden overflow-hidden">
@@ -115,7 +116,7 @@
 			</div>
 
 			<div class="sm:hidden">
-				<PageLayout.VerticalSpacing sizing="half" />
+				<VerticalSpacing sizing="half" />
 			</div>
 
 			<div class="sm:pt-[40px] px-md sm:px-0">
@@ -123,4 +124,4 @@
 			</div>
 		</div>
 	{/if}
-</PageLayout.Body>
+</BodyContainer>

@@ -2,12 +2,13 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
-	import { updateGlobalFlags } from '$lib/stores';
 	import { images } from '$lib/assets';
-	import { songsArr } from '$lib/data';
-	import { ImageGalleryModal, Images, PageLayout } from '$lib/components';
+	import { ImageGalleryModal, Images } from '$lib/components';
 	import { ImageScroller, Track } from '$lib/components/+pages/album';
+	import { BodyContainer, VerticalSpacing } from '$lib/components/layout';
 	import { Link } from '$lib/components/prose';
+	import { songsArr } from '$lib/data';
+	import { updateGlobalFlags } from '$lib/stores';
 
 	const albumImages = [
 		images.albums.red_brick_angels.band_hope_and_anchor,
@@ -52,15 +53,15 @@
 	let userHasScrolledTracks = false;
 </script>
 
-<PageLayout.Body>
-	<PageLayout.VerticalSpacing sizing="1.5" />
+<BodyContainer>
+	<VerticalSpacing sizing="1.5" />
 
 	{#if mounted}
 		<div class="flex justify-center" in:fade>
 			<div class="max-w-[900px]">
 				<Images.BrickBg.HorizontalThree />
 
-				<PageLayout.VerticalSpacing sizing="2/3" />
+				<VerticalSpacing sizing="2/3" />
 
 				<div class="flex gap-x-xl flex-col sm:flex-row gap-y-sm sm:items-end">
 					<h1 class="text-3xl lg:text-4xl tracking-widest">Red Brick Angel</h1>
@@ -140,7 +141,7 @@
 					{/if}
 				</div>
 
-				<PageLayout.VerticalSpacing sizing="2/3" />
+				<VerticalSpacing sizing="2/3" />
 
 				<h3 class="text-my-black-500 tracking-widest text-xs uppercase">Credits</h3>
 
@@ -155,7 +156,7 @@
 			</div>
 		</div>
 	{/if}
-</PageLayout.Body>
+</BodyContainer>
 
 <ImageGalleryModal
 	bind:currentIndex={imageModalCurrentIndex}

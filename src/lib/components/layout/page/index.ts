@@ -1,9 +1,9 @@
 import HorizontalSpacing from './HorizontalSpacing.svelte';
 import VerticalSpacing from './VerticalSpacing.svelte';
-import Body from './body-container.svelte';
+import BodyContainer from './body-container.svelte';
 
-export const PageLayout = {
+export {
 	HorizontalSpacing,
 	VerticalSpacing,
-	Body
+	BodyContainer
 };

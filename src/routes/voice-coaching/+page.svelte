@@ -2,11 +2,12 @@
 	import { onMount } from 'svelte';
 
 	import { images } from '$lib/assets';
+	import { Caption, ImageGalleryModal, Images, Picture } from '$lib/components';
+	import { BodyContainer, VerticalSpacing } from '$lib/components/layout';
 	import { voiceCoaching } from '$lib/data';
 	import { updateGlobalFlags } from '$lib/stores';
-	import { Caption, ImageGalleryModal, Images, PageLayout, Picture } from '$lib/components';
-	import PersonalTestimony from './personal-testimony.svelte';
 	import { fade } from 'svelte/transition';
+	import PersonalTestimony from './personal-testimony.svelte';
 
 	const galleryImages = [
 		images.dog_carpet,
@@ -33,8 +34,8 @@
 	let imageModalCurrentImageIndex = 0;
 </script>
 
-<PageLayout.Body>
-	<PageLayout.VerticalSpacing sizing="1.5" />
+<BodyContainer>
+	<VerticalSpacing sizing="1.5" />
 
 	{#if mounted}
 		<div in:fade>
@@ -42,7 +43,7 @@
 		</div>
 	{/if}
 
-	<PageLayout.VerticalSpacing sizing="half" />
+	<VerticalSpacing sizing="half" />
 
 	{#if mounted}
 		<div class="" in:fade>
@@ -216,7 +217,7 @@
 			</div>
 		</div>
 	{/if}
-</PageLayout.Body>
+</BodyContainer>
 
 <ImageGalleryModal
 	bind:currentIndex={imageModalCurrentImageIndex}

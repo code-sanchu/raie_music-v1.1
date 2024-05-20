@@ -67,11 +67,12 @@ import red_brick_angels_may_2024_maria_tiimus from '$assets/images/red_brick_ang
 import red_brick_angels_may_2024_standing_ovation from '$assets/images/red_brick_angels-latest-may_2024/Standing ovation.jpg?w=1800&format=avif;webp;jpg&as=picture&imagetools';
 import red_brick_angels_may_2024_final_song from '$assets/images/red_brick_angels-latest-may_2024/The final song of the nite.jpg?w=1800&format=avif;webp;jpg&as=picture&imagetools';
 import red_brick_angels_may_2024_tim_gardner from '$assets/images/red_brick_angels-latest-may_2024/Tim Gardner on keys.jpg?w=1800&format=avif;webp;jpg&as=picture&imagetools';
+import type { ImgMeta } from '$lib/types';
 
 export const images = {
 	red_brick_angels_may_2024: {
 		altea_narici: { src: red_brick_angels_may_2024_altea_narici, naturalDimensions: { width: 5028, height: 5464 }, caption: 'Altea Narici on cello.' },
-		backing_singers: { src: red_brick_angels_may_2024_backing_singers, naturalDimensions: { width: 1800, height: 1201 }, caption: 'Backing singers, L to R, Emily McLean Nathan Devonte and Nazarene.' },
+		backing_singers: { src: red_brick_angels_may_2024_backing_singers, naturalDimensions: { width: 1800, height: 1201 }, caption: 'Backing singers, L to R: Emily McLean, Nathan Devonte and Nazarene.' },
 		chris_bell: { src: red_brick_angels_may_2024_chris_bell, naturalDimensions: { width: 5978, height: 5028 }, caption: 'Chris Bell on kit.' },
 		christiano_tortoioli: { src: red_brick_angels_may_2024_christiano_tortoioli, naturalDimensions: { width: 5994, height: 5464 }, caption: 'Christiano Tortoioli on electric bass.' },
 		jon_dunn: { src: red_brick_angels_may_2024_jon_dunn, naturalDimensions: { width: 3113, height: 5464 }, caption: 'Jon Dunn - album launch Music Director and rhythm guitar.' },
@@ -314,5 +315,11 @@ export const images = {
 	}
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type ImageAsset = { src: any; naturalDimensions: { width: number; height: number }, caption?: string };
+export type ImgAsset = {
+	src: ImgMeta;
+	naturalDimensions: {
+		width: number;
+		height: number;
+	};
+	caption?: string;
+};
