@@ -21,7 +21,8 @@
 		– you’ll need an evening and a glass of wine!
 	</p>
 
-	<p>[link to launch footage coming soon...]</p>
+	<Link href="https://www.youtube.com/watch?v=qvy-6zO_U4k">Watch on YouTube</Link>
+
 	<p>
 		We will be releasing the album officially in June ’24 but have already released two singles from
 		the album... Young Love and Crystal Girl... have a listen...
@@ -51,7 +52,7 @@
 		one of the songs from a planned Raie EP (more news later)... check this out!
 	</p>
 
-	<p>[link to gig footage coming soon...]</p>
+	<Link href="https://www.youtube.com/watch?v=gkytBWj5WeA">Watch on YouTube</Link>
 
 	<p>
 		but had to take time out to bring in new players as our wonderful Louis Bell on lead guitar, Tim
