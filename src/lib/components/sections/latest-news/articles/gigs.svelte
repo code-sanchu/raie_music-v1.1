@@ -8,7 +8,7 @@
 	import Container from './_container.svelte';
 </script>
 
-<Container>
+<Container styles="pt-[18px]">
 	<p class="mt-0">
 		Raie performed to a full house and a standing ovation at The Camden Club when we launched the
 		album Red Brick Angel ... highlights included Jon Klein's solo for Free Now and the whole room

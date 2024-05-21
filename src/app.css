@@ -36,3 +36,10 @@ div,
 article {
 	@apply md:scrollbar-thin md:scrollbar-track-my-black-50/50 md:scrollbar-thumb-my-black-100 md:hover:scrollbar-thumb-my-black-200;
 }
+
+.prose p:first-of-type {
+	margin-top: 0;
+	margin-bottom: 0;
+	/* min-height handles empty p tag for paragraph spacing */
+	min-height: 15px;
+}

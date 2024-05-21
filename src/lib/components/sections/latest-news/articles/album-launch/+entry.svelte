@@ -7,7 +7,7 @@
 	import EpkLink from './epk-link.svelte';
 </script>
 
-<Container>
+<Container styles="pt-[13px]">
 	<div class="w-full max-w-[120px] float-left pr-md">
 		<Image img={images.faceshots[2]} />
 	</div>

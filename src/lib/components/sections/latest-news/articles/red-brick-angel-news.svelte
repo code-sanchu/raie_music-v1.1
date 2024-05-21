@@ -9,12 +9,16 @@
 	import Container from './_container.svelte';
 </script>
 
-<Container>
+<Container styles="pt-[13px]">
+	<p>
+		<time class="text-[13px] opacity-80" datetime="2024-05-21">May 2024</time>
+	</p>
+
 	<div class="w-full md:w-1/2 md:float-right md:pl-md">
 		<Image img={images.red_brick_angels_may_2024.backing_singers} />
 	</div>
 
-	<p class="mt-0">
+	<p class="mt-[5px]">
 		Since our wonderful spring ’23 news update we quietly prepped for our Red Brick Angel launch...<br />
 		...and it happened! We had a beautiful night at The Camden Club – special thanks to Andrew Hart proprietor
 		– We played to a full house and a standing ovation... was a night to remember. Check out the footage
