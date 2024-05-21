@@ -6,7 +6,7 @@
 	import Container from './_container.svelte';
 </script>
 
-<Container styles="pt-[18px]">
+<Container styles="pt-[12px]">
 	<div class="w-full md:w-1/2 md:float-right md:pl-md">
 		<Image img={images.galaxy['full-band']} />
 	</div>

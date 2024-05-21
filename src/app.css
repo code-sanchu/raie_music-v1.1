@@ -43,3 +43,13 @@ article {
 	/* min-height handles empty p tag for paragraph spacing */
 	min-height: 15px;
 }
+
+.prose caption {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+.prose picture {
+	margin-top: 0;
+	margin-bottom: 0;
+}

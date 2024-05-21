@@ -9,12 +9,12 @@
 	import Container from './_container.svelte';
 </script>
 
-<Container styles="pt-[13px]">
+<Container styles="pt-[2px]">
 	<p>
 		<time class="text-[13px] opacity-80" datetime="2024-05-21">May 2024</time>
 	</p>
 
-	<div class="w-full md:w-1/2 md:float-right md:pl-md">
+	<div class="w-full md:w-1/2 md:float-right md:pl-md mt-[12px]">
 		<Image img={images.red_brick_angels_may_2024.backing_singers} />
 	</div>
 

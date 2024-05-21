@@ -43,7 +43,7 @@
 		<TitleButton text="Gigs" onClick={() => (showing = 'gigs')} isActive={showing === 'gigs'} />
 	</div>
 
-	<div class="max-w-[768px]">
+	<div class="max-w-[768px] mt-[13px]">
 		{#if showing === 'red brick angel news'}
 			<RedBrickAngelNews />
 		{:else if showing === 'album launch'}
