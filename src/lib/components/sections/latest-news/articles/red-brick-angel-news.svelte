@@ -70,26 +70,16 @@
 	</div>
 
 	<p>
-		...meanwhile we are welcoming the Felgate Bros. – a lead guitar and kit duo … and we have a
-		beautiful upcoming gig at Karamel Restaurant N22 on May 11th.
-
-		<Tooltip
-			text="Tickets from EventBrite"
-			triggeredById="latest_news-red_brick-tickets-karamel_restaurant" />
-		<Link
-			href="https://www.eventbrite.com/e/raie-bringing-sweet-music-to-the-karamel-club-tickets-883179913897?aff=ebdssbdestsearch&keep_tld=1"
-			id="latest_news-red_brick-tickets-karamel_restaurant">
-			Get your tickects here
-			<span class="ml-xxs text-my-black-500">
-				<Icon.Event weight="light" />
-			</span>
-		</Link>
-	</p>
-
-	<p>
 		We are also proud to be one of the bands opening the Brockley Max Festival this year on May
 		31st... watch this space for coverage... We’ll be back soon with more news!...
 	</p>
+
+	<p>
+		... we are proudly releasing Red Brick Angel - the full album via Distrokid onto all your media
+		channels on June 1st
+	</p>
+
+	<p>... we also have Louis bell back on stage with us for the 31st ... see you all there!</p>
 
 	<p>More pics from the gig:</p>
 
