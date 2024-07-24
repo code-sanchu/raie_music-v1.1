@@ -1,15 +1,22 @@
-import type { PersonalTestimony } from "$lib/types";
+import type { PersonalTestimony, CompanyTestimony } from "$lib/types";
+
+const companyTestimony: CompanyTestimony[] = [
+	{
+		testimony: "I have worked with Rachel for many years in different sectors, she is always my first-choice voice specialist and singing workshop leader to invite into any project because she is a pro running workshops, bringing sunshine and joy into a session, adapting sessions to people’s needs and just being professional and thoroughly prepared. She usually has a loyal following of participants who come back again and again for her singing sessions because she is an engaging and sensitive and talented all-round human and really knows her stuff. What she can help a group of non-singers achieve in 90-minutes is amazing, harmonies, a wellbeing boost and so much more! A safe pair of hands and an experienced practitioner for community projects or more work-based wellbeing environments.",
+		title: 'Sally, Staff Learning Team, London Met University'
+	},
+	{
+		testimony: "With over two decades of superb vocal development behind Rachel Bennett we at Midas Productions trust when she undertakes to develop a voice it will be nourished with care, diligence, passion and excellence.",
+		title: 'Kevin Leo'
+	},
+	{
+		testimony: "Rachel Bennett is an extremely competent, skilled and inspiring vocal coach with years of experience as a performer/singer. Her techniques have provided students and singers alike with the confidence and ability to progress their professional careers.",
+		title: 'Wozzy Brewster, OBE, Executive Director, The Midi Music Company'
+	},
+];
 
 
 const personalTestimony: PersonalTestimony[] = [
-	{
-		name: 'Sally',
-		title: 'Staff Learning Team, London Met University',
-		aboutHref: null,
-		testimony:
-			"I have worked with Rachel for many years in different sectors, she is always my first-choice voice specialist and singing workshop leader to invite into any project because she is a pro running workshops, bringing sunshine and joy into a session, adapting sessions to people’s needs and just being professional and thoroughly prepared. She usually has a loyal following of participants who come back again and again for her singing sessions because she is an engaging and sensitive and talented all-round human and really knows her stuff. What she can help a group of non-singers achieve in 90-minutes is amazing, harmonies, a wellbeing boost and so much more! A safe pair of hands and an experienced practitioner for community projects or more work-based wellbeing environments."
-	},
-
 	{
 		name: 'Carmody',
 		title: 'Singer Songwriter',
@@ -71,5 +78,6 @@ const personalTestimony: PersonalTestimony[] = [
 ];
 
 export const voiceCoaching = {
-	personalTestimony
+	companyTestimony,
+	personalTestimony,
 };

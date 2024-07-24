@@ -1,13 +1,17 @@
 <script lang="ts" context="module">
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
+
+	import { voiceCoaching } from '$lib/data';
 
 	import { images } from '$lib/assets';
+
+	import { updateGlobalFlags } from '$lib/stores';
+
 	import { Caption, ImageGalleryModal, Images, Picture } from '$lib/components';
 	import { BodyContainer, VerticalSpacing } from '$lib/components/layout';
-	import { voiceCoaching } from '$lib/data';
-	import { updateGlobalFlags } from '$lib/stores';
-	import { fade } from 'svelte/transition';
 	import PersonalTestimony from './personal-testimony.svelte';
+	import CompanyTestimony from './company-testimony.svelte';
 
 	const galleryImages = [
 		images.dog_carpet,
@@ -179,21 +183,9 @@
 
 				<h2 class="text-xl tracking-widest uppercase mt-xl">Company Testimony</h2>
 
-				<p class="mt-lg border-my-black-50/20 prose text-my-black max-w-[65ch] tracking-wide">
-					"With over two decades of superb vocal development behind Rachel Bennett we at Midas
-					Productions trust when she undertakes to develop a voice it will be nourished with care,
-					diligence, passion and excellence."
-				</p>
-				<p class="pl-xs mt-xs italic text-my-black-700 font-medium">— Kevin Leo</p>
-
-				<p class="mt-lg border-my-black-50/20 prose text-my-black max-w-[65ch] tracking-wide">
-					"Rachel Bennett is an extremely competent, skilled and inspiring vocal coach with years of
-					experience as a performer/singer. Her techniques have provided students and singers alike
-					with the confidence and ability to progress their professional careers."
-				</p>
-				<p class="pl-xs mt-xs italic text-my-black-700 font-medium">
-					— Wozzy Brewster, OBE, Executive Director, The Midi Music Company
-				</p>
+				{#each voiceCoaching.companyTestimony as testimony}
+					<CompanyTestimony {testimony} />
+				{/each}
 
 				<h2 class="text-xl tracking-widest uppercase mt-xl">Personal Testimony</h2>
 

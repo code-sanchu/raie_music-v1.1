@@ -23,3 +23,8 @@ export type PersonalTestimony = {
 	aboutHref: string | null,
 	testimony: string
 }
+
+export type CompanyTestimony = {
+	title: string,
+	testimony: string
+}
