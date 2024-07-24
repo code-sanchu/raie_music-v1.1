@@ -1,4 +1,15 @@
-const personalTestimony = [
+import type { PersonalTestimony } from "$lib/types";
+
+
+const personalTestimony: PersonalTestimony[] = [
+	{
+		name: 'Sally',
+		title: 'Staff Learning Team, London Met University',
+		aboutHref: null,
+		testimony:
+			"I have worked with Rachel for many years in different sectors, she is always my first-choice voice specialist and singing workshop leader to invite into any project because she is a pro running workshops, bringing sunshine and joy into a session, adapting sessions to people’s needs and just being professional and thoroughly prepared. She usually has a loyal following of participants who come back again and again for her singing sessions because she is an engaging and sensitive and talented all-round human and really knows her stuff. What she can help a group of non-singers achieve in 90-minutes is amazing, harmonies, a wellbeing boost and so much more! A safe pair of hands and an experienced practitioner for community projects or more work-based wellbeing environments."
+	},
+
 	{
 		name: 'Carmody',
 		title: 'Singer Songwriter',
