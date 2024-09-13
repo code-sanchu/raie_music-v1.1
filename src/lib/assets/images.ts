@@ -1,3 +1,5 @@
+import type { ImgMeta } from '$lib/types';
+
 import brick_bg from '$assets/images/brick_bg.png?w=400&format=avif;webp;jpg&as=picture&imagetools';
 import raie_as_child from '$assets/images/raie-as-child.jpeg?w=480&format=avif;webp;jpg&as=picture&imagetools';
 import dog_carpet from '$assets/images/dog_carpet_gms.jpg?w=500&format=avif;webp;jpg&as=picture&imagetools';
@@ -15,6 +17,8 @@ import review_martin_cooke_blues_matters from '$assets/images/reviews/martin_coo
 import review_martin_slidel_whats_on_london from '$assets/images/reviews/martin_slidel-whats_on_london.png?w=1407&format=avif;webp;jpg&as=picture&imagetools';
 import review_martin_webb_on_raie from '$assets/images/reviews/martin_webb-on_raie.jpg?w=868&format=avif;webp;jpg&as=picture&imagetools';
 import review_martin_webb_this_music_thing from '$assets/images/reviews/martin_webb-this_music_thing.jpg?w=938&format=avif;webp;jpg&as=picture&imagetools';
+import review_preumont_michel_for_concert_monkey from '$assets/images/reviews/Album - Red Brick Angel - Raie ConcertMonkey - Preumont Michel.jpg?w=800&format=avif;webp;jpg&as=picture&imagetools';
+import review_red_brick_angel_stephen_harrison_blues_matters from '$assets/images/reviews/red_brick_angel-stephen_harrison-blues_matters.png?w=800&format=avif;webp;jpg&as=picture&imagetools';
 
 import altea_grey from '$assets/images/altea-grey.jpg?w=1200&format=avif;webp;jpg&as=picture&imagetools';
 import christiano_in_full_flow from '$assets/images/christiano-in_full_flow.jpg?w=1536&format=avif;webp;jpg&as=picture&imagetools';
@@ -67,7 +71,7 @@ import red_brick_angels_may_2024_maria_tiimus from '$assets/images/red_brick_ang
 import red_brick_angels_may_2024_standing_ovation from '$assets/images/red_brick_angels-latest-may_2024/Standing ovation.jpg?w=1800&format=avif;webp;jpg&as=picture&imagetools';
 import red_brick_angels_may_2024_final_song from '$assets/images/red_brick_angels-latest-may_2024/The final song of the nite.jpg?w=1800&format=avif;webp;jpg&as=picture&imagetools';
 import red_brick_angels_may_2024_tim_gardner from '$assets/images/red_brick_angels-latest-may_2024/Tim Gardner on keys.jpg?w=1800&format=avif;webp;jpg&as=picture&imagetools';
-import type { ImgMeta } from '$lib/types';
+
 
 export const images = {
 	red_brick_angels_may_2024: {
@@ -176,6 +180,14 @@ export const images = {
 	},
 
 	reviews: {
+		review_preumont_michel_for_concert_monkey: {
+			src: review_preumont_michel_for_concert_monkey,
+			naturalDimensions: { width: 1000, height: 3077 }
+		},
+		review_red_brick_angel_stephen_harrison_blues_matters: {
+			src: review_red_brick_angel_stephen_harrison_blues_matters,
+			naturalDimensions: { width: 168, height: 459 }
+		},
 		review_blue_bloods_by_steve_yourglivch_and_rachel_bennett: {
 			src: review_blue_bloods_by_steve_yourglivch_and_rachel_bennett,
 			naturalDimensions: { width: 583, height: 827 }
@@ -195,7 +207,7 @@ export const images = {
 		review_martin_webb_this_music_thing: {
 			src: review_martin_webb_this_music_thing,
 			naturalDimensions: { width: 938, height: 943 }
-		}
+		},
 	},
 
 	singing_coach: {

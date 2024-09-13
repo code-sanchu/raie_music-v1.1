@@ -1,7 +1,7 @@
 <script context="module" lang="ts">
 	import Container from './_container.svelte';
 
-	const params = `?modestbranding=1&rel=0&color=white&frameborder=0&autoplay=1&origin=${
+	const params = `?modestbranding=1&rel=0&color=white&frameborder=0&autoplay=0&origin=${
 		import.meta.env.PROD ? 'http://www.raiemusic.com' : ''
 	}`;
 	const src = 'https://www.youtube.com/embed/uI1dUjpad14?si=GfVli16Kyvht6ppv' + params;

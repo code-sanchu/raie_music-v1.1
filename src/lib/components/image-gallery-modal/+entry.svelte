@@ -2,10 +2,9 @@
 	import { Dialog, Transition } from '@rgossiaux/svelte-headlessui';
 	import { swipe as untypedSwipe } from 'svelte-gestures';
 
-	import type { Swipe } from '$lib/types';
+	import type { Swipe, Data } from '$lib/types';
 
 	import { Icon, MyDialog } from '$lib/components';
-	import type { Data } from '$lib/types';
 	import MyImage from './my-image.svelte';
 
 	const swipe: Swipe = untypedSwipe as any;
