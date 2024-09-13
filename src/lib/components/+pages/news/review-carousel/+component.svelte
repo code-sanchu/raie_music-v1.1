@@ -13,7 +13,7 @@
 	const swipe: Swipe = untypedSwipe as any;
 
 	const reviewTitles = [
-		'Preumont Michel for Contert Monkey',
+		'Preumont Michel for Concert Monkey',
 		'Stephen Harrison for Blues Matters',
 		'Steve Yourglivch for Blue Bloods',
 		'Martin Cooke for Blues Matters',

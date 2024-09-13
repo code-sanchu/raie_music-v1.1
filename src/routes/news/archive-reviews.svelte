@@ -8,6 +8,8 @@
 </script>
 
 <script lang="ts">
+	import { Icon } from '$lib/components';
+
 	let imageModalIsOpen = false;
 
 	let imageModalCurrentIndex = 0;
@@ -22,7 +24,7 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 
-<h2 class="tracking-widest text-xs sm:text-sm text-my-black-600 uppercase">Archive Reviews</h2>
+<h2 class="tracking-widest text-xs sm:text-sm text-my-black-600 uppercase">Reviews</h2>
 
 <p class="text-my-black tracking-wide leading-relaxed max-w-[768px] mt-sm">
 	Raie's latest album Red Brick Angel is attracting attention from top international reviewers! ...
@@ -44,12 +46,12 @@
 					class="border border-my-black-50/80 rounded-lg shrink-0 cursor-zoom-in flex items-stretch relative w-[500px] max-w-[70vw]">
 					<div class="absolute inset-lg overflow-hidden bg-my-black-50/10">
 						<div
-							class="absolute inset-0"
+							class="absolute inset-0 flex justify-center"
 							style:height="{height}px"
 							style:max-width="{image.naturalDimensions.width}px"
 							on:click={() => onClickImage(i)}>
 							<Picture
-								imageClass={`w-full h-full `}
+								imageClass={`w-full h-full`}
 								meta={image.src}
 								sizes={`${image.naturalDimensions.width}px`}
 								alt="" />
@@ -57,11 +59,27 @@
 
 						{#if i === 0}
 							<div
-								class="absolute bottom-0 z-10 bg-white/60 w-full p-1 flex justify-end cursor-pointer">
+								class="absolute bottom-0 z-10 bg-my-black-700 border-2 border-white text-white w-full p-2 flex justify-end cursor-pointer">
 								<a
-									class="uppercase text-xs tracking-wide"
+									class="uppercase text-xs tracking-wide flex items-center gap-2"
 									href="http://www.concertmonkey.be/albumreviews/album-red-brick-angel-raie"
-									target="_blank">Visit website</a>
+									target="_blank">
+									<span>Read on Concert Monkey</span>
+									<span><Icon.ExternalLink /></span>
+								</a>
+							</div>
+						{/if}
+
+						{#if i === 1}
+							<div
+								class="absolute bottom-0 z-10 bg-my-black-700 border-2 border-white text-white w-full p-2 flex justify-end cursor-pointer">
+								<a
+									class="uppercase text-xs tracking-wide flex items-center gap-2"
+									href="http://www.concertmonkey.be/albumreviews/album-red-brick-angel-raie"
+									target="_blank">
+									<span>Read on Blues Matters (pg 95)</span>
+									<span><Icon.ExternalLink /></span>
+								</a>
 							</div>
 						{/if}
 					</div>
