@@ -1,13 +1,11 @@
 <script lang="ts" context="module">
 	import { Dialog, Transition } from '@rgossiaux/svelte-headlessui';
-	import { swipe as untypedSwipe } from 'svelte-gestures';
+	import { pinch, swipe } from 'svelte-gestures';
 
-	import type { Swipe, Data } from '$lib/types';
+	import type { Data } from '$lib/types';
 
 	import { Icon, MyDialog } from '$lib/components';
 	import MyImage from './my-image.svelte';
-
-	const swipe: Swipe = untypedSwipe as any;
 </script>
 
 <script lang="ts">
@@ -57,6 +55,8 @@
 			imageMaxWidthPx = windowWidth * 0.8 - gap;
 		}
 	}
+
+	let scale: number = 1;
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} bind:innerHeight={windowHeight} />
@@ -93,17 +93,20 @@
 						style:transform={`translateX(-${currentIndex * 80}vw)`}>
 						{#each images as image, i}
 							<div
-								class="w-[80vw] shrink-0 grid place-items-center overflow-auto"
+								class="w-[80vw] shrink-0 grid place-items-center overflow-auto max-h-[85vh]"
 								style:height="{contentMaxHeight}px"
-								on:swipe={(e) => (e.detail.direction === 'left' ? goNextImage() : goPrevImage())}>
-								<div>
-									<MyImage
-										{image}
-										maxHeightPx={contentMaxHeight}
-										maxWidthPx={imageMaxWidthPx}
-										isActive={currentIndex === i}
-										minWidth={i === 0 ? `${800}px` : i === 1 ? `${100}px` : 'auto'} />
-								</div>
+								style:transform={`scale(${scale})`}
+								on:swipe={(e) => (e.detail.direction === 'left' ? goNextImage() : goPrevImage())}
+								use:swipe
+								on:pinch={(e) => {
+									scale = e.detail.scale;
+								}}
+								use:pinch>
+								<MyImage
+									{image}
+									isActive={currentIndex === i}
+									minWidth={i === 0 ? `${900}px` : i === 1 ? `${100}px` : 'auto'}
+									maxWidth={1200} />
 							</div>
 						{/each}
 					</div>

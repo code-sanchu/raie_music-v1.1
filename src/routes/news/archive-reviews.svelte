@@ -1,7 +1,8 @@
 <script lang="ts" context="module">
 	import { images } from '$lib/assets';
 
-	import { ImageGalleryModal, Picture } from '$lib/components';
+	import { Picture } from '$lib/components';
+	import { ImageGalleryModal } from '$lib/components/+pages/news';
 	import { ReviewCarousel } from '$lib/components/+pages/news';
 
 	const reviewImages = Object.values(images.reviews);
@@ -59,9 +60,9 @@
 
 						{#if i === 0}
 							<div
-								class="absolute bottom-0 z-10 bg-my-black-700 border-2 border-white text-white w-full p-2 flex justify-end cursor-pointer">
+								class="absolute bottom-0 z-10 bg-my-black-100 border-2 border-white w-full p-2 flex justify-end cursor-pointer">
 								<a
-									class="uppercase text-xs tracking-wide flex items-center gap-2"
+									class="uppercase text-[10px] md:text-xs tracking-wide flex items-center gap-2"
 									href="http://www.concertmonkey.be/albumreviews/album-red-brick-angel-raie"
 									target="_blank">
 									<span>Read on Concert Monkey</span>
@@ -72,9 +73,9 @@
 
 						{#if i === 1}
 							<div
-								class="absolute bottom-0 z-10 bg-my-black-700 border-2 border-white text-white w-full p-2 flex justify-end cursor-pointer">
+								class="absolute bottom-0 z-10 bg-my-black-100 border-2 border-white w-full p-2 flex justify-end cursor-pointer">
 								<a
-									class="uppercase text-xs tracking-wide flex items-center gap-2"
+									class="uppercase text-[10px] md:text-xs tracking-wide flex items-center gap-2"
 									href="http://www.concertmonkey.be/albumreviews/album-red-brick-angel-raie"
 									target="_blank">
 									<span>Read on Blues Matters (pg 95)</span>
