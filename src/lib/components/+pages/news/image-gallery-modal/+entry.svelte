@@ -4,7 +4,7 @@
 
 	import type { Data } from '$lib/types';
 
-	import { Icon, MyDialog } from '$lib/components';
+	import { Icon, MyDialog, Picture } from '$lib/components';
 	import MyImage from './my-image.svelte';
 </script>
 
@@ -93,7 +93,7 @@
 						style:transform={`translateX(-${currentIndex * 80}vw)`}>
 						{#each images as image, i}
 							<div
-								class="w-[80vw] shrink-0 grid place-items-center overflow-auto max-h-[85vh]"
+								class="w-[80vw] shrink-0 overflow-auto max-h-[85vh]"
 								style:height="{contentMaxHeight}px"
 								on:swipe={(e) => (e.detail.direction === 'left' ? goNextImage() : goPrevImage())}
 								use:swipe
@@ -105,12 +105,18 @@
 									scale = e.detail.scale;
 								}}
 								use:pinch>
-								<div style:transform={`scale(${1.5})`}>
-									<MyImage
-										{image}
-										isActive={currentIndex === i}
-										minWidth={i === 0 ? `${900}px` : i === 1 ? `${100}px` : 'auto'}
-										maxWidth={1200} />
+								<!-- 								<MyImage
+									{image}
+									isActive={currentIndex === i}
+									minWidth={}
+									maxWidth={1200} /> -->
+
+								<div style:min-width={i === 0 ? `${400}px` : i === 1 ? `${100}px` : 'auto'}>
+									<Picture
+										imageClass={``}
+										meta={image.src}
+										sizes={`${image.naturalDimensions.width}px`}
+										alt="" />
 								</div>
 							</div>
 						{/each}
