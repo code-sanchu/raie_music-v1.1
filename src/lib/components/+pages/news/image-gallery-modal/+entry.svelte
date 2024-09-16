@@ -98,10 +98,14 @@
 								on:swipe={(e) => (e.detail.direction === 'left' ? goNextImage() : goPrevImage())}
 								use:swipe
 								on:pinch={(e) => {
+									return;
+									if (e.detail.scale < 0.5) {
+										return;
+									}
 									scale = e.detail.scale;
 								}}
 								use:pinch>
-								<div style:transform={`scale(${scale})`}>
+								<div style:transform={`scale(${1.5})`}>
 									<MyImage
 										{image}
 										isActive={currentIndex === i}
