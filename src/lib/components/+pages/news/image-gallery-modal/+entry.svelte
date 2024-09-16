@@ -95,18 +95,19 @@
 							<div
 								class="w-[80vw] shrink-0 grid place-items-center overflow-auto max-h-[85vh]"
 								style:height="{contentMaxHeight}px"
-								style:transform={`scale(${scale})`}
 								on:swipe={(e) => (e.detail.direction === 'left' ? goNextImage() : goPrevImage())}
 								use:swipe
 								on:pinch={(e) => {
 									scale = e.detail.scale;
 								}}
 								use:pinch>
-								<MyImage
-									{image}
-									isActive={currentIndex === i}
-									minWidth={i === 0 ? `${900}px` : i === 1 ? `${100}px` : 'auto'}
-									maxWidth={1200} />
+								<div style:transform={`scale(${scale})`}>
+									<MyImage
+										{image}
+										isActive={currentIndex === i}
+										minWidth={i === 0 ? `${900}px` : i === 1 ? `${100}px` : 'auto'}
+										maxWidth={1200} />
+								</div>
 							</div>
 						{/each}
 					</div>
