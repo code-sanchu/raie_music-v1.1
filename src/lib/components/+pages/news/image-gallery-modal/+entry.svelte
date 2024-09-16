@@ -93,9 +93,17 @@
 							<div
 								class="w-[80vw] shrink-0 overflow-auto max-h-[85vh]"
 								style:height="{contentMaxHeight}px">
-								<div style:min-width={i === 0 ? `${400}px` : i === 1 ? `${100}px` : 'auto'}>
+								<div
+									class="w-full"
+									style:max-width={i === 0
+										? 'auto'
+										: i === 1
+											? `${400}px`
+											: i === 2 || i === 3 || i === 4 || i === 5 || i === 6
+												? `${900}px`
+												: 'auto'}>
 									<Picture
-										imageClass={``}
+										imageClass={`w-full`}
 										meta={image.src}
 										sizes={`${image.naturalDimensions.width}px`}
 										alt="" />
@@ -128,3 +136,5 @@
 									scale = e.detail.scale;
 								}}
 								use:pinch -->
+
+<!-- <div style:min-width={i === 0 ? `${400}px` : i === 1 ? `${100}px` : 'auto'}> -->
