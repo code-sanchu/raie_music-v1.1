@@ -1,11 +1,9 @@
 <script lang="ts" context="module">
 	import { Dialog, Transition } from '@rgossiaux/svelte-headlessui';
-	import { pinch, swipe } from 'svelte-gestures';
 
 	import type { Data } from '$lib/types';
 
 	import { Icon, MyDialog, Picture } from '$lib/components';
-	import MyImage from './my-image.svelte';
 </script>
 
 <script lang="ts">
@@ -94,23 +92,7 @@
 						{#each images as image, i}
 							<div
 								class="w-[80vw] shrink-0 overflow-auto max-h-[85vh]"
-								style:height="{contentMaxHeight}px"
-								on:swipe={(e) => (e.detail.direction === 'left' ? goNextImage() : goPrevImage())}
-								use:swipe
-								on:pinch={(e) => {
-									return;
-									if (e.detail.scale < 0.5) {
-										return;
-									}
-									scale = e.detail.scale;
-								}}
-								use:pinch>
-								<!-- 								<MyImage
-									{image}
-									isActive={currentIndex === i}
-									minWidth={}
-									maxWidth={1200} /> -->
-
+								style:height="{contentMaxHeight}px">
 								<div style:min-width={i === 0 ? `${400}px` : i === 1 ? `${100}px` : 'auto'}>
 									<Picture
 										imageClass={``}
@@ -135,3 +117,14 @@
 		</MyDialog.ContentContainer>
 	</Dialog>
 </Transition>
+
+<!-- 								on:swipe={(e) => (e.detail.direction === 'left' ? goNextImage() : goPrevImage())}
+								use:swipe
+								on:pinch={(e) => {
+									return;
+									if (e.detail.scale < 0.5) {
+										return;
+									}
+									scale = e.detail.scale;
+								}}
+								use:pinch -->
