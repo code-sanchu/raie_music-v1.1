@@ -29,6 +29,8 @@
 
 <p class="text-my-black tracking-wide leading-relaxed max-w-[768px] mt-sm">
 	Raie's latest album Red Brick Angel is attracting attention from top international reviewers! ...
+	<br /><br />
+	... yet another international review for Red Brick Angel! ... from KeysAndChords.com
 </p>
 
 {#if windowWidth}
@@ -52,13 +54,26 @@
 							style:max-width="{image.naturalDimensions.width}px"
 							on:click={() => onClickImage(i)}>
 							<Picture
-								imageClass={`w-full h-full`}
+								imageClass={`w-full h-full grayscale`}
 								meta={image.src}
 								sizes={`${image.naturalDimensions.width}px`}
 								alt="" />
 						</div>
 
 						{#if i === 0}
+							<div
+								class="absolute bottom-0 z-10 bg-my-black-50 w-full p-2 flex justify-end cursor-pointer">
+								<a
+									class="uppercase text-[10px] md:text-xs tracking-wider flex items-center gap-2"
+									href="https://www.keysandchords.com/album-review-blog/raie-red-brick-angel-this-music-thing-earthbound"
+									target="_blank">
+									<span>Read on KeysAndChords</span>
+									<span><Icon.ExternalLink /></span>
+								</a>
+							</div>
+						{/if}
+
+						{#if i === 1}
 							<div
 								class="absolute bottom-0 z-10 bg-my-black-50 w-full p-2 flex justify-end cursor-pointer">
 								<a
