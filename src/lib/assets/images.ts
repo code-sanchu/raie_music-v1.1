@@ -12,7 +12,7 @@ import md_and_producer_chillin_GMS from '$assets/images/md_and_producer_chillin-
 import naz_and_nate_warmin_up from '$assets/images/naz_and_nate_warmin_up.jpg?w=640&format=avif;webp;jpg&as=picture&imagetools';
 import raie_concert from '$assets/images/raie-concert-opt.png?w=600&format=avif;webp;jpg&as=picture&imagetools';
 
-import review_by_philip_verhaege_in_keys_and_chords from '$assets/images/reviews/review-by_philip_verhaege-in_keys_and_chords.jpg?w=583&format=avif;webp;jpg&as=picture&imagetools';
+import review_by_philip_verhaege_in_keys_and_chords from '$assets/images/reviews/review-by_philip_verhaege-in_keys_and_chords.jpg?w=800&format=avif;webp;jpg&as=picture&imagetools';
 import review_blue_bloods_by_steve_yourglivch_and_rachel_bennett from '$assets/images/reviews/blue_bloods-by_steve_yourglivch_and_rachel_bennett.jpg?w=583&format=avif;webp;jpg&as=picture&imagetools';
 import review_martin_cooke_blues_matters from '$assets/images/reviews/martin_cooke-blues_matters.png?w=1058&format=avif;webp;jpg&as=picture&imagetools';
 import review_martin_slidel_whats_on_london from '$assets/images/reviews/martin_slidel-whats_on_london.png?w=1407&format=avif;webp;jpg&as=picture&imagetools';

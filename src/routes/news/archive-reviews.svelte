@@ -30,7 +30,7 @@
 <p class="text-my-black tracking-wide leading-relaxed max-w-[768px] mt-sm">
 	Raie's latest album Red Brick Angel is attracting attention from top international reviewers! ...
 	<br /><br />
-	... yet another international review for Red Brick Angel! ... from KeysAndChords.com
+	... yet another international review for Red Brick Angel! ... from KeysAndChords.com!
 </p>
 
 {#if windowWidth}

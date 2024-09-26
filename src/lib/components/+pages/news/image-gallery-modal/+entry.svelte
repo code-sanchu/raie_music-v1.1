@@ -95,11 +95,11 @@
 								style:height="{contentMaxHeight}px">
 								<div
 									class="w-full"
-									style:max-width={i === 0
-										? 'auto'
-										: i === 1
+									style:max-width={i === 0 || i === 1
+										? '1200px'
+										: i === 2
 											? `${400}px`
-											: i === 2 || i === 3 || i === 4 || i === 5 || i === 6
+											: i === 3 || i === 4 || i === 5 || i === 6 || i === 7
 												? `${900}px`
 												: 'auto'}>
 									<Picture
