@@ -1,11 +1,24 @@
 <script lang="ts" context="module">
 	import { Icon } from '$lib/components';
-	import { AlbumLaunch, GalaxyStudios, Gigs, RedBrickAngelNews, NewEP } from './articles';
+	import {
+		AlbumLaunch,
+		GalaxyStudios,
+		Gigs,
+		RedBrickAngelNews,
+		NewEP,
+		GrammyAwardsAndMore
+	} from './articles';
 	import TitleButton from './_title-button.svelte';
 </script>
 
 <script lang="ts">
-	let showing: 'new ep' | 'galaxy' | 'gigs' | 'album launch' | 'red brick angel news' = 'new ep';
+	let showing:
+		| 'grammy awards'
+		| 'new ep'
+		| 'galaxy'
+		| 'gigs'
+		| 'album launch'
+		| 'red brick angel news' = 'grammy awards';
 </script>
 
 <div>
@@ -13,6 +26,15 @@
 
 	<div
 		class="flex items-center flex-wrap gap-x-xxs xs:gap-x-xs sm:gap-x-sm gap-y-xs mt-xs max-w-full overflow-hidden">
+		<TitleButton
+			text="Grammy Awards!"
+			onClick={() => (showing = 'grammy awards')}
+			isActive={showing === 'grammy awards'} />
+
+		<span class="text-my-black-50 text-sm">
+			<Icon.DotOutline weight="thin" />
+		</span>
+
 		<TitleButton
 			text="New EP!"
 			onClick={() => (showing = 'new ep')}
@@ -53,7 +75,9 @@
 	</div>
 
 	<div class="max-w-[768px] mt-[13px]">
-		{#if showing === 'new ep'}
+		{#if showing === 'grammy awards'}
+			<GrammyAwardsAndMore />
+		{:else if showing === 'new ep'}
 			<NewEP />
 		{:else if showing === 'red brick angel news'}
 			<RedBrickAngelNews />
